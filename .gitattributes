@@ -15,3 +15,4 @@
 *.so.dbg filter=lfs diff=lfs merge=lfs -text
 *.blend* filter=lfs diff=lfs merge=lfs -text
 *.xcf filter=lfs diff=lfs merge=lfs -text
+*.lib filter=lfs diff=lfs merge=lfs -text
