@@ -5,3 +5,9 @@
 .mono/
 data_*/
 mono_crash.*.json
+
+# Don't include Blender backups
+*.blend*
+# but keep main Blender files
+!*.blend
+!*.blend.*
