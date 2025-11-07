@@ -12,6 +12,12 @@
     
     <ItemGroup>
       <Content Include="addons\settings_helper\Icons\**" />
+      <Content Include="Interactables\IInteractable.cs.uid" />
+      <Content Include="Interactables\InteractableRigidBody3D.cs.uid" />
+      <Content Include="Interactables\InteractableStaticBody3D.cs.uid" />
+      <Content Include="Interactables\Interactor.cs.uid" />
+      <Content Include="Player\Player Prefab.tscn" />
+      <Content Include="Player\PlayerController.cs.uid" />
     </ItemGroup>
     
 </Project>
