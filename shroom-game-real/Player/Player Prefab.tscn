@@ -21,17 +21,17 @@ metadata/_custom_type_script = "uid://byjq1fe68ukgj"
 [node name="Player Model" parent="Visual Root" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Player Model/Player/Armature" index="0"]
-bones/13/position = Vector3(0.6952974, 1.5009496, -0.06312945)
-bones/30/position = Vector3(-0.71302396, 1.544903, -0.063129455)
-bones/47/position = Vector3(0, 1.1746835, 0)
-bones/49/rotation = Quaternion(-0.5294417, -0.105320245, -0.16075179, 0.82629174)
-bones/50/rotation = Quaternion(-0.011125706, 6.9849193e-10, 0.30723408, 0.951569)
-bones/52/rotation = Quaternion(-0.5294417, 0.10532047, 0.16075194, 0.82629174)
-bones/53/rotation = Quaternion(-0.011125688, -1.1059455e-08, -0.30723447, 0.9515688)
-bones/58/rotation = Quaternion(0.02628587, 0.36072594, -0.47193938, 0.8040268)
-bones/59/rotation = Quaternion(0.31047302, 0.00072316406, -0.06726419, 0.94819915)
-bones/64/rotation = Quaternion(-0.026432721, -0.388519, 0.42568782, 0.816789)
-bones/65/rotation = Quaternion(0.40058476, -0.00069569313, 0.08678696, 0.91214)
+bones/13/position = Vector3(0.6952974, 1.5058676, -0.063129455)
+bones/30/position = Vector3(-0.71302396, 1.5545745, -0.063129455)
+bones/47/position = Vector3(0, 1.1709746, 0)
+bones/49/rotation = Quaternion(-0.52798086, -0.11096734, -0.16943069, 0.824752)
+bones/50/rotation = Quaternion(-0.011648337, 7.566995e-10, 0.32166645, 0.9467814)
+bones/52/rotation = Quaternion(-0.5279808, 0.110967726, 0.16943109, 0.8247518)
+bones/53/rotation = Quaternion(-0.011648334, -1.1059456e-08, -0.3216673, 0.94678116)
+bones/58/rotation = Quaternion(0.014214361, 0.3686834, -0.46199507, 0.8064932)
+bones/59/rotation = Quaternion(0.3342143, 0.00071669254, -0.07240775, 0.9397114)
+bones/64/rotation = Quaternion(-0.041057732, -0.3970258, 0.41289845, 0.8186572)
+bones/65/rotation = Quaternion(0.42677516, -0.0006861487, 0.09246112, 0.8996185)
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
@@ -72,7 +72,7 @@ metadata/_custom_type_script = "uid://cu7l4gfo6xn00"
 
 [node name="FirstPersonOverworldPlayerState" type="Node" parent="PlayerStates"]
 script = ExtResource("5_dvuv0")
-movementSpeed = 10.0
+movementSpeed = 5.0
 mass = 0.35
 metadata/_custom_type_script = "uid://cxyvequtlcd0m"
 
