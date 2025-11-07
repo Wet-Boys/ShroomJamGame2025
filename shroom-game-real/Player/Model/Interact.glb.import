@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b32s7br267u3f"
-path="res://.godot/imported/Interact.glb-716f815d3483da3c3a1fd34e9070de74.scn"
+uid="uid://b6xj5xk7j7k8c"
+path="res://.godot/imported/Interact.glb-03a1f5946b20ae0743447f7c6f726dba.scn"
 
 [deps]
 
-source_file="res://scenes/overworld/PlayerAnimations/Interact.glb"
-dest_files=["res://.godot/imported/Interact.glb-716f815d3483da3c3a1fd34e9070de74.scn"]
+source_file="res://Player/Model/Interact.glb"
+dest_files=["res://.godot/imported/Interact.glb-03a1f5946b20ae0743447f7c6f726dba.scn"]
 
 [params]
 
