@@ -5,15 +5,15 @@
 
 [sub_resource type="Resource" id="Resource_7njba"]
 script = ExtResource("2_8lbnx")
-DefaultValue = 0.004
-Max = 1.0
+DefaultValue = 3.0
+Max = 10.0
 Key = "gameplay.mouse.horizontal_sensitivity"
 metadata/_custom_type_script = "uid://dklkxqbwayfil"
 
 [sub_resource type="Resource" id="Resource_kmose"]
 script = ExtResource("2_8lbnx")
-DefaultValue = 0.004
-Max = 1.0
+DefaultValue = 3.0
+Max = 10.0
 Key = "gameplay.mouse.vertical_sensitivity"
 metadata/_custom_type_script = "uid://dklkxqbwayfil"
 
