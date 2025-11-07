@@ -14,6 +14,14 @@ config/name="ShroomGameReal"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SettingsManagerSingleton="*res://addons/settings_helper/SettingsManager Singleton.tscn"
+
 [dotnet]
 
 project/assembly_name="ShroomGameReal"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/settings_helper/plugin.cfg")
