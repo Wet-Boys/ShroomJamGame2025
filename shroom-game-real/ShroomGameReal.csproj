@@ -5,4 +5,13 @@
         <EnableDynamicLoading>true</EnableDynamicLoading>
         <LangVersion>preview</LangVersion>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="Samboy063.Tomlet" Version="6.1.0"/>
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Content Include="addons\settings_helper\Icons\**" />
+    </ItemGroup>
+    
 </Project>
