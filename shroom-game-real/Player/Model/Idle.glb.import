@@ -3,18 +3,18 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b32s7br267u3f"
-path="res://.godot/imported/Interact.glb-716f815d3483da3c3a1fd34e9070de74.scn"
+uid="uid://b7hwuaardwru5"
+path="res://.godot/imported/Idle.glb-f8502187656b61d9c1afb20e618bb5e6.scn"
 
 [deps]
 
-source_file="res://scenes/overworld/PlayerAnimations/Interact.glb"
-dest_files=["res://.godot/imported/Interact.glb-716f815d3483da3c3a1fd34e9070de74.scn"]
+source_file="res://Player/Model/Idle.glb"
+dest_files=["res://.godot/imported/Idle.glb-f8502187656b61d9c1afb20e618bb5e6.scn"]
 
 [params]
 
 nodes/root_type=""
-nodes/root_name="Interact"
+nodes/root_name="Idle"
 nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

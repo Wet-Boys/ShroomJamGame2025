@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://bq111dof5116h"]
 
-[ext_resource type="PackedScene" uid="uid://ba6rc7urqohbv" path="res://scenes/overworld/PlayerAnimations/Player.glb" id="1_enbey"]
-[ext_resource type="Animation" uid="uid://0b63vf7xy35t" path="res://scenes/overworld/PlayerAnimations/interact.res" id="2_wp7mc"]
-[ext_resource type="Animation" uid="uid://btr71ra2ku0kr" path="res://scenes/overworld/PlayerAnimations/walk.res" id="3_4d7i0"]
-[ext_resource type="Animation" uid="uid://c6aha7l6cq558" path="res://scenes/overworld/PlayerAnimations/idle.res" id="4_36mr8"]
+[ext_resource type="PackedScene" uid="uid://ba6rc7urqohbv" path="res://Player/Model/Player.glb" id="1_enbey"]
+[ext_resource type="Animation" uid="uid://dm8d65u5y47a" path="res://Player/Animations/interact.res" id="2_wp7mc"]
+[ext_resource type="Animation" uid="uid://cqrj3hxq7aq7w" path="res://Player/Animations/walk.res" id="3_4d7i0"]
+[ext_resource type="Animation" uid="uid://b7hqy0frfdjyg" path="res://Player/Animations/idle.res" id="4_36mr8"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_hoi1s"]
 _data = {
