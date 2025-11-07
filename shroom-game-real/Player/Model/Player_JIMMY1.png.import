@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbhty8nro84tt"
-path.s3tc="res://.godot/imported/Idle_JIMMY1.png-432275192cbe60b3a5b92890b5a73d14.s3tc.ctex"
+uid="uid://jnym6ai207am"
+path.s3tc="res://.godot/imported/Player_JIMMY1.png-62a320ee3f338ef7b28e683389decb99.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://scenes/overworld/PlayerAnimations/Idle_JIMMY1.png"
-dest_files=["res://.godot/imported/Idle_JIMMY1.png-432275192cbe60b3a5b92890b5a73d14.s3tc.ctex"]
+source_file="res://Player/Model/Player_JIMMY1.png"
+dest_files=["res://.godot/imported/Player_JIMMY1.png-62a320ee3f338ef7b28e683389decb99.s3tc.ctex"]
 
 [params]
 
