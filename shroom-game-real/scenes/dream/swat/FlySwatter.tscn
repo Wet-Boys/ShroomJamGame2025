@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://0kheumkpenf0"]
+[gd_scene load_steps=3 format=3 uid="uid://0kheumkpenf0"]
 
-[node name="FlySwatter" type="Node3D"]
+[ext_resource type="PackedScene" uid="uid://bu64ighge7vn6" path="res://scenes/dream/swat/swatter_model.tscn" id="1_3ayj7"]
+[ext_resource type="Script" uid="uid://x30kkq3bbr2g" path="res://scenes/dream/swat/FlySwatter.cs" id="1_cjlba"]
+
+[node name="FlySwatter" type="Node3D" node_paths=PackedStringArray("_animationTree")]
+script = ExtResource("1_cjlba")
+_animationTree = NodePath("Swatter/AnimationTree")
+
+[node name="Swatter" parent="." instance=ExtResource("1_3ayj7")]
+
+[editable path="Swatter"]

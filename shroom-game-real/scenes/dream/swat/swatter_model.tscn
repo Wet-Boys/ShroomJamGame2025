@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu64ighge7vn6"]
+
+[ext_resource type="PackedScene" uid="uid://c5k7d8podqihh" path="res://scenes/dream/swat/Swatter.glb" id="1_2om5t"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tftbq"]
+animation = &"ArmatureAction"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tebjr"]
+animation = &"ArmatureAction_001"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_wwsw0"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_61w85"]
+graph_offset = Vector2(-602, 21)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_tftbq")
+nodes/Animation/position = Vector2(-140, 100)
+nodes/Sw/node = SubResource("AnimationNodeAnimation_tebjr")
+nodes/Sw/position = Vector2(-160, 300)
+nodes/Swat/node = SubResource("AnimationNodeOneShot_wwsw0")
+nodes/Swat/position = Vector2(140, 100)
+node_connections = [&"output", 0, &"Swat", &"Swat", 0, &"Animation", &"Swat", 1, &"Sw"]
+
+[node name="Swatter" instance=ExtResource("1_2om5t")]
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_61w85")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Swat/active = false
+parameters/Swat/internal_active = false
+parameters/Swat/request = 0
