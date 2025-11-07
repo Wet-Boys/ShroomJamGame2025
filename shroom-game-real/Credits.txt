@@ -4,3 +4,5 @@
 ## All symbols can be escaped with a backslash '\' such as \# to have the symbol show up in the credits
 ## Headers are lines that start with a '>'
 ## Empty lines will be added as vertical padding
+
+Fire sprite - https://opengameart.org/content/fire-0

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckqosumwe874t"]
+
+[ext_resource type="Script" uid="uid://bmjsf35bntkr8" path="res://scenes/dream/fire hop/FireSpawner.cs" id="1_4xruj"]
+[ext_resource type="PackedScene" uid="uid://d0lj435j73iq7" path="res://scenes/dream/fire hop/fire.tscn" id="2_bvucs"]
+
+[node name="FireSpawner" type="Node3D" node_paths=PackedStringArray("_spawnTimer")]
+script = ExtResource("1_4xruj")
+_firePrefab = ExtResource("2_bvucs")
+_spawnTimer = NodePath("Timer")
+_fireInterval = 1.0
+
+[node name="Timer" type="Timer" parent="."]

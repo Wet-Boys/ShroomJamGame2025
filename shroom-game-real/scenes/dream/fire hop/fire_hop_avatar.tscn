@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://w3slbrxj45wg"]
+
+[ext_resource type="Script" uid="uid://b8ys6dymbslay" path="res://scenes/dream/fire hop/FireHopAvatar.cs" id="1_ag2dt"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ag2dt"]
+radius = 0.18408203
+height = 0.82592773
+
+[sub_resource type="BoxMesh" id="BoxMesh_rqwnb"]
+size = Vector3(0.3, 0.3, 0.2)
+
+[node name="FireHopAvatar" type="Node3D" node_paths=PackedStringArray("_rigidBody3D")]
+script = ExtResource("1_ag2dt")
+_rigidBody3D = NodePath("RigidBody3D")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 8
+collision_mask = 23
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+contact_monitor = true
+max_contacts_reported = 5
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015701275, 1.3774871, 0)
+shape = SubResource("CapsuleShape3D_ag2dt")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1.2796887, 0, 0, 0, 2.7393277, 0, 0, 0, 1.2379141, 0.017168045, 1.3819928, 0)
+mesh = SubResource("BoxMesh_rqwnb")

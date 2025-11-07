@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://qfpcy16nfiyq"]
+
+[ext_resource type="PackedScene" uid="uid://bft8tglx2o4p7" path="res://scenes/dream/fire hop/ScootDance.glb" id="1_mi7h5"]
+
+[node name="ScootDance" instance=ExtResource("1_mi7h5")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0.17046697, 1.2953031, -0.22641277)
+bones/0/rotation = Quaternion(-0.7563589, -0.022412369, -0.0014757926, 0.6537712)
+bones/2/rotation = Quaternion(0.1640821, -0.082841605, 0.9540553, -0.23662795)
+bones/3/rotation = Quaternion(0.09330765, 0.5058872, 0.023527458, 0.8572154)
+bones/5/rotation = Quaternion(0.189119, 0.017540146, 0.9747201, 0.117673695)
+bones/6/rotation = Quaternion(-0.089107044, 0.526799, -0.022101745, 0.8450173)
+bones/8/rotation = Quaternion(0.023768628, -0.15253244, 0.023096548, 0.9877426)
+bones/9/rotation = Quaternion(-0.039175134, -0.18993883, -0.92512125, 0.32640383)
+bones/10/rotation = Quaternion(-2.7905628e-08, -0.8510365, 3.283014e-08, 0.52510655)
+bones/12/rotation = Quaternion(0.23696387, -0.4208652, 0.83017534, 0.27844122)
+bones/13/rotation = Quaternion(0.16920713, -0.7371474, -0.14636192, 0.63762134)
+bones/15/rotation = Quaternion(0.00040262807, -0.14789727, 0.032452304, 0.9884701)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "Armature|mixamo_com|Layer0"

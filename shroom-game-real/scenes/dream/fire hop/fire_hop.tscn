@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://o0ogl1dvej1j"]
+
+[ext_resource type="PackedScene" uid="uid://qfpcy16nfiyq" path="res://scenes/dream/fire hop/scoot_dance.tscn" id="1_67rug"]
+[ext_resource type="PackedScene" uid="uid://d04dmr2q6mlib" path="res://scenes/dream/fire hop/Scene.glb" id="1_dcnef"]
+[ext_resource type="PackedScene" uid="uid://ckqosumwe874t" path="res://scenes/dream/fire hop/fire_spawner.tscn" id="3_vshx0"]
+[ext_resource type="PackedScene" uid="uid://w3slbrxj45wg" path="res://scenes/dream/fire hop/fire_hop_avatar.tscn" id="4_aoet2"]
+[ext_resource type="PackedScene" uid="uid://cx072cwkrciue" path="res://scenes/2D Camera.tscn" id="5_7wxk0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcnef"]
+size = Vector3(9.662598, 1.2219238, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vshx0"]
+size = Vector3(0.46325684, 4.685974, 1)
+
+[node name="FireHop" type="Node3D"]
+
+[node name="Scene" parent="." instance=ExtResource("1_dcnef")]
+
+[node name="ScootDance" parent="." instance=ExtResource("1_67rug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.35, 0)
+
+[node name="ScootDance2" parent="." instance=ExtResource("1_67rug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0.35, 0)
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.034335256, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18969727, -1.5242649, 1.9540942)
+shape = SubResource("BoxShape3D_dcnef")
+
+[node name="Wall1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5086975, 2.056837, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0049438477, -1.9698792, 1.9540942)
+shape = SubResource("BoxShape3D_vshx0")
+
+[node name="Wall2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5331373, 2.056837, 0)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0049438477, -1.9698792, 1.9540942)
+shape = SubResource("BoxShape3D_vshx0")
+
+[node name="FireSpawner" parent="." instance=ExtResource("3_vshx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 4.987, 1.983)
+_fireInterval = 3.0
+
+[node name="FireSpawner2" parent="." instance=ExtResource("3_vshx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 4.987, 1.983)
+_fireInterval = 3.0
+
+[node name="FireHopAvatar" parent="." instance=ExtResource("4_aoet2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014622688, -0.2695161, 2.0128844)
+
+[node name="Camera3D" parent="." instance=ExtResource("5_7wxk0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5250726)
