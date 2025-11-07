@@ -24,12 +24,15 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
     public float groundFriction = 0.85f;
     [Export]
     public float movementSpeed = 450f;
+    [Export(PropertyHint.Range, "0, 100,or_greater")]
+    public float mass = 1f;
     
     private FloatSettingsEntry _verticalSensitivity;
     private FloatSettingsEntry _horizontalSensitivity;
     private Vector2 MouseSensitivity => new(_horizontalSensitivity.Value, _verticalSensitivity.Value);
     
     private Vector2 _mouseDelta;
+    private float _gravity;
 
     public override void _Ready()
     {
@@ -37,6 +40,8 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
         
         _verticalSensitivity = SettingsManager.Gameplay.Mouse.VerticalSensitivity;
         _horizontalSensitivity = SettingsManager.Gameplay.Mouse.HorizontalSensitivity;
+        
+        _gravity = ProjectSettings.Singleton.GetSetting("physics/3d/default_gravity").AsSingle();
     }
 
     protected override void OnEnterState()
@@ -105,9 +110,14 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
         
         Player.Velocity += forward * movementVector.Y * movementSpeed;
         Player.Velocity += right * movementVector.X * movementSpeed;
+        
+        // Apply gravity if not on floor
+        if (!Player.IsOnFloor())
+            Player.Velocity += Vector3.Down * _gravity * mass;
 
         Player.MoveAndSlide();
 
-        Player.Velocity *= groundFriction;
+        // Apply friction only the horizontal velocity while copying over the vertical velocity
+        Player.Velocity = ((Player.Velocity * (Vector3.One - Vector3.Up)) * groundFriction) + (Player.Velocity * Vector3.Up);
     }
 }

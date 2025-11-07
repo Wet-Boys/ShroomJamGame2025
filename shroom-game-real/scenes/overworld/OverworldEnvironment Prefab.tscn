@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3lqsowth1x4l"]
+
+[ext_resource type="Environment" uid="uid://cj1t2w7bnngn7" path="res://scenes/overworld/Overworld Environment.tres" id="1_h8amo"]
+
+[node name="OverworldEnvironment" type="WorldEnvironment"]
+environment = ExtResource("1_h8amo")
