@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SettingsManagerSingleton="*res://addons/settings_helper/SettingsManager Singleton.tscn"
 MouseReleaserSingleton="*res://Utilities/MouseReleaser Singleton.tscn"
+SettingsManagerSingleton="*res://addons/settings_helper/SettingsManager Singleton.tscn"
 
 [display]
 

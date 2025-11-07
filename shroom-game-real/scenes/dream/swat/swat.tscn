@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjkryu57tmvhc"]
+[gd_scene load_steps=6 format=3 uid="uid://bjkryu57tmvhc"]
 
 [ext_resource type="PackedScene" uid="uid://biquo2ggwekir" path="res://scenes/dream/swat/Background.glb" id="1_s0qyg"]
 [ext_resource type="PackedScene" uid="uid://cx072cwkrciue" path="res://scenes/2D Camera.tscn" id="2_3je0u"]
 [ext_resource type="PackedScene" uid="uid://dkni3hugwlk2q" path="res://scenes/dream/swat/Fly.tscn" id="3_3je0u"]
+[ext_resource type="PackedScene" uid="uid://0kheumkpenf0" path="res://scenes/dream/swat/FlySwatter.tscn" id="4_3de6a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0qyg"]
 size = Vector3(10.161621, 0.53118896, 2.2094727)
@@ -13,34 +14,36 @@ size = Vector3(10.161621, 0.53118896, 2.2094727)
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -1.9268599, 1.92686)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6218848, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07495117, 2.7588964, 0.6047363)
 shape = SubResource("BoxShape3D_s0qyg")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="Background"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.713328, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.011682, 1.1920929e-07)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07495117, 2.9491272, 0.6047363)
 shape = SubResource("BoxShape3D_s0qyg")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="Background"]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 1.7650795, 0.94093466, 0)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.89502716, 0.94093454, 2.3841858e-07)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07495117, 2.9491272, 0.6047363)
 shape = SubResource("BoxShape3D_s0qyg")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="Background"]
-transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -7.646345, 0.94093466, 0)
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -6.8470054, 0.94093454, 2.3841858e-07)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07495117, 2.9491272, 0.6047363)
 shape = SubResource("BoxShape3D_s0qyg")
 
 [node name="Camera3D" parent="." instance=ExtResource("2_3je0u")]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.9268599, 1.9268597)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2.0598316, 1.9268597)
+projection = 0
 
 [node name="Fly" parent="." instance=ExtResource("3_3je0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.759325, -1.0803871, 2.4834633)
@@ -65,3 +68,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85040134, -1.0803871, 1.504
 
 [node name="Fly8" parent="." instance=ExtResource("3_3je0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.525885, -1.0803871, 1.5046208)
+
+[node name="FlySwatter" parent="." node_paths=PackedStringArray("_camera3D") instance=ExtResource("4_3de6a")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 1.6540456)
+_camera3D = NodePath("../Camera3D")

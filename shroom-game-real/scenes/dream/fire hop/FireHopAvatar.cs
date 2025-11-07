@@ -32,15 +32,15 @@ public partial class FireHopAvatar : Node3D
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-        if (Input.IsActionJustPressed("testJ"))
+        if (Input.IsActionJustPressed("movement.jump"))
         {
             Jump();
         }
-        if (Input.IsActionPressed("testL"))
+        if (Input.IsActionPressed("movement.move_left"))
         {
             MoveLeft();
         }
-        if (Input.IsActionPressed("testR"))
+        if (Input.IsActionPressed("movement.move_right"))
         {
             MoveRight();
         }
