@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cerhhu863d61b"]
+
+[ext_resource type="Script" uid="uid://f7wuo7bqj2v3" path="res://Utilities/MouseReleaser.cs" id="1_522dh"]
+
+[node name="MouseReleaserSingleton" type="Node"]
+script = ExtResource("1_522dh")
+metadata/_custom_type_script = "uid://f7wuo7bqj2v3"

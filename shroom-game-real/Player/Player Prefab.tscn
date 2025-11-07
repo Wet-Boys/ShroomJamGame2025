@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://dk5rx6k5tsxl1"]
+
+[ext_resource type="Script" uid="uid://byjq1fe68ukgj" path="res://Player/PlayerController.cs" id="1_ffodk"]
+[ext_resource type="PackedScene" uid="uid://d25p0awkpqnka" path="res://Player/player_visuals.tscn" id="2_l50ud"]
+[ext_resource type="Script" uid="uid://l37bgfm3gxh4" path="res://Interactables/Interactor.cs" id="2_p5fe0"]
+[ext_resource type="PackedScene" uid="uid://b8t3w2bqcud6w" path="res://Camera/Main Game Camera.tscn" id="4_biwqw"]
+[ext_resource type="Script" uid="uid://cxyvequtlcd0m" path="res://Player/PlayerStates/FirstPersonOverworldPlayerState.cs" id="5_dvuv0"]
+[ext_resource type="Script" uid="uid://cu7l4gfo6xn00" path="res://Player/PlayerStates/PlayerStateList.cs" id="5_ibwd3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p5fe0"]
+radius = 0.9
+height = 5.1762695
+
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("initialState")]
+script = ExtResource("1_ffodk")
+initialState = NodePath("PlayerStates/FirstPersonOverworldPlayerState")
+metadata/_custom_type_script = "uid://byjq1fe68ukgj"
+
+[node name="Visual Root" type="Node3D" parent="."]
+
+[node name="Player Model" parent="Visual Root" instance=ExtResource("2_l50ud")]
+
+[node name="Skeleton3D" parent="Visual Root/Player Model/Player/Armature" index="0"]
+bones/13/position = Vector3(0.6952974, 1.5113494, -0.06312945)
+bones/30/position = Vector3(-0.7130239, 1.5641897, -0.063129455)
+bones/47/position = Vector3(0, 1.1802027, 0)
+bones/49/rotation = Quaternion(-0.5316306, -0.09636746, -0.14699315, 0.828538)
+bones/50/rotation = Quaternion(-0.0102919955, 1.0477378e-09, 0.28421137, 0.9587064)
+bones/52/rotation = Quaternion(-0.53163064, 0.096367836, 0.14699356, 0.82853794)
+bones/53/rotation = Quaternion(-0.010291994, -1.1117662e-08, -0.28421214, 0.95870626)
+bones/58/rotation = Quaternion(0.017989945, 0.36483157, -0.46618116, 0.8057602)
+bones/59/rotation = Quaternion(0.32525697, 0.00071919675, -0.070467114, 0.94299626)
+bones/64/rotation = Quaternion(-0.04253736, -0.39611357, 0.4131823, 0.8188803)
+bones/65/rotation = Quaternion(0.4274242, -0.00068590284, 0.09260173, 0.8992959)
+
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+target_node = NodePath("../../../../../../Head/Look Dir")
+bone_name = "Neck"
+bone = 60
+origin_from = 2
+origin_external_node = NodePath("../../../../../../Head")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2.4932778, 0)
+
+[node name="Look Dir" type="Marker3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+
+[node name="SteamAudioListener" type="SteamAudioListener" parent="Head"]
+
+[node name="Eyes" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4762094, -1.012)
+
+[node name="Camera" parent="Head/Eyes" instance=ExtResource("4_biwqw")]
+near = 0.1
+
+[node name="Interactor" type="RayCast3D" parent="Head/Eyes"]
+target_position = Vector3(0, 0, -10)
+collision_mask = 2
+script = ExtResource("2_p5fe0")
+metadata/_custom_type_script = "uid://l37bgfm3gxh4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6072388, 0)
+shape = SubResource("CapsuleShape3D_p5fe0")
+
+[node name="PlayerStates" type="Node" parent="." node_paths=PackedStringArray("firstPersonOverworld")]
+script = ExtResource("5_ibwd3")
+firstPersonOverworld = NodePath("FirstPersonOverworldPlayerState")
+metadata/_custom_type_script = "uid://cu7l4gfo6xn00"
+
+[node name="FirstPersonOverworldPlayerState" type="Node" parent="PlayerStates"]
+script = ExtResource("5_dvuv0")
+movementSpeed = 10.0
+metadata/_custom_type_script = "uid://cxyvequtlcd0m"
+
+[editable path="Visual Root/Player Model"]
+[editable path="Visual Root/Player Model/Player"]
