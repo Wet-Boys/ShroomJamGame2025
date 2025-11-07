@@ -16,9 +16,8 @@ public partial class SettingsHelperPlugin : EditorPlugin
 		RegisteredCustomTypes.Clear();
 		
 		RegisterCustomType("SettingsManager", "Node", "SettingsManager.cs", "Tools.svg");
-		RegisterCustomType("BoolSettingsEntry", "Resource", "SettingEntries/BoolSettingsEntry.cs", "bool.svg");
-		RegisterCustomType("FloatSettingsEntry", "Resource", "SettingEntries/FloatSettingsEntry.cs", "float.svg");
-		RegisterCustomType("IntSettingsEntry", "Resource", "SettingEntries/IntSettingsEntry.cs", "int.svg");
+		RegisterCustomType("BoolSettingsEntry", "Resource", "SettingsEntries/BoolSettingsEntry.cs", "bool.svg");
+		RegisterCustomType("FloatSettingsEntry", "Resource", "SettingsEntries/FloatSettingsEntry.cs", "float.svg");
 		
 		AddAutoloadSingleton("SettingsManagerSingleton", AddonResourceLoader.GetFullPath("SettingsManager Singleton.tscn"));
 	}
