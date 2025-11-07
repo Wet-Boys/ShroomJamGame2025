@@ -1,0 +1,8 @@
+[configuration]
+entry_symbol = "blender_godot_interop_init"
+compatibility_minimum = 4.1
+reloadable = false
+
+[libraries]
+
+linux.x86_64.debug = "res://addons/blender_godot_interop/BlenderGodotInteropAddon.debug.so"
