@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv1ufabh0k63e"]
+
+[ext_resource type="Script" uid="uid://byygvsgk812la" path="res://Tv/TvController.cs" id="1_ifqpe"]
+[ext_resource type="PackedScene" uid="uid://3xmqky200xr8" path="res://Tv/Model/CRT.glb" id="1_r0ehp"]
+[ext_resource type="Material" uid="uid://csgbj47b57ahc" path="res://Tv/Tv Screen Viewport mat.tres" id="2_gxnsj"]
+
+[sub_resource type="World3D" id="World3D_gxnsj"]
+
+[node name="CRT TV" type="Node3D"]
+script = ExtResource("1_ifqpe")
+screenViewportMaterial = ExtResource("2_gxnsj")
+metadata/_custom_type_script = "uid://byygvsgk812la"
+
+[node name="Model" parent="." instance=ExtResource("1_r0ehp")]
+
+[node name="SubWorld" type="SubViewport" parent="."]
+world_3d = SubResource("World3D_gxnsj")
+size = Vector2i(1024, 1024)
+render_target_update_mode = 0
