@@ -1,0 +1,79 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0lj435j73iq7"]
+
+[ext_resource type="Script" uid="uid://cregcfviqrrhk" path="res://scenes/dream/fire hop/Fire.cs" id="1_8few7"]
+[ext_resource type="Texture2D" uid="uid://c3eyiebu6k0s5" path="res://scenes/dream/fire hop/fire.png" id="1_phvmq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_phvmq"]
+atlas = ExtResource("1_phvmq")
+region = Rect2(0, 0, 15, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8few7"]
+atlas = ExtResource("1_phvmq")
+region = Rect2(15, 0, 15, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7jik"]
+atlas = ExtResource("1_phvmq")
+region = Rect2(30, 0, 15, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2c0j"]
+atlas = ExtResource("1_phvmq")
+region = Rect2(45, 0, 15, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cuj11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_phvmq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8few7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7jik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2c0j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phvmq"]
+size = Vector3(0.24536133, 0.34075928, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8few7"]
+size = Vector3(0.15324402, 3.119873, 1)
+
+[node name="Fire" type="Node3D" node_paths=PackedStringArray("_rigidBody", "_area")]
+script = ExtResource("1_8few7")
+_rigidBody = NodePath("RigidBody3D")
+_area = NodePath("RigidBody3D/ScoreTracker")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 2
+collision_mask = 9
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+contact_monitor = true
+max_contacts_reported = 2
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="RigidBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_cuj11")
+autoplay = "default"
+frame_progress = 0.32002977
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008911133, -0.029876709, 0)
+shape = SubResource("BoxShape3D_phvmq")
+
+[node name="ScoreTracker" type="Area3D" parent="RigidBody3D"]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/ScoreTracker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0047073364, 0.6680908, 0)
+shape = SubResource("BoxShape3D_8few7")
