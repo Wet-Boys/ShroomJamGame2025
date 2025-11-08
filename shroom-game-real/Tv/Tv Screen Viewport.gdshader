@@ -10,4 +10,5 @@ void fragment() {
 	vec4 sample = texture(viewportTexture, UV);
 	
 	EMISSION = sample.rgb;
+	ALBEDO = sample.rgb;
 }

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64"
+   height="64"
+   viewBox="0 0 16.933333 16.933333"
+   version="1.1"
+   id="svg1"
+   sodipodi:docname="zapper-crosshair.svg"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="12.876389"
+     inkscape:cx="44.3059"
+     inkscape:cy="41.548916"
+     inkscape:window-width="2560"
+     inkscape:window-height="1413"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g5" />
+  <defs
+     id="defs1" />
+  <g
+     id="layer1"
+     transform="matrix(0.35277778,0,0,0.35277778,-2.8222222,-2.8222222)">
+    <g
+       id="g5">
+      <rect
+         style="fill:#ff0303;fill-opacity:1;stroke-width:0.236956"
+         id="rect1"
+         width="3.8638766"
+         height="16"
+         x="30.068062"
+         y="8" />
+      <rect
+         style="fill:#ff0303;fill-opacity:1;stroke-width:0.236956"
+         id="rect2"
+         width="3.8638766"
+         height="16"
+         x="30.068062"
+         y="40" />
+      <rect
+         style="fill:#ff0303;fill-opacity:1;stroke-width:0.236948"
+         id="rect4"
+         width="3.863622"
+         height="16"
+         x="30.067717"
+         y="-56"
+         transform="rotate(90)" />
+      <rect
+         style="fill:#ff0303;fill-opacity:1;stroke-width:0.236948"
+         id="rect5"
+         width="3.863622"
+         height="16"
+         x="30.067717"
+         y="-24"
+         transform="rotate(90)" />
+      <circle
+         style="fill:none;fill-opacity:1;stroke:#ff0303;stroke-width:3.05324998;stroke-dasharray:none;stroke-opacity:1"
+         id="path5"
+         r="15.147304"
+         cy="32.029163"
+         cx="32.029163" />
+    </g>
+  </g>
+</svg>
