@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://x30kkq3bbr2g" path="res://scenes/dream/swat/FlySwatter.cs" id="1_cjlba"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_cjlba"]
-height = 2.5368652
-radius = 0.6821289
+height = 5.5335693
+radius = 0.4633789
 
 [node name="FlySwatter" type="Node3D" node_paths=PackedStringArray("_animationTree", "_hitBoxTimer", "_area3D")]
 script = ExtResource("1_cjlba")
@@ -14,15 +14,16 @@ _hitBoxTimer = NodePath("Timer")
 _area3D = NodePath("Area3D")
 
 [node name="Swatter" parent="." instance=ExtResource("1_3ayj7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1238223, 0)
 
 [node name="Area3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.48579347)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1238223, -0.48579347)
 collision_layer = 0
 collision_mask = 32
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.1491815, -0.7622855)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.1491816, -2.2606373)
 shape = SubResource("CylinderShape3D_cjlba")
 
 [node name="Timer" type="Timer" parent="."]

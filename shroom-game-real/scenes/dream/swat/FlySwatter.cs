@@ -47,14 +47,16 @@ public partial class FlySwatter : Node3D
         if (_currentCooldown > 0)
         {
             _currentCooldown -= delta;
-            if (_currentCooldown < .15f || _currentCooldown > .4f)
+            if (_currentCooldown < .15f)
             {
-                GlobalPosition = GlobalPosition.Lerp(mouse3dPosition + new Vector3(0, 0, 1), .15f);
+                GlobalPosition = GlobalPosition.Lerp(mouse3dPosition, .15f);
             }
         }
         else
         {
-            GlobalPosition = mouse3dPosition + new Vector3(0,0,1);
+            GlobalPosition = mouse3dPosition;
+            LookAt(_camera3D.ProjectPosition(mouse2dPosition, _distance + 1), Vector3.Forward);
+            // Rotation += new Vector3(-90.0f, 0, 0);
             if (Input.IsActionPressed("primary_action"))
             {
                 _hitBoxTimer.Start(.25f);
