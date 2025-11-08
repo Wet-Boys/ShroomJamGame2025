@@ -6,16 +6,61 @@ public partial class FlySwatter : Node3D
     [Export] private Camera3D _camera3D;
     [Export] private float _distance = 2;
     [Export] private AnimationTree _animationTree;
+    [Export] private float _cooldown = .55f;
+    private double _currentCooldown;
+    [Export] private Timer _hitBoxTimer;
+    [Export] private Area3D _area3D;
+
+    public override void _Ready()
+    {
+        _hitBoxTimer.Timeout += HitBoxTimerOnTimeout;
+        _area3D.BodyEntered += HitFly;
+    }
+
+    private void HitFly(Node3D body)
+    {
+        if (body.GetParent() is Fly fly)
+        {
+            fly.QueueFree();
+        }
+    }
+
+    private void HitBoxTimerOnTimeout()
+    {
+        if (_area3D.Monitoring)
+        {
+            _area3D.Monitoring = false;
+            _hitBoxTimer.Stop();
+        }
+        else
+        {
+            _area3D.Monitoring = true;
+            _hitBoxTimer.Start(.15f);
+        }
+    }
 
     public override void _Process(double delta)
     {
         base._Process(delta);
         var mouse2dPosition = GetViewport().GetMousePosition();
         var mouse3dPosition = _camera3D.ProjectPosition(mouse2dPosition, _distance);
-        GlobalPosition = mouse3dPosition + new Vector3(0,0,1);
-        if (Input.IsActionPressed("primary_action"))
+        if (_currentCooldown > 0)
         {
-            _animationTree.Set($"parameters/Swat/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
+            _currentCooldown -= delta;
+            if (_currentCooldown < .15f || _currentCooldown > .4f)
+            {
+                GlobalPosition = GlobalPosition.Lerp(mouse3dPosition + new Vector3(0, 0, 1), .15f);
+            }
+        }
+        else
+        {
+            GlobalPosition = mouse3dPosition + new Vector3(0,0,1);
+            if (Input.IsActionPressed("primary_action"))
+            {
+                _hitBoxTimer.Start(.25f);
+                _animationTree.Set($"parameters/Swat/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
+                _currentCooldown = _cooldown;
+            }   
         }
     }
 }

@@ -8,6 +8,8 @@ public partial class Fly : Node3D
     private RandomNumberGenerator _rng = new();
     [Export]
     private Timer _moveTimer;
+
+    public static int flyCount = 0;
     public override void _Ready()
     {
         base._Ready();
@@ -15,6 +17,7 @@ public partial class Fly : Node3D
         _rigidBody3D.BodyEntered += RigidBody3DOnBodyEntered;
         MoveToNewSpot();
         _moveTimer.Timeout += MoveToNewSpot;
+        flyCount++;
     }
 
     private void RigidBody3DOnBodyEntered(Node body)
@@ -34,5 +37,14 @@ public partial class Fly : Node3D
     {
         _rigidBody3D.LinearVelocity = Vector3.Zero;
         _moveTimer.Start(_rng.RandfRange(.75f, 1.25f));
+    }
+    public override void _Notification(int what)
+    {
+        base._Notification(what);
+        if (what == NotificationPredelete)
+        {
+            flyCount--;
+            GD.Print($"{Fly.flyCount} flies left");
+        }
     }
 }

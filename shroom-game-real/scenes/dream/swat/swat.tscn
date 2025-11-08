@@ -46,28 +46,28 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 2
 projection = 0
 
 [node name="Fly" parent="." instance=ExtResource("3_3je0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.759325, -1.0803871, 2.4834633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8707442, -1.0803871, 2.0785403)
 
 [node name="Fly2" parent="." instance=ExtResource("3_3je0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123654366, -1.0803871, 2.4834633)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87740517, -1.0803871, 2.6184378)
 
 [node name="Fly3" parent="." instance=ExtResource("3_3je0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123654366, -1.0803871, 0.44117236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82102203, -1.0803871, 0.9360784)
 
 [node name="Fly4" parent="." instance=ExtResource("3_3je0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5518293, -1.0803871, 0.44117236)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0569239, -1.0803871, 0.83484745)
 
 [node name="Fly5" parent="." instance=ExtResource("3_3je0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7852693, -1.0803871, 3.5469117)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3466024, -1.0803871, 3.130741)
 
 [node name="Fly6" parent="." instance=ExtResource("3_3je0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85040134, -1.0803871, 3.5469117)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4352903, -1.0803871, 2.973271)
 
 [node name="Fly7" parent="." instance=ExtResource("3_3je0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.85040134, -1.0803871, 1.5046208)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99662346, -1.0803871, 1.1334412)
 
 [node name="Fly8" parent="." instance=ExtResource("3_3je0u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.525885, -1.0803871, 1.5046208)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3336112, -1.0803871, 1.8083129)
 
 [node name="FlySwatter" parent="." node_paths=PackedStringArray("_camera3D") instance=ExtResource("4_3de6a")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 1.6540456)
