@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://2qxftp1qcga5"]
+
+[ext_resource type="PackedScene" uid="uid://c6iqy0qbru8ib" path="res://scenes/Scoot Shoot/Models/Barricade.glb" id="1_aanyx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rx22l"]
+size = Vector3(1.0942383, 3.0158691, 4.56781)
+
+[node name="Barricade" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Barricade" parent="." instance=ExtResource("1_aanyx")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0007324219, 0.0025634766, 0.0030822754)
+shape = SubResource("BoxShape3D_rx22l")

@@ -1,0 +1,343 @@
+[gd_scene load_steps=15 format=3 uid="uid://l0o5yekikrdc"]
+
+[ext_resource type="Script" uid="uid://bfpku0gl8etli" path="res://scenes/Scoot Shoot/ScootShootOnRailsGame.cs" id="1_eqt36"]
+[ext_resource type="PackedScene" uid="uid://dlkdxx6x5qj3l" path="res://scenes/Scoot Shoot/Models/Straight Hall.glb" id="1_ex37d"]
+[ext_resource type="PackedScene" uid="uid://baa66eg1kis02" path="res://scenes/Scoot Shoot/Models/Corner.glb" id="2_n1nhb"]
+[ext_resource type="PackedScene" uid="uid://dafj2yo2qlmgo" path="res://scenes/Scoot Shoot/Models/Empty.glb" id="3_eavg0"]
+[ext_resource type="PackedScene" uid="uid://dfl84mfhnyb6f" path="res://scenes/Scoot Shoot/Models/Wall.glb" id="4_p4a6w"]
+[ext_resource type="Script" uid="uid://b5kdeq7hcpnvu" path="res://scenes/Scoot Shoot/CrtScreenZapper.cs" id="7_1lmy4"]
+[ext_resource type="Texture2D" uid="uid://dnctv2qdsms0v" path="res://scenes/Scoot Shoot/zapper-crosshair.svg" id="8_eqt36"]
+[ext_resource type="PackedScene" uid="uid://2qxftp1qcga5" path="res://scenes/Scoot Shoot/Barricade.tscn" id="9_x81cp"]
+[ext_resource type="PackedScene" uid="uid://ct8wpe4p3fuok" path="res://scenes/Scoot Shoot/Enemies/Shooter Enemy.tscn" id="10_e6wbm"]
+[ext_resource type="Script" uid="uid://d2w7jlt7wv4qj" path="res://scenes/Scoot Shoot/ScootShootStage.cs" id="10_x81cp"]
+
+[sub_resource type="Environment" id="Environment_1lmy4"]
+ssao_enabled = true
+ssil_enabled = true
+volumetric_fog_enabled = true
+
+[sub_resource type="Curve3D" id="Curve3D_eqt36"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -16, 3, 16, 0, 0, 0, 0, 0, 0, 0, 3, 16, 0, 0, 0, 0, 0, 0, 0, 3, 32),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_x81cp"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 3, -16, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 16),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve3D" id="Curve3D_e6wbm"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -15.999999, 3, 6.9938216e-07, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 3, 16),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
+
+[node name="ScootShootGame" type="Node3D" node_paths=PackedStringArray("stages")]
+script = ExtResource("1_eqt36")
+stages = [NodePath("Stages/Stage 1"), NodePath("Stages/Stage 2"), NodePath("Stages/Stage 3")]
+metadata/_custom_type_script = "uid://bfpku0gl8etli"
+
+[node name="Zapper RayCast" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 3, -48)
+target_position = Vector3(0, 0, 100)
+collision_mask = 36
+debug_shape_custom_color = Color(1, 0.38282022, 0.5495467, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -16, 3, -48)
+current = true
+
+[node name="Level" type="Node3D" parent="."]
+
+[node name="Straight Hall" parent="Level" instance=ExtResource("1_ex37d")]
+
+[node name="Straight Hall2" parent="Level" instance=ExtResource("1_ex37d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -16)
+
+[node name="Straight Hall6" parent="Level" instance=ExtResource("1_ex37d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32)
+
+[node name="Straight Hall7" parent="Level" instance=ExtResource("1_ex37d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16, 0, -48)
+
+[node name="Corner" parent="Level" instance=ExtResource("2_n1nhb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+
+[node name="Corner7" parent="Level" instance=ExtResource("2_n1nhb")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -48)
+
+[node name="Corner2" parent="Level" instance=ExtResource("2_n1nhb")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -64, 0, 16)
+
+[node name="Corner3" parent="Level" instance=ExtResource("2_n1nhb")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -80, 0, 32)
+
+[node name="Corner4" parent="Level" instance=ExtResource("2_n1nhb")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -48, 0, 32)
+
+[node name="Corner5" parent="Level" instance=ExtResource("2_n1nhb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 80)
+
+[node name="Corner6" parent="Level" instance=ExtResource("2_n1nhb")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -80, 0, 80)
+
+[node name="Straight Hall3" parent="Level" instance=ExtResource("1_ex37d")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -16, 0, 16)
+
+[node name="Straight Hall4" parent="Level" instance=ExtResource("1_ex37d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -32, 0, 16)
+
+[node name="Straight Hall5" parent="Level" instance=ExtResource("1_ex37d")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -48, 0, 16)
+
+[node name="Empty" parent="Level" instance=ExtResource("3_eavg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 32)
+
+[node name="Empty2" parent="Level" instance=ExtResource("3_eavg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 48)
+
+[node name="Wall" parent="Level" instance=ExtResource("4_p4a6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 48)
+
+[node name="Wall2" parent="Level" instance=ExtResource("4_p4a6w")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -80, 0, 48)
+
+[node name="Empty3" parent="Level" instance=ExtResource("3_eavg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 64)
+
+[node name="Empty4" parent="Level" instance=ExtResource("3_eavg0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 0, 80)
+
+[node name="Wall3" parent="Level" instance=ExtResource("4_p4a6w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 64)
+
+[node name="Wall4" parent="Level" instance=ExtResource("4_p4a6w")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -80, 0, 64)
+
+[node name="CrtScreenZapper" type="Node2D" parent="."]
+script = ExtResource("7_1lmy4")
+maxZapperRange = 10000.0
+metadata/_custom_type_script = "uid://b5kdeq7hcpnvu"
+
+[node name="ZapperCrosshair" type="Sprite2D" parent="CrtScreenZapper"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_eqt36")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1lmy4")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -32)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D13" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -48)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D14" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 11, -48)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, -16)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 16)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 11, 16)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 11, 16)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 11, 16)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 11, 16)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D9" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 11, 32)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 11, 48)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 11, 64)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="OmniLight3D12" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64, 11, 80)
+light_color = Color(0.47274664, 0.46080002, 0.64, 1)
+light_energy = 4.264
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 21.071
+
+[node name="Stages" type="Node3D" parent="."]
+
+[node name="Stage 1" type="Node3D" parent="Stages" node_paths=PackedStringArray("enemies")]
+script = ExtResource("10_x81cp")
+enemies = [NodePath("ShooterEnemy 1"), NodePath("ShooterEnemy 2")]
+metadata/_custom_type_script = "uid://d2w7jlt7wv4qj"
+
+[node name="Intro Path" type="Path3D" parent="Stages/Stage 1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -64)
+curve = SubResource("Curve3D_eqt36")
+
+[node name="Path Follower" type="PathFollow3D" parent="Stages/Stage 1/Intro Path"]
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -16, 3, 16)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Stages/Stage 1/Intro Path/Path Follower"]
+remote_path = NodePath("../../../../../Camera3D")
+
+[node name="Barricade" parent="Stages/Stage 1" instance=ExtResource("9_x81cp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.7107773, 1, -23.015163)
+
+[node name="ShooterEnemy 1" parent="Stages/Stage 1" instance=ExtResource("10_e6wbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6380553, 0, -21.45724)
+
+[node name="Barricade2" parent="Stages/Stage 1" instance=ExtResource("9_x81cp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.0126963, 1, -15.98322)
+
+[node name="ShooterEnemy 2" parent="Stages/Stage 1" instance=ExtResource("10_e6wbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.085418, 0, -14.425296)
+
+[node name="Stage 2" type="Node3D" parent="Stages" node_paths=PackedStringArray("enemies")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 16)
+script = ExtResource("10_x81cp")
+enemies = [NodePath("ShooterEnemy 1"), NodePath("ShooterEnemy 2")]
+metadata/_custom_type_script = "uid://d2w7jlt7wv4qj"
+
+[node name="Intro Path" type="Path3D" parent="Stages/Stage 2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.21309)
+curve = SubResource("Curve3D_x81cp")
+
+[node name="Path Follower" type="PathFollow3D" parent="Stages/Stage 2/Intro Path"]
+transform = Transform3D(-0.99999285, 0, -8.7422244e-08, 0, 0.99999845, 0, 8.742215e-08, 0, -0.9999939, 0, 3, -16)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Stages/Stage 2/Intro Path/Path Follower"]
+remote_path = NodePath("../../../../../Camera3D")
+update_position = false
+update_rotation = false
+update_scale = false
+
+[node name="Barricade" parent="Stages/Stage 2" instance=ExtResource("9_x81cp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.7107773, 1, -7.0151634)
+
+[node name="ShooterEnemy 1" parent="Stages/Stage 2" instance=ExtResource("10_e6wbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6380553, 0, -5.457239)
+
+[node name="Barricade2" parent="Stages/Stage 2" instance=ExtResource("9_x81cp")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.710906, 1, -7.0151634)
+
+[node name="ShooterEnemy 2" parent="Stages/Stage 2" instance=ExtResource("10_e6wbm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.783628, 0, -5.457239)
+
+[node name="Stage 3" type="Node3D" parent="Stages" node_paths=PackedStringArray("enemies")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 16)
+script = ExtResource("10_x81cp")
+enemies = [NodePath("ShooterEnemy 1"), NodePath("ShooterEnemy 2"), NodePath("ShooterEnemy 3")]
+metadata/_custom_type_script = "uid://d2w7jlt7wv4qj"
+
+[node name="Intro Path" type="Path3D" parent="Stages/Stage 3"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 32, 0, -0.21308899)
+curve = SubResource("Curve3D_e6wbm")
+
+[node name="Path Follower" type="PathFollow3D" parent="Stages/Stage 3/Intro Path"]
+transform = Transform3D(-4.3710973e-08, 0, -0.9999908, 0, 0.99999845, 0, 0.9999905, 0, -4.3710987e-08, -15.999999, 3, 6.9938216e-07)
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Stages/Stage 3/Intro Path/Path Follower"]
+remote_path = NodePath("../../../../../Camera3D")
+update_position = false
+update_rotation = false
+update_scale = false
+
+[node name="Barricade" parent="Stages/Stage 3" instance=ExtResource("9_x81cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.453377, 1, -5.1998396)
+
+[node name="ShooterEnemy 1" parent="Stages/Stage 3" instance=ExtResource("10_e6wbm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.8954544, 0, -5.272561)
+
+[node name="Barricade2" parent="Stages/Stage 3" instance=ExtResource("9_x81cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0316925, 1, 4.8001595)
+
+[node name="ShooterEnemy 2" parent="Stages/Stage 3" instance=ExtResource("10_e6wbm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.47377014, 0, 4.72744)
+
+[node name="Barricade3" parent="Stages/Stage 3" instance=ExtResource("9_x81cp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9683075, 1, -6.1998405)
+
+[node name="ShooterEnemy 3" parent="Stages/Stage 3" instance=ExtResource("10_e6wbm")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.5262299, 0, -6.27256)
