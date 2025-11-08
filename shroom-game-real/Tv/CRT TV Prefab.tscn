@@ -15,5 +15,4 @@ metadata/_custom_type_script = "uid://byygvsgk812la"
 
 [node name="SubWorld" type="SubViewport" parent="."]
 world_3d = SubResource("World3D_gxnsj")
-size = Vector2i(1024, 1024)
 render_target_update_mode = 0
