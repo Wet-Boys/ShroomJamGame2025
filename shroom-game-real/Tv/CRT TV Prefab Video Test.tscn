@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://rq05n8u057go"]
+
+[ext_resource type="Script" uid="uid://byygvsgk812la" path="res://Tv/TvController.cs" id="1_c7e64"]
+[ext_resource type="Material" uid="uid://csgbj47b57ahc" path="res://Tv/Tv Screen Viewport mat.tres" id="2_x6264"]
+[ext_resource type="PackedScene" uid="uid://3xmqky200xr8" path="res://Tv/Model/CRT.glb" id="3_t087i"]
+[ext_resource type="VideoStream" uid="uid://b10jtvbuiod7r" path="res://Tv/Videos/pain.ogv" id="4_x6264"]
+
+[sub_resource type="World3D" id="World3D_gxnsj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x6264"]
+viewport_path = NodePath("SubWorld")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t087i"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_x6264")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pqy4e"]
+material = SubResource("StandardMaterial3D_t087i")
+
+[node name="CRT TV" type="Node3D"]
+script = ExtResource("1_c7e64")
+screenViewportMaterial = ExtResource("2_x6264")
+metadata/_custom_type_script = "uid://byygvsgk812la"
+
+[node name="Model" parent="." instance=ExtResource("3_t087i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1691456, 0)
+
+[node name="SubWorld" type="SubViewport" parent="."]
+world_3d = SubResource("World3D_gxnsj")
+size = Vector2i(640, 480)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="SubWorld"]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("4_x6264")
+autoplay = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.4660134)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.90244997, 0.23135798, -0.36339715, 0, 0.8435508, 0.53704935, 0.43079463, -0.48466018, 0.7612624, -2.6425982, 3.1278343, 8.030588)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 1.5614147, 0)
+mesh = SubResource("PlaneMesh_pqy4e")
