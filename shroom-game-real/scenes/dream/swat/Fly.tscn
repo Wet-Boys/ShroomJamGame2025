@@ -12,7 +12,7 @@ _rigidBody3D = NodePath("RigidBody3D")
 _moveTimer = NodePath("StartTimer")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-collision_layer = 2
+collision_layer = 32
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
