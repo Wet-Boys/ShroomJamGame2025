@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://buam6xk2w03da"]
+
+[ext_resource type="PackedScene" uid="uid://ccj3k51na6cm4" path="res://scenes/dream/avoid balls/Background.glb" id="1_fkod1"]
+[ext_resource type="PackedScene" uid="uid://foskdcl1e87l" path="res://scenes/dream/avoid balls/Bussy/bussy.tscn" id="2_46cp5"]
+[ext_resource type="PackedScene" uid="uid://cx072cwkrciue" path="res://scenes/2D Camera.tscn" id="2_xfgk3"]
+[ext_resource type="PackedScene" uid="uid://bf3m7bxsj4cd8" path="res://scenes/dream/avoid balls/ball.tscn" id="4_46cp5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkod1"]
+size = Vector3(19.85791, 1.3533936, 12.840332)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xfgk3"]
+size = Vector3(0.68792725, 3.128357, 18.408447)
+
+[node name="AvoidBalls" type="Node3D"]
+
+[node name="Background" parent="." instance=ExtResource("1_fkod1")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Background"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17700195, 0.17669678, -0.20776367)
+shape = SubResource("BoxShape3D_fkod1")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.019853, 0, 0.016726136)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15536499, 1.0641785, -0.21643066)
+shape = SubResource("BoxShape3D_xfgk3")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.332302, 0, 0.0038737245)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15536499, 1.0641785, -0.20776367)
+shape = SubResource("BoxShape3D_xfgk3")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Background"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -4.3711385e-08, -0.27539158, 0, -5.814816)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15536499, 1.0641785, -0.20776367)
+shape = SubResource("BoxShape3D_xfgk3")
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Background"]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -4.3711385e-08, -0.27539158, 0, 6.126198)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Background/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15536499, 1.0641785, -0.20776367)
+shape = SubResource("BoxShape3D_xfgk3")
+
+[node name="Bussy" parent="Background" instance=ExtResource("2_46cp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24538493, 0.99082494, 0.06947279)
+
+[node name="Camera3D" parent="." instance=ExtResource("2_xfgk3")]
+transform = Transform3D(1, 0, 0, 0, 0.53295016, 0.84614664, 0, -0.84614664, 0.53295016, 0, 10.196317, 5.713656)
+projection = 0
+fov = 66.5
+
+[node name="Ball" parent="." instance=ExtResource("4_46cp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3451185, 1.547334, 4.3805323)
+
+[node name="Ball2" parent="." instance=ExtResource("4_46cp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4539804, 1.547334, -3.8929825)
+
+[node name="Ball3" parent="." instance=ExtResource("4_46cp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.736472, 1.547334, -4.292144)
+
+[node name="Ball4" parent="." instance=ExtResource("4_46cp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2626386, 1.547334, 4.07209)
+
+[node name="Ball7" parent="." instance=ExtResource("4_46cp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.530752, 1.547334, -4.3465743)
+
+[node name="Ball8" parent="." instance=ExtResource("4_46cp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7043796, 1.547334, 4.0176597)
+
+[node name="Ball5" parent="." instance=ExtResource("4_46cp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.371501, 1.547334, -0.35496712)
+
+[node name="Ball6" parent="." instance=ExtResource("4_46cp5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6717043, 1.547334, -0.010237485)
