@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://ct8wpe4p3fuok"]
+[gd_scene load_steps=8 format=3 uid="uid://ct8wpe4p3fuok"]
 
 [ext_resource type="Script" uid="uid://cgk8bwhpf4lmk" path="res://scenes/Scoot Shoot/Enemies/ShooterEnemy.cs" id="1_nqeqi"]
 [ext_resource type="PackedScene" uid="uid://bxo4tn437u1dg" path="res://scenes/Scoot Shoot/Models/Enemy 1.glb" id="2_n4142"]
 [ext_resource type="Script" uid="uid://hha3kds0lf64" path="res://scenes/HealthComponent.cs" id="3_gd413"]
+[ext_resource type="Script" uid="uid://hutdt2ctord0" path="res://Tv/GameStates/TvGameTimer.cs" id="4_mia52"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n4142"]
 size = Vector3(0.8, 0.8, 0.8)
@@ -43,4 +44,6 @@ maxHealth = 100.0
 currentHealth = 100.0
 metadata/_custom_type_script = "uid://hha3kds0lf64"
 
-[node name="Damage Player Timer" type="Timer" parent="."]
+[node name="Damage Player Timer" type="Node" parent="."]
+script = ExtResource("4_mia52")
+metadata/_custom_type_script = "uid://hutdt2ctord0"

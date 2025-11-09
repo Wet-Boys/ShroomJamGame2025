@@ -1,4 +1,5 @@
 using Godot;
+using ShroomGameReal.Tv.GameStates;
 
 namespace ShroomGameReal.scenes.Scoot_Shoot.Enemies;
 
@@ -22,7 +23,7 @@ public partial class ShooterEnemy : RigidBody3D, IHealthProvider
     public ScootShootOnRailsGame game;
     public ScootShootStage stage;
     
-    private Timer _damagePlayerTimer;
+    private TvGameTimer _damagePlayerTimer;
     private RandomNumberGenerator _rng = new();
 
     public override void _Ready()
@@ -30,7 +31,7 @@ public partial class ShooterEnemy : RigidBody3D, IHealthProvider
         HealthComponent = GetNode<HealthComponent>("HealthComponent");
         HealthComponent.OnDeath += OnDeath;
         
-        _damagePlayerTimer = GetNode<Timer>("Damage Player Timer");
+        _damagePlayerTimer = GetNode<TvGameTimer>("Damage Player Timer");
         _damagePlayerTimer.Timeout += DealDamageToPlayer;
         _damagePlayerTimer.OneShot = true;
         _damagePlayerTimer.WaitTime = GetNextShotTime();
