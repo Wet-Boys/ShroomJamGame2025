@@ -45,17 +45,17 @@ metadata/_custom_type_script = "uid://byjq1fe68ukgj"
 [node name="Player Model" parent="Visual Root" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Player Model/Player/Armature" index="0"]
-bones/13/position = Vector3(0.6952973, 1.5193685, -0.06312945)
-bones/30/position = Vector3(-0.71302396, 1.5783708, -0.063129455)
-bones/47/position = Vector3(0, 1.1987201, 0)
-bones/49/rotation = Quaternion(-0.5392703, -0.05802384, -0.0880749, 0.8355021)
-bones/50/rotation = Quaternion(-0.0066629536, 9.0381047e-10, 0.18399613, 0.98290443)
-bones/52/rotation = Quaternion(-0.5392702, 0.058024418, 0.08807554, 0.83550197)
-bones/53/rotation = Quaternion(-0.0066629783, -1.129297e-08, -0.18399732, 0.98290426)
-bones/58/rotation = Quaternion(0.030605346, 0.3538017, -0.4784027, 0.80313057)
-bones/59/rotation = Quaternion(0.29690427, 0.00072664645, -0.06432449, 0.952738)
-bones/64/rotation = Quaternion(-0.040272903, -0.39155686, 0.41807723, 0.8187019)
-bones/65/rotation = Quaternion(0.41978803, -0.0006887626, 0.090947375, 0.9030539)
+bones/13/position = Vector3(0.69529736, 1.5067017, -0.06312945)
+bones/30/position = Vector3(-0.71302396, 1.556034, -0.063129455)
+bones/47/position = Vector3(0, 1.1856753, 0)
+bones/49/rotation = Quaternion(-0.53380686, -0.08676326, -0.13223432, 0.83068436)
+bones/50/rotation = Quaternion(-0.009391396, 8.731149e-10, 0.25934154, 0.96574)
+bones/52/rotation = Quaternion(-0.53380686, 0.08676367, 0.13223474, 0.8306843)
+bones/53/rotation = Quaternion(-0.009391397, -1.1117663e-08, -0.25934225, 0.96573985)
+bones/58/rotation = Quaternion(0.03169429, 0.35544014, -0.47755462, 0.8028695)
+bones/59/rotation = Quaternion(0.29779464, 0.0007264178, -0.0645174, 0.95244706)
+bones/64/rotation = Quaternion(-0.028018525, -0.3873598, 0.42612535, 0.81705856)
+bones/65/rotation = Quaternion(0.40111145, -0.00069549435, 0.0869011, 0.91189766)
 
 [node name="Jimmy" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="0"]
 layers = 2
@@ -141,15 +141,11 @@ mouse_filter = 2
 [node name="Interact Label" type="PanelContainer" parent="UI Root/Interaction Overlay"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 245.0
-offset_bottom = 59.0
+offset_right = 121.0
+offset_bottom = 60.0
 pivot_offset = Vector2(122, 29)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qfgdp")
 script = ExtResource("9_nv1sy")
-
-[node name="Line2D" type="Line2D" parent="UI Root/Interaction Overlay/Interact Label"]
-visible = false
-points = PackedVector2Array(121, 31, 590, 114)
 
 [node name="MarginContainer" type="MarginContainer" parent="UI Root/Interaction Overlay/Interact Label"]
 layout_mode = 2
@@ -171,15 +167,11 @@ stretch_mode = 5
 layout_mode = 2
 theme_override_constants/margin_top = 4
 
-[node name="Label" type="Label" parent="UI Root/Interaction Overlay/Interact Label/MarginContainer/HBoxContainer/MarginContainer"]
+[node name="Interact Label Text" type="Label" parent="UI Root/Interaction Overlay/Interact Label/MarginContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = " Interact"
 label_settings = SubResource("LabelSettings_sy1gk")
 vertical_alignment = 2
-
-[node name="Top" type="Marker2D" parent="UI Root/Interaction Overlay/Interact Label"]
-visible = false
-position = Vector2(122, 0)
 
 [node name="Pause Menu" parent="UI Root" instance=ExtResource("9_thgmb")]
 visible = false

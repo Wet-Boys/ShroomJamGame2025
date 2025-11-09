@@ -96,10 +96,12 @@ public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
         
         OnDeselected();
     }
+    
+    public virtual string GetInteractText() => "Interact";
 
     protected virtual void Interact(PlayerController player) { }
 
-    private (Vector2 min, Vector2 max) GetScreenBounds()
+    public (Vector2 screenMin, Vector2 screenMax) GetScreenBounds()
     {
         var screenMin = Vector2.One * float.MaxValue;
         var screenMax = Vector2.One * float.MinValue;
