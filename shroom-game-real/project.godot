@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 MouseReleaserSingleton="*res://Utilities/MouseReleaser Singleton.tscn"
 SettingsManagerSingleton="*res://addons/settings_helper/SettingsManager Singleton.tscn"
+GlobalGameStateSingleton="*res://Singletons/Global Game State Singleton.tscn"
 
 [display]
 
@@ -100,9 +101,17 @@ escape={
 
 [layer_names]
 
+3d_render/layer_1="Main"
+3d_render/layer_2="Player Model"
 3d_physics/layer_1="Floors"
 3d_physics/layer_2="Interactables"
 3d_physics/layer_3="Walls"
 3d_physics/layer_4="Player"
 3d_physics/layer_5="NotSure"
 3d_physics/layer_6="EnemyProjectiles"
+3d_physics/layer_7="3D Mouse Interactions"
+
+[rendering]
+
+environment/volumetric_fog/volume_size=128
+environment/volumetric_fog/volume_depth=128
