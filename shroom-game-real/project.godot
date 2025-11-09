@@ -111,6 +111,10 @@ escape={
 3d_physics/layer_6="EnemyProjectiles"
 3d_physics/layer_7="3D Mouse Interactions"
 
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
 [rendering]
 
 environment/volumetric_fog/volume_size=128
