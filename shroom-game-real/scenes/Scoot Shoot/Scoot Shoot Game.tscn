@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://l0o5yekikrdc"]
+[gd_scene load_steps=22 format=3 uid="uid://l0o5yekikrdc"]
 
 [ext_resource type="Script" uid="uid://bfpku0gl8etli" path="res://scenes/Scoot Shoot/ScootShootOnRailsGame.cs" id="1_eqt36"]
 [ext_resource type="PackedScene" uid="uid://dlkdxx6x5qj3l" path="res://scenes/Scoot Shoot/Models/Straight Hall.glb" id="1_ex37d"]
@@ -7,9 +7,15 @@
 [ext_resource type="PackedScene" uid="uid://dfl84mfhnyb6f" path="res://scenes/Scoot Shoot/Models/Wall.glb" id="4_p4a6w"]
 [ext_resource type="Script" uid="uid://b5kdeq7hcpnvu" path="res://scenes/Scoot Shoot/CrtScreenZapper.cs" id="7_1lmy4"]
 [ext_resource type="Texture2D" uid="uid://dnctv2qdsms0v" path="res://scenes/Scoot Shoot/zapper-crosshair.svg" id="8_eqt36"]
+[ext_resource type="Script" uid="uid://r2erxaqw5sfs" path="res://scenes/Scoot Shoot/ScootShootUiController.cs" id="9_pbqn1"]
 [ext_resource type="PackedScene" uid="uid://2qxftp1qcga5" path="res://scenes/Scoot Shoot/Barricade.tscn" id="9_x81cp"]
 [ext_resource type="PackedScene" uid="uid://ct8wpe4p3fuok" path="res://scenes/Scoot Shoot/Enemies/Shooter Enemy.tscn" id="10_e6wbm"]
 [ext_resource type="Script" uid="uid://d2w7jlt7wv4qj" path="res://scenes/Scoot Shoot/ScootShootStage.cs" id="10_x81cp"]
+[ext_resource type="Script" uid="uid://boyg2gdep7c4m" path="res://scenes/Scoot Shoot/Main Menu/MainMenuController.cs" id="11_d7sgu"]
+[ext_resource type="Texture2D" uid="uid://bhaj4ucy7mh1s" path="res://scenes/Scoot Shoot/Main Menu/Scoot pog.png" id="11_e6wbm"]
+[ext_resource type="FontFile" uid="uid://cicwamu45tttv" path="res://scenes/Scoot Shoot/Main Menu/Fonts/Arbutus/Arbutus-Regular.ttf" id="13_0s1lt"]
+[ext_resource type="Theme" uid="uid://8m3ndueviodv" path="res://scenes/Scoot Shoot/Main Menu/Scoot Shoot Main Menu Theme.tres" id="14_0s1lt"]
+[ext_resource type="PackedScene" uid="uid://dofhffbbgk7t" path="res://Ui/PauseMenu/Pause Menu.tscn" id="14_rdfk3"]
 
 [sub_resource type="Environment" id="Environment_1lmy4"]
 ssao_enabled = true
@@ -37,6 +43,14 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="LabelSettings" id="LabelSettings_0s1lt"]
+line_spacing = -16.0
+font = ExtResource("13_0s1lt")
+font_size = 64
+font_color = Color(0, 0.75, 1, 1)
+shadow_size = 26
+shadow_color = Color(0.13, 0.13, 0.13, 1)
+
 [node name="ScootShootGame" type="Node3D" node_paths=PackedStringArray("stages")]
 script = ExtResource("1_eqt36")
 stages = [NodePath("Stages/Stage 1"), NodePath("Stages/Stage 2"), NodePath("Stages/Stage 3")]
@@ -49,7 +63,7 @@ collision_mask = 36
 debug_shape_custom_color = Color(1, 0.38282022, 0.5495467, 1)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -16, 3, -48)
+transform = Transform3D(-4.3711385e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, -4.3711385e-08, -16, 3, -48)
 current = true
 
 [node name="Level" type="Node3D" parent="."]
@@ -118,15 +132,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48, 0, 64)
 
 [node name="Wall4" parent="Level" instance=ExtResource("4_p4a6w")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -80, 0, 64)
-
-[node name="CrtScreenZapper" type="Node2D" parent="."]
-script = ExtResource("7_1lmy4")
-maxZapperRange = 10000.0
-metadata/_custom_type_script = "uid://b5kdeq7hcpnvu"
-
-[node name="ZapperCrosshair" type="Sprite2D" parent="CrtScreenZapper"]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("8_eqt36")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1lmy4")
@@ -341,3 +346,119 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9683075, 1, -6.1998405)
 
 [node name="ShooterEnemy 3" parent="Stages/Stage 3" instance=ExtResource("10_e6wbm")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.5262299, 0, -6.27256)
+
+[node name="UI Root" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("14_0s1lt")
+script = ExtResource("9_pbqn1")
+
+[node name="Main Menu" type="Control" parent="UI Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_d7sgu")
+metadata/_custom_type_script = "uid://boyg2gdep7c4m"
+
+[node name="Background" type="ColorRect" parent="UI Root/Main Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.69403815, 0.56383824, 0.33367282, 1)
+
+[node name="TextureRect" type="TextureRect" parent="UI Root/Main Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -176.0
+offset_right = 125.0
+offset_bottom = 336.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_e6wbm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="UI Root/Main Menu/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.56600004
+anchor_top = 0.30900002
+anchor_right = 0.56600004
+anchor_bottom = 0.30900002
+offset_left = -15.792023
+offset_top = -204.20802
+offset_right = 310.65598
+offset_bottom = -16.096024
+grow_horizontal = 2
+grow_vertical = 2
+text = "Scoot
+       Shoot"
+label_settings = SubResource("LabelSettings_0s1lt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI Root/Main Menu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51500005
+anchor_top = 0.527
+anchor_right = 0.51500005
+anchor_bottom = 0.527
+offset_left = 12.19989
+offset_top = -66.160034
+offset_right = 249.19989
+offset_bottom = 76.839966
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Start Button" type="Button" parent="UI Root/Main Menu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("14_0s1lt")
+text = "Start"
+
+[node name="Settings Button" type="Button" parent="UI Root/Main Menu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("14_0s1lt")
+text = "Settings"
+
+[node name="Quit Button" type="Button" parent="UI Root/Main Menu/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("14_0s1lt")
+text = "Quit"
+
+[node name="Pause Menu" parent="UI Root" instance=ExtResource("14_rdfk3")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+theme = null
+
+[node name="CrtScreenZapper" type="Node2D" parent="."]
+script = ExtResource("7_1lmy4")
+maxZapperRange = 10000.0
+metadata/_custom_type_script = "uid://b5kdeq7hcpnvu"
+
+[node name="ZapperCrosshair" type="Sprite2D" parent="CrtScreenZapper"]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("8_eqt36")
+
+[connection signal="pressed" from="UI Root/Main Menu/VBoxContainer/Start Button" to="UI Root/Main Menu" method="OnStartPressed"]
+[connection signal="pressed" from="UI Root/Main Menu/VBoxContainer/Quit Button" to="UI Root/Main Menu" method="OnQuitPressed"]

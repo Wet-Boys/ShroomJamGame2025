@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dk5rx6k5tsxl1"]
+[gd_scene load_steps=11 format=3 uid="uid://dk5rx6k5tsxl1"]
 
 [ext_resource type="Script" uid="uid://byjq1fe68ukgj" path="res://Player/PlayerController.cs" id="1_ffodk"]
 [ext_resource type="PackedScene" uid="uid://d25p0awkpqnka" path="res://Player/player_visuals.tscn" id="2_l50ud"]
@@ -6,12 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://b8t3w2bqcud6w" path="res://Camera/Main Game Camera.tscn" id="4_biwqw"]
 [ext_resource type="Script" uid="uid://cxyvequtlcd0m" path="res://Player/PlayerStates/FirstPersonOverworldPlayerState.cs" id="5_dvuv0"]
 [ext_resource type="Script" uid="uid://cu7l4gfo6xn00" path="res://Player/PlayerStates/PlayerStateList.cs" id="5_ibwd3"]
+[ext_resource type="Script" uid="uid://oswbmavah515" path="res://Player/PlayerStates/TvGamePlayerState.cs" id="7_qthdm"]
+[ext_resource type="Material" uid="uid://r5xrehqr4it" path="res://Tv/CRT TV Prefab Background Fog Material.tres" id="8_ns3to"]
+[ext_resource type="PackedScene" uid="uid://dofhffbbgk7t" path="res://Ui/PauseMenu/Pause Menu.tscn" id="9_thgmb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p5fe0"]
 radius = 0.9
 height = 5.1762695
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("initialState")]
+input_ray_pickable = false
 script = ExtResource("1_ffodk")
 initialState = NodePath("PlayerStates/FirstPersonOverworldPlayerState")
 metadata/_custom_type_script = "uid://byjq1fe68ukgj"
@@ -21,17 +25,26 @@ metadata/_custom_type_script = "uid://byjq1fe68ukgj"
 [node name="Player Model" parent="Visual Root" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Player Model/Player/Armature" index="0"]
-bones/13/position = Vector3(0.6952974, 1.5058676, -0.063129455)
-bones/30/position = Vector3(-0.71302396, 1.5545745, -0.063129455)
-bones/47/position = Vector3(0, 1.1709746, 0)
-bones/49/rotation = Quaternion(-0.52798086, -0.11096734, -0.16943069, 0.824752)
-bones/50/rotation = Quaternion(-0.011648337, 7.566995e-10, 0.32166645, 0.9467814)
-bones/52/rotation = Quaternion(-0.5279808, 0.110967726, 0.16943109, 0.8247518)
-bones/53/rotation = Quaternion(-0.011648334, -1.1059456e-08, -0.3216673, 0.94678116)
-bones/58/rotation = Quaternion(0.014214361, 0.3686834, -0.46199507, 0.8064932)
-bones/59/rotation = Quaternion(0.3342143, 0.00071669254, -0.07240775, 0.9397114)
-bones/64/rotation = Quaternion(-0.041057732, -0.3970258, 0.41289845, 0.8186572)
-bones/65/rotation = Quaternion(0.42677516, -0.0006861487, 0.09246112, 0.8996185)
+bones/13/position = Vector3(0.69529736, 1.5168256, -0.06312945)
+bones/30/position = Vector3(-0.7130239, 1.5737919, -0.063129455)
+bones/47/position = Vector3(0, 1.1921227, 0)
+bones/49/rotation = Quaternion(-0.53641653, -0.074049056, -0.11269753, 0.83311063)
+bones/50/rotation = Quaternion(-0.008189896, 7.2759576e-10, 0.22616233, 0.97405523)
+bones/52/rotation = Quaternion(-0.5364165, 0.074049555, 0.11269807, 0.83311063)
+bones/53/rotation = Quaternion(-0.008189909, -1.1350494e-08, -0.22616337, 0.97405505)
+bones/58/rotation = Quaternion(0.025682904, 0.35802254, -0.47375625, 0.80418617)
+bones/59/rotation = Quaternion(0.30812323, 0.0007238085, -0.0667551, 0.9490013)
+bones/64/rotation = Quaternion(-0.04146446, -0.39337307, 0.41603163, 0.8188138)
+bones/65/rotation = Quaternion(0.42316762, -0.0006875007, 0.09167953, 0.90140086)
+
+[node name="Jimmy" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="0"]
+layers = 2
+
+[node name="JimmyLeftPinky" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="1"]
+layers = 2
+
+[node name="JimmyRightPinky" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="2"]
+layers = 2
 
 [node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
@@ -53,6 +66,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4762094, -1.012)
 
 [node name="Camera" parent="Head/Eyes" instance=ExtResource("4_biwqw")]
+current = true
 near = 0.1
 
 [node name="Interactor" type="RayCast3D" parent="Head/Eyes"]
@@ -65,9 +79,10 @@ metadata/_custom_type_script = "uid://l37bgfm3gxh4"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6072388, 0)
 shape = SubResource("CapsuleShape3D_p5fe0")
 
-[node name="PlayerStates" type="Node" parent="." node_paths=PackedStringArray("firstPersonOverworld")]
+[node name="PlayerStates" type="Node" parent="." node_paths=PackedStringArray("firstPersonOverworld", "tvGame")]
 script = ExtResource("5_ibwd3")
 firstPersonOverworld = NodePath("FirstPersonOverworldPlayerState")
+tvGame = NodePath("TvGamePlayerState")
 metadata/_custom_type_script = "uid://cu7l4gfo6xn00"
 
 [node name="FirstPersonOverworldPlayerState" type="Node" parent="PlayerStates"]
@@ -75,6 +90,27 @@ script = ExtResource("5_dvuv0")
 movementSpeed = 5.0
 mass = 0.35
 metadata/_custom_type_script = "uid://cxyvequtlcd0m"
+
+[node name="TvGamePlayerState" type="Node" parent="PlayerStates"]
+script = ExtResource("7_qthdm")
+backgroundFogMaterial = ExtResource("8_ns3to")
+enterDuration = 2.0
+exitDuration = 1.0
+metadata/_custom_type_script = "uid://oswbmavah515"
+
+[node name="UI Root" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Pause Menu" parent="UI Root" instance=ExtResource("9_thgmb")]
+visible = false
+layout_mode = 1
 
 [editable path="Visual Root/Player Model"]
 [editable path="Visual Root/Player Model/Player"]

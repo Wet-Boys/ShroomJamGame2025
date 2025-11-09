@@ -7,4 +7,7 @@ public partial class PlayerStateList : Node
 {
     [Export]
     public FirstPersonOverworldPlayerState firstPersonOverworld;
+    
+    [Export]
+    public TvGamePlayerState tvGame;
 }
