@@ -48,6 +48,7 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
     {
         // Reset velocity on enter
         Player.Velocity = Vector3.Zero;
+        MouseReleaser.Instance.SetLockedMode(Input.MouseModeEnum.Captured);
         
         SettingsManager.Camera.Fov.OnValueChanged += OnFovSettingChanged;
         Camera.TweenToFov(SettingsManager.Camera.Fov.Value, onEnterFovTweenDuration);
@@ -65,6 +66,9 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
 
     public override void _Input(InputEvent @event)
     {
+        if (!IsActive || GlobalGameState.Instance.IsMainPaused)
+            return;
+        
         if (@event is InputEventMouseMotion mouseMotion)
             _mouseDelta += mouseMotion.ScreenRelative;
     }
@@ -72,6 +76,9 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
     public override void _PhysicsProcess(double delta)
     {
         if (!IsActive)
+            return;
+        
+        if (GlobalGameState.Instance.IsMainPaused)
             return;
         
         var movementVector = Input.GetVector("movement.move_left", "movement.move_right", "movement.move_forward", "movement.move_backward");
@@ -114,7 +121,8 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
         // Apply gravity if not on floor
         if (!Player.IsOnFloor())
             Player.Velocity += Vector3.Down * _gravity * mass;
-
+        else if (Input.IsActionJustPressed("movement.jump"))
+            Player.Velocity += Vector3.Up * 60;
         Player.MoveAndSlide();
 
         // Apply friction only the horizontal velocity while copying over the vertical velocity

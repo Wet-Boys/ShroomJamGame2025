@@ -1,10 +1,13 @@
 using Godot;
 using ShroomGameReal.scenes.Scoot_Shoot.Enemies;
+using ShroomGameReal.Tv.GameStates;
+using ShroomGameReal.Ui.PauseMenu;
+using ShroomGameReal.Utilities;
 
 namespace ShroomGameReal.scenes.Scoot_Shoot;
 
 [GlobalClass]
-public partial class ScootShootOnRailsGame : Node3D
+public partial class ScootShootOnRailsGame : BaseTvGameState
 {
     [Export]
     public float playerHealth = 100f;
@@ -29,17 +32,26 @@ public partial class ScootShootOnRailsGame : Node3D
     private CrtScreenZapper _screenZapper;
     private Camera3D _camera;
     private RayCast3D _zapperRayCast;
+    private PauseMenuController _pauseMenu;
 
     public override void _Ready()
     {
         _screenZapper = GetNode<CrtScreenZapper>("CrtScreenZapper");
         _camera = GetNode<Camera3D>("Camera3D");
         _zapperRayCast = GetNode<RayCast3D>("Zapper RayCast");
+        _pauseMenu = GetNode<PauseMenuController>("%Pause Menu");
         
         foreach (var stage in stages)
             stage.OnStageFinished += CurrentStageFinished;
-        
-        StartGame();
+
+        _pauseMenu.baitQuitButton.Pressed += OnGameLost;
+
+        CanActivate = true;
+    }
+
+    public override void OnEnterState()
+    {
+        MouseReleaser.Instance.SetLockedMode(Input.MouseModeEnum.ConfinedHidden);
     }
 
     public void StartGame()
@@ -78,6 +90,10 @@ public partial class ScootShootOnRailsGame : Node3D
         GameOver = true;
         EmitSignalOnGameFinished(true);
         GD.Print("Player won");
+
+        CanActivate = false;
+        
+        ExitTv();
     }
 
     private void OnGameLost()
@@ -85,17 +101,49 @@ public partial class ScootShootOnRailsGame : Node3D
         GameOver = true;
         EmitSignalOnGameFinished(false);
         GD.Print("Player lost");
+
+        CanActivate = false;
+        
+        ExitTv();
     }
 
-    public override void _Process(double delta)
+    public override void ExitTv()
     {
-        var mousePos = GetViewport().GetMousePosition();
-        _zapperRayCast.GlobalPosition = _camera.ProjectRayOrigin(mousePos);
-        _zapperRayCast.TargetPosition = _zapperRayCast.GlobalPosition + _camera.ProjectRayNormal(mousePos) * _screenZapper.maxZapperRange;
+        if (_pauseMenu.Visible)
+        {
+            MouseReleaser.Instance.RequestLockedMouse();
+        }
+        
+        _screenZapper.Visible = false;
+        GlobalGameState.Instance.InBaitMode = false;
+        GameOver = true;
+        base.ExitTv();
     }
 
     public override void _Input(InputEvent @event)
     {
+        if (@event.IsActionPressed("escape") && GameStarted && CanActivate)
+        {
+            if (_pauseMenu.Visible)
+            {
+                _pauseMenu.Resume();
+            }
+            else
+            {
+                _pauseMenu.Pause();
+            }
+        }
+
+        if (TimeScale <= 0)
+            return;
+        
+        if (@event is InputEventMouseMotion mouseMotion)
+        {
+            _zapperRayCast.GlobalPosition = _camera.ProjectRayOrigin(mouseMotion.Position);
+            _zapperRayCast.TargetPosition = _zapperRayCast.GlobalPosition + _camera.ProjectRayNormal(mouseMotion.Position) * _screenZapper.maxZapperRange;
+            _zapperRayCast.ForceRaycastUpdate();
+        }
+        
         if (@event.IsActionPressed("primary_action"))
         {
             _zapperRayCast.ForceRaycastUpdate();

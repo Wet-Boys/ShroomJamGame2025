@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://ybhdhnchsgp"]
+
+[ext_resource type="Material" uid="uid://dystsjvjfj08q" path="res://scenes/obby/red.tres" id="1_4vfi5"]
+[ext_resource type="Script" uid="uid://dpebtkmn8w7yj" path="res://scenes/obby/Physicsball.cs" id="1_iwqvb"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pk4yt"]
+radius = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_8qkhh"]
+radius = 1.0
+height = 2.0
+
+[node name="RigidBody3D" type="RigidBody3D"]
+collision_layer = 32
+script = ExtResource("1_iwqvb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_pk4yt")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_4vfi5")
+mesh = SubResource("SphereMesh_8qkhh")
+skeleton = NodePath("../..")

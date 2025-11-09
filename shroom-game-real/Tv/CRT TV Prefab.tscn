@@ -1,18 +1,72 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv1ufabh0k63e"]
+[gd_scene load_steps=11 format=3 uid="uid://cv1ufabh0k63e"]
 
-[ext_resource type="Script" uid="uid://byygvsgk812la" path="res://Tv/TvController.cs" id="1_ifqpe"]
+[ext_resource type="Script" uid="uid://eyhyubl50qtf" path="res://Tv/TvInteractable.cs" id="1_ifqpe"]
 [ext_resource type="PackedScene" uid="uid://3xmqky200xr8" path="res://Tv/Model/CRT.glb" id="1_r0ehp"]
-[ext_resource type="Material" uid="uid://csgbj47b57ahc" path="res://Tv/Tv Screen Viewport mat.tres" id="2_gxnsj"]
+[ext_resource type="Script" uid="uid://byygvsgk812la" path="res://Tv/TvController.cs" id="2_bhbdq"]
+[ext_resource type="Material" uid="uid://csgbj47b57ahc" path="res://Tv/Tv Screen Viewport mat.tres" id="3_nsevw"]
+[ext_resource type="PackedScene" uid="uid://btn8pjg6c3s62" path="res://scenes/obby/obby.tscn" id="4_hnmqc"]
+[ext_resource type="Material" uid="uid://r5xrehqr4it" path="res://Tv/CRT TV Prefab Background Fog Material.tres" id="6_hnmqc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bhbdq"]
+size = Vector3(4.6536407, 3.4865112, 4.226575)
 
 [sub_resource type="World3D" id="World3D_gxnsj"]
 
-[node name="CRT TV" type="Node3D"]
+[sub_resource type="QuadMesh" id="QuadMesh_nsevw"]
+size = Vector2(4, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nsevw"]
+size = Vector3(4, 3, 0.5)
+
+[node name="CRT TV" type="StaticBody3D"]
+process_mode = 3
+collision_layer = 2
+collision_mask = 0
+input_ray_pickable = false
 script = ExtResource("1_ifqpe")
-screenViewportMaterial = ExtResource("2_gxnsj")
+outlinePadding = 0.5
+metadata/_custom_type_script = "uid://eyhyubl50qtf"
+
+[node name="TvController" type="Node" parent="." node_paths=PackedStringArray("cameraProxy")]
+script = ExtResource("2_bhbdq")
+cameraProxy = NodePath("../Camera Pos")
+screenViewportMaterial = ExtResource("3_nsevw")
+debugSceneToLoad = ExtResource("4_hnmqc")
 metadata/_custom_type_script = "uid://byygvsgk812la"
 
 [node name="Model" parent="." instance=ExtResource("1_r0ehp")]
 
+[node name="Background Fog" type="FogVolume" parent="Model"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4532173)
+size = Vector3(12, 12, 4.770499)
+material = ExtResource("6_hnmqc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003364563, 0.0045776367, -0.6933837)
+shape = SubResource("BoxShape3D_bhbdq")
+
 [node name="SubWorld" type="SubViewport" parent="."]
+unique_name_in_owner = true
 world_3d = SubResource("World3D_gxnsj")
+size = Vector2i(640, 480)
 render_target_update_mode = 0
+
+[node name="Camera Pos" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.1)
+gizmo_extents = 1.0
+
+[node name="Screen Quad" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4483209)
+layers = 524288
+mesh = SubResource("QuadMesh_nsevw")
+
+[node name="Mouse Interaction Area" type="Area3D" parent="Screen Quad"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.19193995)
+collision_layer = 64
+input_capture_on_drag = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Screen Quad/Mouse Interaction Area"]
+shape = SubResource("BoxShape3D_nsevw")

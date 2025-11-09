@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://iugiuksyecct"]
+
+[ext_resource type="Shader" uid="uid://do2nl12e86d3j" path="res://Ui/PauseMenu/DualKawaseBlur/Dual Kawase Up.gdshader" id="1_ib5u4"]
+
+[resource]
+shader = ExtResource("1_ib5u4")
+shader_parameter/offset = 3.0000001425
