@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl83r242kfjyk"]
+
+[ext_resource type="Script" uid="uid://nhq5s3cgtq3x" path="res://scenes/obby/VictoryBlock.cs" id="1_2lqq4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_txav5"]
+albedo_color = Color(2.0214916e-06, 0.7723314, 0.47254336, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_d6tvb"]
+material = SubResource("StandardMaterial3D_txav5")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1g2x6"]
+points = PackedVector3Array(-5, -0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, -0.5, 5, -5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_d6tvb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 33
+collision_mask = 0
+script = ExtResource("1_2lqq4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_1g2x6")

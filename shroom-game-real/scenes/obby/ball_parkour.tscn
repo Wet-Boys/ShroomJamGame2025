@@ -1,0 +1,115 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlsc0qvdq0jow"]
+
+[ext_resource type="Material" uid="uid://dystsjvjfj08q" path="res://scenes/obby/red.tres" id="1_bpc5d"]
+[ext_resource type="Script" uid="uid://cf6ubt16mb305" path="res://scenes/obby/BigRedBall.cs" id="2_xjljy"]
+[ext_resource type="Material" uid="uid://cnk5huiw7rh7a" path="res://scenes/obby/blue.tres" id="3_2jinu"]
+[ext_resource type="Texture2D" uid="uid://bg6ne4whoqvua" path="res://scenes/dream/avoid balls/Ball_normal.png" id="4_xqc85"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_t705a"]
+radius = 2.5
+height = 5.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8qkhh"]
+radius = 2.5084343
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4d3p"]
+albedo_texture = ExtResource("4_xqc85")
+uv1_scale = Vector3(7.69, 7.69, 7.69)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wsa02"]
+material = SubResource("StandardMaterial3D_a4d3p")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pk4yt"]
+points = PackedVector3Array(-5, -0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, -0.5, 5, -5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, 5)
+
+[node name="BallParkour" type="Node3D"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.479701, -8.99995)
+material_override = ExtResource("1_bpc5d")
+mesh = SubResource("SphereMesh_t705a")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+collision_layer = 33
+script = ExtResource("2_xjljy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("SphereShape3D_8qkhh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.627844, -14.420344)
+material_override = ExtResource("1_bpc5d")
+mesh = SubResource("SphereMesh_t705a")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D3"]
+collision_layer = 33
+script = ExtResource("2_xjljy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D3/StaticBody3D"]
+shape = SubResource("SphereShape3D_8qkhh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.011593, 9.224169, -16.783989)
+material_override = ExtResource("1_bpc5d")
+mesh = SubResource("SphereMesh_t705a")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D4"]
+collision_layer = 33
+script = ExtResource("2_xjljy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D4/StaticBody3D"]
+shape = SubResource("SphereShape3D_8qkhh")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3867688, 12.48062, -18.29935)
+material_override = ExtResource("1_bpc5d")
+mesh = SubResource("SphereMesh_t705a")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D5"]
+collision_layer = 33
+script = ExtResource("2_xjljy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D5/StaticBody3D"]
+shape = SubResource("SphereShape3D_8qkhh")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8020072, 14.115114, -25.06818)
+material_override = ExtResource("1_bpc5d")
+mesh = SubResource("SphereMesh_t705a")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D6"]
+collision_layer = 33
+script = ExtResource("2_xjljy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D6/StaticBody3D"]
+shape = SubResource("SphereShape3D_8qkhh")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5792665, -34.80426)
+material_override = ExtResource("1_bpc5d")
+mesh = SubResource("SphereMesh_t705a")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D7"]
+collision_layer = 33
+script = ExtResource("2_xjljy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D7/StaticBody3D"]
+shape = SubResource("SphereShape3D_8qkhh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.279896, 0)
+material_override = ExtResource("3_2jinu")
+mesh = SubResource("BoxMesh_wsa02")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_pk4yt")

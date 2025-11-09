@@ -1,0 +1,109 @@
+[gd_scene load_steps=16 format=3 uid="uid://c6he2p1mclbxd"]
+
+[ext_resource type="Script" uid="uid://dpkhq3by31qcf" path="res://scenes/obby/SpinObstacle.cs" id="1_gdjra"]
+[ext_resource type="Material" uid="uid://cnk5huiw7rh7a" path="res://scenes/obby/blue.tres" id="2_wkkqy"]
+[ext_resource type="Material" uid="uid://dystsjvjfj08q" path="res://scenes/obby/red.tres" id="3_52ofs"]
+[ext_resource type="PackedScene" uid="uid://dpkauqrsqetvp" path="res://scenes/obby/obby_hitbox.tscn" id="4_d6hrs"]
+[ext_resource type="Texture2D" uid="uid://bg6ne4whoqvua" path="res://scenes/dream/avoid balls/Ball_normal.png" id="5_8m6m8"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_d6tvb"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cf3hr"]
+material = ExtResource("2_wkkqy")
+height = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_1g2x6"]
+material = ExtResource("3_52ofs")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dmj57"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8qkhh"]
+height = 4.730713
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_pk4yt"]
+top_radius = 14.0
+bottom_radius = 14.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8qkhh"]
+points = PackedVector3Array(0, -1, -14, -1.3731403, -1, -13.934221, 0, 1, -14, 1.3703995, -1, -13.934221, -1.3731403, 1, -13.934221, -2.7325764, -1, -13.731401, 1.3703995, 1, -13.934221, 2.7298355, -1, -13.731401, -2.7325764, 1, -13.731401, -4.0646048, -1, -13.399765, 2.7298355, 1, -13.731401, 4.061863, -1, -13.399765, -4.0646048, 1, -13.399765, -5.358261, -1, -12.93657, 4.061863, 1, -13.399765, 5.3555202, -1, -12.93657, -5.358261, 1, -12.93657, -6.5998435, -1, -12.347299, 5.3555202, 1, -12.93657, 6.597103, -1, -12.347299, -6.5998435, 1, -12.347299, -7.778387, -1, -11.642913, 6.597103, 1, -12.347299, 7.775646, -1, -11.642913, -7.778387, 1, -11.642913, -8.882929, -1, -10.823414, 7.775646, 1, -11.642913, 8.880188, -1, -10.823414, -8.882929, 1, -10.823414, -9.899765, -1, -9.899765, 8.880188, 1, -10.823414, 9.897024, -1, -9.899765, -9.899765, 1, -9.899765, -10.823414, -1, -8.882929, 9.897024, 1, -9.899765, 10.820673, -1, -8.882929, -10.823414, 1, -8.882929, -11.642913, -1, -7.778387, 10.820673, 1, -8.882929, 11.640173, -1, -7.778387, -11.642913, 1, -7.778387, -12.347299, -1, -6.5998435, 11.640173, 1, -7.778387, 12.344557, -1, -6.5998435, -12.347299, 1, -6.5998435, -12.93657, -1, -5.358261, 12.344557, 1, -6.5998435, 12.93383, -1, -5.358261, -12.93657, 1, -5.358261, -13.399765, -1, -4.0646048, 12.93383, 1, -5.358261, 13.397024, -1, -4.0646048, -13.399765, 1, -4.0646048, -13.731401, -1, -2.7325764, 13.397024, 1, -4.0646048, 13.728661, -1, -2.7325764, -13.731401, 1, -2.7325764, -13.934221, -1, -1.3731403, 13.728661, 1, -2.7325764, 13.93148, -1, -1.3731403, -13.934221, 1, -1.3731403, -14, -1, 0, 13.93148, 1, -1.3731403, 14, -1, 0, -14, 1, 0, -13.934221, -1, 1.3703995, 14, 1, 0, 13.93148, -1, 1.3703995, -13.934221, 1, 1.3703995, -13.731401, -1, 2.7298355, 13.93148, 1, 1.3703995, 13.728661, -1, 2.7298355, -13.731401, 1, 2.7298355, -13.399765, -1, 4.061863, 13.728661, 1, 2.7298355, 13.397024, -1, 4.061863, -13.399765, 1, 4.061863, -12.93657, -1, 5.3555202, 13.397024, 1, 4.061863, 12.93383, -1, 5.3555202, -12.93657, 1, 5.3555202, -12.347299, -1, 6.597103, 12.93383, 1, 5.3555202, 12.344557, -1, 6.597103, -12.347299, 1, 6.597103, -11.642913, -1, 7.775646, 12.344557, 1, 6.597103, 11.640173, -1, 7.775646, -11.642913, 1, 7.775646, -10.823414, -1, 8.880188, 11.640173, 1, 7.775646, 10.820673, -1, 8.880188, -10.823414, 1, 8.880188, -9.899765, -1, 9.897024, 10.820673, 1, 8.880188, 9.897024, -1, 9.897024, -9.899765, 1, 9.897024, -8.882929, -1, 10.820673, 9.897024, 1, 9.897024, 8.880188, -1, 10.820673, -8.882929, 1, 10.820673, -7.778387, -1, 11.640173, 8.880188, 1, 10.820673, 7.775646, -1, 11.640173, -7.778387, 1, 11.640173, -6.5998435, -1, 12.344557, 7.775646, 1, 11.640173, 6.597103, -1, 12.344557, -6.5998435, 1, 12.344557, -5.358261, -1, 12.93383, 6.597103, 1, 12.344557, 5.3555202, -1, 12.93383, -5.358261, 1, 12.93383, -4.0646048, -1, 13.397024, 5.3555202, 1, 12.93383, 4.061863, -1, 13.397024, -4.0646048, 1, 13.397024, -2.7325764, -1, 13.728661, 4.061863, 1, 13.397024, 2.7298355, -1, 13.728661, -2.7325764, 1, 13.728661, -1.3731403, -1, 13.93148, 2.7298355, 1, 13.728661, 1.3703995, -1, 13.93148, -1.3731403, 1, 13.93148, 0, -1, 14, 1.3703995, 1, 13.93148, 0, 1, 14)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a4d3p"]
+albedo_texture = ExtResource("5_8m6m8")
+uv1_scale = Vector3(7.69, 7.69, 7.69)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wsa02"]
+material = SubResource("StandardMaterial3D_a4d3p")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pk4yt"]
+points = PackedVector3Array(-5, -0.5, -5, -5, 0.5, -5, 5, -0.5, -5, -5, -0.5, 5, -5, 0.5, 5, 5, 0.5, -5, 5, -0.5, 5, 5, 0.5, 5)
+
+[node name="SingleSpinner" type="Node3D"]
+
+[node name="TestObstacle" type="Node3D" parent="." node_paths=PackedStringArray("_partToSpin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.193877, -66.697)
+script = ExtResource("1_gdjra")
+_partToSpin = NodePath("MeshInstance3D2")
+_spinAmount = Vector3(0, -0.035, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TestObstacle"]
+material_override = ExtResource("2_wkkqy")
+mesh = SubResource("CylinderMesh_d6tvb")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="TestObstacle"]
+transform = Transform3D(1, 0, 0, 0, -2.1855695e-07, -0.9999998, 0, 5, -4.371138e-08, 0, 1, 0)
+material_override = ExtResource("3_52ofs")
+mesh = SubResource("CylinderMesh_cf3hr")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="TestObstacle/MeshInstance3D2"]
+transform = Transform3D(3, 0, 0, 0, -2.6226834e-08, 0.6, 0, -3.0000005, -1.3113419e-07, 0, 2.5, 0)
+mesh = SubResource("SphereMesh_1g2x6")
+skeleton = NodePath("../..")
+
+[node name="ObbyHitbox" parent="TestObstacle/MeshInstance3D2/MeshInstance3D3" instance=ExtResource("4_d6hrs")]
+
+[node name="CollisionShape3D" parent="TestObstacle/MeshInstance3D2/MeshInstance3D3/ObbyHitbox" index="0"]
+shape = SubResource("SphereShape3D_dmj57")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="TestObstacle/MeshInstance3D2"]
+transform = Transform3D(3, 0, 0, 0, -2.6226834e-08, 0.6, 0, -3.0000005, -1.3113419e-07, 0, -2.5, 0)
+mesh = SubResource("SphereMesh_1g2x6")
+skeleton = NodePath("../..")
+
+[node name="ObbyHitbox2" parent="TestObstacle/MeshInstance3D2/MeshInstance3D4" instance=ExtResource("4_d6hrs")]
+
+[node name="CollisionShape3D" parent="TestObstacle/MeshInstance3D2/MeshInstance3D4/ObbyHitbox2" index="0"]
+shape = SubResource("SphereShape3D_dmj57")
+
+[node name="ObbyHitbox" parent="TestObstacle/MeshInstance3D2" node_paths=PackedStringArray("_hitboxToTakeVelocityFrom") instance=ExtResource("4_d6hrs")]
+_hitboxToTakeVelocityFrom = NodePath("../MeshInstance3D4/ObbyHitbox2")
+
+[node name="CollisionShape3D" parent="TestObstacle/MeshInstance3D2/ObbyHitbox" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999893, 0, 0.06994629, 0)
+shape = SubResource("CylinderShape3D_8qkhh")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.692166, -66.69734)
+material_override = ExtResource("2_wkkqy")
+mesh = SubResource("CylinderMesh_pk4yt")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_8qkhh")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.279896, -45.488777)
+material_override = ExtResource("2_wkkqy")
+mesh = SubResource("BoxMesh_wsa02")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_pk4yt")
+
+[editable path="TestObstacle/MeshInstance3D2/MeshInstance3D3/ObbyHitbox"]
+[editable path="TestObstacle/MeshInstance3D2/MeshInstance3D4/ObbyHitbox2"]
+[editable path="TestObstacle/MeshInstance3D2/ObbyHitbox"]

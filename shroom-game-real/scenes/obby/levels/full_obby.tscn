@@ -1,0 +1,32 @@
+[gd_scene load_steps=9 format=3 uid="uid://jihg2c1j8ppa"]
+
+[ext_resource type="PackedScene" uid="uid://7ecyirh0eyap" path="res://scenes/obby/obby_player.tscn" id="1_su3uh"]
+[ext_resource type="PackedScene" uid="uid://bd8pjnmtppuir" path="res://scenes/obby/spinners.tscn" id="2_6fvu3"]
+[ext_resource type="PackedScene" uid="uid://c6he2p1mclbxd" path="res://scenes/obby/single_spinner.tscn" id="3_bxbpc"]
+[ext_resource type="PackedScene" uid="uid://dlsc0qvdq0jow" path="res://scenes/obby/ball_parkour.tscn" id="4_cr42y"]
+[ext_resource type="PackedScene" uid="uid://dmilyff7q6rcj" path="res://scenes/obby/falling_balls.tscn" id="5_ltamp"]
+[ext_resource type="PackedScene" uid="uid://v2jey4exk4l" path="res://scenes/obby/spinning_floor.tscn" id="6_2dy8h"]
+[ext_resource type="PackedScene" uid="uid://b5tgkfjx1u1m6" path="res://scenes/obby/finale.tscn" id="7_rgeov"]
+[ext_resource type="PackedScene" uid="uid://dl83r242kfjyk" path="res://scenes/obby/goal.tscn" id="8_36l6b"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ObbyPlayer" parent="." instance=ExtResource("1_su3uh")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -0.24951002, 8.276595, 3.71754)
+
+[node name="Spinners" parent="." instance=ExtResource("2_6fvu3")]
+
+[node name="SingleSpinner" parent="." instance=ExtResource("3_bxbpc")]
+
+[node name="BallParkour" parent="." instance=ExtResource("4_cr42y")]
+
+[node name="FallingBalls" parent="." instance=ExtResource("5_ltamp")]
+
+[node name="SpinningFloor" parent="." instance=ExtResource("6_2dy8h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.611343, 9.975067)
+
+[node name="Finale" parent="." instance=ExtResource("7_rgeov")]
+
+[node name="Goal" parent="." instance=ExtResource("8_36l6b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 21.97551, -291.89163)
+skeleton = NodePath("../..")

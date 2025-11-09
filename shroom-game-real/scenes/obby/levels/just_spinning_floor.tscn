@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://8hu6we75t0se"]
+
+[ext_resource type="PackedScene" uid="uid://7ecyirh0eyap" path="res://scenes/obby/obby_player.tscn" id="1_ph5l1"]
+[ext_resource type="PackedScene" uid="uid://v2jey4exk4l" path="res://scenes/obby/spinning_floor.tscn" id="2_n4535"]
+[ext_resource type="PackedScene" uid="uid://dl83r242kfjyk" path="res://scenes/obby/goal.tscn" id="3_jbu2f"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ObbyPlayer" parent="." instance=ExtResource("1_ph5l1")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -0.24951765, 26.910633, -30.90842)
+
+[node name="SpinningFloor" parent="." instance=ExtResource("2_n4535")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.611343, 187.30411)
+
+[node name="Goal" parent="." instance=ExtResource("3_jbu2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.610504, -82.9644)
+skeleton = NodePath("../..")

@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://csmfyw76pousm"]
+
+[ext_resource type="PackedScene" uid="uid://7ecyirh0eyap" path="res://scenes/obby/obby_player.tscn" id="1_etimk"]
+[ext_resource type="PackedScene" uid="uid://dlsc0qvdq0jow" path="res://scenes/obby/ball_parkour.tscn" id="2_whrge"]
+[ext_resource type="PackedScene" uid="uid://dl83r242kfjyk" path="res://scenes/obby/goal.tscn" id="3_u3qqe"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ObbyPlayer" parent="." instance=ExtResource("1_etimk")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -0.24951002, 8.276595, 3.71754)
+
+[node name="BallParkour" parent="." instance=ExtResource("2_whrge")]
+
+[node name="Goal" parent="." instance=ExtResource("3_u3qqe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2547054, -45.572678)
+skeleton = NodePath("../..")
