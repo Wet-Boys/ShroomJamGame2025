@@ -54,4 +54,14 @@ public partial class TvGamePlayerState : BasePlayerState
         
         tvController.ExitTvState();
     }
+
+    public override void _Input(InputEvent @event)
+    {
+        if (@event.IsActionPressed("interact") && IsActive)
+        {
+            tvController.GameState.ExitTv();
+            GetViewport().SetInputAsHandled();
+            // tvController.ExitTvState();
+        }
+    }
 }

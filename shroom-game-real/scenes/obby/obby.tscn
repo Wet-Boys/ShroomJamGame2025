@@ -1,5 +1,6 @@
-[gd_scene load_steps=48 format=3 uid="uid://btn8pjg6c3s62"]
+[gd_scene load_steps=49 format=3 uid="uid://btn8pjg6c3s62"]
 
+[ext_resource type="Script" uid="uid://dlaiovox4k0f0" path="res://scenes/obby/ObbyGameState.cs" id="1_cf3hr"]
 [ext_resource type="Script" uid="uid://ckkrkpbikrq4n" path="res://scenes/obby/ObbyPlayer.cs" id="1_t1i3u"]
 [ext_resource type="Texture2D" uid="uid://bg6ne4whoqvua" path="res://scenes/dream/avoid balls/Ball_normal.png" id="1_wsa02"]
 [ext_resource type="Script" uid="uid://dpkhq3by31qcf" path="res://scenes/obby/SpinObstacle.cs" id="3_8qkhh"]
@@ -125,6 +126,8 @@ material = SubResource("StandardMaterial3D_d6tvb")
 size = Vector3(500, 1, 500)
 
 [node name="Obby" type="Node3D"]
+script = ExtResource("1_cf3hr")
+metadata/_custom_type_script = "uid://dlaiovox4k0f0"
 
 [node name="ObbyPlayer" type="Node3D" parent="." node_paths=PackedStringArray("cameraContainer", "cameraX", "cameraY", "cameraPosition", "camera", "cameraRay", "ragdollBody", "characterBody", "hurtBox")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -0.24951002, 8.276595, 3.71754)
@@ -170,6 +173,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70000005, 0.3000002, -3.00
 
 [node name="Camera3D" type="Camera3D" parent="ObbyPlayer/CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+current = true
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="ObbyPlayer/CharacterBody/CameraContainer/CameraY/CameraX"]
 shape = SubResource("SphereShape3D_t1i3u")

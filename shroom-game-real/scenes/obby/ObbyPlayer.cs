@@ -2,6 +2,7 @@ using Godot;
 using System;
 using SettingsHelper;
 using SettingsHelper.SettingsEntries;
+using ShroomGameReal.scenes.obby;
 
 public partial class ObbyPlayer : Node3D
 {
@@ -25,6 +26,8 @@ public partial class ObbyPlayer : Node3D
     private FloatSettingsEntry _horizontalSensitivity;
     private Vector2 MouseSensitivity => new(_horizontalSensitivity.Value, _verticalSensitivity.Value);
     private float _gravity = ProjectSettings.Singleton.GetSetting("physics/3d/default_gravity").AsSingle();
+    private ObbyGameState _gameState;
+    
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -35,6 +38,7 @@ public partial class ObbyPlayer : Node3D
         characterBody.AddCollisionExceptionWith(ragdollBody);
         hurtBox.BodyEntered += HurtBoxOnBodyEntered;
         _respawnPoint = GlobalPosition;
+        _gameState = GetOwner<ObbyGameState>();
     }
 
     private void HurtBoxOnBodyEntered(Node3D body)
@@ -69,10 +73,10 @@ public partial class ObbyPlayer : Node3D
         }
     }
 
-    public override void _UnhandledInput(InputEvent @event)
+    public override void _Input(InputEvent @event)
     {
-        base._UnhandledInput(@event);
-        if (Input.MouseMode == Input.MouseModeEnum.Captured && @event is InputEventMouseMotion motionEvent)
+        base._Input(@event);
+        if (_gameState.IsActive && @event is InputEventMouseMotion motionEvent)
         {
             cameraY.RotateY(motionEvent.Relative.X * MouseSensitivity.X * -1 * .0005f);
             cameraX.RotateX(motionEvent.Relative.Y * MouseSensitivity.Y * .0005f);
@@ -86,17 +90,6 @@ public partial class ObbyPlayer : Node3D
             new Vector3(Mathf.Clamp(cameraX.Rotation.X, float.DegreesToRadians(-89f), float.DegreesToRadians((89f))),
                 cameraX.Rotation.Y, cameraX.Rotation.Z);
         CameraRayCast();
-        if (Input.IsActionJustPressed("escape"))
-        {
-            if (Input.MouseMode == Input.MouseModeEnum.Captured)
-            {
-                Input.MouseMode = Input.MouseModeEnum.Visible;
-            }
-            else
-            {
-                Input.MouseMode = Input.MouseModeEnum.Captured;
-            }
-        }
 
         if (!ragdollBody.Freeze)
         {
@@ -133,6 +126,7 @@ public partial class ObbyPlayer : Node3D
         characterBody.Velocity -= new Vector3(characterBody.Velocity.X, 0, characterBody.Velocity.Z) * friction * (float)delta;
 
         Vector2 test = Input.GetVector("movement.move_left", "movement.move_right", "movement.move_forward", "movement.move_backward");
+        test *= _gameState.IsActive ? 1 : 0;
         Vector3 inputDirection = ((cameraY.GlobalBasis.X.Cross(Vector3.Up) * -test.Y) +
                                   (cameraY.GlobalBasis.Z.Cross(Vector3.Up) * test.X)).Normalized();
         var inputMovement = Vector2.Zero;
@@ -147,7 +141,7 @@ public partial class ObbyPlayer : Node3D
         {
             characterBody.Velocity += Vector3.Down * _gravity * (float)delta * 3;
         }
-        else if (Input.IsActionJustPressed("movement.jump"))
+        else if (_gameState.IsActive && Input.IsActionJustPressed("movement.jump"))
         {
             characterBody.Velocity = new Vector3(characterBody.Velocity.X, 12, characterBody.Velocity.Z);
         }
