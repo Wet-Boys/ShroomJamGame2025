@@ -11,3 +11,5 @@
 .import/
 export.cfg
 export_credentials.cfg
+
+*.user
