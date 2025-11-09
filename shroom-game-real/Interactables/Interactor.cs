@@ -1,3 +1,4 @@
+using System;
 using Godot;
 using ShroomGameReal.Player;
 
@@ -65,10 +66,24 @@ public partial class Interactor : RayCast3D
         if (_currentInteractable is null || !Active || GlobalGameState.Instance.IsMainPaused)
             return;
 
-        var (screenMin, screenMax) = _currentInteractable.GetScreenBounds();
-        var screenCenter = screenMin.Lerp(screenMax, 0.5f);
+        var (screenBoundsMin, screenBoundsMax) = _currentInteractable.GetScreenBounds();
+        var screenBoundsSize = screenBoundsMax - screenBoundsMin;
+        var screenBoundsCenter = screenBoundsMin + screenBoundsSize / 2f;
+
+        var windowSize = (Vector2)GetViewport().GetWindow().Size;
+        var windowCenter = windowSize / 2f;
         
+        var screenToWindow = windowCenter - screenBoundsCenter;
+        var screenToWindowDir = screenToWindow.Normalized();
+
+        var pointOnBounds = screenBoundsCenter + screenToWindowDir * screenBoundsSize;
+        pointOnBounds.X = Mathf.Clamp(pointOnBounds.X, screenBoundsMin.X, screenBoundsMax.X);
+        pointOnBounds.Y = Mathf.Clamp(pointOnBounds.Y, screenBoundsMin.Y, screenBoundsMax.Y);
+
+        var labelSize = _interactLabel.Size;
+        var labelOffset = screenToWindowDir * ((labelSize / 2f) + (Vector2.One * _interactLabel.padding));
         
+        _interactLabel.SetLabelPosition(pointOnBounds + labelOffset);
     }
 
     private void UpdateLabelVisibility()

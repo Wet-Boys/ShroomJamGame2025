@@ -64,4 +64,9 @@ public partial class PauseMenuController : Control
             GlobalGameState.Instance.MainTimeScale = 1f;
         }
     }
+
+    public void QuitToDesktop()
+    {
+        GetTree().Quit();
+    }
 }

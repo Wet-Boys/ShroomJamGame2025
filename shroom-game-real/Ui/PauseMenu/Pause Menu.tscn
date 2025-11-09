@@ -165,3 +165,4 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [connection signal="pressed" from="Buttons/Resume Button" to="." method="Resume"]
+[connection signal="pressed" from="Buttons/Quit Button" to="." method="QuitToDesktop"]
