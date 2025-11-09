@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://g8g6h0a8otte"]
+
+[ext_resource type="PackedScene" uid="uid://7ecyirh0eyap" path="res://scenes/obby/obby_player.tscn" id="1_uocyx"]
+[ext_resource type="PackedScene" uid="uid://b5tgkfjx1u1m6" path="res://scenes/obby/finale.tscn" id="2_5qddq"]
+[ext_resource type="PackedScene" uid="uid://dl83r242kfjyk" path="res://scenes/obby/goal.tscn" id="3_wmiuf"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ObbyPlayer" parent="." instance=ExtResource("1_uocyx")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -0.24951002, 8.276595, 3.71754)
+
+[node name="Finale" parent="." instance=ExtResource("2_5qddq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.666782, 259.35736)
+
+[node name="Goal" parent="." instance=ExtResource("3_wmiuf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3087273, -32.534286)
+skeleton = NodePath("../..")
