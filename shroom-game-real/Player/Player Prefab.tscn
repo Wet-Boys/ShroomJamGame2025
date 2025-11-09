@@ -25,17 +25,17 @@ metadata/_custom_type_script = "uid://byjq1fe68ukgj"
 [node name="Player Model" parent="Visual Root" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Player Model/Player/Armature" index="0"]
-bones/13/position = Vector3(0.69529736, 1.5168256, -0.06312945)
-bones/30/position = Vector3(-0.7130239, 1.5737919, -0.063129455)
-bones/47/position = Vector3(0, 1.1921227, 0)
-bones/49/rotation = Quaternion(-0.53641653, -0.074049056, -0.11269753, 0.83311063)
-bones/50/rotation = Quaternion(-0.008189896, 7.2759576e-10, 0.22616233, 0.97405523)
-bones/52/rotation = Quaternion(-0.5364165, 0.074049555, 0.11269807, 0.83311063)
-bones/53/rotation = Quaternion(-0.008189909, -1.1350494e-08, -0.22616337, 0.97405505)
-bones/58/rotation = Quaternion(0.025682904, 0.35802254, -0.47375625, 0.80418617)
-bones/59/rotation = Quaternion(0.30812323, 0.0007238085, -0.0667551, 0.9490013)
-bones/64/rotation = Quaternion(-0.04146446, -0.39337307, 0.41603163, 0.8188138)
-bones/65/rotation = Quaternion(0.42316762, -0.0006875007, 0.09167953, 0.90140086)
+bones/13/position = Vector3(0.69529736, 1.5135461, -0.06312945)
+bones/30/position = Vector3(-0.7130239, 1.5680119, -0.063129455)
+bones/47/position = Vector3(0, 1.1846931, 0)
+bones/49/rotation = Quaternion(-0.5334156, -0.08854828, -0.13497727, 0.830306)
+bones/50/rotation = Quaternion(-0.009559242, 9.313226e-10, 0.26397657, 0.9644817)
+bones/52/rotation = Quaternion(-0.5334183, 0.08853671, 0.13495935, 0.8303085)
+bones/53/rotation = Quaternion(-0.009559232, -1.10594565e-08, -0.263977, 0.9644817)
+bones/58/rotation = Quaternion(0.020708622, 0.3623884, -0.46890634, 0.8052159)
+bones/59/rotation = Quaternion(0.31916982, 0.0007208588, -0.06914834, 0.94517124)
+bones/64/rotation = Quaternion(-0.04237353, -0.39521176, 0.41405442, 0.818884)
+bones/65/rotation = Quaternion(0.42623398, -0.0006863328, 0.09234389, 0.89988714)
 
 [node name="Jimmy" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="0"]
 layers = 2
@@ -70,6 +70,7 @@ current = true
 near = 0.1
 
 [node name="Interactor" type="RayCast3D" parent="Head/Eyes"]
+unique_name_in_owner = true
 target_position = Vector3(0, 0, -10)
 collision_mask = 2
 script = ExtResource("2_p5fe0")

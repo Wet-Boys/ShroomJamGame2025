@@ -17,11 +17,8 @@ public partial class TvInteractable : InteractableStaticBody3D
         TvController = GetNode<TvController>("TvController");
     }
 
-    public override void OnInteract(PlayerController player)
+    protected override void Interact(PlayerController player)
     {
-        if (!CanInteract)
-            return;
-        
         GD.Print("TV Interact Attempted");
 
         var tvGameState = player.AllPlayerStates.tvGame;

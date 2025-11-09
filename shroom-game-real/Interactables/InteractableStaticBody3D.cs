@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using System.Linq;
 using Godot;
 using ShroomGameReal.Player;
+using ShroomGameReal.Utilities;
 
 namespace ShroomGameReal.Interactables;
 
@@ -10,60 +12,99 @@ public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
     [Export]
     public float outlinePadding;
     
+    [Export(PropertyHint.Range, "0, 1, 0.01")]
+    public float outlineThickness = 0.1f;
+    
+    [Export]
+    public Color outlineColor = Colors.White;
+    
+    [Export(PropertyHint.Layers3DRender)]
+    public uint meshLayersOutlineMask;
+    
     private readonly List<BoundaryShape> _boundaryShapes = [];
-    private ColorRect _outlineRect;
-    private Material _outlineMaterial = ResourceLoader.Load<Material>("res://Interactables/Selected Outline Mat.tres");
+    // private ColorRect _outlineRect;
+    // private Material _outlineMaterial = ResourceLoader.Load<Material>("res://Interactables/Selected Outline Mat.tres");
+
+    private List<MeshInstance3D> _meshInstances = [];
+    
+    private Material _stencilOutlineMaterial = ResourceLoader.Load<Material>("res://Interactables/Selected Outline Stencil Write.tres");
+    private Material _renderOutlineMaterial = ResourceLoader.Load<Material>("res://Interactables/Selected Outline Render Outline.tres");
     
     public virtual bool CanInteract { get; }
     
     public override void _Ready()
     {
         // Iterate through all shape owners and store their boundary points.
-        foreach (uint shapeOwnerId in GetShapeOwners())
-        {
-            var shapeOwner = ShapeOwnerGetOwner(shapeOwnerId) as CollisionShape3D;
+        // foreach (uint shapeOwnerId in GetShapeOwners())
+        // {
+        //     var shapeOwner = ShapeOwnerGetOwner(shapeOwnerId) as CollisionShape3D;
+        //
+        //     if (shapeOwner is null)
+        //         continue;
+        //     
+        //     _boundaryShapes.Add(new BoundaryShape(shapeOwner, outlinePadding));
+        // }
 
-            if (shapeOwner is null)
-                continue;
-            
-            _boundaryShapes.Add(new BoundaryShape(shapeOwner, outlinePadding));
-        }
+        _meshInstances = this.GetChildrenRecursively<MeshInstance3D>()
+            .Where(meshInstance => (meshInstance.Layers & meshLayersOutlineMask) != 0)
+            .ToList();
     }
-    
-    
     
     public virtual void OnSelected()
     {
         if (!CanInteract)
             return;
         
-        var (screenMin, screenMax) = GetScreenBounds();
-        var camera = GetViewport().GetCamera3D();
+        _renderOutlineMaterial.Set("shader_parameter/grow", outlineThickness);
+        _renderOutlineMaterial.Set("shader_parameter/albedo", outlineColor);
 
-        if (_outlineRect is null)
+        foreach (var meshInstance in _meshInstances)
         {
-            _outlineRect = new ColorRect();
-            _outlineRect.MouseFilter = Control.MouseFilterEnum.Ignore;
-            _outlineRect.Material = _outlineMaterial;
-            camera.AddChild(_outlineRect);
+            meshInstance.SetMaterialOverlay(_stencilOutlineMaterial);
         }
         
-        _outlineRect.Position = screenMin;
-        var size = screenMax - screenMin;
-        _outlineRect.Size = size;
-        _outlineRect.SetInstanceShaderParameter("rect_size", size);
+        // var (screenMin, screenMax) = GetScreenBounds();
+        // var camera = GetViewport().GetCamera3D();
+        //
+        // if (_outlineRect is null)
+        // {
+        //     _outlineRect = new ColorRect();
+        //     _outlineRect.MouseFilter = Control.MouseFilterEnum.Ignore;
+        //     _outlineRect.Material = _outlineMaterial;
+        //     camera.AddChild(_outlineRect);
+        // }
+        //
+        // _outlineRect.Position = screenMin;
+        // var size = screenMax - screenMin;
+        // _outlineRect.Size = size;
+        // _outlineRect.SetInstanceShaderParameter("rect_size", size);
     }
 
     public virtual void OnDeselected()
     {
-        if (_outlineRect is not null)
+        foreach (var meshInstance in _meshInstances)
         {
-            _outlineRect.Free();
-            _outlineRect = null;
+            meshInstance.SetMaterialOverlay(null);
         }
+        
+        // if (_outlineRect is not null)
+        // {
+        //     _outlineRect.Free();
+        //     _outlineRect = null;
+        // }
     }
 
-    public virtual void OnInteract(PlayerController player) { }
+    public void OnInteract(PlayerController player)
+    {
+        if (!CanInteract)
+            return;
+
+        Interact(player);
+        
+        OnDeselected();
+    }
+
+    protected virtual void Interact(PlayerController player) { }
 
     private (Vector2 min, Vector2 max) GetScreenBounds()
     {

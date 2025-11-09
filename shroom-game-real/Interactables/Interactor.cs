@@ -8,6 +8,9 @@ public partial class Interactor : RayCast3D
 {
     private PlayerController _player;
     private IInteractable _currentInteractable;
+    
+    [Export]
+    public bool Active { get; set; }
 
     public override void _Ready()
     {
@@ -16,7 +19,7 @@ public partial class Interactor : RayCast3D
 
     public override void _PhysicsProcess(double delta)
     {
-        if (!IsColliding())
+        if (!IsColliding() || !Active)
         {
             if (_currentInteractable is not null && IsInstanceValid(_currentInteractable as GodotObject))
             {
@@ -37,7 +40,7 @@ public partial class Interactor : RayCast3D
 
     public override void _Input(InputEvent @event)
     {
-        if (_currentInteractable is null)
+        if (_currentInteractable is null || !Active)
             return;
         
         if (@event.IsActionPressed("interact"))

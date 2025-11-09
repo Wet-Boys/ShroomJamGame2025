@@ -24,6 +24,11 @@ public partial class MainCamera : Camera3D
         _tween.TweenProperty(this, "fov", newFov, duration);
     }
 
+    public void StopFovTween()
+    {
+        _tween?.Kill();
+    }
+
     public void SetPlayerModelVisibility(bool visible)
     {
         SetCullMaskValue(2, visible);

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bdcb20ebtykpe"]
+
+[ext_resource type="Material" uid="uid://d27oejcimpiyp" path="res://Interactables/Selected Outline Render Outline.tres" id="1_pfju7"]
+[ext_resource type="Shader" uid="uid://qep0pf8awgna" path="res://Interactables/Selected Outline Stencil Write.gdshader" id="2_rjiri"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("1_pfju7")
+shader = ExtResource("2_rjiri")
