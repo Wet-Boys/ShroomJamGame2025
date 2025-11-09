@@ -1,11 +1,12 @@
 using Godot;
 using System;
+using ShroomGameReal.Tv.GameStates;
 
 public partial class BallSpawner : MeshInstance3D
 {
     private int _direction = -1;
     [Export]
-    private Timer _spawnTimer;
+    private TvGameTimer _spawnTimer;
     [Export]
     private PackedScene _ballPrefab;
     public override void _Ready()
@@ -34,7 +35,6 @@ public partial class BallSpawner : MeshInstance3D
         {
             _direction = -1;
         }
-
         GlobalPosition += new Vector3(_direction * (float)delta * 25, 0, 0);
     }
 }

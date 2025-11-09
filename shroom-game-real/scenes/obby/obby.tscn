@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://btn8pjg6c3s62"]
+[gd_scene load_steps=50 format=3 uid="uid://btn8pjg6c3s62"]
 
 [ext_resource type="Script" uid="uid://dlaiovox4k0f0" path="res://scenes/obby/ObbyGameState.cs" id="1_cf3hr"]
 [ext_resource type="Script" uid="uid://ckkrkpbikrq4n" path="res://scenes/obby/ObbyPlayer.cs" id="1_t1i3u"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://4maaatdoepjs" path="res://scenes/obby/BallSpawner.cs" id="7_t705a"]
 [ext_resource type="PackedScene" uid="uid://ybhdhnchsgp" path="res://scenes/obby/physicsball.tscn" id="8_txav5"]
 [ext_resource type="Script" uid="uid://nhq5s3cgtq3x" path="res://scenes/obby/VictoryBlock.cs" id="9_txav5"]
+[ext_resource type="Script" uid="uid://hutdt2ctord0" path="res://Tv/GameStates/TvGameTimer.cs" id="11_1g2x6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bn54t"]
 
@@ -515,7 +516,9 @@ script = ExtResource("7_t705a")
 _spawnTimer = NodePath("Timer")
 _ballPrefab = ExtResource("8_txav5")
 
-[node name="Timer" type="Timer" parent="FallingBalls/MeshInstance3D2"]
+[node name="Timer" type="Node" parent="FallingBalls/MeshInstance3D2"]
+script = ExtResource("11_1g2x6")
+metadata/_custom_type_script = "uid://hutdt2ctord0"
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="FallingBalls"]
 transform = Transform3D(-4.371139e-08, 17.260193, -4.3711367e-08, 0, -7.5446707e-07, -0.99999946, -1.0000001, -7.5446707e-07, 5.463397e-15, 0, 56.537174, -201.51756)

@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using ShroomGameReal;
 
 public partial class SpinObstacle : Node3D
 {
@@ -8,6 +9,6 @@ public partial class SpinObstacle : Node3D
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-        _partToSpin.Rotation += _spinAmount;
+        _partToSpin.Rotation += _spinAmount * GlobalGameState.Instance.GameTimeScale;
     }
 }
