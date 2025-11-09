@@ -10,7 +10,7 @@ namespace ShroomGameReal.Interactables;
 public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
 {
     [Export]
-    public float outlinePadding;
+    public float meshBoundaryPadding;
     
     [Export(PropertyHint.Range, "0, 1, 0.01")]
     public float outlineThickness = 0.1f;
@@ -21,7 +21,8 @@ public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
     [Export(PropertyHint.Layers3DRender)]
     public uint meshLayersOutlineMask;
     
-    private readonly List<BoundaryShape> _boundaryShapes = [];
+    private readonly List<MeshBounds> _meshBounds = [];
+    
     // private ColorRect _outlineRect;
     // private Material _outlineMaterial = ResourceLoader.Load<Material>("res://Interactables/Selected Outline Mat.tres");
 
@@ -34,20 +35,12 @@ public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
     
     public override void _Ready()
     {
-        // Iterate through all shape owners and store their boundary points.
-        // foreach (uint shapeOwnerId in GetShapeOwners())
-        // {
-        //     var shapeOwner = ShapeOwnerGetOwner(shapeOwnerId) as CollisionShape3D;
-        //
-        //     if (shapeOwner is null)
-        //         continue;
-        //     
-        //     _boundaryShapes.Add(new BoundaryShape(shapeOwner, outlinePadding));
-        // }
-
         _meshInstances = this.GetChildrenRecursively<MeshInstance3D>()
             .Where(meshInstance => (meshInstance.Layers & meshLayersOutlineMask) != 0)
             .ToList();
+
+        foreach (var meshInstance in _meshInstances)
+            _meshBounds.Add(new MeshBounds(meshInstance, meshBoundaryPadding));
     }
     
     public virtual void OnSelected()
@@ -103,21 +96,23 @@ public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
         
         OnDeselected();
     }
+    
+    public virtual string GetInteractText() => "Interact";
 
     protected virtual void Interact(PlayerController player) { }
 
-    private (Vector2 min, Vector2 max) GetScreenBounds()
+    public (Vector2 screenMin, Vector2 screenMax) GetScreenBounds()
     {
         var screenMin = Vector2.One * float.MaxValue;
         var screenMax = Vector2.One * float.MinValue;
         
         var camera = GetViewport().GetCamera3D();
 
-        foreach (var shape in _boundaryShapes)
+        foreach (var meshBoundary in _meshBounds)
         {
-            foreach (var point in shape.Points)
+            foreach (var point in meshBoundary.BoundaryPoints)
             {
-                var worldPoint = shape.Owner.GlobalTransform * point;
+                var worldPoint = meshBoundary.Owner.GlobalTransform * point;
                 var screenPoint = camera.UnprojectPosition(worldPoint);
 
                 if (screenPoint.X > screenMax.X)
@@ -135,39 +130,63 @@ public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
         return (screenMin, screenMax);
     }
     
-    private class BoundaryShape
+    private class MeshBounds
     {
-        public CollisionShape3D Owner { get; private set; }
-        public List<Vector3> Points { get; } = [];
+        public MeshInstance3D Owner { get; }
+        public List<Vector3> BoundaryPoints { get; } = [];
         
-        public BoundaryShape(CollisionShape3D owner, float padding)
+        public MeshBounds(MeshInstance3D meshInstance, float padding)
         {
-            Owner = owner;
-            var shape = owner?.Shape;
+            Owner = meshInstance;
             
-            if (shape is BoxShape3D boxShape)
-            {
-                var size = boxShape.Size + Vector3.One * padding;
+            if (meshInstance.Mesh is not ArrayMesh arrayMesh)
+                return;
 
-                var localMin = -size / 2f;
-                var localMax = size / 2f;
+            // Calculate bounding box of mesh.
+            var minVertex = Vector3.One * float.MaxValue;
+            var maxVertex = Vector3.One * float.MinValue;
+            
+            for (int i = 0; i < arrayMesh.GetSurfaceCount(); i++)
+            {
+                var surfaceArrays = arrayMesh.SurfaceGetArrays(i);
+                var vertices = surfaceArrays[(int)Mesh.ArrayType.Vertex].AsVector3Array();
+
+                foreach (var vertex in vertices)
+                {
+                    if (vertex.X < minVertex.X)
+                        minVertex.X = vertex.X;
+                    if (vertex.Y < minVertex.Y)
+                        minVertex.Y = vertex.Y;
+                    if (vertex.Z < minVertex.Z)
+                        minVertex.Z = vertex.Z;
                 
-                var pointA = new Vector3(localMin.X, localMin.Y, localMax.Z);
-                var pointB = new Vector3(localMax.X, localMin.Y, localMin.Z);
-                var pointC = new Vector3(localMax.X, localMin.Y, localMax.Z);
-                var pointD = new Vector3(localMin.X, localMax.Y, localMin.Z);
-                var pointE = new Vector3(localMin.X, localMax.Y, localMax.Z);
-                var pointF = new Vector3(localMax.X, localMax.Y, localMin.Z);
-                
-                Points.Add(localMin);
-                Points.Add(pointA);
-                Points.Add(pointB);
-                Points.Add(pointC);
-                Points.Add(pointD);
-                Points.Add(pointE);
-                Points.Add(pointF);
-                Points.Add(localMax);
+                    if (vertex.X > maxVertex.X)
+                        maxVertex.X = vertex.X;
+                    if (vertex.Y > maxVertex.Y)
+                        maxVertex.Y = vertex.Y;
+                    if (vertex.Z > maxVertex.Z)
+                        maxVertex.Z = vertex.Z;
+                }
             }
+            
+            minVertex -= Vector3.One * (padding / 2f);
+            maxVertex += Vector3.One * (padding / 2f);
+            
+            var pointA = new Vector3(minVertex.X, minVertex.Y, maxVertex.Z);
+            var pointB = new Vector3(maxVertex.X, minVertex.Y, minVertex.Z);
+            var pointC = new Vector3(maxVertex.X, minVertex.Y, maxVertex.Z);
+            var pointD = new Vector3(minVertex.X, maxVertex.Y, minVertex.Z);
+            var pointE = new Vector3(minVertex.X, maxVertex.Y, maxVertex.Z);
+            var pointF = new Vector3(maxVertex.X, maxVertex.Y, minVertex.Z);
+                
+            BoundaryPoints.Add(minVertex);
+            BoundaryPoints.Add(pointA);
+            BoundaryPoints.Add(pointB);
+            BoundaryPoints.Add(pointC);
+            BoundaryPoints.Add(pointD);
+            BoundaryPoints.Add(pointE);
+            BoundaryPoints.Add(pointF);
+            BoundaryPoints.Add(maxVertex);
         }
     }
 }
