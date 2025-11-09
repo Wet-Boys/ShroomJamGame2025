@@ -16,6 +16,12 @@
       <Content Include="Interactables\InteractableRigidBody3D.cs.uid" />
       <Content Include="Interactables\InteractableStaticBody3D.cs.uid" />
       <Content Include="Interactables\Interactor.cs.uid" />
+      <Content Include="Interactables\Selected Outline Render Outline.gdshader" />
+      <Content Include="Interactables\Selected Outline Render Outline.gdshader.uid" />
+      <Content Include="Interactables\Selected Outline Render Outline.tres" />
+      <Content Include="Interactables\Selected Outline Stencil Write.gdshader" />
+      <Content Include="Interactables\Selected Outline Stencil Write.gdshader.uid" />
+      <Content Include="Interactables\Selected Outline Stencil Write.tres" />
       <Content Include="Player\Player Prefab.tscn" />
       <Content Include="Player\PlayerController.cs.uid" />
     </ItemGroup>

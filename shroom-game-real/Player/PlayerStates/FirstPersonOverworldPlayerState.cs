@@ -1,6 +1,7 @@
 using Godot;
 using SettingsHelper;
 using SettingsHelper.SettingsEntries;
+using ShroomGameReal.Interactables;
 using ShroomGameReal.Utilities;
 
 namespace ShroomGameReal.Player.PlayerStates;
@@ -29,6 +30,9 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
     
     private FloatSettingsEntry _verticalSensitivity;
     private FloatSettingsEntry _horizontalSensitivity;
+
+    private Interactor _interactor;
+    
     private Vector2 MouseSensitivity => new(_horizontalSensitivity.Value, _verticalSensitivity.Value);
     
     private Vector2 _mouseDelta;
@@ -41,6 +45,8 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
         _verticalSensitivity = SettingsManager.Gameplay.Mouse.VerticalSensitivity;
         _horizontalSensitivity = SettingsManager.Gameplay.Mouse.HorizontalSensitivity;
         
+        _interactor = GetNode<Interactor>("%Interactor");
+        
         _gravity = ProjectSettings.Singleton.GetSetting("physics/3d/default_gravity").AsSingle();
     }
 
@@ -52,11 +58,16 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
         
         SettingsManager.Camera.Fov.OnValueChanged += OnFovSettingChanged;
         Camera.TweenToFov(SettingsManager.Camera.Fov.Value, onEnterFovTweenDuration);
+
+        _interactor.Active = true;
     }
 
     protected override void OnExitState()
     {
         SettingsManager.Camera.Fov.OnValueChanged -= OnFovSettingChanged;
+        Camera.StopFovTween();
+
+        _interactor.Active = false;
     }
 
     private void OnFovSettingChanged(float newFov)
