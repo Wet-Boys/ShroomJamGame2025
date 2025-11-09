@@ -23,8 +23,8 @@ public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
     
     private readonly List<MeshBounds> _meshBounds = [];
     
-    private ColorRect _outlineRect;
-    private Material _outlineMaterial = ResourceLoader.Load<Material>("res://Interactables/Selected Outline Mat.tres");
+    // private ColorRect _outlineRect;
+    // private Material _outlineMaterial = ResourceLoader.Load<Material>("res://Interactables/Selected Outline Mat.tres");
 
     private List<MeshInstance3D> _meshInstances = [];
     
@@ -56,21 +56,21 @@ public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
             meshInstance.SetMaterialOverlay(_stencilOutlineMaterial);
         }
         
-        var (screenMin, screenMax) = GetScreenBounds();
-        var camera = GetViewport().GetCamera3D();
-        
-        if (_outlineRect is null)
-        {
-            _outlineRect = new ColorRect();
-            _outlineRect.MouseFilter = Control.MouseFilterEnum.Ignore;
-            _outlineRect.Material = _outlineMaterial;
-            camera.AddChild(_outlineRect);
-        }
-        
-        _outlineRect.Position = screenMin;
-        var size = screenMax - screenMin;
-        _outlineRect.Size = size;
-        _outlineRect.SetInstanceShaderParameter("rect_size", size);
+        // var (screenMin, screenMax) = GetScreenBounds();
+        // var camera = GetViewport().GetCamera3D();
+        //
+        // if (_outlineRect is null)
+        // {
+        //     _outlineRect = new ColorRect();
+        //     _outlineRect.MouseFilter = Control.MouseFilterEnum.Ignore;
+        //     _outlineRect.Material = _outlineMaterial;
+        //     camera.AddChild(_outlineRect);
+        // }
+        //
+        // _outlineRect.Position = screenMin;
+        // var size = screenMax - screenMin;
+        // _outlineRect.Size = size;
+        // _outlineRect.SetInstanceShaderParameter("rect_size", size);
     }
 
     public virtual void OnDeselected()
@@ -80,11 +80,11 @@ public partial class InteractableStaticBody3D : StaticBody3D, IInteractable
             meshInstance.SetMaterialOverlay(null);
         }
         
-        if (_outlineRect is not null)
-        {
-            _outlineRect.Free();
-            _outlineRect = null;
-        }
+        // if (_outlineRect is not null)
+        // {
+        //     _outlineRect.Free();
+        //     _outlineRect = null;
+        // }
     }
 
     public void OnInteract(PlayerController player)
