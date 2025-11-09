@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://8m3ndueviodv"]
+
+[ext_resource type="FontFile" uid="uid://cicwamu45tttv" path="res://scenes/Scoot Shoot/Main Menu/Fonts/Arbutus/Arbutus-Regular.ttf" id="1_p628o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3umc"]
+bg_color = Color(1, 0.19, 0.19, 0.7529412)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 50
+corner_radius_top_right = 20
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p628o"]
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 50
+corner_radius_top_right = 20
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0fpb5"]
+bg_color = Color(0.41215244, 0.4121525, 0.41215235, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 50
+corner_radius_top_right = 20
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 20
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_p628o")
+Button/styles/hover = SubResource("StyleBoxFlat_g3umc")
+Button/styles/normal = SubResource("StyleBoxFlat_p628o")
+Button/styles/pressed = SubResource("StyleBoxFlat_0fpb5")
+VBoxContainer/constants/separation = 20

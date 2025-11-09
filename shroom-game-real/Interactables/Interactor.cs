@@ -1,11 +1,18 @@
 using Godot;
+using ShroomGameReal.Player;
 
 namespace ShroomGameReal.Interactables;
 
 [GlobalClass]
 public partial class Interactor : RayCast3D
 {
+    private PlayerController _player;
     private IInteractable _currentInteractable;
+
+    public override void _Ready()
+    {
+        _player = GetOwner<PlayerController>();
+    }
 
     public override void _PhysicsProcess(double delta)
     {
@@ -30,7 +37,10 @@ public partial class Interactor : RayCast3D
 
     public override void _Input(InputEvent @event)
     {
+        if (_currentInteractable is null)
+            return;
+        
         if (@event.IsActionPressed("interact"))
-            _currentInteractable.OnInteract();
+            _currentInteractable.OnInteract(_player);
     }
 }

@@ -6207,6 +6207,11 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 }
+},
+"nodes": {
+"PATH:Armature/Skeleton3D/Jimmy": {
+"mesh_instance/layers": 2
+}
 }
 }
 gltf/naming_version=0

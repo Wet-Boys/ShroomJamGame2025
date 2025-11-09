@@ -3,5 +3,6 @@
 [ext_resource type="Script" uid="uid://dhy88blb34dyf" path="res://Camera/MainCamera.cs" id="1_akj6v"]
 
 [node name="MainGameCamera" type="Camera3D"]
+cull_mask = 524287
 script = ExtResource("1_akj6v")
 metadata/_custom_type_script = "uid://dhy88blb34dyf"

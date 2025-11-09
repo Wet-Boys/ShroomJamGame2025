@@ -6,6 +6,7 @@
 sky_material = SubResource("ProceduralSkyMaterial_jskvd")
 
 [resource]
+resource_local_to_scene = true
 background_mode = 2
 sky = SubResource("Sky_qv1eo")
 tonemap_mode = 3
