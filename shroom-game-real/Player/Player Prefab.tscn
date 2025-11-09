@@ -45,17 +45,17 @@ metadata/_custom_type_script = "uid://byjq1fe68ukgj"
 [node name="Player Model" parent="Visual Root" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Player Model/Player/Armature" index="0"]
-bones/13/position = Vector3(0.69529736, 1.5067017, -0.06312945)
-bones/30/position = Vector3(-0.71302396, 1.556034, -0.063129455)
-bones/47/position = Vector3(0, 1.1856753, 0)
-bones/49/rotation = Quaternion(-0.53380686, -0.08676326, -0.13223432, 0.83068436)
-bones/50/rotation = Quaternion(-0.009391396, 8.731149e-10, 0.25934154, 0.96574)
-bones/52/rotation = Quaternion(-0.53380686, 0.08676367, 0.13223474, 0.8306843)
-bones/53/rotation = Quaternion(-0.009391397, -1.1117663e-08, -0.25934225, 0.96573985)
-bones/58/rotation = Quaternion(0.03169429, 0.35544014, -0.47755462, 0.8028695)
-bones/59/rotation = Quaternion(0.29779464, 0.0007264178, -0.0645174, 0.95244706)
-bones/64/rotation = Quaternion(-0.028018525, -0.3873598, 0.42612535, 0.81705856)
-bones/65/rotation = Quaternion(0.40111145, -0.00069549435, 0.0869011, 0.91189766)
+bones/13/position = Vector3(0.69529736, 1.5009025, -0.06312945)
+bones/30/position = Vector3(-0.7130239, 1.5457517, -0.063129455)
+bones/47/position = Vector3(0, 1.1694953, 0)
+bones/49/rotation = Quaternion(-0.5273979, -0.11315577, -0.17279407, 0.8241296)
+bones/50/rotation = Quaternion(-0.011850196, 1.0477382e-09, 0.32724088, 0.94486666)
+bones/52/rotation = Quaternion(-0.5273979, 0.113156006, 0.17279425, 0.8241295)
+bones/53/rotation = Quaternion(-0.011850177, -1.08266285e-08, -0.32724118, 0.9448666)
+bones/58/rotation = Quaternion(0.018884113, 0.3661627, -0.4654522, 0.80555737)
+bones/59/rotation = Quaternion(0.32569596, 0.0007190631, -0.07056224, 0.94283766)
+bones/64/rotation = Quaternion(-0.03275585, -0.39288136, 0.41961068, 0.8176174)
+bones/65/rotation = Quaternion(0.41272298, -0.0006913705, 0.08941668, 0.9064568)
 
 [node name="Jimmy" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="0"]
 layers = 2

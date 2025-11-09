@@ -93,6 +93,9 @@ public partial class ObbyPlayer : Node3D
 
     public override void _Process(double delta)
     {
+        if (GlobalGameState.Instance.IsMainPaused)
+            return;
+        
         base._Process(delta);
         cameraX.Rotation =
             new Vector3(Mathf.Clamp(cameraX.Rotation.X, float.DegreesToRadians(-89f), float.DegreesToRadians((89f))),
@@ -125,6 +128,9 @@ public partial class ObbyPlayer : Node3D
 
     public override void _PhysicsProcess(double delta)
     {
+        if (GlobalGameState.Instance.IsMainPaused)
+            return;
+        
         base._PhysicsProcess(delta);
         if (!ragdollBody.Freeze)
         {
