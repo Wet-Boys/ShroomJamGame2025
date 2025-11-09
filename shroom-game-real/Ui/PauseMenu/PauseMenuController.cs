@@ -36,7 +36,6 @@ public partial class PauseMenuController : Control
     {
         if (GlobalGameState.Instance.InBaitMode)
         {
-            GlobalGameState.Instance.GameTimeScale = 0f;
             _vhsEffect.Visible = false;
             _quitButton.Visible = false;
             baitQuitButton.Visible = true;
@@ -49,6 +48,7 @@ public partial class PauseMenuController : Control
             baitQuitButton.Visible = false;
         }
         
+        GlobalGameState.Instance.GameTimeScale = 0f;
         Visible = true;
         MouseReleaser.Instance.RequestFreeMouse();
     }
@@ -57,12 +57,9 @@ public partial class PauseMenuController : Control
     {
         Visible = false;
         MouseReleaser.Instance.RequestLockedMouse();
+        GlobalGameState.Instance.GameTimeScale = 1f;
         
-        if (GlobalGameState.Instance.InBaitMode)
-        {
-            GlobalGameState.Instance.GameTimeScale = 1f;
-        }
-        else
+        if (!GlobalGameState.Instance.InBaitMode)
         {
             GlobalGameState.Instance.MainTimeScale = 1f;
         }

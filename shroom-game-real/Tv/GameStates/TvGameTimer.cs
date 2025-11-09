@@ -34,6 +34,11 @@ public partial class TvGameTimer : Node
         _timeLeft = WaitTime;
         _timerActive = true;
     }
+    public void Start(float time)
+    {
+        WaitTime = time;
+        Start();
+    }
 
     public void Stop()
     {

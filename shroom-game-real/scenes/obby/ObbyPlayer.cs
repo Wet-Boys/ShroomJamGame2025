@@ -2,6 +2,7 @@ using Godot;
 using System;
 using SettingsHelper;
 using SettingsHelper.SettingsEntries;
+using ShroomGameReal;
 using ShroomGameReal.scenes.obby;
 
 public partial class ObbyPlayer : Node3D
@@ -43,9 +44,16 @@ public partial class ObbyPlayer : Node3D
 
     private void HurtBoxOnBodyEntered(Node3D body)
     {
-        if (body is VictoryBlock && ragdollBody.Freeze)
+        if (body is VictoryBlock)
         {
-            GD.Print("YOU WIN!");
+            if (ragdollBody.Freeze)
+            {
+                GD.Print("Tumble win?");
+            }
+            else
+            {
+                GD.Print("YOU WIN!");
+            }
         }
         else if (body is BigRedBall)
         {
@@ -123,7 +131,7 @@ public partial class ObbyPlayer : Node3D
             return;
         }
         var friction = characterBody.IsOnFloor() ? _groundFriction : _airFriction;
-        characterBody.Velocity -= new Vector3(characterBody.Velocity.X, 0, characterBody.Velocity.Z) * friction * (float)delta;
+        characterBody.Velocity -= new Vector3(characterBody.Velocity.X, 0, characterBody.Velocity.Z) * friction * (float)delta * GlobalGameState.Instance.GameTimeScale;
 
         Vector2 test = Input.GetVector("movement.move_left", "movement.move_right", "movement.move_forward", "movement.move_backward");
         test *= _gameState.IsActive ? 1 : 0;
@@ -135,11 +143,11 @@ public partial class ObbyPlayer : Node3D
             inputMovement = new Vector2(inputDirection.X, inputDirection.Z).Normalized();
         }
         
-        characterBody.Velocity += PlayerForward * inputMovement.Y;
-        characterBody.Velocity += PlayerRight * inputMovement.X;
+        characterBody.Velocity += PlayerForward * inputMovement.Y * GlobalGameState.Instance.GameTimeScale;
+        characterBody.Velocity += PlayerRight * inputMovement.X * GlobalGameState.Instance.GameTimeScale;
         if (!characterBody.IsOnFloor())
         {
-            characterBody.Velocity += Vector3.Down * _gravity * (float)delta * 3;
+            characterBody.Velocity += Vector3.Down * _gravity * (float)delta * 3 * GlobalGameState.Instance.GameTimeScale;
         }
         else if (_gameState.IsActive && Input.IsActionJustPressed("movement.jump"))
         {
