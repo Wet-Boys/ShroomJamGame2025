@@ -26,6 +26,7 @@ public partial class ScootShootStage : Node3D
     private ScootShootOnRailsGame _game;
 
     private uint _deadEnemies;
+    private Tween _tween;
 
     public override void _Ready()
     {
@@ -55,9 +56,15 @@ public partial class ScootShootStage : Node3D
         transformProxy.UpdateRotation = true;
         transformProxy.UpdateScale = true;
 
-        var tween = CreateTween();
-        tween.TweenProperty(pathFollower, "progress_ratio", 1.0, introDuration).SetEase(Tween.EaseType.InOut);
-        tween.TweenCallback(Callable.From(EmitSignalOnStageStart));
+        _tween?.Kill();
+        _tween = CreateTween();
+        _tween.TweenProperty(pathFollower, "progress_ratio", 1.0, introDuration).SetEase(Tween.EaseType.InOut);
+        _tween.TweenCallback(Callable.From(EmitSignalOnStageStart));
+    }
+
+    public override void _Process(double delta)
+    {
+        _tween?.SetSpeedScale(_game.TimeScale);
     }
 
     private void EnemyDied()

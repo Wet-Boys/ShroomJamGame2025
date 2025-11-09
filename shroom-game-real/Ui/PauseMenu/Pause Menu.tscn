@@ -1,0 +1,167 @@
+[gd_scene load_steps=11 format=3 uid="uid://dofhffbbgk7t"]
+
+[ext_resource type="Theme" uid="uid://dmrcff1f44uiw" path="res://Ui/Main UI Theme.tres" id="1_016cm"]
+[ext_resource type="Script" uid="uid://ctw51c8yf2es2" path="res://Ui/PauseMenu/PauseMenuController.cs" id="1_wix5u"]
+[ext_resource type="Material" uid="uid://141say3yeumx" path="res://Ui/PauseMenu/DualKawaseBlur/Dual Kawase Down.tres" id="2_1b0fp"]
+[ext_resource type="Script" uid="uid://dwhd7ogbo64mi" path="res://Ui/RemoteTransformControl.cs" id="3_33sxq"]
+[ext_resource type="Material" uid="uid://iugiuksyecct" path="res://Ui/PauseMenu/DualKawaseBlur/Dual Kawase Up.tres" id="3_bd5x7"]
+[ext_resource type="Material" uid="uid://cll6ptrwl04v0" path="res://Ui/PauseMenu/VHS Effect/VHS Glitch.tres" id="5_6sppg"]
+[ext_resource type="FontFile" uid="uid://dxye7ru5qc0s2" path="res://Ui/Fonts/OSD Mono/VCR_OSD_MONO_1.001.ttf" id="5_jcwe2"]
+[ext_resource type="FontFile" uid="uid://cukg4glixq1g1" path="res://Ui/Fonts/Jersey/Jersey10-Regular.ttf" id="6_5jtq2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6sppg"]
+font = ExtResource("5_jcwe2")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_016cm"]
+font = ExtResource("6_5jtq2")
+font_size = 96
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_016cm")
+script = ExtResource("1_wix5u")
+metadata/_custom_type_script = "uid://ctw51c8yf2es2"
+
+[node name="Dual Kawase Blur" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Down" type="ColorRect" parent="Dual Kawase Blur"]
+material = ExtResource("2_1b0fp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Up Remote" type="Control" parent="Dual Kawase Blur" node_paths=PackedStringArray("remoteControl")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_33sxq")
+remoteControl = NodePath("../BackBufferCopy/Up")
+metadata/_custom_type_script = "uid://dwhd7ogbo64mi"
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Dual Kawase Blur"]
+copy_mode = 2
+
+[node name="Up" type="ColorRect" parent="Dual Kawase Blur/BackBufferCopy"]
+material = ExtResource("3_bd5x7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1720.0
+offset_bottom = 880.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VHS" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RemoteTransformControl" type="Control" parent="VHS" node_paths=PackedStringArray("remoteControl")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_33sxq")
+remoteControl = NodePath("../BackBufferCopy/VHS Glitch")
+metadata/_custom_type_script = "uid://dwhd7ogbo64mi"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VHS"]
+layout_mode = 1
+offset_left = 30.0
+offset_top = 12.0
+offset_right = 180.0
+offset_bottom = 52.0
+
+[node name="Pause Text" type="Label" parent="VHS/HBoxContainer"]
+layout_mode = 2
+text = "PAUSE "
+label_settings = SubResource("LabelSettings_6sppg")
+
+[node name="I I" type="Label" parent="VHS/HBoxContainer"]
+layout_mode = 2
+text = "I I"
+label_settings = SubResource("LabelSettings_016cm")
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="VHS"]
+copy_mode = 2
+
+[node name="VHS Glitch" type="ColorRect" parent="VHS/BackBufferCopy"]
+material = ExtResource("5_6sppg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1720.0
+offset_bottom = 880.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_right = 196.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Resume Button" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Resume"
+
+[node name="Settings Button" type="Button" parent="Buttons"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
+[node name="Bait Quit Button" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[node name="Quit Button" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Quit to Desktop"
+
+[node name="Settings Menu" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="Buttons/Resume Button" to="." method="Resume"]
