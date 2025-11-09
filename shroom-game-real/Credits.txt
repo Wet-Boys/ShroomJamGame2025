@@ -12,3 +12,5 @@ vending machine segment - https://www.youtube.com/watch?v=lNxP11M0K7Y
 VHS Effect on Pause Menu - CC0 - https://godotshaders.com/shader/vhs-post-processing/
 Dual Kawase Down - CC0 - https://godotshaders.com/shader/dual-kawase-down-fast-blur/
 Dual Kawase Up - CC0 - https://godotshaders.com/shader/dual-kawase-up-fast-blur/
+
+Kenny Input Prompts - CC0 - https://kenney.nl/assets/input-prompts

@@ -19,6 +19,9 @@ public partial class Interactor : RayCast3D
 
     public override void _PhysicsProcess(double delta)
     {
+        if (GlobalGameState.Instance.IsMainPaused)
+            return;
+        
         if (!IsColliding() || !Active)
         {
             if (_currentInteractable is not null && IsInstanceValid(_currentInteractable as GodotObject))
@@ -40,7 +43,7 @@ public partial class Interactor : RayCast3D
 
     public override void _Input(InputEvent @event)
     {
-        if (_currentInteractable is null || !Active)
+        if (_currentInteractable is null || !Active || GlobalGameState.Instance.IsMainPaused)
             return;
         
         if (@event.IsActionPressed("interact"))
