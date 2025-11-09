@@ -2,17 +2,36 @@
 
 [ext_resource type="PackedScene" uid="uid://dk5rx6k5tsxl1" path="res://Player/Player Prefab.tscn" id="1_ua1yy"]
 [ext_resource type="PackedScene" uid="uid://cv1ufabh0k63e" path="res://Tv/CRT TV Prefab.tscn" id="2_ua1yy"]
-[ext_resource type="Shader" uid="uid://2argfgcdjftl" path="res://Tv/Tv Screen Viewport.gdshader" id="3_7v52t"]
-[ext_resource type="PackedScene" uid="uid://l0o5yekikrdc" path="res://scenes/Scoot Shoot/Scoot Shoot Game.tscn" id="4_mgjos"]
 [ext_resource type="PackedScene" uid="uid://c3lqsowth1x4l" path="res://scenes/overworld/OverworldEnvironment Prefab.tscn" id="5_mgjos"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7v52t"]
 data = PackedVector3Array(-50, -0.5, 50, -50, -0.5, -50, -50, 0.5, -50, 50, -0.5, -50, -50, -0.5, -50, -50, -0.5, 50, -50, 0.5, -50, -50, -0.5, -50, 50, -0.5, -50, -50, 0.5, -50, -50, 0.5, 50, -50, -0.5, 50, -50, -0.5, 50, -50, 0.5, 50, 50, 0.5, 50, 50, 0.5, 50, -50, 0.5, 50, -50, 0.5, -50, -50, -0.5, 50, 50, -0.5, 50, 50, -0.5, -50, 50, 0.5, 50, 50, -0.5, 50, -50, -0.5, 50, 50, -0.5, -50, 50, -0.5, 50, 50, 0.5, 50, 50, -0.5, -50, 50, 0.5, -50, -50, 0.5, -50, -50, 0.5, -50, 50, 0.5, -50, 50, 0.5, 50, 50, 0.5, 50, 50, 0.5, -50, 50, -0.5, -50)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mgjos"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jskvd"]
+
+[sub_resource type="Sky" id="Sky_qv1eo"]
+sky_material = SubResource("ProceduralSkyMaterial_jskvd")
+
+[sub_resource type="Environment" id="Environment_ijg2j"]
 resource_local_to_scene = true
-render_priority = 0
-shader = ExtResource("3_7v52t")
+background_mode = 2
+sky = SubResource("Sky_qv1eo")
+tonemap_mode = 3
+ssao_enabled = true
+ssil_enabled = true
+ssil_intensity = 6.42
+glow_enabled = true
+glow_levels/2 = 0.54
+glow_levels/4 = 0.85
+glow_intensity = 3.62
+glow_strength = 0.37
+glow_bloom = 0.03
+glow_blend_mode = 0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.06
+volumetric_fog_albedo = Color(0.60933006, 0.6093301, 0.60933006, 1)
+volumetric_fog_ambient_inject = 0.1
+volumetric_fog_temporal_reprojection_amount = 0.85
 
 [node name="TvTesting" type="Node3D"]
 
@@ -31,11 +50,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6612027, 0.28182662, -4.71
 
 [node name="CRT TV" parent="." instance=ExtResource("2_ua1yy")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.433905, 4.103676, 3.420313)
-screenViewportMaterial = SubResource("ShaderMaterial_mgjos")
-debugSceneToLoad = ExtResource("4_mgjos")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.25881907, 0.9659258, 0, -0.9659258, -0.25881907, 0, 13.34069, -8.055782)
+visible = false
 light_color = Color(0.8088422, 0.7485277, 0.48788786, 1)
 light_energy = 0.7
 light_indirect_energy = 0.0
@@ -43,3 +61,4 @@ light_volumetric_fog_energy = 2.515
 shadow_enabled = true
 
 [node name="OverworldEnvironment" parent="." instance=ExtResource("5_mgjos")]
+environment = SubResource("Environment_ijg2j")

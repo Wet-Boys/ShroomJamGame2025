@@ -39,8 +39,8 @@ public partial class PlayerController : CharacterBody3D
 
     public override void _Input(InputEvent @event)
     {
-        if (@event.IsActionPressed("escape"))
-            ToggleMouse();
+        // if (@event.IsActionPressed("escape"))
+        //     ToggleMouse();
     }
 
     // TODO: Replace this with settings menu

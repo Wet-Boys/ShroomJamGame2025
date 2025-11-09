@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdnpe5f2f5r3a"]
+
+[ext_resource type="Script" uid="uid://btsiew8cw4xxi" path="res://GlobalGameState.cs" id="1_ej1i1"]
+
+[node name="GlobalGameStateSingleton" type="Node"]
+script = ExtResource("1_ej1i1")
+InBaitMode = false
+metadata/_custom_type_script = "uid://btsiew8cw4xxi"
