@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dk5rx6k5tsxl1"]
+[gd_scene load_steps=16 format=3 uid="uid://dk5rx6k5tsxl1"]
 
 [ext_resource type="Script" uid="uid://byjq1fe68ukgj" path="res://Player/PlayerController.cs" id="1_ffodk"]
 [ext_resource type="PackedScene" uid="uid://d25p0awkpqnka" path="res://Player/player_visuals.tscn" id="2_l50ud"]
@@ -8,11 +8,31 @@
 [ext_resource type="Script" uid="uid://cu7l4gfo6xn00" path="res://Player/PlayerStates/PlayerStateList.cs" id="5_ibwd3"]
 [ext_resource type="Script" uid="uid://oswbmavah515" path="res://Player/PlayerStates/TvGamePlayerState.cs" id="7_qthdm"]
 [ext_resource type="Material" uid="uid://r5xrehqr4it" path="res://Tv/CRT TV Prefab Background Fog Material.tres" id="8_ns3to"]
+[ext_resource type="Texture2D" uid="uid://b2c45ws4pno0g" path="res://Interactables/keyboard_e.svg" id="9_gnw3n"]
+[ext_resource type="Script" uid="uid://brxnff63qy35t" path="res://Interactables/InteractLabel.cs" id="9_nv1sy"]
 [ext_resource type="PackedScene" uid="uid://dofhffbbgk7t" path="res://Ui/PauseMenu/Pause Menu.tscn" id="9_thgmb"]
+[ext_resource type="FontFile" uid="uid://cta4afpkksl5f" path="res://Ui/Fonts/Inter/Inter-Medium.ttf" id="10_nv1sy"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p5fe0"]
 radius = 0.9
 height = 5.1762695
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfgdp"]
+bg_color = Color(1, 1, 1, 1)
+draw_center = false
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_sy1gk"]
+font = ExtResource("10_nv1sy")
+font_size = 32
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("initialState")]
 input_ray_pickable = false
@@ -25,17 +45,17 @@ metadata/_custom_type_script = "uid://byjq1fe68ukgj"
 [node name="Player Model" parent="Visual Root" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Player Model/Player/Armature" index="0"]
-bones/13/position = Vector3(0.69529736, 1.5135461, -0.06312945)
-bones/30/position = Vector3(-0.7130239, 1.5680119, -0.063129455)
-bones/47/position = Vector3(0, 1.1846931, 0)
-bones/49/rotation = Quaternion(-0.5334156, -0.08854828, -0.13497727, 0.830306)
-bones/50/rotation = Quaternion(-0.009559242, 9.313226e-10, 0.26397657, 0.9644817)
-bones/52/rotation = Quaternion(-0.5334183, 0.08853671, 0.13495935, 0.8303085)
-bones/53/rotation = Quaternion(-0.009559232, -1.10594565e-08, -0.263977, 0.9644817)
-bones/58/rotation = Quaternion(0.020708622, 0.3623884, -0.46890634, 0.8052159)
-bones/59/rotation = Quaternion(0.31916982, 0.0007208588, -0.06914834, 0.94517124)
-bones/64/rotation = Quaternion(-0.04237353, -0.39521176, 0.41405442, 0.818884)
-bones/65/rotation = Quaternion(0.42623398, -0.0006863328, 0.09234389, 0.89988714)
+bones/13/position = Vector3(0.69529736, 1.5009025, -0.06312945)
+bones/30/position = Vector3(-0.7130239, 1.5457517, -0.063129455)
+bones/47/position = Vector3(0, 1.1694953, 0)
+bones/49/rotation = Quaternion(-0.5273979, -0.11315577, -0.17279407, 0.8241296)
+bones/50/rotation = Quaternion(-0.011850196, 1.0477382e-09, 0.32724088, 0.94486666)
+bones/52/rotation = Quaternion(-0.5273979, 0.113156006, 0.17279425, 0.8241295)
+bones/53/rotation = Quaternion(-0.011850177, -1.08266285e-08, -0.32724118, 0.9448666)
+bones/58/rotation = Quaternion(0.018884113, 0.3661627, -0.4654522, 0.80555737)
+bones/59/rotation = Quaternion(0.32569596, 0.0007190631, -0.07056224, 0.94283766)
+bones/64/rotation = Quaternion(-0.03275585, -0.39288136, 0.41961068, 0.8176174)
+bones/65/rotation = Quaternion(0.41272298, -0.0006913705, 0.08941668, 0.9064568)
 
 [node name="Jimmy" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="0"]
 layers = 2
@@ -108,6 +128,50 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="Interaction Overlay" type="Control" parent="UI Root"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Interact Label" type="PanelContainer" parent="UI Root/Interaction Overlay"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 121.0
+offset_bottom = 60.0
+pivot_offset = Vector2(122, 29)
+theme_override_styles/panel = SubResource("StyleBoxFlat_qfgdp")
+script = ExtResource("9_nv1sy")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI Root/Interaction Overlay/Interact Label"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI Root/Interaction Overlay/Interact Label/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI Root/Interaction Overlay/Interact Label/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_gnw3n")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="UI Root/Interaction Overlay/Interact Label/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="UI Root/Interaction Overlay/Interact Label/MarginContainer/HBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+label_settings = SubResource("LabelSettings_sy1gk")
+vertical_alignment = 2
 
 [node name="Pause Menu" parent="UI Root" instance=ExtResource("9_thgmb")]
 visible = false
