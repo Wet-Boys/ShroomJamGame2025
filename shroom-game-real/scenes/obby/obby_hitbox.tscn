@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpkauqrsqetvp"]
+
+[ext_resource type="Script" uid="uid://cuvucoiq58ehe" path="res://scenes/obby/ObbyHitbox.cs" id="1_cauw7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cauw7"]
+friction = 0.0
+bounce = 1.0
+
+[node name="ObbyHitbox" type="StaticBody3D"]
+collision_layer = 32
+collision_mask = 0
+physics_material_override = SubResource("PhysicsMaterial_cauw7")
+script = ExtResource("1_cauw7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
