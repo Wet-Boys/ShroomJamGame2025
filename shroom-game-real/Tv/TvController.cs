@@ -28,12 +28,12 @@ public partial class TvController : Node
     private float _lastEventTime = -1f;
     private PlayerController _player;
     
-    public bool HasSubWorld => _gameState is not null;
+    public bool HasSubWorld => GameState is not null;
     
-    public bool CanActivateGameState => _gameState is not null && _gameState.CanActivate;
+    public bool CanActivateGameState => GameState is not null && GameState.CanActivate;
 
     private bool _isActive;
-    private BaseTvGameState _gameState;
+    public BaseTvGameState GameState { get; private set; }
 
     public override void _Ready()
     {
@@ -62,7 +62,7 @@ public partial class TvController : Node
         _player = player;
         _isActive = true;
 
-        _gameState.OnEnterState();
+        GameState.OnEnterState();
     }
 
     public void ExitTvState()
@@ -132,8 +132,11 @@ public partial class TvController : Node
         _lastScreenPos = eventPos2D;
         _lastScreenPosInitialized = true;
         _lastEventTime = now;
-        
-        _viewport.PushInput(@event);
+
+        if (Input.MouseMode != Input.MouseModeEnum.Captured)
+        {
+            _viewport.PushInput(@event);
+        }
     }
 
     public void SetTvSubWorld(PackedScene scene)
@@ -143,8 +146,8 @@ public partial class TvController : Node
         var instance = scene.Instantiate();
         _viewport.AddChild(instance);
 
-        _gameState = (BaseTvGameState)instance;
-        _gameState.OnExitTv += OnGameStateExit;
+        GameState = (BaseTvGameState)instance;
+        GameState.OnExitTv += OnGameStateExit;
         
         UpdateViewport();
     }
@@ -188,6 +191,12 @@ public partial class TvController : Node
         if (@event is InputEventKey { PhysicalKeycode: Key.H, Pressed: true })
         {
             SetTvSubWorld(debugSceneToLoad);
+        }
+
+        if (Input.MouseMode == Input.MouseModeEnum.Captured)
+        {
+            _viewport.PushInput(@event);
+            return;
         }
 
         if (@event is InputEventMouse || !_isActive)

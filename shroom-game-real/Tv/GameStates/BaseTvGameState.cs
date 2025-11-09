@@ -19,6 +19,7 @@ public partial class BaseTvGameState : Node3D
 
     public virtual void ExitTv()
     {
+        IsActive = false;
         EmitSignalOnExitTv();
     }
 

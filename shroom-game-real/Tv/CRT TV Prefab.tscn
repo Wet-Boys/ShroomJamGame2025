@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://3xmqky200xr8" path="res://Tv/Model/CRT.glb" id="1_r0ehp"]
 [ext_resource type="Script" uid="uid://byygvsgk812la" path="res://Tv/TvController.cs" id="2_bhbdq"]
 [ext_resource type="Material" uid="uid://csgbj47b57ahc" path="res://Tv/Tv Screen Viewport mat.tres" id="3_nsevw"]
-[ext_resource type="PackedScene" uid="uid://l0o5yekikrdc" path="res://scenes/Scoot Shoot/Scoot Shoot Game.tscn" id="5_hnmqc"]
+[ext_resource type="PackedScene" uid="uid://btn8pjg6c3s62" path="res://scenes/obby/obby.tscn" id="4_hnmqc"]
 [ext_resource type="Material" uid="uid://r5xrehqr4it" path="res://Tv/CRT TV Prefab Background Fog Material.tres" id="6_hnmqc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhbdq"]
@@ -31,7 +31,7 @@ metadata/_custom_type_script = "uid://eyhyubl50qtf"
 script = ExtResource("2_bhbdq")
 cameraProxy = NodePath("../Camera Pos")
 screenViewportMaterial = ExtResource("3_nsevw")
-debugSceneToLoad = ExtResource("5_hnmqc")
+debugSceneToLoad = ExtResource("4_hnmqc")
 metadata/_custom_type_script = "uid://byygvsgk812la"
 
 [node name="Model" parent="." instance=ExtResource("1_r0ehp")]
