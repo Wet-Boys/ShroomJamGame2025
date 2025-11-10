@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://buam6xk2w03da"]
+[gd_scene load_steps=8 format=3 uid="uid://buam6xk2w03da"]
 
+[ext_resource type="Script" uid="uid://lnulau21do8o" path="res://scenes/dream/avoid balls/AvoidBallsGameState.cs" id="1_bjhn5"]
 [ext_resource type="PackedScene" uid="uid://ccj3k51na6cm4" path="res://scenes/dream/avoid balls/Background.glb" id="1_fkod1"]
 [ext_resource type="PackedScene" uid="uid://foskdcl1e87l" path="res://scenes/dream/avoid balls/Bussy/bussy.tscn" id="2_46cp5"]
 [ext_resource type="PackedScene" uid="uid://cx072cwkrciue" path="res://scenes/2D Camera.tscn" id="2_xfgk3"]
@@ -12,6 +13,7 @@ size = Vector3(19.85791, 1.3533936, 12.840332)
 size = Vector3(0.68792725, 3.128357, 18.408447)
 
 [node name="AvoidBalls" type="Node3D"]
+script = ExtResource("1_bjhn5")
 
 [node name="Background" parent="." instance=ExtResource("1_fkod1")]
 

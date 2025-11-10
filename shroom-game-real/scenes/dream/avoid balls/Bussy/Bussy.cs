@@ -6,11 +6,13 @@ public partial class Bussy : Node3D
     [Export] private RigidBody3D _rigidBody3D;
     [Export] private Area3D _area3D;
     private Vector3 _forward;
+    private AvoidBallsGameState _gameState;
 
     public override void _Ready()
     {
         base._Ready();
         _area3D.BodyEntered += Area3DOnBodyEntered;
+        _gameState = GetParent().GetParent<AvoidBallsGameState>();
     }
 
     private void Area3DOnBodyEntered(Node body)
@@ -24,22 +26,25 @@ public partial class Bussy : Node3D
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-        _forward = _rigidBody3D.GlobalTransform.Basis.Z;
-        if (Input.IsActionPressed("movement.move_forward"))
+        if (_gameState.IsActive)
         {
-            MoveForward();
-        }
-        if (Input.IsActionPressed("movement.move_backward"))
-        {
-            MoveBack();
-        }
-        if (Input.IsActionPressed("movement.move_left"))
-        {
-            MoveLeft();
-        }
-        if (Input.IsActionPressed("movement.move_right"))
-        {
-            MoveRight();
+            _forward = _rigidBody3D.GlobalTransform.Basis.Z;
+            if (Input.IsActionPressed("movement.move_forward"))
+            {
+                MoveForward();
+            }
+            if (Input.IsActionPressed("movement.move_backward"))
+            {
+                MoveBack();
+            }
+            if (Input.IsActionPressed("movement.move_left"))
+            {
+                MoveLeft();
+            }
+            if (Input.IsActionPressed("movement.move_right"))
+            {
+                MoveRight();
+            }   
         }
     }
     public void MoveLeft()

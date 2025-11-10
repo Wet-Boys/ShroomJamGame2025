@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://dw0j2rdqywcvy"]
+
+[ext_resource type="Script" uid="uid://b4sjpo4dmc3ft" path="res://scenes/froggers/FroggerGameState.cs" id="1_fm2k6"]
+[ext_resource type="PackedScene" uid="uid://llnicj42rant" path="res://scenes/froggers/Collection.glb" id="1_obs73"]
+[ext_resource type="PackedScene" uid="uid://droxinqo8f145" path="res://scenes/froggers/frog.tscn" id="2_r4xsi"]
+[ext_resource type="PackedScene" uid="uid://b743b0qfg0ksp" path="res://scenes/froggers/car.tscn" id="2_vieri"]
+[ext_resource type="PackedScene" uid="uid://djgssrh4u54rn" path="res://scenes/froggers/log.tscn" id="3_0ybi4"]
+[ext_resource type="PackedScene" uid="uid://cx072cwkrciue" path="res://scenes/2D Camera.tscn" id="3_fm2k6"]
+[ext_resource type="PackedScene" uid="uid://db3kqj612eni" path="res://scenes/froggers/leaf.tscn" id="4_ix7rd"]
+
+[node name="Frogger" type="Node3D" node_paths=PackedStringArray("_frog")]
+script = ExtResource("1_fm2k6")
+_carScene = ExtResource("2_vieri")
+_logScenes = Array[PackedScene]([ExtResource("3_0ybi4"), ExtResource("4_ix7rd")])
+_frog = NodePath("Frog")
+
+[node name="Collection" parent="." instance=ExtResource("1_obs73")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+
+[node name="Frog" parent="." instance=ExtResource("2_r4xsi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 2, 0)
+
+[node name="Camera3D" parent="." instance=ExtResource("3_fm2k6")]
+transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -2.9568315, 30.65831, -1.2924721e-07)
+projection = 0
