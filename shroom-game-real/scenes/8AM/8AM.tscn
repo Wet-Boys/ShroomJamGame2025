@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://ckbq3521r8wcp"]
+
+[ext_resource type="PackedScene" uid="uid://ckipkwdm0nqu0" path="res://scenes/8AM/8AM Room.glb" id="1_nosrv"]
+[ext_resource type="PackedScene" uid="uid://dk5rx6k5tsxl1" path="res://Player/Player Prefab.tscn" id="2_8qw3q"]
+[ext_resource type="PackedScene" uid="uid://c3lqsowth1x4l" path="res://scenes/overworld/OverworldEnvironment Prefab.tscn" id="3_8qw3q"]
+[ext_resource type="PackedScene" uid="uid://jcij2hin3jyb" path="res://scenes/8AM/Slavic Tv.glb" id="3_cy5ao"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8edld"]
+size = Vector3(30.077393, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nosrv"]
+size = Vector3(30.077393, 10.321289, 0.49591064)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8qw3q"]
+size = Vector3(0.44769287, 10.269653, 20)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jskvd"]
+
+[sub_resource type="Sky" id="Sky_qv1eo"]
+sky_material = SubResource("ProceduralSkyMaterial_jskvd")
+
+[sub_resource type="Environment" id="Environment_cy5ao"]
+resource_local_to_scene = true
+background_mode = 2
+sky = SubResource("Sky_qv1eo")
+tonemap_mode = 3
+ssao_enabled = true
+ssil_intensity = 6.42
+glow_enabled = true
+glow_levels/2 = 0.54
+glow_levels/4 = 0.85
+glow_intensity = 3.62
+glow_strength = 0.37
+glow_bloom = 0.03
+glow_blend_mode = 0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.06
+volumetric_fog_albedo = Color(0.60933006, 0.6093301, 0.60933006, 1)
+volumetric_fog_ambient_inject = 0.1
+volumetric_fog_temporal_reprojection_amount = 0.85
+
+[node name="Node3D" type="Node3D"]
+
+[node name="8AM Room" parent="." instance=ExtResource("1_nosrv")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="8AM Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.127115, -2.758817)
+shadow_enabled = true
+distance_fade_enabled = true
+omni_range = 27.680902
+
+[node name="Player" parent="8AM Room" instance=ExtResource("2_8qw3q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.555214, -0.8168888, -5.0745335)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="8AM Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.555214, -0.8168888, -5.0745335)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="8AM Room/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.788208, 0, 2.5)
+shape = SubResource("BoxShape3D_8edld")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="8AM Room/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.788208, 4.6606445, 12.53714)
+shape = SubResource("BoxShape3D_nosrv")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="8AM Room/StaticBody3D"]
+transform = Transform3D(1.3921036, 0, 0, 0, 1.3921036, 0, 0, 0, 1.3921036, 4.788208, 4.6606445, -7.650255)
+shape = SubResource("BoxShape3D_nosrv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="8AM Room/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.861778, 4.6348267, 2.5)
+shape = SubResource("BoxShape3D_8qw3q")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="8AM Room/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.262909, 4.6348267, 2.5)
+shape = SubResource("BoxShape3D_8qw3q")
+
+[node name="OverworldEnvironment" parent="8AM Room" instance=ExtResource("3_8qw3q")]
+environment = SubResource("Environment_cy5ao")
+
+[node name="Slavic Tv" parent="." instance=ExtResource("3_cy5ao")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1294575, 1.2625442, -10.795282)
