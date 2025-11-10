@@ -22,6 +22,9 @@ public partial class PlayerController : CharacterBody3D
         }
     }
 
+    [Export] public PlayerVisualHandler visualHandler;
+    [Export] public Node3D headNode;
+
     // Contains all possible players states.
     public PlayerStateList AllPlayerStates
     {
@@ -56,5 +59,11 @@ public partial class PlayerController : CharacterBody3D
         {
             MouseReleaser.Instance.RequestLockedMouse();
         }
+    }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        visualHandler.RotateVisuals(delta, headNode.GlobalTransform.Basis.Z, true);
     }
 }

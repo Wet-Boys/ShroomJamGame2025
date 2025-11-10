@@ -1,87 +1,85 @@
-[gd_scene load_steps=12 format=3 uid="uid://bq111dof5116h"]
+[gd_scene load_steps=9 format=3 uid="uid://bq111dof5116h"]
 
-[ext_resource type="PackedScene" uid="uid://ba6rc7urqohbv" path="res://Player/Model/Player.glb" id="1_enbey"]
-[ext_resource type="Animation" uid="uid://dm8d65u5y47a" path="res://Player/Animations/interact.res" id="2_wp7mc"]
-[ext_resource type="Animation" uid="uid://cqrj3hxq7aq7w" path="res://Player/Animations/walk.res" id="3_4d7i0"]
-[ext_resource type="Animation" uid="uid://b7hqy0frfdjyg" path="res://Player/Animations/idle.res" id="4_36mr8"]
+[ext_resource type="PackedScene" uid="uid://p24tg15ubdu1" path="res://Player/Model/Little John First Person.glb" id="1_kfcni"]
+[ext_resource type="Animation" uid="uid://dakofl403oc3r" path="res://Player/Animations_new/Coughing.res" id="2_5lox5"]
+[ext_resource type="Animation" uid="uid://cwdnvqatyga43" path="res://Player/Animations_new/FallIntoTv.res" id="3_kfcni"]
+[ext_resource type="Animation" uid="uid://bcq4pps0umthx" path="res://Player/Animations_new/Idle.res" id="4_y4k3s"]
+[ext_resource type="Animation" uid="uid://bjcceflwhakcx" path="res://Player/Animations_new/Jump.res" id="5_fcfwr"]
+[ext_resource type="Animation" uid="uid://bq6jugqj37xna" path="res://Player/Animations_new/Walking.res" id="6_0y7oe"]
+[ext_resource type="AnimationNodeBlendTree" uid="uid://c2ewrmh2ljigb" path="res://Player/LittleJohnAnimator.tres" id="7_y4k3s"]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hoi1s"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fcfwr"]
 _data = {
-&"idle": ExtResource("4_36mr8"),
-&"interact": ExtResource("2_wp7mc"),
-&"walk": ExtResource("3_4d7i0")
+&"Coughing": ExtResource("2_5lox5"),
+&"FallIntoTv": ExtResource("3_kfcni"),
+&"Idle": ExtResource("4_y4k3s"),
+&"Jump": ExtResource("5_fcfwr"),
+&"Walking": ExtResource("6_0y7oe")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wp7mc"]
-animation = &"CharacterAnims/interact"
+[node name="Player" type="Node3D"]
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4d7i0"]
-animation = &"CharacterAnims/walk"
+[node name="Little John First Person" parent="." instance=ExtResource("1_kfcni")]
+transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_36mr8"]
-animation = &"CharacterAnims/idle"
+[node name="Skeleton3D" parent="Little John First Person/metarig" index="1"]
+bones/1/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
+bones/2/position = Vector3(0, 0.9285663, -0.055199977)
+bones/2/rotation = Quaternion(0.03507916, -6.1981615e-18, -1.9921363e-19, 0.99938464)
+bones/3/rotation = Quaternion(-0.006019595, 2.706302e-21, 2.6999008e-18, 0.9999819)
+bones/4/rotation = Quaternion(-0.0005284548, 4.5208283e-20, 1.7665775e-19, 0.9999999)
+bones/5/rotation = Quaternion(0.0040802774, 7.0179296e-21, 1.2154085e-19, 0.99999166)
+bones/6/rotation = Quaternion(0.1555547, -2.8072287e-18, -1.6900709e-19, 0.98782736)
+bones/7/rotation = Quaternion(-0.094857514, 0, 0, 0.99549085)
+bones/10/rotation = Quaternion(-0.20483297, 0.77971154, -0.4432395, 0.39195934)
+bones/11/rotation = Quaternion(0.29973894, -0.09724548, -0.13967249, 0.93871814)
+bones/12/rotation = Quaternion(-0.12074571, -0.052976854, -0.097594135, 0.986453)
+bones/15/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
+bones/17/rotation = Quaternion(-0.20651244, -0.7569995, 0.48515555, 0.38591248)
+bones/18/rotation = Quaternion(0.23324224, 0.09957261, 0.108686276, 0.96118194)
+bones/19/rotation = Quaternion(-0.08972677, 0.041918926, 0.05983413, 0.99328333)
+bones/22/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
+bones/24/rotation = Quaternion(0.9724569, 5.244687e-09, -2.2190653e-08, 0.23308313)
+bones/25/rotation = Quaternion(0.41968262, -4.7173414e-16, -6.8617117e-16, 0.9076709)
+bones/26/rotation = Quaternion(-0.6726412, 2.8698292e-07, -2.285689e-07, 0.73996884)
+bones/30/rotation = Quaternion(0.9724569, -7.77624e-09, 3.7933155e-08, 0.23308313)
+bones/31/rotation = Quaternion(0.41968262, -3.5729118e-16, 5.1281037e-16, 0.9076709)
+bones/32/rotation = Quaternion(-0.6726412, -3.0236492e-07, 2.2437024e-07, 0.73996884)
+bones/33/rotation = Quaternion(-1.1064199e-07, 0.9612488, -0.2756822, -3.0175178e-07)
+bones/35/position = Vector3(0.3815259, 0.9481268, -0.05334942)
+bones/35/rotation = Quaternion(-0.025784606, 0.7066365, -0.7066365, 0.025784662)
+bones/36/position = Vector3(0.1396544, 0.08520002, -0.084361754)
+bones/36/rotation = Quaternion(-0.7071067, 0, 0, 0.7071068)
+bones/37/position = Vector3(0.49290267, 1.6067429, -0.62285686)
+bones/37/rotation = Quaternion(-0.48382312, 0.51566964, -0.51566976, 0.48382306)
+bones/38/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
+bones/39/position = Vector3(-0.37100703, 0.9297188, -0.05334942)
+bones/39/rotation = Quaternion(-0.05800342, -0.70472383, 0.7047238, 0.05800341)
+bones/40/position = Vector3(-0.1396544, 0.08520002, -0.084361754)
+bones/40/rotation = Quaternion(-0.7071067, 0, 0, 0.7071068)
+bones/41/position = Vector3(-0.49290267, 1.6067429, -0.62285686)
+bones/41/rotation = Quaternion(0.48382312, 0.51566964, -0.51566976, -0.48382306)
+bones/42/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
 
-[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_hoi1s"]
-filter_enabled = true
-filters = ["", "Armature/Skeleton3D:ArmLower.L", "Armature/Skeleton3D:ArmLower.R", "Armature/Skeleton3D:ArmUpper.L", "Armature/Skeleton3D:ArmUpper.R", "Armature/Skeleton3D:FoodIK.R", "Armature/Skeleton3D:Foot.L", "Armature/Skeleton3D:FootIK.L", "Armature/Skeleton3D:HeelIK.L", "Armature/Skeleton3D:Idk.L", "Armature/Skeleton3D:LegLower.L", "Armature/Skeleton3D:LegLower.R", "Armature/Skeleton3D:LegUpper.L", "Armature/Skeleton3D:LegUpper.R", "Armature/Skeleton3D:Toes.L", "Armature/Skeleton3D:Toes.R", "Armature/Skeleton3D:Waist"]
-
-[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_0xqgc"]
-filter_enabled = true
-filters = ["Armature/Skeleton3D:ArmLower.R", "Armature/Skeleton3D:ArmUpper.R", "Armature/Skeleton3D:Hand.R", "Armature/Skeleton3D:WristIK.R"]
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_thsln"]
-graph_offset = Vector2(-842.57556, -98.99309)
-nodes/output/position = Vector2(440, 160)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_36mr8")
-nodes/Animation/position = Vector2(-320, 60)
-nodes/OneShot/node = SubResource("AnimationNodeOneShot_0xqgc")
-nodes/OneShot/position = Vector2(-55.910038, 67.720955)
-"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_wp7mc")
-"nodes/Animation 2/position" = Vector2(-380, 240)
-nodes/Blend2/node = SubResource("AnimationNodeBlend2_hoi1s")
-nodes/Blend2/position = Vector2(200, 80)
-"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_4d7i0")
-"nodes/Animation 3/position" = Vector2(-60, 340)
-node_connections = [&"output", 0, &"Blend2", &"OneShot", 0, &"Animation", &"OneShot", 1, &"Animation 2", &"Blend2", 0, &"OneShot", &"Blend2", 1, &"Animation 3"]
-
-[node name="Player" instance=ExtResource("1_enbey")]
-
-[node name="Skeleton3D" parent="Armature" index="0"]
-bones/1/position = Vector3(0.31346464, 0.030502468, 0.058307573)
-bones/1/rotation = Quaternion(0.4908695, 0.50896674, 0.5089668, 0.4908695)
-bones/2/rotation = Quaternion(-0.036188673, 9.859366e-16, 0.99934506, -1.4333176e-17)
-bones/3/rotation = Quaternion(-0.036186088, -4.3689635e-11, 0.99927247, -0.012045556)
-bones/4/rotation = Quaternion(0.00043591278, -4.3989345e-08, -0.012037667, 0.99992746)
-bones/5/position = Vector3(-0.31346464, 0.030502468, 0.058307573)
-bones/5/rotation = Quaternion(-0.4908695, 0.50896674, 0.5089668, -0.4908695)
-bones/8/rotation = Quaternion(0.00043591278, 4.3989345e-08, 0.012037667, 0.99992746)
-bones/10/rotation = Quaternion(-0.49086958, 0.5089668, 0.50896674, -0.49086952)
-bones/13/position = Vector3(0.69529736, 1.5163991, -0.06312945)
-bones/13/rotation = Quaternion(-0.03656751, 0.7081132, -0.704533, 0.029527424)
-bones/14/position = Vector3(-1.4363003e-06, -5.8600995e-07, 8.5202955e-06)
-bones/30/position = Vector3(-0.7130239, 1.5730046, -0.063129455)
-bones/30/rotation = Quaternion(-0.0278368, -0.70851016, 0.70484346, 0.020841405)
-bones/31/position = Vector3(2.2322279e-06, -1.1838655e-06, 1.2496239e-05)
-bones/47/position = Vector3(0, 1.1910701, 0)
-bones/48/rotation = Quaternion(0.5922959, 0.38624534, 0.59229624, -0.3862452)
-bones/49/rotation = Quaternion(-0.5359857, -0.0762552, -0.11608742, 0.8327233)
-bones/50/rotation = Quaternion(-0.008399058, 8.440111e-10, 0.23193829, 0.9726943)
-bones/52/rotation = Quaternion(-0.5359859, 0.07625444, 0.11608604, 0.83272356)
-bones/53/rotation = Quaternion(-0.00839907, -1.1321388e-08, -0.2319393, 0.97269404)
-bones/58/rotation = Quaternion(0.02493786, 0.35866797, -0.47304174, 0.8043426)
-bones/59/rotation = Quaternion(0.30977073, 0.00072338304, -0.06711202, 0.94843954)
-bones/64/rotation = Quaternion(-0.0416264, -0.3936579, 0.41571853, 0.8188278)
-bones/65/rotation = Quaternion(0.42365676, -0.00068732165, 0.09178552, 0.90116036)
-
-[node name="AnimationPlayer" parent="." index="1"]
+[node name="AnimationPlayer" parent="Little John First Person" index="1"]
 libraries = {
-&"CharacterAnims": SubResource("AnimationLibrary_hoi1s")
+&"PlayerAnimations": SubResource("AnimationLibrary_fcfwr")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
-tree_root = SubResource("AnimationNodeBlendTree_thsln")
+[node name="AnimationTree" type="AnimationTree" parent="Little John First Person"]
+tree_root = ExtResource("7_y4k3s")
 anim_player = NodePath("../AnimationPlayer")
-parameters/OneShot/active = false
-parameters/OneShot/internal_active = false
-parameters/OneShot/request = 0
-parameters/Blend2/blend_amount = 0.0
+parameters/Coughing/active = false
+parameters/Coughing/internal_active = false
+parameters/Coughing/request = 0
+parameters/FallIntoTv/active = false
+parameters/FallIntoTv/internal_active = false
+parameters/FallIntoTv/request = 0
+parameters/Jumping/active = false
+parameters/Jumping/internal_active = false
+parameters/Jumping/request = 0
+parameters/Walking/active = false
+parameters/Walking/internal_active = false
+parameters/Walking/request = 0
+
+[editable path="Little John First Person"]

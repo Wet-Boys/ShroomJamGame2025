@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ShroomGameReal"
-run/main_scene="uid://o0ogl1dvej1j"
+run/main_scene="uid://cl37rt4l2wn4m"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 

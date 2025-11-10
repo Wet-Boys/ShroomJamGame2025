@@ -9,6 +9,7 @@ public partial class AvoidBallsGameState : BaseTvGameState
     {
         base._Ready();
         CanActivate = true;
+        infoText = "Avoid!";
     }
     public override void OnEnterState()
     {

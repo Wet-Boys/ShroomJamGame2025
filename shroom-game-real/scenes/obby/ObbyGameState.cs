@@ -13,7 +13,7 @@ public partial class ObbyGameState : BaseTvGameState
     public override void _Ready()
     {
         CanActivate = true;
-        // SpawnLevel();//TODO move this to a better spot
+        infoText = "Get to the Finish!";
     }
 
     public override void OnEnterState()

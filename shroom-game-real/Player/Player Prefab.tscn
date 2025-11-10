@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://dk5rx6k5tsxl1"]
+[gd_scene load_steps=17 format=3 uid="uid://dk5rx6k5tsxl1"]
 
 [ext_resource type="Script" uid="uid://byjq1fe68ukgj" path="res://Player/PlayerController.cs" id="1_ffodk"]
 [ext_resource type="PackedScene" uid="uid://d25p0awkpqnka" path="res://Player/player_visuals.tscn" id="2_l50ud"]
 [ext_resource type="Script" uid="uid://l37bgfm3gxh4" path="res://Interactables/Interactor.cs" id="2_p5fe0"]
+[ext_resource type="Script" uid="uid://b1063q0adakev" path="res://Player/PlayerVisualHandler.cs" id="2_qfgdp"]
 [ext_resource type="PackedScene" uid="uid://b8t3w2bqcud6w" path="res://Camera/Main Game Camera.tscn" id="4_biwqw"]
 [ext_resource type="Script" uid="uid://cxyvequtlcd0m" path="res://Player/PlayerStates/FirstPersonOverworldPlayerState.cs" id="5_dvuv0"]
 [ext_resource type="Script" uid="uid://cu7l4gfo6xn00" path="res://Player/PlayerStates/PlayerStateList.cs" id="5_ibwd3"]
@@ -34,39 +35,44 @@ corner_radius_bottom_left = 32
 font = ExtResource("10_nv1sy")
 font_size = 32
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("initialState")]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("initialState", "visualHandler", "headNode")]
 input_ray_pickable = false
 script = ExtResource("1_ffodk")
 initialState = NodePath("PlayerStates/FirstPersonOverworldPlayerState")
+visualHandler = NodePath("Visual Root")
+headNode = NodePath("Head/Look Dir")
 metadata/_custom_type_script = "uid://byjq1fe68ukgj"
 
-[node name="Visual Root" type="Node3D" parent="."]
+[node name="Visual Root" type="Node3D" parent="." node_paths=PackedStringArray("visualRotationNode", "desiredVisualRotationNode")]
+script = ExtResource("2_qfgdp")
+visualRotationNode = NodePath("Player Model")
+desiredVisualRotationNode = NodePath("DesiredLookDirection")
 
 [node name="Player Model" parent="Visual Root" instance=ExtResource("2_l50ud")]
 
-[node name="Skeleton3D" parent="Visual Root/Player Model/Player/Armature" index="0"]
-bones/13/position = Vector3(0.6952974, 1.5053148, -0.063129455)
-bones/30/position = Vector3(-0.71302396, 1.553607, -0.063129455)
-bones/47/position = Vector3(0, 1.1702987, 0)
-bones/49/rotation = Quaternion(-0.5277145, -0.11197132, -0.17097373, 0.8244683)
-bones/50/rotation = Quaternion(-0.011740994, 9.895302e-10, 0.32422513, 0.9459071)
-bones/52/rotation = Quaternion(-0.5277145, 0.11197174, 0.17097414, 0.8244681)
-bones/53/rotation = Quaternion(-0.011740992, -1.08848335e-08, -0.324226, 0.9459069)
-bones/58/rotation = Quaternion(0.014275459, 0.36873698, -0.46197328, 0.80648005)
-bones/59/rotation = Quaternion(0.33420202, 0.00071669975, -0.072405085, 0.939716)
-bones/64/rotation = Quaternion(-0.040660575, -0.39693978, 0.41312128, 0.8186063)
-bones/65/rotation = Quaternion(0.4262311, -0.0006863517, 0.09234325, 0.8998886)
+[node name="Skeleton3D" parent="Visual Root/Player Model/Player/Little John First Person/metarig" index="1"]
+bones/2/position = Vector3(0, 0.9407303, -0.05519998)
+bones/2/rotation = Quaternion(0.034810733, 2.7437027e-18, 4.759381e-19, 0.999394)
+bones/6/rotation = Quaternion(0.1558506, -1.1241606e-18, -5.120075e-19, 0.98778063)
+bones/10/rotation = Quaternion(-0.20804521, 0.7879521, -0.42509538, 0.39388138)
+bones/11/rotation = Quaternion(0.33019418, -0.095962256, -0.15386407, 0.9263309)
+bones/12/rotation = Quaternion(-0.13488635, -0.053033598, -0.09082853, 0.9852631)
+bones/17/rotation = Quaternion(-0.21014008, -0.7685271, 0.46361873, 0.3876404)
+bones/18/rotation = Quaternion(0.2723756, 0.09828019, 0.12692171, 0.94870615)
+bones/19/rotation = Quaternion(-0.10756771, 0.041698907, 0.050422583, 0.99204236)
+bones/24/rotation = Quaternion(0.9754882, 4.699498e-09, -2.2191788e-08, 0.22005194)
+bones/25/rotation = Quaternion(0.39167267, -2.0754386e-16, -1.3879634e-16, 0.92010474)
+bones/26/rotation = Quaternion(-0.6601902, 2.899393e-07, -2.283923e-07, 0.7510985)
+bones/30/rotation = Quaternion(0.9754882, -7.007965e-09, 3.796855e-08, 0.22005194)
+bones/31/rotation = Quaternion(0.39167267, -3.4047204e-16, -3.5806425e-16, 0.92010474)
+bones/32/rotation = Quaternion(-0.6601902, -3.0524834e-07, 2.2393483e-07, 0.7510985)
+bones/35/position = Vector3(0.3815259, 0.9686421, -0.05334942)
+bones/39/position = Vector3(-0.37100703, 0.9502342, -0.05334942)
 
-[node name="Jimmy" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="0"]
-layers = 2
+[node name="DesiredLookDirection" type="Node3D" parent="Visual Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.471674, 0.34143186)
 
-[node name="JimmyLeftPinky" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="1"]
-layers = 2
-
-[node name="JimmyRightPinky" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="2"]
-layers = 2
-
-[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="3"]
+[node name="Visual Root_Player Model_Player_Armature_Skeleton3D#LookAtModifier3D" type="LookAtModifier3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 target_node = NodePath("../../../../../../Head/Look Dir")
 bone_name = "Neck"
@@ -75,7 +81,7 @@ origin_from = 2
 origin_external_node = NodePath("../../../../../../Head")
 
 [node name="Head" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2.4932778, 0)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 4.0004997, 0)
 
 [node name="Look Dir" type="Marker3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
@@ -83,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 [node name="SteamAudioListener" type="SteamAudioListener" parent="Head"]
 
 [node name="Eyes" type="Node3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4762094, -1.012)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4398985, 0)
 
 [node name="Camera" parent="Head/Eyes" instance=ExtResource("4_biwqw")]
 current = true
@@ -181,3 +187,4 @@ mouse_filter = 1
 
 [editable path="Visual Root/Player Model"]
 [editable path="Visual Root/Player Model/Player"]
+[editable path="Visual Root/Player Model/Player/Little John First Person"]

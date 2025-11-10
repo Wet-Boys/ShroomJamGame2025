@@ -1,0 +1,54 @@
+[gd_resource type="AnimationNodeBlendTree" load_steps=10 format=3 uid="uid://c2ewrmh2ljigb"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s5w8n"]
+animation = &"PlayerAnimations/Walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p6nc6"]
+animation = &"PlayerAnimations/Coughing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gaqsb"]
+animation = &"PlayerAnimations/Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y2u7b"]
+animation = &"PlayerAnimations/FallIntoTv"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0n4ac"]
+animation = &"PlayerAnimations/Idle"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_bqn7q"]
+fadein_time = 0.1
+fadeout_time = 0.3
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_bh7bw"]
+fadein_time = 0.1
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_jom8a"]
+fadein_time = 0.2
+fadeout_time = 0.2
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_hk2uy"]
+fadein_time = 0.2
+fadeout_time = 0.2
+
+[resource]
+graph_offset = Vector2(-384.38467, 1.6737976)
+nodes/output/position = Vector2(1440, 140)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_0n4ac")
+nodes/Animation/position = Vector2(-80, 60)
+"nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_y2u7b")
+"nodes/Animation 5/position" = Vector2(1000, 460)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_s5w8n")
+"nodes/Animation 2/position" = Vector2(-60, 300)
+nodes/Coughing/node = SubResource("AnimationNodeOneShot_bqn7q")
+nodes/Coughing/position = Vector2(1040, 140)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_p6nc6")
+"nodes/Animation 3/position" = Vector2(760, 360)
+nodes/FallIntoTv/node = SubResource("AnimationNodeOneShot_bh7bw")
+nodes/FallIntoTv/position = Vector2(1260, 240)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_gaqsb")
+"nodes/Animation 4/position" = Vector2(240, 380)
+nodes/Jumping/node = SubResource("AnimationNodeOneShot_jom8a")
+nodes/Jumping/position = Vector2(580, 140)
+nodes/Walking/node = SubResource("AnimationNodeOneShot_hk2uy")
+nodes/Walking/position = Vector2(300, 100)
+node_connections = [&"output", 0, &"FallIntoTv", &"Coughing", 0, &"Jumping", &"Coughing", 1, &"Animation 3", &"FallIntoTv", 0, &"Coughing", &"FallIntoTv", 1, &"Animation 5", &"Jumping", 0, &"Walking", &"Jumping", 1, &"Animation 4", &"Walking", 0, &"Animation", &"Walking", 1, &"Animation 2"]
