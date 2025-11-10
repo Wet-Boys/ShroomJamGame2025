@@ -39,14 +39,14 @@ public partial class ObbyPlayer : Node3D
         characterBody.AddCollisionExceptionWith(ragdollBody);
         hurtBox.BodyEntered += HurtBoxOnBodyEntered;
         _respawnPoint = GlobalPosition;
-        _gameState = GetOwner<ObbyGameState>();
+        _gameState = GetParent().GetParent<ObbyGameState>();
     }
 
     private void HurtBoxOnBodyEntered(Node3D body)
     {
         if (body is VictoryBlock)
         {
-            if (ragdollBody.Freeze)
+            if (!ragdollBody.Freeze)
             {
                 GD.Print("Tumble win?");
             }

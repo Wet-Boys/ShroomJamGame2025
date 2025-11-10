@@ -13,13 +13,22 @@ public partial class ObbyGameState : BaseTvGameState
     public override void _Ready()
     {
         CanActivate = true;
-        var newLevel = _potentialLevels.PickRandom().Instantiate<Node3D>();
-        GetParent().AddChild(newLevel);
+        SpawnLevel();//TODO move this to a better spot
     }
 
     public override void OnEnterState()
     {
         MouseReleaser.Instance.SetLockedMode(Input.MouseModeEnum.Captured);
         IsActive = true;
+    }
+
+    public void SpawnLevel(int specificLevel = -1)
+    {
+        RandomNumberGenerator rng = new RandomNumberGenerator();
+        if (specificLevel == -1)
+        {
+            specificLevel = rng.RandiRange(1, _potentialLevels.Count - 1);
+        }
+        AddChild(_potentialLevels[specificLevel].Instantiate<Node3D>());
     }
 }
