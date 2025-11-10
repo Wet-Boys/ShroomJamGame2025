@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b84uf7ao54a7n"
-path.s3tc="res://.godot/imported/Fabric2000.jpg-ea8d183bbc4b90a278bbc1bebb532563.s3tc.s3tc.ctex"
+path.s3tc="res://.godot/imported/Fabric2000.jpg-ea8d183bbc4b90a278bbc1bebb532563.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,7 +12,7 @@ metadata={
 [deps]
 
 source_file="res://scenes/10AM/textures/Fabric2000.jpg"
-dest_files=["res://.godot/imported/Fabric2000.jpg-ea8d183bbc4b90a278bbc1bebb532563.s3tc.s3tc.ctex"]
+dest_files=["res://.godot/imported/Fabric2000.jpg-ea8d183bbc4b90a278bbc1bebb532563.s3tc.ctex"]
 
 [params]
 

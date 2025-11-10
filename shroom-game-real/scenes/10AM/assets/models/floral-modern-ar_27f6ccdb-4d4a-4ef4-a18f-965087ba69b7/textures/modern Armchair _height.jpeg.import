@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cecb21yxd8ut2"
-path.s3tc="res://.godot/imported/modern Armchair _normal.jpg-50eddbac90cdcac68322eda6ca37f27f.s3tc.ctex"
+path.s3tc="res://.godot/imported/modern Armchair _height.jpeg-997a3f4d0cd49c02a92c0cffba9d0358.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/8AM/assets/models/floral-modern-ar_27f6ccdb-4d4a-4ef4-a18f-965087ba69b7/textures/modern Armchair _normal.jpg"
-dest_files=["res://.godot/imported/modern Armchair _normal.jpg-50eddbac90cdcac68322eda6ca37f27f.s3tc.ctex"]
+source_file="res://scenes/10AM/assets/models/floral-modern-ar_27f6ccdb-4d4a-4ef4-a18f-965087ba69b7/textures/modern Armchair _height.jpeg"
+dest_files=["res://.godot/imported/modern Armchair _height.jpeg-997a3f4d0cd49c02a92c0cffba9d0358.s3tc.ctex"]
 
 [params]
 

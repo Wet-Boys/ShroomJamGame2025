@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6vnooqxctqfg"
-path.s3tc="res://.godot/imported/Fabric3.jpg-a2548867600fb163d7abfb3006896b38.s3tc.ctex"
+path.s3tc="res://.godot/imported/Madeira rustica_spec.jpg-24f617653ed0c77371b1e19d78dc45e1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/8AM/assets/models/sofa-g_52fbf620-4010-4611-93b5-9a46cd0aa22d/textures/Fabric3.jpg"
-dest_files=["res://.godot/imported/Fabric3.jpg-a2548867600fb163d7abfb3006896b38.s3tc.ctex"]
+source_file="res://scenes/10AM/textures/Madeira rustica_spec.jpg"
+dest_files=["res://.godot/imported/Madeira rustica_spec.jpg-24f617653ed0c77371b1e19d78dc45e1.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bdguq2mk457ta"
-path.s3tc="res://.godot/imported/Blanket_Normal.jpg-99ebac0f523441e070c10a9f2f799d7f.s3tc.ctex"
+path.s3tc="res://.godot/imported/WoodFine22_COL_1K.jpg-9fa9e76cbedaf27f75b3a946bf098c14.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/8AM/assets/models/sofa-g_52fbf620-4010-4611-93b5-9a46cd0aa22d/textures/Blanket_Normal.jpg"
-dest_files=["res://.godot/imported/Blanket_Normal.jpg-99ebac0f523441e070c10a9f2f799d7f.s3tc.ctex"]
+source_file="res://scenes/10AM/textures/WoodFine22_COL_1K.jpg"
+dest_files=["res://.godot/imported/WoodFine22_COL_1K.jpg-9fa9e76cbedaf27f75b3a946bf098c14.s3tc.ctex"]
 
 [params]
 

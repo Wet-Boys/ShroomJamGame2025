@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://s6yktu0dvl0a"
-path.s3tc="res://.godot/imported/Fabric3000.jpg-df73ad39df6226592b5cba0bb3d0da2a.s3tc.ctex"
+path.s3tc="res://.godot/imported/Fabric3000.jpg-ce3de26578a5716a8c23fd1d20cbaeb7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/8AM/assets/models/sofa-g_52fbf620-4010-4611-93b5-9a46cd0aa22d/textures/Fabric3000.jpg"
-dest_files=["res://.godot/imported/Fabric3000.jpg-df73ad39df6226592b5cba0bb3d0da2a.s3tc.ctex"]
+source_file="res://scenes/10AM/textures/Fabric3000.jpg"
+dest_files=["res://.godot/imported/Fabric3000.jpg-ce3de26578a5716a8c23fd1d20cbaeb7.s3tc.ctex"]
 
 [params]
 
