@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c04a35ba4gio4"
-path.s3tc="res://.godot/imported/roughness.png-f8b05cfbf24cd85ebd9ea22ea3e369af.s3tc.ctex"
+path.s3tc="res://.godot/imported/tv_02_tv_out_Metallic.jpg-b5325c7b2e78fde7a96cce8e03d4c8d2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/8AM/assets/models/old-coffee-table_d21c5b21-1141-48f5-999e-ce50291cf46d/textures/roughness.png"
-dest_files=["res://.godot/imported/roughness.png-f8b05cfbf24cd85ebd9ea22ea3e369af.s3tc.ctex"]
+source_file="res://scenes/10AM/assets/models/slavic-tv_c02f3eac-97a1-49d4-8eb5-aa51516ba1d4/textures/tv_02_tv_out_Metallic.jpg"
+dest_files=["res://.godot/imported/tv_02_tv_out_Metallic.jpg-b5325c7b2e78fde7a96cce8e03d4c8d2.s3tc.ctex"]
 
 [params]
 

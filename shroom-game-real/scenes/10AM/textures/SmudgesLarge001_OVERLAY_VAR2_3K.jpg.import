@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cps1gy8yjlo8r"
-path.s3tc="res://.godot/imported/normal.png-4ab1c9984c241b88dd9d93598841d125.s3tc.ctex"
+path.s3tc="res://.godot/imported/SmudgesLarge001_OVERLAY_VAR2_3K.jpg-e9ad4157f47f01f2c9c89311ae282015.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/8AM/assets/models/old-coffee-table_d21c5b21-1141-48f5-999e-ce50291cf46d/textures/normal.png"
-dest_files=["res://.godot/imported/normal.png-4ab1c9984c241b88dd9d93598841d125.s3tc.ctex"]
+source_file="res://scenes/10AM/textures/SmudgesLarge001_OVERLAY_VAR2_3K.jpg"
+dest_files=["res://.godot/imported/SmudgesLarge001_OVERLAY_VAR2_3K.jpg-e9ad4157f47f01f2c9c89311ae282015.s3tc.ctex"]
 
 [params]
 
