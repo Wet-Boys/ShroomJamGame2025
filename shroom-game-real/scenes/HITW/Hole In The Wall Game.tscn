@@ -1,0 +1,187 @@
+[gd_scene load_steps=16 format=3 uid="uid://8awqfdjpqei6"]
+
+[ext_resource type="Script" uid="uid://b2ekqf23iydes" path="res://scenes/HITW/HoleInTheWallGame.cs" id="1_ddbat"]
+[ext_resource type="PackedScene" uid="uid://cib1elxwbyfpr" path="res://scenes/HITW/Contestants/Contestant 1.tscn" id="2_fewlc"]
+[ext_resource type="Script" uid="uid://bfopv1ynirse8" path="res://scenes/HITW/Drawing/MouseDraw.cs" id="2_rk4ln"]
+[ext_resource type="Script" uid="uid://hutdt2ctord0" path="res://Tv/GameStates/TvGameTimer.cs" id="3_3og3x"]
+[ext_resource type="PackedScene" uid="uid://b0qh8j15dsdod" path="res://scenes/HITW/Contestants/Contestant 2.tscn" id="3_3td4r"]
+[ext_resource type="PackedScene" uid="uid://v16w1jgh6trc" path="res://scenes/HITW/Stage/Stage.glb" id="3_gixxu"]
+[ext_resource type="Material" uid="uid://c20i4fc06gmfr" path="res://scenes/HITW/Drawing/Draw Cut Overlay.tres" id="4_gixxu"]
+[ext_resource type="Texture2D" uid="uid://dnctv2qdsms0v" path="res://scenes/Scoot Shoot/zapper-crosshair.svg" id="4_xpe22"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3og3x"]
+size = Vector3(4, 2, 4)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3og3x"]
+radius = 0.75
+height = 5.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_fewlc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fewlc"]
+size = Vector3(1, 1, 0.025)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fewlc"]
+bg_color = Color(0.000113828006, 0.00011382805, 0.00011382793, 1)
+draw_center = false
+border_width_left = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.2243011, 5.6601762e-05, 0.80448, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpe22"]
+bg_color = Color(0, 0.679688, 0.7331568, 1)
+border_width_left = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.2243011, 5.6601762e-05, 0.80448, 1)
+
+[sub_resource type="Environment" id="Environment_gixxu"]
+
+[node name="HoleInTheWallGame" type="Node3D"]
+script = ExtResource("1_ddbat")
+imageSize = Vector2i(128, 128)
+budgetMultiplier = 2.5
+contestantPrefabs = [ExtResource("2_fewlc"), ExtResource("3_3td4r")]
+metadata/_custom_type_script = "uid://b2ekqf23iydes"
+
+[node name="Completion Timer" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_3og3x")
+metadata/_custom_type_script = "uid://hutdt2ctord0"
+
+[node name="Stage Root" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25, -3.1)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Stage Root"]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 4.4394665, 3)
+light_energy = 10.051
+shadow_enabled = true
+spot_range = 10.0
+
+[node name="Stage" type="StaticBody3D" parent="Stage Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Stage" parent="Stage Root/Stage" instance=ExtResource("3_gixxu")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Stage Root/Stage"]
+shape = SubResource("BoxShape3D_3og3x")
+
+[node name="Contestant Spawn" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25, -3.1)
+
+[node name="Contestant Body" type="RigidBody3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25, -3.1)
+collision_layer = 5
+collision_mask = 5
+freeze = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Contestant Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("CapsuleShape3D_3og3x")
+
+[node name="Contestant Root" type="Node3D" parent="Contestant Body"]
+unique_name_in_owner = true
+
+[node name="HITW Camera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+fov = 90.0
+
+[node name="Wall" type="StaticBody3D" parent="HITW Camera"]
+unique_name_in_owner = true
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -5)
+collision_layer = 68
+collision_mask = 8
+constant_linear_velocity = Vector3(0, 0, -100)
+
+[node name="Wall Quad" type="MeshInstance3D" parent="HITW Camera/Wall"]
+unique_name_in_owner = true
+material_override = ExtResource("4_gixxu")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_fewlc")
+skeleton = NodePath("../../..")
+
+[node name="Wall CollisionShape" type="CollisionShape3D" parent="HITW Camera/Wall"]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_fewlc")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="HITW Camera"]
+visible = false
+light_energy = 7.505
+spot_angle = 89.99
+
+[node name="Mouse Ray" type="RayCast3D" parent="HITW Camera"]
+unique_name_in_owner = true
+target_position = Vector3(0, 0, -20)
+collision_mask = 64
+
+[node name="UI Root" type="Control" parent="HITW Camera"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ZapperCrosshair" type="Sprite2D" parent="HITW Camera/UI Root"]
+unique_name_in_owner = true
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("4_xpe22")
+
+[node name="MouseDraw" type="Control" parent="HITW Camera/UI Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_rk4ln")
+brushRadius = 7
+maxBrushRadius = 32
+metadata/_custom_type_script = "uid://bfopv1ynirse8"
+
+[node name="TextureRect" type="TextureRect" parent="HITW Camera/UI Root/MouseDraw"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Hud Elements" type="Control" parent="HITW Camera/UI Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Usage Bar" type="ProgressBar" parent="HITW Camera/UI Root/Hud Elements"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 16.0
+offset_top = -163.5
+offset_right = 48.0
+offset_bottom = 136.5
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_fewlc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xpe22")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gixxu")

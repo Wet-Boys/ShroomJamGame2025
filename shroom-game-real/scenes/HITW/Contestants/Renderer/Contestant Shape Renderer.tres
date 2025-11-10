@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://vqtd6t7837p3"]
+
+[ext_resource type="Shader" uid="uid://irujbo7absi4" path="res://scenes/HITW/Contestants/Renderer/Contestant Shape Renderer.gdshader" id="1_duopr"]
+
+[resource]
+shader = ExtResource("1_duopr")

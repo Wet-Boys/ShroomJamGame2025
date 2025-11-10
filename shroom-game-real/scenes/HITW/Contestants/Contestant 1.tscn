@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cib1elxwbyfpr"]
+
+[ext_resource type="PackedScene" uid="uid://8dvdxvspd1ir" path="res://scenes/HITW/Contestants/Renderer/Base Contestant Prefab.tscn" id="1_8qb8h"]
+[ext_resource type="PackedScene" uid="uid://dwxs4c8kn5uiu" path="res://Player/Model/Little John.glb" id="2_cqasu"]
+
+[node name="Contestant 1" instance=ExtResource("1_8qb8h")]
+
+[node name="Little John" parent="Contestant Render Viewport/Contestant Render Root" index="0" instance=ExtResource("2_cqasu")]
