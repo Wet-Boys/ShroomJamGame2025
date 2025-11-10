@@ -2,20 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8qqlhvnbtokn"
-path="res://.godot/imported/tv_02_tv_screen_Metallic.jpg-6e4d0c2af44f58c7e2dd1a0e750cd5bf.ctex"
+uid="uid://nocfcoh3tooy"
+path.s3tc="res://.godot/imported/WoodFine22_GLOSS_1K.jpg-775df98bb12aa4f70d4e98c092b4a129.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://scenes/10AM/assets/models/slavic-tv_c02f3eac-97a1-49d4-8eb5-aa51516ba1d4/textures/tv_02_tv_screen_Metallic.jpg"
-dest_files=["res://.godot/imported/tv_02_tv_screen_Metallic.jpg-6e4d0c2af44f58c7e2dd1a0e750cd5bf.ctex"]
+source_file="res://scenes/8AM/assets/models/wall-book-shelf_be5ee38a-b1ce-4542-ad08-6e3505e479f0/textures/WoodFine22_GLOSS_1K.jpg"
+dest_files=["res://.godot/imported/WoodFine22_GLOSS_1K.jpg-775df98bb12aa4f70d4e98c092b4a129.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

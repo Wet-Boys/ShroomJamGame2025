@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwggvyvscbt8o"
-path.s3tc="res://.godot/imported/WoodFineDark003_GLOSS_3K.jpg-a5781f46335c6ca5b97979b37153c8cd.s3tc.ctex"
+uid="uid://bkqdns5s5ngpr"
+path.s3tc="res://.godot/imported/WoodFineDark003_GLOSS_3K.jpg-a56afbda912cafba176b4f9fb0e15b46.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/10AM/textures/WoodFineDark003_GLOSS_3K.jpg"
-dest_files=["res://.godot/imported/WoodFineDark003_GLOSS_3K.jpg-a5781f46335c6ca5b97979b37153c8cd.s3tc.ctex"]
+source_file="res://scenes/8AM/assets/models/tv-cabinet_afb81eab-f06d-463b-8af0-d2d8d77ca527/textures/WoodFineDark003_GLOSS_3K.jpg"
+dest_files=["res://.godot/imported/WoodFineDark003_GLOSS_3K.jpg-a56afbda912cafba176b4f9fb0e15b46.s3tc.ctex"]
 
 [params]
 
