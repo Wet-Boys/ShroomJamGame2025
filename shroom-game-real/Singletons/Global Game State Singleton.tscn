@@ -4,5 +4,4 @@
 
 [node name="GlobalGameStateSingleton" type="Node"]
 script = ExtResource("1_ej1i1")
-InBaitMode = false
 metadata/_custom_type_script = "uid://btsiew8cw4xxi"

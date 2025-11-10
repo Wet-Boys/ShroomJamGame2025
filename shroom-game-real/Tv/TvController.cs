@@ -34,6 +34,10 @@ public partial class TvController : Node
 
     private bool _isActive;
     public BaseTvGameState GameState { get; private set; }
+    public static TvController instance;
+
+    [Signal]
+    public delegate void ExitTvEventHandler();
 
     public override void _Ready()
     {
@@ -44,7 +48,8 @@ public partial class TvController : Node
         
         _mouseArea.MouseEntered += MouseEnteredScreen;
         _mouseArea.MouseExited += MouseExitedScreen;
-        _mouseArea.InputEvent += MouseInputEvent; 
+        _mouseArea.InputEvent += MouseInputEvent;
+        instance = this;
     }
 
     public override void _EnterTree()
@@ -67,6 +72,7 @@ public partial class TvController : Node
 
     public void ExitTvState()
     {
+        EmitSignalExitTv();
         _isActive = false;
     }
     
@@ -139,7 +145,7 @@ public partial class TvController : Node
         }
     }
 
-    public void SetTvSubWorld(PackedScene scene)
+    public Node SetTvSubWorld(PackedScene scene)
     {
         ClearTvSubWorld();
         
@@ -150,6 +156,7 @@ public partial class TvController : Node
         GameState.OnExitTv += OnGameStateExit;
         
         UpdateViewport();
+        return instance;
     }
 
     private void OnGameStateExit()

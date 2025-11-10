@@ -31,10 +31,12 @@ public partial class PlayerController : CharacterBody3D
             return field;
         }
     }
+    public static PlayerController instance;
     
     public override void _Ready()
     {
         CurrentState = initialState;
+        instance = this;
     }
 
     public override void _Input(InputEvent @event)

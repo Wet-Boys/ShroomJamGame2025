@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://7qp7ykwx0m6o"]
+
+[node name="Label3D" type="Label3D"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+text = "8AM
+
+
+
+"
+font_size = 642
