@@ -24,6 +24,13 @@
       <Content Include="Interactables\Selected Outline Stencil Write.tres" />
       <Content Include="Player\Player Prefab.tscn" />
       <Content Include="Player\PlayerController.cs.uid" />
+      <Content Include="scenes\HITW\Drawing\Draw Cut Overlay.gdshader" />
+      <Content Include="scenes\HITW\Drawing\Draw Cut Overlay.gdshader.uid" />
+      <Content Include="scenes\HITW\Drawing\Draw Cut Overlay.tres" />
+      <Content Include="scenes\HITW\Drawing\MouseDraw.cs.uid" />
+      <Content Include="scenes\HITW\HitwContestant.cs.uid" />
+      <Content Include="scenes\HITW\Hole In The Wall Game.tscn" />
+      <Content Include="scenes\HITW\HoleInTheWallGame.cs.uid" />
     </ItemGroup>
     
 </Project>

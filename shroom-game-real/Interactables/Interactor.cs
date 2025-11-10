@@ -84,6 +84,8 @@ public partial class Interactor : RayCast3D
         var labelOffset = screenToWindowDir * ((labelSize / 2f) + (Vector2.One * _interactLabel.padding));
         
         _interactLabel.SetLabelPosition(pointOnBounds + labelOffset);
+
+        _interactLabel.SetLinePoints(_interactLabel.GlobalPosition, screenBoundsCenter);
     }
 
     private void UpdateLabelVisibility()

@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d22ajs35wxhmd"
-path="res://.godot/imported/tv_02_tv_screen_Roughness.exr-adf187aadff74231b85c77a230ea1a70.ctex"
+path.bptc="res://.godot/imported/tv_02_tv_screen_Roughness.exr-adf187aadff74231b85c77a230ea1a70.bptc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/8AM/assets/models/slavic-tv_c02f3eac-97a1-49d4-8eb5-aa51516ba1d4/textures/tv_02_tv_screen_Roughness.exr"
-dest_files=["res://.godot/imported/tv_02_tv_screen_Roughness.exr-adf187aadff74231b85c77a230ea1a70.ctex"]
+dest_files=["res://.godot/imported/tv_02_tv_screen_Roughness.exr-adf187aadff74231b85c77a230ea1a70.bptc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
