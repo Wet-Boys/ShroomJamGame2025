@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cube2qkpjmphq"
-path.s3tc="res://.godot/imported/tv_02_tv_screen_BaseColor.jpg-0fdcb58bb09fd480a1b76452f372288b.s3tc.ctex"
+uid="uid://d18dqr61u8oa3"
+path.s3tc="res://.godot/imported/tv_02_tv_screen_BaseColor.jpg-3ee44e78b4d249d357dd99f29b7b2901.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/10AM/textures/tv_02_tv_screen_BaseColor.jpg"
-dest_files=["res://.godot/imported/tv_02_tv_screen_BaseColor.jpg-0fdcb58bb09fd480a1b76452f372288b.s3tc.ctex"]
+source_file="res://scenes/8AM/assets/models/slavic-tv_c02f3eac-97a1-49d4-8eb5-aa51516ba1d4/textures/tv_02_tv_screen_BaseColor.jpg"
+dest_files=["res://.godot/imported/tv_02_tv_screen_BaseColor.jpg-3ee44e78b4d249d357dd99f29b7b2901.s3tc.ctex"]
 
 [params]
 

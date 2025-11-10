@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c20i4fc06gmfr"]
+
+[ext_resource type="Shader" uid="uid://daxuin17fq148" path="res://scenes/HITW/Drawing/Draw Cut Overlay.gdshader" id="1_rlj8a"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_rlj8a")
+shader_parameter/alpha = 0.90999997965968
+shader_parameter/hint_visibility = 0.96999997831856
+shader_parameter/show_mistakes = false
+shader_parameter/mistakes_color = Color(1, 0, 0, 1)

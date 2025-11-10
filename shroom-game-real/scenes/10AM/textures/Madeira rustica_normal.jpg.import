@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpkkgu23oooir"
-path.s3tc="res://.godot/imported/Madeira rustica_normal.jpg-330c99fbd580d5c92b40962890c6c90c.s3tc.ctex"
+uid="uid://c2fk3h4dumx21"
+path.s3tc="res://.godot/imported/Madeira rustica_normal.jpg-6f5a995489bbcad7902be513df89aa1d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://scenes/10AM/textures/Madeira rustica_normal.jpg"
-dest_files=["res://.godot/imported/Madeira rustica_normal.jpg-330c99fbd580d5c92b40962890c6c90c.s3tc.ctex"]
+source_file="res://scenes/8AM/assets/models/square-wood-side_efb9a096-d813-4f27-8fff-02c65a5d69a3/textures/Madeira rustica_normal.jpg"
+dest_files=["res://.godot/imported/Madeira rustica_normal.jpg-6f5a995489bbcad7902be513df89aa1d.s3tc.ctex"]
 
 [params]
 
@@ -27,7 +27,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://scenes/8AM/textures/Madeira rustica_normal.jpg"
+roughness/src_normal="res://scenes/8AM/assets/models/square-wood-side_efb9a096-d813-4f27-8fff-02c65a5d69a3/textures/Madeira rustica_normal.jpg"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

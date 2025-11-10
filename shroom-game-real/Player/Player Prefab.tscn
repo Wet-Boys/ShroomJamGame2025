@@ -45,17 +45,17 @@ metadata/_custom_type_script = "uid://byjq1fe68ukgj"
 [node name="Player Model" parent="Visual Root" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Player Model/Player/Armature" index="0"]
-bones/13/position = Vector3(0.69529736, 1.5009025, -0.06312945)
-bones/30/position = Vector3(-0.7130239, 1.5457517, -0.063129455)
-bones/47/position = Vector3(0, 1.1694953, 0)
-bones/49/rotation = Quaternion(-0.5273979, -0.11315577, -0.17279407, 0.8241296)
-bones/50/rotation = Quaternion(-0.011850196, 1.0477382e-09, 0.32724088, 0.94486666)
-bones/52/rotation = Quaternion(-0.5273979, 0.113156006, 0.17279425, 0.8241295)
-bones/53/rotation = Quaternion(-0.011850177, -1.08266285e-08, -0.32724118, 0.9448666)
-bones/58/rotation = Quaternion(0.018884113, 0.3661627, -0.4654522, 0.80555737)
-bones/59/rotation = Quaternion(0.32569596, 0.0007190631, -0.07056224, 0.94283766)
-bones/64/rotation = Quaternion(-0.03275585, -0.39288136, 0.41961068, 0.8176174)
-bones/65/rotation = Quaternion(0.41272298, -0.0006913705, 0.08941668, 0.9064568)
+bones/13/position = Vector3(0.6952974, 1.5053148, -0.063129455)
+bones/30/position = Vector3(-0.71302396, 1.553607, -0.063129455)
+bones/47/position = Vector3(0, 1.1702987, 0)
+bones/49/rotation = Quaternion(-0.5277145, -0.11197132, -0.17097373, 0.8244683)
+bones/50/rotation = Quaternion(-0.011740994, 9.895302e-10, 0.32422513, 0.9459071)
+bones/52/rotation = Quaternion(-0.5277145, 0.11197174, 0.17097414, 0.8244681)
+bones/53/rotation = Quaternion(-0.011740992, -1.08848335e-08, -0.324226, 0.9459069)
+bones/58/rotation = Quaternion(0.014275459, 0.36873698, -0.46197328, 0.80648005)
+bones/59/rotation = Quaternion(0.33420202, 0.00071669975, -0.072405085, 0.939716)
+bones/64/rotation = Quaternion(-0.040660575, -0.39693978, 0.41312128, 0.8186063)
+bones/65/rotation = Quaternion(0.4262311, -0.0006863517, 0.09234325, 0.8998886)
 
 [node name="Jimmy" parent="Visual Root/Player Model/Player/Armature/Skeleton3D" index="0"]
 layers = 2
@@ -146,6 +146,7 @@ offset_bottom = 60.0
 pivot_offset = Vector2(122, 29)
 theme_override_styles/panel = SubResource("StyleBoxFlat_qfgdp")
 script = ExtResource("9_nv1sy")
+padding = 48.0
 
 [node name="MarginContainer" type="MarginContainer" parent="UI Root/Interaction Overlay/Interact Label"]
 layout_mode = 2
@@ -176,6 +177,7 @@ vertical_alignment = 2
 [node name="Pause Menu" parent="UI Root" instance=ExtResource("9_thgmb")]
 visible = false
 layout_mode = 1
+mouse_filter = 1
 
 [editable path="Visual Root/Player Model"]
 [editable path="Visual Root/Player Model/Player"]

@@ -43,8 +43,6 @@ public partial class MouseReleaser : Node
 
     public void UpdateMouseState()
     {
-        GD.Print(_numberOfRequests);
-
         if (_numberOfRequests > 0)
         {
             Input.MouseMode = Input.MouseModeEnum.Visible;

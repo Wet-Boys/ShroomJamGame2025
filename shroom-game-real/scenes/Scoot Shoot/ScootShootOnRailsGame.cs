@@ -137,10 +137,10 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
         if (TimeScale <= 0)
             return;
         
-        if (@event is InputEventMouseMotion mouseMotion)
+        if (@event is InputEventMouse mouseEvent)
         {
-            _zapperRayCast.GlobalPosition = _camera.ProjectRayOrigin(mouseMotion.Position);
-            _zapperRayCast.TargetPosition = _zapperRayCast.GlobalPosition + _camera.ProjectRayNormal(mouseMotion.Position) * _screenZapper.maxZapperRange;
+            _zapperRayCast.GlobalPosition = _camera.ProjectRayOrigin(mouseEvent.Position);
+            _zapperRayCast.TargetPosition = _zapperRayCast.GlobalPosition + _camera.ProjectRayNormal(mouseEvent.Position) * _screenZapper.maxZapperRange;
             _zapperRayCast.ForceRaycastUpdate();
         }
         
