@@ -53,6 +53,7 @@ public partial class ObbyPlayer : Node3D
             else
             {
                 GD.Print("YOU WIN!");
+                _gameState.FinishLevel();
             }
         }
         else if (body is BigRedBall)
@@ -67,9 +68,9 @@ public partial class ObbyPlayer : Node3D
         }
         else
         {
-            _ragdollTimer = 0;
             if (ragdollBody.Freeze)
             {
+                _ragdollTimer = 0;
                 BeginRagdoll();
                 if (body is ObbyHitbox hitbox)
                 {

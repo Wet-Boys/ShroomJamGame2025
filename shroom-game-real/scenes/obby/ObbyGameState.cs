@@ -13,7 +13,7 @@ public partial class ObbyGameState : BaseTvGameState
     public override void _Ready()
     {
         CanActivate = true;
-        SpawnLevel();//TODO move this to a better spot
+        // SpawnLevel();//TODO move this to a better spot
     }
 
     public override void OnEnterState()
@@ -30,5 +30,11 @@ public partial class ObbyGameState : BaseTvGameState
             specificLevel = rng.RandiRange(1, _potentialLevels.Count - 1);
         }
         AddChild(_potentialLevels[specificLevel].Instantiate<Node3D>());
+    }
+
+    public void FinishLevel()
+    {
+        ExitTv();
+        CanActivate = false;
     }
 }
