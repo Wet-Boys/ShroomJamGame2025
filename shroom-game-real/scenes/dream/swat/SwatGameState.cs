@@ -9,6 +9,7 @@ public partial class SwatGameState : BaseTvGameState
     {
         base._Ready();
         CanActivate = true;
+        infoText = "Swat!";
     }
 
     public override void OnEnterState()

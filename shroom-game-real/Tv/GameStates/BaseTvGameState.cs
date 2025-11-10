@@ -13,6 +13,7 @@ public partial class BaseTvGameState : Node3D
     public bool CanActivate { get; protected set; }
     
     public float TimeScale => GlobalGameState.Instance.GameTimeScale;
+    public string infoText;
 
     [Signal]
     public delegate void OnExitTvEventHandler();

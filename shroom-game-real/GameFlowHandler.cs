@@ -5,6 +5,7 @@ using Godot.Collections;
 using ShroomGameReal.Player;
 using ShroomGameReal.scenes.obby;
 using ShroomGameReal.Tv;
+using ShroomGameReal.Tv.GameStates;
 using Array = Godot.Collections.Array;
 
 namespace ShroomGameReal;
@@ -38,7 +39,7 @@ public partial class GameFlowHandler : Node
     public Godot.Collections.Dictionary<CurrentTime, PackedScene> tvGameList = new()
     {
         { CurrentTime.Time8Am,  (PackedScene)GD.Load("res://scenes/Scoot Shoot/Scoot Shoot Game.tscn")},
-        //{ CurrentTime.Time10Am,  (PackedScene)GD.Load("")},     //cut out minigame
+        { CurrentTime.Time10Am,  (PackedScene)GD.Load("res://scenes/HITW/Hole In The Wall Game.tscn")},
         { CurrentTime.Time12Pm,  (PackedScene)GD.Load("res://scenes/froggers/frogger.tscn")},
         { CurrentTime.Time6Pm,  (PackedScene)GD.Load("res://scenes/obby/obby.tscn")},
     };
@@ -51,6 +52,7 @@ public partial class GameFlowHandler : Node
     private Node3D _currentScene;
     private Node3D _currentGame;
     private CurrentTime _currentTime;
+    [Export] private Label _label;
     public override void _EnterTree()
     {
         instance = this;
@@ -123,6 +125,7 @@ public partial class GameFlowHandler : Node
                 lastMicrogames.RemoveAt(0);
             }
             _currentGame = (Node3D)TvController.instance.SetTvSubWorld(microGames[randomGame]);
+            _label.Text = ((BaseTvGameState)_currentGame).infoText;
         }
         else
         {

@@ -9,6 +9,7 @@ public partial class FireHopGameState : BaseTvGameState
     {
         base._Ready();
         CanActivate = true;
+        infoText = "Jump Over!";
     }
     public override void OnEnterState()
     {

@@ -30,6 +30,7 @@ public partial class FroggerGameState : BaseTvGameState
     {
         base._Ready();
         CanActivate = true;
+        infoText = "Get to the Finish!";
     }
 
     public override void OnEnterState()
