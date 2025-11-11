@@ -7,13 +7,16 @@ public partial class FireHopAvatar : Node3D
     public int health = 3;
     public int score = 0;
     private FireHopGameState _gameState;
+    [Export] public FireHopVisuals visualHandler;
 
-    private bool Grounded => _rigidBody3D.Position.Y < -1.4f;
+    public bool Grounded => _rigidBody3D.Position.Y < -1.4f;
 
     public override void _Ready()
     {
         base._Ready();
         _gameState = GetParent<FireHopGameState>();
+        visualHandler.player = _rigidBody3D;
+        visualHandler.avatar = this;
     }
 
     public void MoveLeft()
@@ -54,5 +57,11 @@ public partial class FireHopAvatar : Node3D
                 MoveRight();
             }   
         }
+    }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        visualHandler.RotateVisuals(delta, _rigidBody3D.LinearVelocity, false);
     }
 }

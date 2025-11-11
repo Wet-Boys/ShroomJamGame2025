@@ -1,20 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://7ecyirh0eyap"]
+[gd_scene load_steps=6 format=3 uid="uid://7ecyirh0eyap"]
 
 [ext_resource type="Script" uid="uid://ckkrkpbikrq4n" path="res://scenes/obby/ObbyPlayer.cs" id="1_8cktp"]
+[ext_resource type="PackedScene" uid="uid://dpao73iqwvb5m" path="res://scenes/obby/visuals_root.tscn" id="2_pgjcu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bn54t"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_t1i3u"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_wsa02"]
+radius = 0.29
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t1i3u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_txav5"]
-radius = 0.51
+radius = 0.29
 height = 2.01
 
-[node name="ObbyPlayer" type="Node3D" node_paths=PackedStringArray("cameraContainer", "cameraX", "cameraY", "cameraPosition", "camera", "cameraRay", "ragdollBody", "characterBody", "hurtBox")]
+[node name="ObbyPlayer" type="Node3D" node_paths=PackedStringArray("cameraContainer", "cameraX", "cameraY", "cameraPosition", "camera", "cameraRay", "ragdollBody", "characterBody", "hurtBox", "visualHandler")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
 script = ExtResource("1_8cktp")
 cameraContainer = NodePath("CharacterBody/CameraContainer")
@@ -26,6 +24,7 @@ cameraRay = NodePath("CharacterBody/CameraContainer/CameraY/CameraX/ShapeCast3D"
 ragdollBody = NodePath("RigidBody3D")
 characterBody = NodePath("CharacterBody")
 hurtBox = NodePath("CharacterBody/Area3D")
+visualHandler = NodePath("CharacterBody/Visuals Root")
 
 [node name="CharacterBody" type="CharacterBody3D" parent="."]
 collision_layer = 8
@@ -36,15 +35,7 @@ axis_lock_angular_z = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody"]
 shape = SubResource("CapsuleShape3D_bn54t")
 
-[node name="Visuals Root" type="Node3D" parent="CharacterBody"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody/Visuals Root"]
-mesh = SubResource("CapsuleMesh_t1i3u")
-skeleton = NodePath("../..")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody/Visuals Root/MeshInstance3D"]
-transform = Transform3D(0.2817515, 0, 0, 0, -2.5657215e-08, -0.58696866, 0, 0.58696866, -2.5657215e-08, 0, 0.38651848, -0.59074473)
-mesh = SubResource("CapsuleMesh_wsa02")
+[node name="Visuals Root" parent="CharacterBody" instance=ExtResource("2_pgjcu")]
 
 [node name="CameraContainer" type="Node3D" parent="CharacterBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
