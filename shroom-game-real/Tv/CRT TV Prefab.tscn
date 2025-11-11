@@ -1,22 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://cv1ufabh0k63e"]
+[gd_scene load_steps=12 format=3 uid="uid://cv1ufabh0k63e"]
 
 [ext_resource type="Script" uid="uid://eyhyubl50qtf" path="res://Tv/TvInteractable.cs" id="1_ifqpe"]
 [ext_resource type="PackedScene" uid="uid://3xmqky200xr8" path="res://Tv/Model/CRT.glb" id="1_r0ehp"]
 [ext_resource type="Script" uid="uid://byygvsgk812la" path="res://Tv/TvController.cs" id="2_bhbdq"]
 [ext_resource type="Material" uid="uid://csgbj47b57ahc" path="res://Tv/Tv Screen Viewport mat.tres" id="3_nsevw"]
 [ext_resource type="PackedScene" uid="uid://buam6xk2w03da" path="res://scenes/dream/avoid balls/avoid_balls.tscn" id="4_hnmqc"]
+[ext_resource type="PackedScene" uid="uid://jcij2hin3jyb" path="res://scenes/10AM/Slavic Tv.glb" id="5_l1frq"]
 [ext_resource type="Material" uid="uid://r5xrehqr4it" path="res://Tv/CRT TV Prefab Background Fog Material.tres" id="6_hnmqc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhbdq"]
-size = Vector3(4.6536407, 3.4865112, 4.226575)
+size = Vector3(5.8686314, 4.024925, 3.9865117)
 
 [sub_resource type="World3D" id="World3D_gxnsj"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_nsevw"]
-size = Vector2(4, 3)
+size = Vector2(4.07, 3.26)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nsevw"]
-size = Vector3(4, 3, 0.5)
+size = Vector3(4.081482, 3.261322, 0.5)
 
 [node name="CRT TV" type="StaticBody3D"]
 process_mode = 3
@@ -34,16 +35,20 @@ screenViewportMaterial = ExtResource("3_nsevw")
 debugSceneToLoad = ExtResource("4_hnmqc")
 metadata/_custom_type_script = "uid://byygvsgk812la"
 
-[node name="Model" parent="." instance=ExtResource("1_r0ehp")]
+[node name="Model" parent="." instance=ExtResource("5_l1frq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5655675, -2, -0.46911573)
 
 [node name="Background Fog" type="FogVolume" parent="Model"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.4532173)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5655675, 2, -1.0315812)
 size = Vector3(12, 12, 4.770499)
 material = ExtResource("6_hnmqc")
 
+[node name="Old Model" parent="." instance=ExtResource("1_r0ehp")]
+visible = false
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003364563, 0.0045776367, -0.6933837)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.564559, 0.015087128, -0.43206286)
 shape = SubResource("BoxShape3D_bhbdq")
 
 [node name="SubWorld" type="SubViewport" parent="."]
@@ -58,7 +63,7 @@ gizmo_extents = 1.0
 
 [node name="Screen Quad" type="MeshInstance3D" parent="."]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.4483209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019680023, 0.019679546, 1.5495768)
 layers = 524288
 mesh = SubResource("QuadMesh_nsevw")
 
@@ -69,4 +74,5 @@ collision_layer = 64
 input_capture_on_drag = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Screen Quad/Mouse Interaction Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00015258789, -0.0036773682, 0)
 shape = SubResource("BoxShape3D_nsevw")

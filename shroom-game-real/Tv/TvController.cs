@@ -41,7 +41,7 @@ public partial class TvController : Node
 
     public override void _Ready()
     {
-        _tvMeshInstance = GetNode<MeshInstance3D>("../Model/Cube");
+        _tvMeshInstance = GetNode<MeshInstance3D>("../Model/Slavic Tv2/Slavic_Tv_Mesh");
         _viewport = GetNode<SubViewport>("%SubWorld");
         _mouseArea = GetNode<Area3D>("%Mouse Interaction Area");
         _screenQuad = GetNode<MeshInstance3D>("%Screen Quad");
