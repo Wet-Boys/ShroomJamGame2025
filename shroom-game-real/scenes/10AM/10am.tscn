@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://ckbq3521r8wcp"]
+[gd_scene load_steps=9 format=3 uid="uid://ckbq3521r8wcp"]
 
-[ext_resource type="PackedScene" uid="uid://ckipkwdm0nqu0" path="res://scenes/10AM/8AM Room.glb" id="1_nosrv"]
-[ext_resource type="PackedScene" uid="uid://ith6vil7fils" path="res://scenes/10AM/Room.glb" id="2_0d8jj"]
+[ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_632cx"]
 [ext_resource type="PackedScene" uid="uid://c3lqsowth1x4l" path="res://scenes/overworld/OverworldEnvironment Prefab.tscn" id="3_8qw3q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jskvd"]
@@ -40,40 +39,37 @@ size = Vector3(0.44769287, 12.780457, 20)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="8AM Room" parent="." instance=ExtResource("1_nosrv")]
-visible = false
+[node name="Room-core" parent="." instance=ExtResource("1_632cx")]
+transform = Transform3D(1.3074495, 0, 0, 0, 1.3074495, 0, 0, 0, 1.3074495, 0.481, 0.79, -1.821)
 
-[node name="Room" parent="." instance=ExtResource("2_0d8jj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48087692, 0.7896087, -1.8205075)
-
-[node name="OverworldEnvironment" parent="Room" instance=ExtResource("3_8qw3q")]
+[node name="OverworldEnvironment" parent="Room-core" instance=ExtResource("3_8qw3q")]
 environment = SubResource("Environment_cy5ao")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.48087692, 8.88632, -0.93830943)
+[node name="OmniLight3D" type="OmniLight3D" parent="Room-core"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.675929, -2.758817)
 shadow_enabled = true
 distance_fade_enabled = true
 omni_range = 27.680902
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Room"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.036091, -0.057683945, -3.254026)
+[node name="StaticBody3D" type="StaticBody3D" parent="Room-core"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.555214, 0.7319248, -2.6694827)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room-core/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.788208, -1.276278, 2.5)
 shape = SubResource("BoxShape3D_8edld")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="Room/StaticBody3D"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Room-core/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.788208, 5.2993164, 12.53714)
 shape = SubResource("BoxShape3D_nosrv")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="Room/StaticBody3D"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Room-core/StaticBody3D"]
 transform = Transform3D(1.3921036, 0, 0, 0, 1.3921036, 0, 0, 0, 1.3921036, 4.788208, 4.6606445, -7.650255)
 shape = SubResource("BoxShape3D_nosrv")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Room/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Room-core/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.861778, 5.8902283, 2.5)
 shape = SubResource("BoxShape3D_8qw3q")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="Room/StaticBody3D"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Room-core/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.262909, 4.6348267, 2.5)
 shape = SubResource("BoxShape3D_8qw3q")
