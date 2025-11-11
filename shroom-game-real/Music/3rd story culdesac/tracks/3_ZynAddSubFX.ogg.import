@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cl3ssd48jcimb"
+path="res://.godot/imported/3_ZynAddSubFX.ogg-1bd6a45d4b5298c4261ffa058d94d00c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/3rd story culdesac/tracks/3_ZynAddSubFX.ogg"
+dest_files=["res://.godot/imported/3_ZynAddSubFX.ogg-1bd6a45d4b5298c4261ffa058d94d00c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

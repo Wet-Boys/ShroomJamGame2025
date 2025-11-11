@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3lqsowth1x4l"]
+[gd_scene load_steps=3 format=3 uid="uid://c3lqsowth1x4l"]
 
 [ext_resource type="Environment" uid="uid://cj1t2w7bnngn7" path="res://scenes/overworld/Overworld Environment.tres" id="1_h8amo"]
+[ext_resource type="Compositor" uid="uid://cq65g3tth3i33" path="res://Camera/Overworld Compositor.tres" id="2_q6vvh"]
 
 [node name="OverworldEnvironment" type="WorldEnvironment"]
 environment = ExtResource("1_h8amo")
+compositor = ExtResource("2_q6vvh")

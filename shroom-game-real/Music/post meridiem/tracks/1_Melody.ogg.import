@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bext72w3xfi22"
+path="res://.godot/imported/1_Melody.ogg-d160a16c864dd2dbd79d33d15d3b09bb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/post meridiem/tracks/1_Melody.ogg"
+dest_files=["res://.godot/imported/1_Melody.ogg-d160a16c864dd2dbd79d33d15d3b09bb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

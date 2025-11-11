@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=5 format=3 uid="uid://dytmv55wyn4g7"]
+
+[ext_resource type="AudioStream" uid="uid://bext72w3xfi22" path="res://Music/post meridiem/tracks/1_Melody.ogg" id="1_wxmf3"]
+[ext_resource type="AudioStream" uid="uid://cxjbnfhabobmf" path="res://Music/post meridiem/tracks/2_ZynAddSubFX.ogg" id="2_ekrj2"]
+[ext_resource type="AudioStream" uid="uid://bketkkdxv1v68" path="res://Music/post meridiem/tracks/3_Baseline.ogg" id="3_p8jwf"]
+[ext_resource type="AudioStream" uid="uid://byfg5d1vjnbmb" path="res://Music/post meridiem/tracks/4_Drums.ogg" id="4_ruxns"]
+
+[resource]
+stream_count = 4
+stream_0/stream = ExtResource("1_wxmf3")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_ekrj2")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("3_p8jwf")
+stream_2/volume = 0.0
+stream_3/stream = ExtResource("4_ruxns")
+stream_3/volume = 0.0
