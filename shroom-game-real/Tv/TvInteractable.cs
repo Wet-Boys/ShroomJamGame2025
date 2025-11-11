@@ -11,6 +11,8 @@ public partial class TvInteractable : InteractableStaticBody3D
 
     public override bool CanInteract => TvController.CanActivateGameState;
     public static TvInteractable instance;
+    [Signal]
+    public delegate void InteractedEventHandler();
 
     public override void _Ready()
     {
@@ -23,10 +25,6 @@ public partial class TvInteractable : InteractableStaticBody3D
     {
         GD.Print("TV Interact Attempted");
 
-        var tvGameState = player.AllPlayerStates.tvGame;
-
-        tvGameState.tvController = TvController;
-        
-        player.CurrentState = tvGameState;
+        EmitSignalInteracted();
     }
 }
