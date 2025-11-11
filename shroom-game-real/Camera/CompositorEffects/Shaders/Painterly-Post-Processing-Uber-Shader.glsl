@@ -15,7 +15,7 @@ layout(set = 0, binding = 0) uniform ParametersUniform {
 // Texture Inputs
 ///////////////////////
 layout(set = 1, binding = 0) uniform sampler2D src_screen_texture;
-layout(rgba16f, set = 1, binding = 1) uniform image2D depth_stencil_texture;
+layout(set = 1, binding = 1) uniform sampler2D depth_stencil_texture;
 layout(rgba16f, set = 1, binding = 2) uniform image2D dst_screen_texture;
 
 ///////////////////////
@@ -188,9 +188,7 @@ void main() {
             finalColor = sectorAvgColors[i];
         }
     }
-    
-    vec4 depth = imageLoad(depth_stencil_texture, id);
-    
+        
     vec4 final_result = vec4(finalColor, 1.0);
-    imageStore(dst_screen_texture, id, vec4(depth.g * 100));
+    imageStore(dst_screen_texture, id, final_result);
 }

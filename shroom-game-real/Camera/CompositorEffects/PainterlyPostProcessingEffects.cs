@@ -115,10 +115,10 @@ public partial class PainterlyPostProcessingEffects : BaseCompositorEffect
             var sceneDepthStencilTexture = sceneBuffers.GetDepthLayer(view);
             var sceneDepthStencilUniform = new RDUniform
             {
-                UniformType = RenderingDevice.UniformType.Image,
+                UniformType = RenderingDevice.UniformType.SamplerWithTexture,
                 Binding = 1
             };
-            // sceneDepthStencilUniform.AddId(_screenTextureSampler);
+            sceneDepthStencilUniform.AddId(_screenTextureSampler);
             sceneDepthStencilUniform.AddId(sceneDepthStencilTexture);
 
             var resultTextureUniform = new RDUniform
