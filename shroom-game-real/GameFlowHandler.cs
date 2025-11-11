@@ -72,6 +72,7 @@ public partial class GameFlowHandler : Node
         {
             case CurrentTime.Time8Am:
                 PlayerController.instance.visualHandler.CoughingBaby();
+                SetObjectiveText("Put on the cool hole in the wall show");
                 LoadScene(CurrentTime.Time10Am);
                 ((HoleInTheWallGame)_currentGame).SetOrderAndStart([0,1]);
                 break;
@@ -102,6 +103,11 @@ public partial class GameFlowHandler : Node
         }
     }
 
+    private static void SetObjectiveText(string text)
+    {
+        PlayerController.instance.GetNode<Label>("%TaskLabel").Text = text;
+    }
+
     private void SetupRandomGame()
     {
         if (_currentGame is ObbyGameState obbyGameState)
@@ -126,6 +132,7 @@ public partial class GameFlowHandler : Node
     public async void TestStart()
     {
         await ToSignal(GetTree(), "physics_frame");
+        PlayerController.instance.GetNode<Label>("%TaskLabel").Text = "";
         LoadScene(CurrentTime.Time8Am, true);
         TvController.instance.ExitTv += ExitTv;
     }
