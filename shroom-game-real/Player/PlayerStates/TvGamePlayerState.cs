@@ -39,6 +39,7 @@ public partial class TvGamePlayerState : BasePlayerState
             .SetEase(Tween.EaseType.In);
         
         tvController.EnterTvState(Player);
+        Player.visualHandler.Visible = false;
     }
 
     protected override void OnExitState()
@@ -53,6 +54,7 @@ public partial class TvGamePlayerState : BasePlayerState
         Camera.SetPlayerModelVisibility(true);
         
         tvController.ExitTvState();
+        Player.visualHandler.Visible = true;
     }
 
     public override void _Input(InputEvent @event)
