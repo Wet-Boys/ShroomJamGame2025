@@ -1,5 +1,6 @@
 using Godot;
 using ShroomGameReal.scenes.Scoot_Shoot.Enemies;
+using ShroomGameReal.scenes.Scoot_Shoot.Main_Menu;
 using ShroomGameReal.Tv.GameStates;
 using ShroomGameReal.Ui.PauseMenu;
 using ShroomGameReal.Utilities;
@@ -33,6 +34,7 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
     private Camera3D _camera;
     private RayCast3D _zapperRayCast;
     private PauseMenuController _pauseMenu;
+    public MainMenuController mainMenu;
 
     public override void _Ready()
     {
@@ -47,6 +49,7 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
         _pauseMenu.baitQuitButton.Pressed += OnGameLost;
 
         CanActivate = true;
+        infoText = "Shoot!";
     }
 
     public override void OnEnterState()
@@ -58,6 +61,13 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
     {
         stages[0].EnterStage();
         GameStarted = true;
+    }
+
+    public void PlaySingleStage(int stageNum)
+    {
+        mainMenu.Visible = false;
+        _stagesFinished = (uint)stages.Length;
+        stages[stageNum].EnterStage();
     }
 
     public void DamagePlayer(float amount)

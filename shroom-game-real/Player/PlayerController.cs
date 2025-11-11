@@ -40,6 +40,7 @@ public partial class PlayerController : CharacterBody3D
     {
         CurrentState = initialState;
         instance = this;
+        visualHandler.player = this;
     }
 
     public override void _Input(InputEvent @event)
@@ -64,6 +65,6 @@ public partial class PlayerController : CharacterBody3D
     public override void _Process(double delta)
     {
         base._Process(delta);
-        visualHandler.RotateVisuals(delta, headNode.GlobalTransform.Basis.Z, true);
+        visualHandler.RotateVisuals(delta, GlobalPosition.DirectionTo(headNode.GlobalPosition), true);
     }
 }

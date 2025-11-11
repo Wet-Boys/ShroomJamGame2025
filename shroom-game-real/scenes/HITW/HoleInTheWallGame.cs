@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Godot;
 using ShroomGameReal.scenes.HITW.Drawing;
 using ShroomGameReal.Tv.GameStates;
@@ -38,6 +39,7 @@ public partial class HoleInTheWallGame : BaseTvGameState
     private HitwContestant _currentContestant;
     
     private int _gameProgression;
+    public List<int> gameOrder = new();
     
     public override void _Ready()
     {
@@ -54,8 +56,24 @@ public partial class HoleInTheWallGame : BaseTvGameState
         _gameTimer.Timeout += CutOutTimeDone;
         
         _wallCutOutMaterial.Set("shader_parameter/cut_out", _mouseDraw.ImageTexture);
-        
-        SetContestant(contestantPrefabs[0]);
+        infoText = "Carve Out!";
+    }
+
+    public void SetOrderAndStart(List<int> gameOrder)
+    {
+        this.gameOrder = gameOrder;
+        StartNextRound();
+    }
+
+    public bool StartNextRound()
+    {
+        if (gameOrder.Count != 0)
+        {
+            SetContestant(contestantPrefabs[gameOrder[0]]);
+            gameOrder.RemoveAt(0);
+            return true;
+        }
+        return false;
     }
 
     public override void OnEnterState()
@@ -145,13 +163,11 @@ public partial class HoleInTheWallGame : BaseTvGameState
             nextContestantTimer.OneShot = true;
             nextContestantTimer.Timeout += () =>
             {
-                if (_gameProgression >= contestantPrefabs.Length)
+                if (!StartNextRound())
                 {
                     GameWon();
                     return;
                 }
-                
-                SetContestant(contestantPrefabs[_gameProgression]);
                 nextContestantTimer.QueueFree();
                 StartGame();
             };

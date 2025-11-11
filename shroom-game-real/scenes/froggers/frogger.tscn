@@ -8,11 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://cx072cwkrciue" path="res://scenes/2D Camera.tscn" id="3_fm2k6"]
 [ext_resource type="PackedScene" uid="uid://db3kqj612eni" path="res://scenes/froggers/leaf.tscn" id="4_ix7rd"]
 
-[node name="Frogger" type="Node3D" node_paths=PackedStringArray("_frog")]
+[node name="Frogger" type="Node3D" node_paths=PackedStringArray("frog")]
 script = ExtResource("1_fm2k6")
 _carScene = ExtResource("2_vieri")
 _logScenes = Array[PackedScene]([ExtResource("3_0ybi4"), ExtResource("4_ix7rd")])
-_frog = NodePath("Frog")
+frog = NodePath("Frog")
 
 [node name="Collection" parent="." instance=ExtResource("1_obs73")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
