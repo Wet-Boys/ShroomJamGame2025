@@ -10,7 +10,7 @@ public partial class BaseTvGameState : Node3D
     /// </summary>
     public bool IsActive { get; protected set; }
     
-    public bool CanActivate { get; protected set; }
+    public bool CanActivate { get; set; }
     
     public float TimeScale => GlobalGameState.Instance.GameTimeScale;
     public string infoText;

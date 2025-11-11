@@ -1,0 +1,199 @@
+[gd_scene load_steps=16 format=3 uid="uid://81njcsjyalcr"]
+
+[ext_resource type="Script" uid="uid://d2yi06d5v3xo3" path="res://scenes/dream/transition/DreamTransition.cs" id="1_ut6ut"]
+[ext_resource type="Texture2D" uid="uid://c6afbypqw6w4e" path="res://scenes/dream/transition/static.png" id="2_vsbky"]
+[ext_resource type="Theme" uid="uid://dmrcff1f44uiw" path="res://Ui/Main UI Theme.tres" id="3_arvtt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxn1a"]
+atlas = ExtResource("2_vsbky")
+region = Rect2(0, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v36cd"]
+atlas = ExtResource("2_vsbky")
+region = Rect2(320, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6b4r"]
+atlas = ExtResource("2_vsbky")
+region = Rect2(640, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22wqw"]
+atlas = ExtResource("2_vsbky")
+region = Rect2(960, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2b0u"]
+atlas = ExtResource("2_vsbky")
+region = Rect2(1280, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta8al"]
+atlas = ExtResource("2_vsbky")
+region = Rect2(0, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4dxe"]
+atlas = ExtResource("2_vsbky")
+region = Rect2(320, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jagf4"]
+atlas = ExtResource("2_vsbky")
+region = Rect2(640, 240, 320, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g70qc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxn1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v36cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6b4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22wqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2b0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta8al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4dxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jagf4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="Animation" id="Animation_ut6ut"]
+resource_name = "Transition"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.3, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.3666666, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vsbky"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_arvtt"]
+_data = {
+&"RESET": SubResource("Animation_vsbky"),
+&"Transition": SubResource("Animation_ut6ut")
+}
+
+[node name="Control" type="Control" node_paths=PackedStringArray("_background", "_text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ut6ut")
+_background = NodePath("AnimatedSprite2D")
+_text = NodePath("Label")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.8346143, 0.8346143, 0.8346143, 1)
+texture_filter = 1
+position = Vector2(960, 540)
+scale = Vector2(6.019, 4.5)
+sprite_frames = SubResource("SpriteFrames_g70qc")
+frame_progress = 0.4957183
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_arvtt")
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 100
+text = "Jump Over!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_arvtt")
+}

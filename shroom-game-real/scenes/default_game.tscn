@@ -27,7 +27,7 @@ _label = NodePath("../Floor/Player/Control/Label")
 metadata/_custom_type_script = "uid://di11kxlibce8f"
 
 [node name="CRT TV" parent="." instance=ExtResource("3_ur8v4")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -4.433905, 4.103676, 3.420313)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64858055, 4.100717, -9.927169)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
@@ -40,7 +40,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("ConcavePolygonShape3D_hhwg2")
 
 [node name="Player" parent="Floor" instance=ExtResource("2_hhwg2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6612027, 0.28182662, -4.7110863)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.3773582, 0.28182662, 2.4860067)
 
 [node name="Control" type="Control" parent="Floor/Player"]
 layout_mode = 3

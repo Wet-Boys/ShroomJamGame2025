@@ -21,6 +21,6 @@ public partial class FireSpawner : Node3D
         _spawnTimer.Start(_fireInterval + _rng.RandfRange(.5f, 2f));
         Node3D newFire = _firePrefab.Instantiate<Node3D>();
         GetParent().AddChild(newFire);
-        newFire.Position = Position + new Vector3(_rng.RandfRange(-.5f, .5f),0,0);
+        newFire.Position = Position + new Vector3(_rng.RandfRange(-.5f, .5f),-4,0);
     }
 }
