@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://ckbq3521r8wcp"]
 
-[ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_632cx"]
+[ext_resource type="PackedScene" path="res://scenes/room-core.tscn" id="1_632cx"]
 [ext_resource type="PackedScene" uid="uid://c3lqsowth1x4l" path="res://scenes/overworld/OverworldEnvironment Prefab.tscn" id="3_8qw3q"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jskvd"]
@@ -40,7 +40,7 @@ size = Vector3(0.44769287, 12.780457, 20)
 [node name="Node3D" type="Node3D"]
 
 [node name="Room-core" parent="." instance=ExtResource("1_632cx")]
-transform = Transform3D(1.3074495, 0, 0, 0, 1.3074495, 0, 0, 0, 1.3074495, 0.481, 0.79, -1.821)
+transform = Transform3D(1.3074495, 0, 0, 0, 1.3074495, 0, 0, 0, 1.3074495, 0, 0, 0)
 
 [node name="OverworldEnvironment" parent="Room-core" instance=ExtResource("3_8qw3q")]
 environment = SubResource("Environment_cy5ao")

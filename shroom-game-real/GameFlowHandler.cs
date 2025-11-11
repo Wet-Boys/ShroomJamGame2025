@@ -171,7 +171,7 @@ public partial class GameFlowHandler : Node
 
     private static void ResetPlayerPosition()
     {
-        PlayerController.instance.Position = new Vector3(1.7f, 0.282f, 2.486f);
+        PlayerController.instance.Position = new Vector3(0.879f, 9.105f, 6f);
         PlayerController.instance.RotationDegrees = new Vector3(0, 180, 0);
         PlayerController.instance.headNode.GetParentNode3D().RotationDegrees = new Vector3(0, 180, 0);
     }

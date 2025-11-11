@@ -63,25 +63,25 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="Player Model" parent="Visual Root/Node3D" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Node3D/Player Model/Player/Little John First Person/metarig" index="1"]
-bones/2/position = Vector3(0, 0.93822956, -0.05519998)
-bones/2/rotation = Quaternion(0.034852546, 1.3504161e-18, 3.7073863e-19, 0.9993925)
-bones/6/rotation = Quaternion(0.15580451, -1.3864102e-18, -4.585625e-19, 0.987788)
-bones/8/position = Vector3(2.6353478e-19, 0.23002994, -0.056328)
-bones/8/scale = Vector3(1, 1.0000004, 1.0000004)
-bones/10/rotation = Quaternion(-0.20739715, 0.78635985, -0.42870867, 0.39348897)
-bones/11/rotation = Quaternion(0.3242185, -0.09622521, -0.15107949, 0.9288692)
-bones/12/rotation = Quaternion(-0.13208632, -0.05304271, -0.092137, 0.9855204)
-bones/17/rotation = Quaternion(-0.20942666, -0.7663537, 0.46781296, 0.38728982)
-bones/18/rotation = Quaternion(0.26488367, 0.09854449, 0.12343067, 0.9512574)
-bones/19/rotation = Quaternion(-0.104136325, 0.041771267, 0.052193493, 0.9923138)
-bones/24/rotation = Quaternion(0.97486186, 3.2393817e-09, -2.1685901e-08, 0.22281067)
-bones/25/rotation = Quaternion(0.3976023, 5.639085e-16, -5.6957884e-16, 0.91755795)
-bones/26/rotation = Quaternion(-0.66283506, 2.8885333e-07, -2.3099341e-07, 0.7487655)
-bones/30/rotation = Quaternion(0.97486186, -5.5950298e-09, 3.7455685e-08, 0.22281067)
-bones/31/rotation = Quaternion(0.3976023, -1.1484921e-15, -1.2933318e-16, 0.91755795)
-bones/32/rotation = Quaternion(-0.66283506, -3.0417812e-07, 2.2659046e-07, 0.7487655)
-bones/35/position = Vector3(0.3815259, 0.9644359, -0.05334942)
-bones/39/position = Vector3(-0.37100703, 0.94602793, -0.05334942)
+bones/2/position = Vector3(0, 0.9425203, -0.055199973)
+bones/2/rotation = Quaternion(0.035633344, -2.4661291e-17, -1.5932646e-18, 0.9993649)
+bones/6/rotation = Quaternion(0.15494363, -6.282421e-18, 5.3921945e-19, 0.9879233)
+bones/8/position = Vector3(1.1882867e-18, 0.2615415, -0.061146766)
+bones/8/scale = Vector3(1, 1.0000002, 1.0000004)
+bones/10/rotation = Quaternion(-0.20850828, 0.7890664, -0.42253262, 0.39416364)
+bones/11/rotation = Quaternion(0.33439595, -0.09577404, -0.1558219, 0.92451406)
+bones/12/rotation = Quaternion(-0.13693021, -0.053011212, -0.08990058, 0.9850675)
+bones/17/rotation = Quaternion(-0.21064845, -0.7700403, 0.46065527, 0.38789454)
+bones/18/rotation = Quaternion(0.27762753, 0.09809009, 0.129369, 0.9468712)
+bones/19/rotation = Quaternion(-0.10997431, 0.0416397, 0.049192898, 0.9918427)
+bones/24/rotation = Quaternion(0.97593796, 3.127416e-09, -2.1702329e-08, 0.2180489)
+bones/25/rotation = Quaternion(0.38736206, -1.6711753e-15, -1.093938e-15, 0.92192775)
+bones/26/rotation = Quaternion(-0.6582678, 2.902528e-07, -2.2923071e-07, 0.75278395)
+bones/30/rotation = Quaternion(0.97593796, -5.401645e-09, 3.748406e-08, 0.2180489)
+bones/31/rotation = Quaternion(0.38736206, 1.9185012e-15, 1.1696284e-15, 0.92192775)
+bones/32/rotation = Quaternion(-0.6582678, -3.055503e-07, 2.2473375e-07, 0.75278395)
+bones/35/position = Vector3(0.3815259, 0.9716531, -0.05334942)
+bones/39/position = Vector3(-0.37100703, 0.95324516, -0.05334942)
 
 [node name="AnimationPlayer" parent="Visual Root/Node3D/Player Model/Player/Little John First Person" index="1"]
 libraries = {
@@ -237,9 +237,13 @@ Restrict blood flow to Gollum's throat.
 (Optional) Collect five fingers (2/5)"
 horizontal_alignment = 2
 
-[node name="Control" parent="UI Root" instance=ExtResource("16_imhp6")]
-visible = false
+[node name="Control" parent="UI Root" node_paths=PackedStringArray("_animator") instance=ExtResource("16_imhp6")]
 layout_mode = 1
+mouse_filter = 2
+_animator = NodePath("AnimationPlayer")
+
+[node name="AnimatedSprite2D" parent="UI Root/Control" index="0"]
+frame_progress = 0.10388922
 
 [editable path="Visual Root/Node3D/Player Model"]
 [editable path="Visual Root/Node3D/Player Model/Player"]
