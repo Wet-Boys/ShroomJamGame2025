@@ -171,7 +171,7 @@ public partial class GameFlowHandler : Node
 
     private static void ResetPlayerPosition()
     {
-        PlayerController.instance.Position = new Vector3(0.879f, 9.105f, 6f);
+        PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 4.5f);
         PlayerController.instance.RotationDegrees = new Vector3(0, 180, 0);
         PlayerController.instance.headNode.GetParentNode3D().RotationDegrees = new Vector3(0, 180, 0);
     }
@@ -183,6 +183,7 @@ public partial class GameFlowHandler : Node
 
     private void SetupRandomGame()
     {
+        DreamTransition.instance.PlayWithText(((BaseTvGameState)_currentGame).infoText);
         if (_currentGame is ObbyGameState obbyGameState)
         {
             obbyGameState.SpawnLevel();
@@ -267,7 +268,7 @@ public partial class GameFlowHandler : Node
             lastMicrogames.RemoveAt(0);
         }
         _currentGame = (Node3D)TvController.instance.SetTvSubWorld(microGames[randomGame]);
-        _label.Text = ((BaseTvGameState)_currentGame).infoText;
+        _label.Text = "";
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         SetupRandomGame();
         TvInteractable.instance.OnInteract(PlayerController.instance);
