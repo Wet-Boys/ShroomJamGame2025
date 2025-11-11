@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://do2o7xddhrk72"
+path="res://.godot/imported/1_ZynAddSubFX.ogg-46fe74398c8695db43c621a8e7be2381.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/cathode star/tracks/1_ZynAddSubFX.ogg"
+dest_files=["res://.godot/imported/1_ZynAddSubFX.ogg-46fe74398c8695db43c621a8e7be2381.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

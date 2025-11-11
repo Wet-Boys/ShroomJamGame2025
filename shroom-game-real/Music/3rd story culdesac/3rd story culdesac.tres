@@ -1,0 +1,14 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=4 format=3 uid="uid://gn10kninbigy"]
+
+[ext_resource type="AudioStream" uid="uid://c5fqee3mwxgep" path="res://Music/3rd story culdesac/tracks/1_ZynAddSubFX.ogg" id="1_8q88h"]
+[ext_resource type="AudioStream" uid="uid://dtry0c41yfsmg" path="res://Music/3rd story culdesac/tracks/2_ZynAddSubFX.ogg" id="2_kcfrg"]
+[ext_resource type="AudioStream" uid="uid://cl3ssd48jcimb" path="res://Music/3rd story culdesac/tracks/3_ZynAddSubFX.ogg" id="3_q0sm5"]
+
+[resource]
+stream_count = 3
+stream_0/stream = ExtResource("1_8q88h")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_kcfrg")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("3_q0sm5")
+stream_2/volume = 0.0

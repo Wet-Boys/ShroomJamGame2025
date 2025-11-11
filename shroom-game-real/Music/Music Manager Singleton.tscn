@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cpcy7mg3s734q"]
+
+[ext_resource type="AudioStream" uid="uid://c4dya171574n5" path="res://Music/cathode star/cathode star.tres" id="1_8btxe"]
+[ext_resource type="Script" uid="uid://e7531fkebijs" path="res://Music/MusicManager.cs" id="1_a8yyp"]
+[ext_resource type="AudioStream" uid="uid://gn10kninbigy" path="res://Music/3rd story culdesac/3rd story culdesac.tres" id="2_vnrfv"]
+[ext_resource type="AudioStream" uid="uid://dytmv55wyn4g7" path="res://Music/post meridiem/post meridiem.tres" id="3_me3x1"]
+
+[node name="MusicManagerSingleton" type="Node"]
+script = ExtResource("1_a8yyp")
+firstSongLoopEndOffset = 36.0
+middleSongLoopEndOffset = 27.45
+thirdStoryCuldesac = ExtResource("2_vnrfv")
+postMeridiem = ExtResource("3_me3x1")
+cathodeStar = ExtResource("1_8btxe")
+metadata/_custom_type_script = "uid://e7531fkebijs"
+
+[node name="Overworld" type="Node" parent="."]
+
+[node name="3rd Story Culdesac" type="AudioStreamPlayer" parent="Overworld"]
+unique_name_in_owner = true
+stream = ExtResource("2_vnrfv")
+max_polyphony = 2
+bus = &"Overworld Intro Music"
+
+[node name="Post Meridiem" type="AudioStreamPlayer" parent="Overworld"]
+unique_name_in_owner = true
+stream = ExtResource("3_me3x1")
+max_polyphony = 2
+bus = &"Overworld Middle Music"

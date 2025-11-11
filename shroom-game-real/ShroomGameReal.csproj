@@ -12,6 +12,7 @@
     
     <ItemGroup>
       <Content Include="addons\settings_helper\Icons\**" />
+      <Content Include="Camera\CompositorEffects\Shaders\Painterly-Post-Processing-Uber-Shader.glsl" />
       <Content Include="Interactables\IInteractable.cs.uid" />
       <Content Include="Interactables\InteractableRigidBody3D.cs.uid" />
       <Content Include="Interactables\InteractableStaticBody3D.cs.uid" />

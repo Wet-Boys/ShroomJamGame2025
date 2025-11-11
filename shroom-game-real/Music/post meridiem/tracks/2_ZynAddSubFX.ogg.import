@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cxjbnfhabobmf"
+path="res://.godot/imported/2_ZynAddSubFX.ogg-cf6b84efc60d9bca497a8161b612ad5a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/post meridiem/tracks/2_ZynAddSubFX.ogg"
+dest_files=["res://.godot/imported/2_ZynAddSubFX.ogg-cf6b84efc60d9bca497a8161b612ad5a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

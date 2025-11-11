@@ -1,0 +1,17 @@
+[gd_resource type="Compositor" load_steps=3 format=3 uid="uid://cq65g3tth3i33"]
+
+[ext_resource type="Script" uid="uid://bxc2u1lqrfvyg" path="res://Camera/CompositorEffects/PainterlyPostProcessingEffects.cs" id="1_mtkhw"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_ys4lv"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = false
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("1_mtkhw")
+painterlyNoiseScale = 10.0
+metadata/_custom_type_script = "uid://bxc2u1lqrfvyg"
+
+[resource]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_ys4lv")])
