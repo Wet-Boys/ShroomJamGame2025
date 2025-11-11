@@ -7,8 +7,9 @@ void vertex() {
 }
 
 void fragment() {
-	vec4 sample = texture(viewportTexture, UV);
-	
+	vec2 uv = vec2(-UV.y, UV.x);
+	vec4 sample = texture(viewportTexture, uv);
+
 	EMISSION = sample.rgb;
 	ALBEDO = sample.rgb;
 }
