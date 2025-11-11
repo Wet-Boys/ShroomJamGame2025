@@ -19,7 +19,7 @@ public abstract partial class BasePlayerState : Node
     {
         Player = GetNode<PlayerController>("../../../Player");
         Head = Player.GetNode<Node3D>("Head");
-        Camera = Head.GetNode<MainCamera>("Eyes/Camera");
+        Camera = Head.GetNode<MainCamera>("Eyes/BoneAttachment/AnimationRotate/Camera");
     }
 
     public void EnterState()

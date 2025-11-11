@@ -71,6 +71,7 @@ public partial class GameFlowHandler : Node
         switch (_currentTime)
         {
             case CurrentTime.Time8Am:
+                PlayerController.instance.visualHandler.CoughingBaby();
                 LoadScene(CurrentTime.Time10Am);
                 ((HoleInTheWallGame)_currentGame).SetOrderAndStart([0,1]);
                 break;

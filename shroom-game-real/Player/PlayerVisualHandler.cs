@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using ShroomGameReal.Player.PlayerStates;
 
 public partial class PlayerVisualHandler : Node3D
 {
@@ -9,6 +10,8 @@ public partial class PlayerVisualHandler : Node3D
     public CharacterBody3D player;
     private bool _inAir = false;
     private bool _walking = false;
+    [Export] public BoneAttachment3D animationHeadLockNode;
+    [Export] public Node3D animationHeadLockExtraNode;
 
     public override void _Process(double delta)
     {
@@ -60,5 +63,46 @@ public partial class PlayerVisualHandler : Node3D
         {
             visualRotationNode.Rotation = new Vector3(visualRotationNode.Rotation.X, Mathf.LerpAngle(visualRotationNode.Rotation.Y, desiredVisualRotationNode.Rotation.Y, (float)delta * 15), visualRotationNode.Rotation.Z);
         }
+    }
+
+    public void CoughingBaby()
+    {
+        LockHeadAnimation("Coughing");
+    }
+
+    private void UnlockHead(StringName animName)
+    {
+        UnlockBody();
+        animationTree.AnimationFinished -= UnlockHead;
+    }
+
+    public void Succ()
+    {
+        LockHeadAnimation("FallIntoTv");
+    }
+
+    private void LockHeadAnimation(string  animName)
+    {
+        LockBody();
+        animationTree.Set($"parameters/{animName}/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
+        animationTree.AnimationFinished += UnlockHead;
+    }
+
+    public void UnlockBody()
+    {
+        FirstPersonOverworldPlayerState.isInAnimation = false;
+        animationHeadLockNode.OverridePose = true;
+        animationHeadLockNode.Position = Vector3.Zero;
+        animationHeadLockNode.Rotation = Vector3.Zero;
+        animationHeadLockExtraNode.Position = Vector3.Zero;
+        animationHeadLockExtraNode.Rotation = Vector3.Zero;
+    }
+
+    public void LockBody()
+    {
+        FirstPersonOverworldPlayerState.isInAnimation = true;
+        animationHeadLockNode.OverridePose = false;
+        animationHeadLockExtraNode.Position = new Vector3(0, 0.2f, 0);
+        animationHeadLockExtraNode.RotationDegrees = new Vector3(0, 180, 0);
     }
 }

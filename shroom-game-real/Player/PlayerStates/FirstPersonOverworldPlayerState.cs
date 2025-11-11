@@ -37,6 +37,7 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
     
     private Vector2 _mouseDelta;
     private float _gravity;
+    public static bool isInAnimation;
 
     public override void _Ready()
     {
@@ -77,7 +78,7 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
 
     public override void _Input(InputEvent @event)
     {
-        if (!IsActive || GlobalGameState.Instance.IsMainPaused)
+        if (!IsActive || GlobalGameState.Instance.IsMainPaused || isInAnimation)
             return;
         
         if (@event is InputEventMouseMotion mouseMotion)
@@ -90,6 +91,9 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
             return;
         
         if (GlobalGameState.Instance.IsMainPaused)
+            return;
+
+        if (isInAnimation)
             return;
         
         var movementVector = Input.GetVector("movement.move_left", "movement.move_right", "movement.move_forward", "movement.move_backward");

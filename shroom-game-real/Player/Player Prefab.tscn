@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://dk5rx6k5tsxl1"]
+[gd_scene load_steps=18 format=3 uid="uid://dk5rx6k5tsxl1"]
 
 [ext_resource type="Script" uid="uid://byjq1fe68ukgj" path="res://Player/PlayerController.cs" id="1_ffodk"]
 [ext_resource type="PackedScene" uid="uid://d25p0awkpqnka" path="res://Player/player_visuals.tscn" id="2_l50ud"]
 [ext_resource type="Script" uid="uid://l37bgfm3gxh4" path="res://Interactables/Interactor.cs" id="2_p5fe0"]
 [ext_resource type="Script" uid="uid://b1063q0adakev" path="res://Player/PlayerVisualHandler.cs" id="2_qfgdp"]
 [ext_resource type="PackedScene" uid="uid://b8t3w2bqcud6w" path="res://Camera/Main Game Camera.tscn" id="4_biwqw"]
+[ext_resource type="AnimationLibrary" uid="uid://bjv0k40sfchi0" path="res://Player/Animations_new/PlayerAnimations.res" id="4_sy1gk"]
 [ext_resource type="Script" uid="uid://cxyvequtlcd0m" path="res://Player/PlayerStates/FirstPersonOverworldPlayerState.cs" id="5_dvuv0"]
 [ext_resource type="Script" uid="uid://cu7l4gfo6xn00" path="res://Player/PlayerStates/PlayerStateList.cs" id="5_ibwd3"]
 [ext_resource type="Script" uid="uid://oswbmavah515" path="res://Player/PlayerStates/TvGamePlayerState.cs" id="7_qthdm"]
@@ -43,11 +44,13 @@ visualHandler = NodePath("Visual Root")
 headNode = NodePath("Head/Look Dir")
 metadata/_custom_type_script = "uid://byjq1fe68ukgj"
 
-[node name="Visual Root" type="Node3D" parent="." node_paths=PackedStringArray("visualRotationNode", "desiredVisualRotationNode", "animationTree")]
+[node name="Visual Root" type="Node3D" parent="." node_paths=PackedStringArray("visualRotationNode", "desiredVisualRotationNode", "animationTree", "animationHeadLockNode", "animationHeadLockExtraNode")]
 script = ExtResource("2_qfgdp")
 visualRotationNode = NodePath("Node3D/Player Model")
 desiredVisualRotationNode = NodePath("DesiredLookDirection")
 animationTree = NodePath("Node3D/Player Model/Player/Little John First Person/AnimationTree")
+animationHeadLockNode = NodePath("../Head/Eyes/BoneAttachment")
+animationHeadLockExtraNode = NodePath("../Head/Eyes/BoneAttachment/AnimationRotate")
 
 [node name="DesiredLookDirection" type="Node3D" parent="Visual Root"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.471674, 0.34143186)
@@ -58,31 +61,35 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="Player Model" parent="Visual Root/Node3D" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Node3D/Player Model/Player/Little John First Person/metarig" index="1"]
-bones/2/position = Vector3(0, 0.98574674, -0.055199977)
-bones/2/rotation = Quaternion(0.03608006, -2.0998258e-17, 7.3373557e-19, 0.999349)
-bones/6/rotation = Quaternion(0.15464696, 2.1005228e-17, -3.0562599e-18, 0.9879699)
-bones/10/rotation = Quaternion(-0.2193508, 0.81049496, -0.366369, 0.40094522)
-bones/11/rotation = Quaternion(0.4211616, -0.09124397, -0.19625303, 0.88078505)
-bones/12/rotation = Quaternion(-0.17860654, -0.051511724, -0.072752655, 0.97987413)
-bones/17/rotation = Quaternion(-0.22183971, -0.797977, 0.39866334, 0.3938115)
-bones/18/rotation = Quaternion(0.38063923, 0.09351655, 0.17737047, 0.9027227)
-bones/19/rotation = Quaternion(-0.15820932, 0.038972408, 0.026795775, 0.98627234)
-bones/24/rotation = Quaternion(0.9873028, 1.7470693e-09, -2.1856797e-08, 0.15885043)
-bones/25/rotation = Quaternion(0.25851077, 3.0486913e-16, -8.72471e-17, 0.96600837)
-bones/26/rotation = Quaternion(-0.6006652, 3.064394e-07, -2.0707672e-07, 0.79950064)
-bones/30/rotation = Quaternion(0.9873028, -3.0175211e-09, 3.7750855e-08, 0.15885043)
-bones/31/rotation = Quaternion(0.25851077, -1.9482308e-15, 2.428196e-16, 0.96600837)
-bones/32/rotation = Quaternion(-0.6006652, -3.2135833e-07, 2.0144995e-07, 0.79950064)
-bones/35/position = Vector3(0.38152587, 1.0443625, -0.05334942)
-bones/39/position = Vector3(-0.37100703, 1.0259545, -0.05334942)
+bones/2/position = Vector3(0, 0.96128166, -0.055199977)
+bones/2/rotation = Quaternion(0.035899058, -3.3512988e-17, -2.2616088e-18, 0.9993555)
+bones/6/rotation = Quaternion(0.15465066, -7.948517e-18, 8.787617e-19, 0.9879692)
+bones/8/position = Vector3(5.827537e-19, 0.24878943, -0.058956057)
+bones/8/scale = Vector3(1, 1.0000001, 1.0000002)
+bones/10/rotation = Quaternion(-0.21324675, 0.79948705, -0.39706722, 0.39709437)
+bones/11/rotation = Quaternion(0.37505692, -0.09380759, -0.1747692, 0.90553194)
+bones/12/rotation = Quaternion(-0.1561711, -0.052624587, -0.081444785, 0.98295885)
+bones/17/rotation = Quaternion(-0.21566872, -0.78386426, 0.4319474, 0.39046815)
+bones/18/rotation = Quaternion(0.32698643, 0.09610412, 0.15236926, 0.92770016)
+bones/19/rotation = Quaternion(-0.13283527, 0.040744703, 0.037998423, 0.98957103)
+bones/24/rotation = Quaternion(0.9807333, 8.7181755e-09, -2.39199e-08, 0.19535184)
+bones/25/rotation = Quaternion(0.33830768, -4.4284907e-16, 1.8649172e-16, 0.94103557)
+bones/26/rotation = Quaternion(-0.636384, 2.979808e-07, -2.1198234e-07, 0.7713724)
+bones/30/rotation = Quaternion(0.9807333, -1.06055715e-08, 3.9752546e-08, 0.19535184)
+bones/31/rotation = Quaternion(0.33830768, 4.877332e-17, -4.618072e-16, 0.94103557)
+bones/32/rotation = Quaternion(-0.636384, -3.131416e-07, 2.0704428e-07, 0.7713724)
+bones/35/position = Vector3(0.38152587, 1.003157, -0.05334942)
+bones/39/position = Vector3(-0.37100703, 0.9847491, -0.05334942)
 
-[node name="Visual Root_Player Model_Player_Armature_Skeleton3D#LookAtModifier3D" type="LookAtModifier3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
-target_node = NodePath("../../../../../../Head/Look Dir")
-bone_name = "Neck"
-bone = 60
-origin_from = 2
-origin_external_node = NodePath("../../../../../../Head")
+[node name="AnimationPlayer" parent="Visual Root/Node3D/Player Model/Player/Little John First Person" index="1"]
+libraries = {
+&"PlayerAnimations": ExtResource("4_sy1gk")
+}
+
+[node name="AnimationTree" parent="Visual Root/Node3D/Player Model/Player/Little John First Person" index="2"]
+parameters/OneShot/active = false
+parameters/OneShot/internal_active = false
+parameters/OneShot/request = 0
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 3.609559, 0)
@@ -95,16 +102,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 [node name="Eyes" type="Node3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9468317, 0)
 
-[node name="Camera" parent="Head/Eyes" instance=ExtResource("4_biwqw")]
-current = true
-near = 0.1
-
 [node name="Interactor" type="RayCast3D" parent="Head/Eyes"]
 unique_name_in_owner = true
 target_position = Vector3(0, 0, -10)
 collision_mask = 2
 script = ExtResource("2_p5fe0")
 metadata/_custom_type_script = "uid://l37bgfm3gxh4"
+
+[node name="BoneAttachment" type="BoneAttachment3D" parent="Head/Eyes"]
+transform = Transform3D(2.3393896, -1.809012e-11, 4.0903183e-07, 1.1559787e-17, 2.339389, 0.00010353307, -4.0903186e-07, -0.00010346335, 2.3393893, 0, 0, 0)
+bone_name = "spine.006"
+bone_idx = 8
+override_pose = true
+use_external_skeleton = true
+external_skeleton = NodePath("../../../Visual Root/Node3D/Player Model/Player/Little John First Person/metarig/Skeleton3D")
+
+[node name="AnimationRotate" type="Node3D" parent="Head/Eyes/BoneAttachment"]
+transform = Transform3D(-0.42746183, 0, -3.7369926e-08, 0, 0.4274621, 0, 3.73699e-08, 0, -0.42746213, 0, 0.2, 0)
+
+[node name="Camera" parent="Head/Eyes/BoneAttachment/AnimationRotate" instance=ExtResource("4_biwqw")]
+transform = Transform3D(1.0000001, 2.6126965e-11, 7.1054274e-15, -2.612696e-11, 1, -0.00014947358, -4.2632564e-14, 0.00014947359, 1, 0, 0, 0)
+current = true
+near = 0.1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6072388, 0)
