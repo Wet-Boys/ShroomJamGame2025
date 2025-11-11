@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamSynchronized" script_class="LoopableAudioStreamSynchronized" load_steps=5 format=3 uid="uid://bmoflb30llvl7"]
+
+[ext_resource type="Script" uid="uid://bid6no382s2uo" path="res://Music/LoopableAudioStreamSynchronized.cs" id="1_06ljg"]
+[ext_resource type="AudioStream" uid="uid://c5fqee3mwxgep" path="res://Music/3rd story culdesac/tracks/1_ZynAddSubFX.ogg" id="2_e3tco"]
+[ext_resource type="AudioStream" uid="uid://dtry0c41yfsmg" path="res://Music/3rd story culdesac/tracks/2_ZynAddSubFX.ogg" id="3_1qp6u"]
+[ext_resource type="AudioStream" uid="uid://cl3ssd48jcimb" path="res://Music/3rd story culdesac/tracks/3_ZynAddSubFX.ogg" id="4_cwusx"]
+
+[resource]
+stream_count = 3
+stream_0/stream = ExtResource("2_e3tco")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("3_1qp6u")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("4_cwusx")
+stream_2/volume = 0.0
+script = ExtResource("1_06ljg")
+metadata/_custom_type_script = "uid://bid6no382s2uo"

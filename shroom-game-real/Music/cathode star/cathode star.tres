@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamSynchronized" load_steps=5 format=3 uid="uid://c4dya171574n5"]
+
+[ext_resource type="AudioStream" uid="uid://do2o7xddhrk72" path="res://Music/cathode star/tracks/1_ZynAddSubFX.ogg" id="1_mjgvs"]
+[ext_resource type="AudioStream" uid="uid://cryv6t5gkixmh" path="res://Music/cathode star/tracks/2_ZynAddSubFX.ogg" id="2_1jxye"]
+[ext_resource type="AudioStream" uid="uid://bulidju064hh1" path="res://Music/cathode star/tracks/3_ZynAddSubFX.ogg" id="3_0hh62"]
+[ext_resource type="AudioStream" uid="uid://dl3oqn4l4dc2b" path="res://Music/cathode star/tracks/4_ZynAddSubFX.ogg" id="4_a6fqp"]
+
+[resource]
+stream_count = 4
+stream_0/stream = ExtResource("1_mjgvs")
+stream_0/volume = 0.0
+stream_1/stream = ExtResource("2_1jxye")
+stream_1/volume = 0.0
+stream_2/stream = ExtResource("3_0hh62")
+stream_2/volume = 0.0
+stream_3/stream = ExtResource("4_a6fqp")
+stream_3/volume = 0.0

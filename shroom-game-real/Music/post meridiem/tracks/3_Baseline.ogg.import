@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bketkkdxv1v68"
+path="res://.godot/imported/3_Baseline.ogg-f09fdbff3e75a40bc819831728d49ed4.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/post meridiem/tracks/3_Baseline.ogg"
+dest_files=["res://.godot/imported/3_Baseline.ogg-f09fdbff3e75a40bc819831728d49ed4.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

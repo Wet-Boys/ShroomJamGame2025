@@ -37,12 +37,27 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Down" type="ColorRect" parent="Dual Kawase Blur"]
-material = ExtResource("2_1b0fp")
+[node name="Down Remote" type="Control" parent="Dual Kawase Blur" node_paths=PackedStringArray("remoteControl")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_33sxq")
+remoteControl = NodePath("../Down BackBuffer/Down")
+metadata/_custom_type_script = "uid://dwhd7ogbo64mi"
+
+[node name="Down BackBuffer" type="BackBufferCopy" parent="Dual Kawase Blur"]
+copy_mode = 2
+
+[node name="Down" type="ColorRect" parent="Dual Kawase Blur/Down BackBuffer"]
+material = ExtResource("2_1b0fp")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1720.0
+offset_bottom = 880.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -54,13 +69,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("3_33sxq")
-remoteControl = NodePath("../BackBufferCopy/Up")
+remoteControl = NodePath("../Up BackBuffer/Up")
 metadata/_custom_type_script = "uid://dwhd7ogbo64mi"
 
-[node name="BackBufferCopy" type="BackBufferCopy" parent="Dual Kawase Blur"]
+[node name="Up BackBuffer" type="BackBufferCopy" parent="Dual Kawase Blur"]
 copy_mode = 2
 
-[node name="Up" type="ColorRect" parent="Dual Kawase Blur/BackBufferCopy"]
+[node name="Up" type="ColorRect" parent="Dual Kawase Blur/Up BackBuffer"]
 material = ExtResource("3_bd5x7")
 anchors_preset = 15
 anchor_right = 1.0
