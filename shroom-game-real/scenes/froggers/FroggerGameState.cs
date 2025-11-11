@@ -10,6 +10,7 @@ public partial class FroggerGameState : BaseTvGameState
 {
     private float _carTimer;
     private float _logTimer;
+    public float logResetPoint = 0;
     public int[] carRows = [-22, -20, -18, -16, -14, -12, -10, -8];//8 rows -22 to -8
     public int[] logRows = [-4, -2, 0, 2, 4, 6, 8, 10, 12, 14];//10 rows -4 to 14
 
@@ -24,13 +25,13 @@ public partial class FroggerGameState : BaseTvGameState
     [Export]
     private Array<PackedScene> _logScenes;
 
-    [Export] private Node3D _frog;
+    [Export] public Node3D frog;
 
     public override void _Ready()
     {
         base._Ready();
         CanActivate = true;
-        infoText = "Get to the Finish!";
+        infoText = "Get to the Other Side!";
     }
 
     public override void OnEnterState()
@@ -65,7 +66,7 @@ public partial class FroggerGameState : BaseTvGameState
 
         if (_logTimer > .37f)
         {
-            _logTimer = 0;
+            _logTimer = logResetPoint;
             int logRow = _rng.RandiRange(0, logRows.Length - 1);
             while (_prevLogRows.Contains(logRow))
             {
@@ -84,7 +85,7 @@ public partial class FroggerGameState : BaseTvGameState
             newLog.speed *= logRow + 3;
         }
 
-        if (_frog.Position.X > 14)
+        if (frog.Position.X > 14)
         {
             ExitTv();
             CanActivate = false;

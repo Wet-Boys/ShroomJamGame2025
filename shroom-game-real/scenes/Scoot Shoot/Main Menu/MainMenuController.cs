@@ -10,6 +10,7 @@ public partial class MainMenuController : Control
     public override void _Ready()
     {
         _game = GetOwner<ScootShootOnRailsGame>();
+        _game.mainMenu = this;
     }
 
     public void OnStartPressed()

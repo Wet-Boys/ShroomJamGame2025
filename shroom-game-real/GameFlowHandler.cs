@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using Godot;
 using Godot.Collections;
 using ShroomGameReal.Player;
+using ShroomGameReal.scenes.HITW;
 using ShroomGameReal.scenes.obby;
+using ShroomGameReal.scenes.Scoot_Shoot;
 using ShroomGameReal.Tv;
 using ShroomGameReal.Tv.GameStates;
 using Array = Godot.Collections.Array;
@@ -70,6 +72,7 @@ public partial class GameFlowHandler : Node
         {
             case CurrentTime.Time8Am:
                 LoadScene(CurrentTime.Time10Am);
+                ((HoleInTheWallGame)_currentGame).SetOrderAndStart([0,1]);
                 break;
             case CurrentTime.Time10Am:
                 LoadScene(CurrentTime.Time12Pm);
@@ -86,17 +89,36 @@ public partial class GameFlowHandler : Node
                 break;
             case CurrentTime.Time12Am:
                 LoadScene(CurrentTime.RandomMinigame);
+                SetupRandomGame();
                 break;
             case CurrentTime.RandomMinigame:
-                LoadScene(CurrentTime.RandomMinigame, false);
-                if (_currentGame is ObbyGameState obbyGameState)
-                {
-                    obbyGameState.SpawnLevel();
-                }
                 //TODO check if out of lives, then LoadScene(CurrentTime.Victory);
+                LoadScene(CurrentTime.RandomMinigame, true);
+                SetupRandomGame();
                 break;
             default:
                 break;
+        }
+    }
+
+    private void SetupRandomGame()
+    {
+        if (_currentGame is ObbyGameState obbyGameState)
+        {
+            obbyGameState.SpawnLevel();
+        }
+        else if (_currentGame is HoleInTheWallGame holeInTheWallGame)
+        {
+            holeInTheWallGame.SetOrderAndStart([_rng.RandiRange(0, holeInTheWallGame.contestantPrefabs.Length-1)]);
+        }
+        else if (_currentGame is FroggerGameState froggerGameState)
+        {
+            froggerGameState.logResetPoint = .2f;
+            froggerGameState.frog.Position += new Vector3(18, 0, 0);
+        }
+        else if (_currentGame is ScootShootOnRailsGame scootShootOnRailsGame)
+        {
+            scootShootOnRailsGame.PlaySingleStage(_rng.RandiRange(0, scootShootOnRailsGame.stages.Length - 1));
         }
     }
 
@@ -107,7 +129,7 @@ public partial class GameFlowHandler : Node
         TvController.instance.ExitTv += ExitTv;
     }
 
-    public void LoadScene(CurrentTime currentTime, bool forceInteract = false)
+    public async void LoadScene(CurrentTime currentTime, bool forceInteract = false)
     {
         _currentTime = currentTime;
 
@@ -145,7 +167,9 @@ public partial class GameFlowHandler : Node
 
         if (forceInteract)
         {
+            await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
             TvInteractable.instance.OnInteract(PlayerController.instance);
         }
     }
+    
 }
