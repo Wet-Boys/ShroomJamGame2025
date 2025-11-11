@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://qbkbcq6npt72"
+path="res://.godot/imported/Painterly-Post-Processing-Uber-Shader.glsl-33b5dffe1e0e2d4ed6450f9893cee60e.res"
+
+[deps]
+
+source_file="res://Camera/CompositorEffects/Shaders/Painterly-Post-Processing-Uber-Shader.glsl"
+dest_files=["res://.godot/imported/Painterly-Post-Processing-Uber-Shader.glsl-33b5dffe1e0e2d4ed6450f9893cee60e.res"]
+
+[params]
+

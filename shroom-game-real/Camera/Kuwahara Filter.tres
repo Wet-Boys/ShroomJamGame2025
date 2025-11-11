@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://cjctd2cm54pom"]
+
+[ext_resource type="Shader" uid="uid://4j36tmhjdvus" path="res://Camera/Kuwahara Filter.gdshader" id="1_wq4wm"]
+
+[resource]
+render_priority = 10
+shader = ExtResource("1_wq4wm")
+shader_parameter/radius = 4
+shader_parameter/amplitude = 3.0
+shader_parameter/noise_scale = 0.05
+shader_parameter/noise_speed = 3.0

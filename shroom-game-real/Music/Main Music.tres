@@ -1,0 +1,31 @@
+[gd_resource type="AudioStreamInteractive" load_steps=4 format=3 uid="uid://cogere1bped6s"]
+
+[ext_resource type="AudioStream" uid="uid://bmoflb30llvl7" path="res://Music/3rd story culdesac/3rd story culdesac loop.tres" id="1_a87ao"]
+[ext_resource type="AudioStream" uid="uid://dytmv55wyn4g7" path="res://Music/post meridiem/post meridiem.tres" id="2_7f7tf"]
+[ext_resource type="AudioStream" uid="uid://c4dya171574n5" path="res://Music/cathode star/cathode star.tres" id="3_iibk5"]
+
+[resource]
+clip_count = 3
+clip_0/name = &"3rd Story Culdesac"
+clip_0/stream = ExtResource("1_a87ao")
+clip_0/auto_advance = 0
+clip_1/name = &"Post Meridiem"
+clip_1/stream = ExtResource("2_7f7tf")
+clip_1/auto_advance = 0
+clip_2/name = &"Cathode Star"
+clip_2/stream = ExtResource("3_iibk5")
+clip_2/auto_advance = 0
+_transitions = {
+Vector2i(1, 0): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 2,
+"to_time": 0
+},
+Vector2i(2, 0): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 2,
+"to_time": 0
+}
+}

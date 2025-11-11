@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ShroomGameReal"
-run/main_scene="uid://cl37rt4l2wn4m"
+run/main_scene="uid://d0dkfiikwmua"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 MouseReleaserSingleton="*res://Utilities/MouseReleaser Singleton.tscn"
 SettingsManagerSingleton="*res://addons/settings_helper/SettingsManager Singleton.tscn"
 GlobalGameStateSingleton="*res://Singletons/Global Game State Singleton.tscn"
+MusicManagerSingleton="*res://Music/Music Manager Singleton.tscn"
 
 [display]
 
@@ -37,6 +38,7 @@ enabled=PackedStringArray("res://addons/settings_helper/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://Music/": "pink",
 "res://addons/": "gray",
 "res://scenes/": "green"
 }
