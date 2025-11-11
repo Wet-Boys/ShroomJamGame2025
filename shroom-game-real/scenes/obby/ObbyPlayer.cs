@@ -28,6 +28,7 @@ public partial class ObbyPlayer : Node3D
     private Vector2 MouseSensitivity => new(_horizontalSensitivity.Value, _verticalSensitivity.Value);
     private float _gravity = ProjectSettings.Singleton.GetSetting("physics/3d/default_gravity").AsSingle();
     private ObbyGameState _gameState;
+    [Export] public PlayerVisualHandler visualHandler;
     
     public override void _Ready()
     {
@@ -40,6 +41,7 @@ public partial class ObbyPlayer : Node3D
         hurtBox.BodyEntered += HurtBoxOnBodyEntered;
         _respawnPoint = GlobalPosition;
         _gameState = GetParent().GetParent<ObbyGameState>();
+        visualHandler.player = characterBody;
     }
 
     private void HurtBoxOnBodyEntered(Node3D body)
@@ -121,6 +123,8 @@ public partial class ObbyPlayer : Node3D
             characterBody.GlobalPosition = _respawnPoint;
         }
         cameraContainer.GlobalRotation = Vector3.Zero;
+        
+        visualHandler.RotateVisuals(delta, characterBody.Velocity, false);
     }
     private void CameraRayCast()
     {
