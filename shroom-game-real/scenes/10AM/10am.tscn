@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckbq3521r8wcp"]
+[gd_scene load_steps=11 format=3 uid="uid://ckbq3521r8wcp"]
 
 [ext_resource type="PackedScene" uid="uid://ckipkwdm0nqu0" path="res://scenes/10AM/8AM Room.glb" id="1_nosrv"]
-[ext_resource type="PackedScene" uid="uid://yjek4i64opw0" path="res://scenes/8AM/Room.glb" id="2_0d8jj"]
+[ext_resource type="PackedScene" uid="uid://ith6vil7fils" path="res://scenes/10AM/Room.glb" id="2_0d8jj"]
 [ext_resource type="PackedScene" uid="uid://c3lqsowth1x4l" path="res://scenes/overworld/OverworldEnvironment Prefab.tscn" id="3_8qw3q"]
 [ext_resource type="PackedScene" uid="uid://jcij2hin3jyb" path="res://scenes/10AM/Slavic Tv.glb" id="3_cy5ao"]
-[ext_resource type="PackedScene" uid="uid://dk5rx6k5tsxl1" path="res://Player/Player Prefab.tscn" id="4_0unfy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jskvd"]
 
@@ -79,9 +78,6 @@ shape = SubResource("BoxShape3D_8qw3q")
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Room/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.262909, 4.6348267, 2.5)
 shape = SubResource("BoxShape3D_8qw3q")
-
-[node name="Player" parent="Room/StaticBody3D" instance=ExtResource("4_0unfy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.289856, 1.0979725, 0.48337555)
 
 [node name="Slavic Tv" parent="Room" instance=ExtResource("3_cy5ao")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64858055, 2.021749, -8.974775)
