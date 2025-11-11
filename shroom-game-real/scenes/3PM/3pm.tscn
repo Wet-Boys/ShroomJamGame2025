@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c4rkbn75ie80w"]
+[gd_scene load_steps=2 format=3 uid="uid://c4rkbn75ie80w"]
+
+[ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_ufnjo"]
 
 [node name="Label3D" type="Label3D"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -8,3 +10,6 @@ text = "3PM
 
 "
 font_size = 642
+
+[node name="Room" parent="." instance=ExtResource("1_ufnjo")]
+transform = Transform3D(-1.307, 0, 1.14261574e-07, 0, 1.307, 0, -1.14261574e-07, 0, -1.307, 0, 0, 0)
