@@ -80,6 +80,18 @@ public partial class PlayerVisualHandler : Node3D
     {
         LockHeadAnimation("FallIntoTv");
     }
+    public void Yawn()
+    {
+        LockHeadAnimation("Yawning");
+    }
+    public void Eat()
+    {
+        LockHeadAnimation("Eating");
+    }
+    public void WakeUp()
+    {
+        LockHeadAnimation("Wakeup");
+    }
 
     private void LockHeadAnimation(string  animName)
     {

@@ -1,4 +1,4 @@
-[gd_resource type="AnimationNodeBlendTree" load_steps=12 format=3 uid="uid://c2ewrmh2ljigb"]
+[gd_resource type="AnimationNodeBlendTree" load_steps=18 format=3 uid="uid://c2ewrmh2ljigb"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s5w8n"]
 animation = &"PlayerAnimations/Walking"
@@ -15,12 +15,25 @@ animation = &"PlayerAnimations/FallIntoTv"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ecnei"]
 animation = &"PlayerAnimations/Running"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yw8k8"]
+animation = &"PlayerAnimations/WakeUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hr01n"]
+animation = &"PlayerAnimations/Yawning"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aegh6"]
+animation = &"PlayerAnimations/Eating"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0n4ac"]
 animation = &"PlayerAnimations/Idle"
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_bqn7q"]
 fadein_time = 0.1
 fadeout_time = 0.3
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_t6gfx"]
+fadein_time = 0.2
+fadeout_time = 0.1
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_bh7bw"]
 fadein_time = 0.1
@@ -31,13 +44,18 @@ fadeout_time = 0.2
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_yw8k8"]
 
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_k5bd7"]
+
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_hk2uy"]
 fadein_time = 0.2
 fadeout_time = 0.2
 
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_m8lkk"]
+fadeout_time = 0.2
+
 [resource]
-graph_offset = Vector2(-514.2891, -96.00041)
-nodes/output/position = Vector2(1640, 180)
+graph_offset = Vector2(892.35974, 198.08563)
+nodes/output/position = Vector2(2500, 500)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_0n4ac")
 nodes/Animation/position = Vector2(-80, 60)
 "nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_y2u7b")
@@ -60,4 +78,16 @@ nodes/OneShot/node = SubResource("AnimationNodeOneShot_yw8k8")
 nodes/OneShot/position = Vector2(540, 140)
 "nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_ecnei")
 "nodes/Animation 6/position" = Vector2(380, 460)
-node_connections = [&"output", 0, &"FallIntoTv", &"Coughing", 0, &"Jumping", &"Coughing", 1, &"Animation 3", &"FallIntoTv", 0, &"Coughing", &"FallIntoTv", 1, &"Animation 5", &"Jumping", 0, &"OneShot", &"Jumping", 1, &"Animation 4", &"Walking", 0, &"Animation", &"Walking", 1, &"Animation 2", &"OneShot", 0, &"Walking", &"OneShot", 1, &"Animation 6"]
+nodes/Eating/node = SubResource("AnimationNodeOneShot_t6gfx")
+nodes/Eating/position = Vector2(1700.6672, 415.08533)
+nodes/Yawning/node = SubResource("AnimationNodeOneShot_m8lkk")
+nodes/Yawning/position = Vector2(1940, 480)
+nodes/Wakeup/node = SubResource("AnimationNodeOneShot_k5bd7")
+nodes/Wakeup/position = Vector2(2240, 520)
+"nodes/Animation 7/node" = SubResource("AnimationNodeAnimation_yw8k8")
+"nodes/Animation 7/position" = Vector2(2120, 800)
+"nodes/Animation 8/node" = SubResource("AnimationNodeAnimation_hr01n")
+"nodes/Animation 8/position" = Vector2(1680, 740)
+"nodes/Animation 9/node" = SubResource("AnimationNodeAnimation_aegh6")
+"nodes/Animation 9/position" = Vector2(1420, 660)
+node_connections = [&"output", 0, &"Wakeup", &"Coughing", 0, &"Jumping", &"Coughing", 1, &"Animation 3", &"FallIntoTv", 0, &"Coughing", &"FallIntoTv", 1, &"Animation 5", &"Jumping", 0, &"OneShot", &"Jumping", 1, &"Animation 4", &"Walking", 0, &"Animation", &"Walking", 1, &"Animation 2", &"OneShot", 0, &"Walking", &"OneShot", 1, &"Animation 6", &"Eating", 0, &"FallIntoTv", &"Eating", 1, &"Animation 9", &"Yawning", 0, &"Eating", &"Yawning", 1, &"Animation 8", &"Wakeup", 0, &"Yawning", &"Wakeup", 1, &"Animation 7"]
