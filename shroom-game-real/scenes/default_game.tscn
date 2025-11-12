@@ -61,6 +61,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.9960504, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Floor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+visible = false
 size = Vector3(100, 1, 100)
 
 [node name="CSGBakedCollisionShape3D" type="CollisionShape3D" parent="Floor"]
