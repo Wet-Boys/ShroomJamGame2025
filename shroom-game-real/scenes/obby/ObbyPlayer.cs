@@ -42,6 +42,7 @@ public partial class ObbyPlayer : Node3D
         _respawnPoint = GlobalPosition;
         _gameState = GetParent().GetParent<ObbyGameState>();
         visualHandler.player = characterBody;
+        cameraY.RotationDegrees = new Vector3(0, 180, 0);
     }
 
     private void HurtBoxOnBodyEntered(Node3D body)

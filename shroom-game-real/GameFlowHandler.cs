@@ -53,7 +53,21 @@ public partial class GameFlowHandler : Node
     private Node3D _currentScene;
     private Node3D _currentGame;
     private CurrentTime _currentTime;
+    public static bool isInDreamSequence = false;
     [Export] private Label _label;
+
+    public static int Lives
+    {
+        get => field;
+        set
+        {
+            field = value;
+            if (value == 0)
+            {
+                GD.Print("game over");
+            }
+        }
+    }
     public override void _EnterTree()
     {
         instance = this;
@@ -63,6 +77,7 @@ public partial class GameFlowHandler : Node
     {
         base._Ready();
         TestStart();
+        Lives = 4;
     }
 
     private void ExitTv()
@@ -95,8 +110,14 @@ public partial class GameFlowHandler : Node
                 LoadScene(CurrentTime.Time12Am);
                 break;
             case CurrentTime.RandomMinigame:
-                LoadScene(CurrentTime.RandomMinigame);
-                //TODO check if out of lives, then LoadScene(CurrentTime.Victory);
+                if (Lives != 0)
+                {
+                    LoadScene(CurrentTime.RandomMinigame);
+                }
+                else
+                {
+                    LoadScene(CurrentTime.Victory);
+                }
                 break;
             default:
                 break;
@@ -152,6 +173,7 @@ public partial class GameFlowHandler : Node
                 ResetPlayerPosition();
                 PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
                 PlayerController.instance.visualHandler.Succ();
+                isInDreamSequence = true;
                 PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
                 break;
             case CurrentTime.Victory:
@@ -183,7 +205,8 @@ public partial class GameFlowHandler : Node
 
     private void SetupRandomGame()
     {
-        DreamTransition.instance.PlayWithText(((BaseTvGameState)_currentGame).infoText);
+        DreamTransition.instance.text.Text = ((BaseTvGameState)_currentGame).infoText;
+        DreamTransition.instance.text.PivotOffset = DreamTransition.instance.text.Size * .5f;
         if (_currentGame is ObbyGameState obbyGameState)
         {
             obbyGameState.SpawnLevel();
@@ -256,6 +279,8 @@ public partial class GameFlowHandler : Node
 
     private async Task RandomMicroGame()
     {
+        DreamTransition.instance.Play();
+        await ToSignal(GetTree().CreateTimer(.8f), "timeout");
         _currentGame?.QueueFree();
         int randomGame = _rng.RandiRange(0, microGames.Count-1);
         while (lastMicrogames.Contains(randomGame))
@@ -263,7 +288,7 @@ public partial class GameFlowHandler : Node
             randomGame = _rng.RandiRange(0, microGames.Count-1);
         }
         lastMicrogames.Add(randomGame);
-        if (lastMicrogames.Count > 1)
+        if (lastMicrogames.Count > 3)
         {
             lastMicrogames.RemoveAt(0);
         }

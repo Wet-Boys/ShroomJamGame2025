@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using ShroomGameReal;
 
 public partial class Bussy : Node3D
 {
@@ -26,7 +27,7 @@ public partial class Bussy : Node3D
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-        if (_gameState.IsActive)
+        if (_gameState.IsActive && !GlobalGameState.Instance.IsMainPaused)
         {
             _forward = _rigidBody3D.GlobalTransform.Basis.Z;
             if (Input.IsActionPressed("movement.move_forward"))

@@ -1,8 +1,125 @@
-[gd_scene load_steps=16 format=3 uid="uid://81njcsjyalcr"]
+[gd_scene load_steps=134 format=3 uid="uid://81njcsjyalcr"]
 
 [ext_resource type="Script" uid="uid://d2yi06d5v3xo3" path="res://scenes/dream/transition/DreamTransition.cs" id="1_ut6ut"]
 [ext_resource type="Texture2D" uid="uid://c6afbypqw6w4e" path="res://scenes/dream/transition/static.png" id="2_vsbky"]
 [ext_resource type="Theme" uid="uid://dmrcff1f44uiw" path="res://Ui/Main UI Theme.tres" id="3_arvtt"]
+[ext_resource type="Texture2D" uid="uid://cmlt8jvo0i6pt" path="res://scenes/dream/transition/Death Pungas/0001.png" id="4_m7ja1"]
+[ext_resource type="Texture2D" uid="uid://cnx5odbab2dtq" path="res://scenes/dream/transition/Death Pungas/0002.png" id="5_85lb8"]
+[ext_resource type="Texture2D" uid="uid://blweiv61na7vu" path="res://scenes/dream/transition/Death Pungas/0003.png" id="6_b4cgv"]
+[ext_resource type="Texture2D" uid="uid://cd3vd300561hk" path="res://scenes/dream/transition/Death Pungas/0004.png" id="7_m57lh"]
+[ext_resource type="Texture2D" uid="uid://ej2qrcyqbqo7" path="res://scenes/dream/transition/Death Pungas/0005.png" id="8_l8goa"]
+[ext_resource type="Texture2D" uid="uid://decnypyhjnl7s" path="res://scenes/dream/transition/Death Pungas/0006.png" id="9_ul37y"]
+[ext_resource type="Texture2D" uid="uid://cumsh134vh528" path="res://scenes/dream/transition/Death Pungas/0007.png" id="10_qietd"]
+[ext_resource type="Texture2D" uid="uid://dtydvgqe6o3l1" path="res://scenes/dream/transition/Death Pungas/0008.png" id="11_h077g"]
+[ext_resource type="Texture2D" uid="uid://pludhluiqoev" path="res://scenes/dream/transition/Death Pungas/0009.png" id="12_v5x8i"]
+[ext_resource type="Texture2D" uid="uid://ddrep3nh1o4xd" path="res://scenes/dream/transition/Death Pungas/0010.png" id="13_hhky6"]
+[ext_resource type="Texture2D" uid="uid://cia35yc4qj5w3" path="res://scenes/dream/transition/Death Pungas/0011.png" id="14_cbh3u"]
+[ext_resource type="Texture2D" uid="uid://dwsbgk5w6nlwi" path="res://scenes/dream/transition/Death Pungas/0012.png" id="15_40dew"]
+[ext_resource type="Texture2D" uid="uid://ccyhyxtwdonit" path="res://scenes/dream/transition/Death Pungas/0013.png" id="16_apccs"]
+[ext_resource type="Texture2D" uid="uid://h7oyo7jc251f" path="res://scenes/dream/transition/Death Pungas/0014.png" id="17_q187d"]
+[ext_resource type="Texture2D" uid="uid://dbpeie6miuc3s" path="res://scenes/dream/transition/Death Pungas/0015.png" id="18_g6y35"]
+[ext_resource type="Texture2D" uid="uid://uy6l5o74ddaw" path="res://scenes/dream/transition/Death Pungas/0016.png" id="19_rd2j8"]
+[ext_resource type="Texture2D" uid="uid://djnyykj8wxgn0" path="res://scenes/dream/transition/Death Pungas/0017.png" id="20_hnpyo"]
+[ext_resource type="Texture2D" uid="uid://d2n6ue3hojku3" path="res://scenes/dream/transition/Death Pungas/0018.png" id="21_3mlse"]
+[ext_resource type="Texture2D" uid="uid://cubiyvmt1qnpb" path="res://scenes/dream/transition/Death Pungas/0019.png" id="22_8me17"]
+[ext_resource type="Texture2D" uid="uid://ddb0xpaiu0my0" path="res://scenes/dream/transition/Death Pungas/0020.png" id="23_0lsvh"]
+[ext_resource type="Texture2D" uid="uid://vosth1rpn88i" path="res://scenes/dream/transition/Death Pungas/0021.png" id="24_q5708"]
+[ext_resource type="Texture2D" uid="uid://jr74yqwtfked" path="res://scenes/dream/transition/Death Pungas/0022.png" id="25_7paa2"]
+[ext_resource type="Texture2D" uid="uid://cikouiubjaja" path="res://scenes/dream/transition/Death Pungas/0023.png" id="26_rbfkc"]
+[ext_resource type="Texture2D" uid="uid://ce8yri15g1bx1" path="res://scenes/dream/transition/Death Pungas/0024.png" id="27_yjlhd"]
+[ext_resource type="Texture2D" uid="uid://dvmswp1a4wrye" path="res://scenes/dream/transition/Death Pungas/0025.png" id="28_rcte4"]
+[ext_resource type="Texture2D" uid="uid://cve5wgedwtgm6" path="res://scenes/dream/transition/Death Pungas/0026.png" id="29_bdg4r"]
+[ext_resource type="Texture2D" uid="uid://f45qefxswgws" path="res://scenes/dream/transition/Death Pungas/0027.png" id="30_ar54s"]
+[ext_resource type="Texture2D" uid="uid://c3hn2p1xlihk3" path="res://scenes/dream/transition/Death Pungas/0028.png" id="31_2rgmr"]
+[ext_resource type="Texture2D" uid="uid://x03wlktnqxg4" path="res://scenes/dream/transition/Death Pungas/0029.png" id="32_kbefq"]
+[ext_resource type="Texture2D" uid="uid://56yjdc0gvqr4" path="res://scenes/dream/transition/Death Pungas/0030.png" id="33_iiht2"]
+[ext_resource type="Texture2D" uid="uid://bihxsdb8oksfq" path="res://scenes/dream/transition/Death Pungas/0031.png" id="34_pvudj"]
+[ext_resource type="Texture2D" uid="uid://3sps8b2kscct" path="res://scenes/dream/transition/Death Pungas/0032.png" id="35_jgdpu"]
+[ext_resource type="Texture2D" uid="uid://xoedxb7ju0ib" path="res://scenes/dream/transition/Death Pungas/0033.png" id="36_pusv2"]
+[ext_resource type="Texture2D" uid="uid://c5rxpwuw1me5q" path="res://scenes/dream/transition/Death Pungas/0034.png" id="37_2kq1c"]
+[ext_resource type="Texture2D" uid="uid://olky8orpqmqu" path="res://scenes/dream/transition/Death Pungas/0035.png" id="38_aapne"]
+[ext_resource type="Texture2D" uid="uid://b1iipcfwffuhm" path="res://scenes/dream/transition/Death Pungas/0036.png" id="39_2tdbn"]
+[ext_resource type="Texture2D" uid="uid://bdgu3hwn7kn53" path="res://scenes/dream/transition/Death Pungas/0037.png" id="40_axx4y"]
+[ext_resource type="Texture2D" uid="uid://bd6iy1wnphnmc" path="res://scenes/dream/transition/Death Pungas/0038.png" id="41_lecb6"]
+[ext_resource type="Texture2D" uid="uid://dg3imfiwhxxgn" path="res://scenes/dream/transition/Death Pungas/0039.png" id="42_1pdyc"]
+[ext_resource type="Texture2D" uid="uid://q8cjxi7fwoqi" path="res://scenes/dream/transition/Death Pungas/0040.png" id="43_iv5cg"]
+[ext_resource type="Texture2D" uid="uid://doh8rcgxxedh1" path="res://scenes/dream/transition/Death Pungas/0041.png" id="44_3qxdr"]
+[ext_resource type="Texture2D" uid="uid://qeimj5rvvxt6" path="res://scenes/dream/transition/Death Pungas/0042.png" id="45_mvycd"]
+[ext_resource type="Texture2D" uid="uid://der7thf2wrcdy" path="res://scenes/dream/transition/Death Pungas/0043.png" id="46_tfixy"]
+[ext_resource type="Texture2D" uid="uid://cs2co8kwwh74b" path="res://scenes/dream/transition/Death Pungas/0044.png" id="47_5wgjt"]
+[ext_resource type="Texture2D" uid="uid://d86ck4n12kml" path="res://scenes/dream/transition/Death Pungas/0045.png" id="48_ydmpr"]
+[ext_resource type="Texture2D" uid="uid://br4j3u5m7jm25" path="res://scenes/dream/transition/Death Pungas/0046.png" id="49_rsm7v"]
+[ext_resource type="Texture2D" uid="uid://c0fwj5uytg74o" path="res://scenes/dream/transition/Death Pungas/0047.png" id="50_e87ra"]
+[ext_resource type="Texture2D" uid="uid://6sddhtk0et6p" path="res://scenes/dream/transition/Death Pungas/0048.png" id="51_jp0wc"]
+[ext_resource type="Texture2D" uid="uid://ce3pfynhpxw1u" path="res://scenes/dream/transition/Death Pungas/0049.png" id="52_h81d5"]
+[ext_resource type="Texture2D" uid="uid://dp1egnb18w5q5" path="res://scenes/dream/transition/Death Pungas/0050.png" id="53_udvc8"]
+[ext_resource type="Texture2D" uid="uid://d3p50o7fnr6pi" path="res://scenes/dream/transition/Death Pungas/0051.png" id="54_nukbc"]
+[ext_resource type="Texture2D" uid="uid://cdcnarowgvt5v" path="res://scenes/dream/transition/Death Pungas/0052.png" id="55_y1gef"]
+[ext_resource type="Texture2D" uid="uid://bdil66p6o43lu" path="res://scenes/dream/transition/Death Pungas/0053.png" id="56_c3rai"]
+[ext_resource type="Texture2D" uid="uid://bvkrweofyktr8" path="res://scenes/dream/transition/Death Pungas/0054.png" id="57_ybcyv"]
+[ext_resource type="Texture2D" uid="uid://ca03yobg5667q" path="res://scenes/dream/transition/Death Pungas/0055.png" id="58_5e4xf"]
+[ext_resource type="Texture2D" uid="uid://ydb3p3j3kest" path="res://scenes/dream/transition/Death Pungas/0056.png" id="59_ro417"]
+[ext_resource type="Texture2D" uid="uid://ccc1mquqpj1kx" path="res://scenes/dream/transition/Death Pungas/0057.png" id="60_71xpg"]
+[ext_resource type="Texture2D" uid="uid://d0qlkbkacol2v" path="res://scenes/dream/transition/Death Pungas/0058.png" id="61_1pfi0"]
+[ext_resource type="Texture2D" uid="uid://diorh58r2sx4h" path="res://scenes/dream/transition/Death Pungas/0059.png" id="62_6x6lh"]
+[ext_resource type="Texture2D" uid="uid://d4fgpiibwoq0o" path="res://scenes/dream/transition/Death Pungas/0060.png" id="63_ea1ie"]
+[ext_resource type="Texture2D" uid="uid://cnk828bqibsoy" path="res://scenes/dream/transition/Death Pungas/0061.png" id="64_kaf6v"]
+[ext_resource type="Texture2D" uid="uid://bqj3up17s0t26" path="res://scenes/dream/transition/Death Pungas/0062.png" id="65_nff5m"]
+[ext_resource type="Texture2D" uid="uid://du3qqhkrr4h3g" path="res://scenes/dream/transition/Death Pungas/0063.png" id="66_aokmu"]
+[ext_resource type="Texture2D" uid="uid://cqvpjdin7gbpu" path="res://scenes/dream/transition/Death Pungas/0064.png" id="67_2w2bf"]
+[ext_resource type="Texture2D" uid="uid://g7aj7si61mi4" path="res://scenes/dream/transition/Death Pungas/0065.png" id="68_sue8o"]
+[ext_resource type="Texture2D" uid="uid://s2tcr2t4afl3" path="res://scenes/dream/transition/Death Pungas/0066.png" id="69_ly8pv"]
+[ext_resource type="Texture2D" uid="uid://b37kkj2x7bd7o" path="res://scenes/dream/transition/Death Pungas/0067.png" id="70_ae4us"]
+[ext_resource type="Texture2D" uid="uid://dshf0cg0ec3ej" path="res://scenes/dream/transition/Death Pungas/0068.png" id="71_tsgvg"]
+[ext_resource type="Texture2D" uid="uid://6w1y21jemtqg" path="res://scenes/dream/transition/Death Pungas/0069.png" id="72_7et0l"]
+[ext_resource type="Texture2D" uid="uid://by2sc1helceit" path="res://scenes/dream/transition/Death Pungas/0070.png" id="73_uqe2u"]
+[ext_resource type="Texture2D" uid="uid://c8exbisv5c3a5" path="res://scenes/dream/transition/Death Pungas/0071.png" id="74_fmlk8"]
+[ext_resource type="Texture2D" uid="uid://cgx5ap07aweck" path="res://scenes/dream/transition/Death Pungas/0072.png" id="75_drmi8"]
+[ext_resource type="Texture2D" uid="uid://b404hgdk41nud" path="res://scenes/dream/transition/Death Pungas/0073.png" id="76_espck"]
+[ext_resource type="Texture2D" uid="uid://bt1x31p5wxh26" path="res://scenes/dream/transition/Death Pungas/0074.png" id="77_k0jgt"]
+[ext_resource type="Texture2D" uid="uid://cwuoxoskvyi0t" path="res://scenes/dream/transition/Death Pungas/0075.png" id="78_h1wwc"]
+[ext_resource type="Texture2D" uid="uid://o0udcvnga0fi" path="res://scenes/dream/transition/Death Pungas/0076.png" id="79_jhp0i"]
+[ext_resource type="Texture2D" uid="uid://fyj6v6vnmqfu" path="res://scenes/dream/transition/Death Pungas/0077.png" id="80_kpty6"]
+[ext_resource type="Texture2D" uid="uid://jwuthrhdt8t0" path="res://scenes/dream/transition/Death Pungas/0078.png" id="81_fnop8"]
+[ext_resource type="Texture2D" uid="uid://tvfelsd2tj53" path="res://scenes/dream/transition/Death Pungas/0079.png" id="82_ugwwu"]
+[ext_resource type="Texture2D" uid="uid://utx63qdu7sx1" path="res://scenes/dream/transition/Death Pungas/0080.png" id="83_rdi8w"]
+[ext_resource type="Texture2D" uid="uid://b2t035pbf7l5q" path="res://scenes/dream/transition/Death Pungas/0081.png" id="84_4ws2q"]
+[ext_resource type="Texture2D" uid="uid://d1xyyemg44r5m" path="res://scenes/dream/transition/Death Pungas/0082.png" id="85_b25hf"]
+[ext_resource type="Texture2D" uid="uid://gi8g2b424hqo" path="res://scenes/dream/transition/Death Pungas/0083.png" id="86_qjdgy"]
+[ext_resource type="Texture2D" uid="uid://bftj1ky67wtej" path="res://scenes/dream/transition/Death Pungas/0084.png" id="87_8m360"]
+[ext_resource type="Texture2D" uid="uid://dw2jvqvpcybv6" path="res://scenes/dream/transition/Death Pungas/0085.png" id="88_33qo8"]
+[ext_resource type="Texture2D" uid="uid://svtiayvr0rws" path="res://scenes/dream/transition/Death Pungas/0086.png" id="89_jvsem"]
+[ext_resource type="Texture2D" uid="uid://ckh1dt3r4gycv" path="res://scenes/dream/transition/Death Pungas/0087.png" id="90_15kgq"]
+[ext_resource type="Texture2D" uid="uid://c55jnr0njqbwk" path="res://scenes/dream/transition/Death Pungas/0088.png" id="91_giirx"]
+[ext_resource type="Texture2D" uid="uid://dg0o758okfdw2" path="res://scenes/dream/transition/Death Pungas/0089.png" id="92_s1uxf"]
+[ext_resource type="Texture2D" uid="uid://dhcticswyi2kh" path="res://scenes/dream/transition/Death Pungas/0090.png" id="93_6o24c"]
+[ext_resource type="Texture2D" uid="uid://b8m71j8msm2oe" path="res://scenes/dream/transition/Death Pungas/0091.png" id="94_p6n0p"]
+[ext_resource type="Texture2D" uid="uid://c4ibs2sof3t6i" path="res://scenes/dream/transition/Death Pungas/0092.png" id="95_eioxf"]
+[ext_resource type="Texture2D" uid="uid://csjopvscklk2y" path="res://scenes/dream/transition/Death Pungas/0093.png" id="96_jebft"]
+[ext_resource type="Texture2D" uid="uid://cpxsl4rruu8uy" path="res://scenes/dream/transition/Death Pungas/0094.png" id="97_ylym1"]
+[ext_resource type="Texture2D" uid="uid://cgk1hqgtnflfu" path="res://scenes/dream/transition/Death Pungas/0095.png" id="98_ogxma"]
+[ext_resource type="Texture2D" uid="uid://ckvuc62k2ryls" path="res://scenes/dream/transition/Death Pungas/0096.png" id="99_hsgga"]
+[ext_resource type="Texture2D" uid="uid://btq2p5pphrngq" path="res://scenes/dream/transition/Death Pungas/0097.png" id="100_1ir6e"]
+[ext_resource type="Texture2D" uid="uid://e1tbuduxh2j4" path="res://scenes/dream/transition/Death Pungas/0098.png" id="101_0wrgf"]
+[ext_resource type="Texture2D" uid="uid://da5fsu44wov6x" path="res://scenes/dream/transition/Death Pungas/0099.png" id="102_sxqqq"]
+[ext_resource type="Texture2D" uid="uid://bh4w7d6fkcmt3" path="res://scenes/dream/transition/Death Pungas/0100.png" id="103_h0aj6"]
+[ext_resource type="Texture2D" uid="uid://dfx5lng076rtp" path="res://scenes/dream/transition/Death Pungas/0101.png" id="104_5lc1j"]
+[ext_resource type="Texture2D" uid="uid://dexgi3rgaslwr" path="res://scenes/dream/transition/Death Pungas/0102.png" id="105_3df1a"]
+[ext_resource type="Texture2D" uid="uid://bspjmf7oftn4m" path="res://scenes/dream/transition/Death Pungas/0103.png" id="106_nfjur"]
+[ext_resource type="Texture2D" uid="uid://cc5hjnwmhjrbw" path="res://scenes/dream/transition/Death Pungas/0104.png" id="107_nj4rx"]
+[ext_resource type="Texture2D" uid="uid://wtark1bnnolv" path="res://scenes/dream/transition/Death Pungas/0105.png" id="108_ps4bt"]
+[ext_resource type="Texture2D" uid="uid://15g2tmqysu1x" path="res://scenes/dream/transition/Death Pungas/0106.png" id="109_cuvgg"]
+[ext_resource type="Texture2D" uid="uid://1xufoiag70vn" path="res://scenes/dream/transition/Death Pungas/0107.png" id="110_mrgg6"]
+[ext_resource type="Texture2D" uid="uid://eoc1lj37dyl4" path="res://scenes/dream/transition/Death Pungas/0108.png" id="111_eb3k3"]
+[ext_resource type="Texture2D" uid="uid://b21lk4e4ijnex" path="res://scenes/dream/transition/Death Pungas/0109.png" id="112_vj4v6"]
+[ext_resource type="Texture2D" uid="uid://b1qdd5kj72vio" path="res://scenes/dream/transition/Death Pungas/0110.png" id="113_x6vrq"]
+[ext_resource type="Texture2D" uid="uid://pp1spt01v22m" path="res://scenes/dream/transition/Death Pungas/0111.png" id="114_y6ddd"]
+[ext_resource type="Texture2D" uid="uid://b5cfmqcwaisva" path="res://scenes/dream/transition/Death Pungas/0112.png" id="115_54h7v"]
+[ext_resource type="Texture2D" uid="uid://x752t74gadlt" path="res://scenes/dream/transition/Death Pungas/0113.png" id="116_hrsid"]
+[ext_resource type="Texture2D" uid="uid://cgrygexmn7x7o" path="res://scenes/dream/transition/Death Pungas/0114.png" id="117_2ftr0"]
+[ext_resource type="Texture2D" uid="uid://dwfdgnywonkua" path="res://scenes/dream/transition/Death Pungas/0115.png" id="118_013au"]
+[ext_resource type="Texture2D" uid="uid://cjy0lxp2v0kev" path="res://scenes/dream/transition/Death Pungas/0116.png" id="119_wmmxd"]
+[ext_resource type="SpriteFrames" uid="uid://dlih64qvfd05d" path="res://scenes/dream/transition/dance.tres" id="120_lqqu6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxn1a"]
 atlas = ExtResource("2_vsbky")
@@ -106,10 +223,22 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
 
 [sub_resource type="Animation" id="Animation_ut6ut"]
 resource_name = "Transition"
-length = 1.5
+length = 2.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -117,10 +246,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.5, 1, 1.3, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.19999999, 1.5, 2, 2.3, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [1.0, 1.0, 0.0, 0.0]
+"values": [0.0, 1.0, 1.0, 1.0, 0.0, 0.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -129,10 +258,10 @@ tracks/1/path = NodePath("Label:modulate:a")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.3666666, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 1.5, 2, 2.3666666, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.0, 1.0, 1.0, 1.0, 0.0]
+"values": [0.0, 0.0, 1.0, 1.0, 1.0, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -141,10 +270,22 @@ tracks/2/path = NodePath("Label:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"times": PackedFloat32Array(0, 1, 1.5, 2, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 10), Vector2(10, 10), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.19999999, 2, 2.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(10, 10), Vector2(1, 1), Vector2(1, 1), Vector2(1, 1)]
+"values": [0.0, 1.0, 1.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_arvtt"]
@@ -153,7 +294,363 @@ _data = {
 &"Transition": SubResource("Animation_ut6ut")
 }
 
-[node name="Control" type="Control" node_paths=PackedStringArray("_background", "_text")]
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbbt0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_m7ja1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_85lb8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b4cgv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_m57lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l8goa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ul37y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qietd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_h077g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_v5x8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hhky6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_cbh3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_40dew")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_apccs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_q187d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g6y35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_rd2j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_hnpyo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3mlse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_8me17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_0lsvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_q5708")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7paa2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rbfkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_yjlhd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_rcte4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bdg4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ar54s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_2rgmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_kbefq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_iiht2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_pvudj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_jgdpu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_pusv2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_2kq1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_aapne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_2tdbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_axx4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_lecb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_1pdyc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_iv5cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_3qxdr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_mvycd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_tfixy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_5wgjt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ydmpr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_rsm7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_e87ra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_jp0wc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_h81d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_udvc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_nukbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_y1gef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_c3rai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ybcyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_5e4xf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ro417")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_71xpg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_1pfi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_6x6lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_ea1ie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_kaf6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_nff5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_aokmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_2w2bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_sue8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_ly8pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_ae4us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_tsgvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_7et0l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_uqe2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_fmlk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_drmi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_espck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_k0jgt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_h1wwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_jhp0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_kpty6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_fnop8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_ugwwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_rdi8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_4ws2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_b25hf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_qjdgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_8m360")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_33qo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_jvsem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_15kgq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_giirx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_s1uxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_6o24c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_p6n0p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_eioxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_jebft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_ylym1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_ogxma")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_hsgga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_1ir6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_0wrgf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_sxqqq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_h0aj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_5lc1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_3df1a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_nfjur")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_nj4rx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_ps4bt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_cuvgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_mrgg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_eb3k3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_vj4v6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_x6vrq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_y6ddd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_54h7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_hrsid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_2ftr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_013au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_wmmxd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("_background", "text", "_animator", "activeHealth", "dyingHealth")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -162,7 +659,10 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ut6ut")
 _background = NodePath("AnimatedSprite2D")
-_text = NodePath("Label")
+text = NodePath("Label")
+_animator = NodePath("AnimationPlayer")
+activeHealth = [NodePath("Control/HBoxContainer2/DeathLife4"), NodePath("Control/HBoxContainer2/DeathLife3"), NodePath("Control/HBoxContainer2/DeathLife2"), NodePath("Control/HBoxContainer2/DeathLife1")]
+dyingHealth = [NodePath("Control/HBoxContainer/DeathLife4"), NodePath("Control/HBoxContainer/DeathLife3"), NodePath("Control/HBoxContainer/DeathLife2"), NodePath("Control/HBoxContainer/DeathLife1")]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.8346143, 0.8346143, 0.8346143, 1)
@@ -196,3 +696,78 @@ vertical_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_arvtt")
 }
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 920.0
+offset_top = 860.0
+offset_right = 960.0
+offset_bottom = 900.0002
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+
+[node name="DeathLife1" type="AnimatedSprite2D" parent="Control/HBoxContainer"]
+position = Vector2(-1063.3334, 0)
+sprite_frames = SubResource("SpriteFrames_kbbt0")
+frame_progress = 0.5465184
+
+[node name="DeathLife2" type="AnimatedSprite2D" parent="Control/HBoxContainer"]
+position = Vector2(-123.33333, 0)
+sprite_frames = SubResource("SpriteFrames_kbbt0")
+frame_progress = 0.5445085
+
+[node name="DeathLife3" type="AnimatedSprite2D" parent="Control/HBoxContainer"]
+position = Vector2(780, 0)
+sprite_frames = SubResource("SpriteFrames_kbbt0")
+frame_progress = 0.51445025
+
+[node name="DeathLife4" type="AnimatedSprite2D" parent="Control/HBoxContainer"]
+position = Vector2(1593.3333, 0)
+sprite_frames = SubResource("SpriteFrames_kbbt0")
+frame_progress = 0.10777658
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 920.0
+offset_top = 860.0
+offset_right = 960.0
+offset_bottom = 900.0002
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.3, 0.3)
+
+[node name="DeathLife1" type="AnimatedSprite2D" parent="Control/HBoxContainer2"]
+position = Vector2(-1063.3334, 0)
+sprite_frames = ExtResource("120_lqqu6")
+frame_progress = 0.4852359
+
+[node name="DeathLife2" type="AnimatedSprite2D" parent="Control/HBoxContainer2"]
+position = Vector2(-123.33333, 0)
+sprite_frames = ExtResource("120_lqqu6")
+frame_progress = 0.9529326
+
+[node name="DeathLife3" type="AnimatedSprite2D" parent="Control/HBoxContainer2"]
+position = Vector2(780, 0)
+sprite_frames = ExtResource("120_lqqu6")
+frame_progress = 0.13370216
+
+[node name="DeathLife4" type="AnimatedSprite2D" parent="Control/HBoxContainer2"]
+position = Vector2(1593.3333, 0)
+sprite_frames = ExtResource("120_lqqu6")
+frame_progress = 0.097878985
