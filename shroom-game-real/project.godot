@@ -21,7 +21,6 @@ MouseReleaserSingleton="*res://Utilities/MouseReleaser Singleton.tscn"
 SettingsManagerSingleton="*res://addons/settings_helper/SettingsManager Singleton.tscn"
 GlobalGameStateSingleton="*res://Singletons/Global Game State Singleton.tscn"
 MusicManagerSingleton="*res://Music/Music Manager Singleton.tscn"
-SteamAudioConfigSingleton="*res://Singletons/Steam Audio Config Singleton.tscn"
 
 [display]
 

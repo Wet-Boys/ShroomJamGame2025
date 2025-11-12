@@ -1,4 +1,0 @@
-[gd_scene format=3 uid="uid://bbkroodk2os3r"]
-
-[node name="SteamAudioConfigSingleton" type="SteamAudioConfig"]
-scene_type = 0
