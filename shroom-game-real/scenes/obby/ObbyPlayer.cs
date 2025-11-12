@@ -30,15 +30,16 @@ public partial class ObbyPlayer : Node3D
     private ObbyGameState _gameState;
     [Export] public PlayerVisualHandler visualHandler;
     
-    [Export] public AudioStreamPlayer3D spawnSfx;
-    [Export] public AudioStreamPlayer3D spawn10;
-    [Export] public AudioStreamPlayer3D spawn20;
-    [Export] public AudioStreamPlayer3D spawn7;
-    [Export] public AudioStreamPlayer3D hitSfx;
-    [Export] public AudioStreamPlayer3D deathSfx;
-    [Export] public AudioStreamPlayer3D idleSfx;
+    [Export] public AudioStreamPlayer spawnSfx;
+    [Export] public AudioStreamPlayer spawn10;
+    [Export] public AudioStreamPlayer spawn20;
+    [Export] public AudioStreamPlayer spawn7;
+    [Export] public AudioStreamPlayer hitSfx;
+    [Export] public AudioStreamPlayer deathSfx;
+    [Export] public AudioStreamPlayer idleSfx;
     private int _currentRound = 1;
     private double _nothingEverHappensTimer = 0;
+    private bool _needToRespawn = false;
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -129,7 +130,7 @@ public partial class ObbyPlayer : Node3D
             }
         }
 
-        if (characterBody.GlobalPosition.Y < 0)
+        if (characterBody.GlobalPosition.Y < 0 && !_needToRespawn)
         {
             Respawn();
         }
@@ -145,6 +146,7 @@ public partial class ObbyPlayer : Node3D
 
     private void Respawn()
     {
+        _needToRespawn = true;
         idleSfx.Stop();
         hitSfx.Stop();
         deathSfx.Play();
@@ -170,6 +172,8 @@ public partial class ObbyPlayer : Node3D
         {
             spawnSfx.Play();
         }
+
+        _needToRespawn = false;
     }
     private void CameraRayCast()
     {
@@ -217,7 +221,10 @@ public partial class ObbyPlayer : Node3D
         if (ragdollBody.Freeze)
         {
             _nothingEverHappensTimer = 0;
-            hitSfx.Play();
+            if (_ragdollTimer < 1)
+            {
+                hitSfx.Play();
+            }
             idleSfx.Stop();
             ragdollBody.GlobalPosition = characterBody.GlobalPosition;
             ragdollBody.GlobalRotation = characterBody.GlobalRotation;
