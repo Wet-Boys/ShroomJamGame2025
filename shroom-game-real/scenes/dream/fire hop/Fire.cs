@@ -46,7 +46,7 @@ public partial class Fire : Node3D
             player.health--;
             QueueFree();
             
-            GameFlowHandler.instance.FailMinigame(player.gameState);
+            GameFlowHandler.instance.FinishMinigame(player.gameState, true);
         }
     }
 }

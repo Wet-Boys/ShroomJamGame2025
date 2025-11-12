@@ -28,4 +28,9 @@ public partial class BaseTvGameState : Node3D
     {
         
     }
+
+    public virtual void Failure()
+    {
+        
+    }
 }

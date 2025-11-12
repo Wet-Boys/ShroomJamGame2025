@@ -179,7 +179,7 @@ public partial class HoleInTheWallGame : BaseTvGameState
             // GD.Print("You lost");
             if (GameFlowHandler.isInDreamSequence)
             {
-                GameFlowHandler.instance.FailMinigame(this);
+                GameFlowHandler.instance.FinishMinigame(this, true);
             }
             _wallCutOutMaterial.Set("shader_parameter/show_mistakes", true);
             _contestantBody.Freeze = false;
@@ -203,6 +203,12 @@ public partial class HoleInTheWallGame : BaseTvGameState
     private void GameWon()
     {
         CanActivate = false;
-        ExitTv();
+        if (GameFlowHandler.isInDreamSequence)
+        {
+            GameFlowHandler.instance.FinishMinigame(this, false);
+        }
+        else
+            ExitTv();
+        CanActivate = true;
     }
 }

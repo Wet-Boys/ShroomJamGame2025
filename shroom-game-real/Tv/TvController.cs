@@ -148,7 +148,6 @@ public partial class TvController : Node
     public Node SetTvSubWorld(PackedScene scene)
     {
         ClearTvSubWorld();
-        
         var instance = scene.Instantiate();
         _viewport.AddChild(instance);
 

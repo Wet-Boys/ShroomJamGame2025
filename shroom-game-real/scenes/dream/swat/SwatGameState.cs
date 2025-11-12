@@ -6,7 +6,6 @@ using ShroomGameReal.Utilities;
 
 public partial class SwatGameState : BaseTvGameState
 {
-    public double remainingTime = 10;
     public override void _Ready()
     {
         base._Ready();
@@ -25,16 +24,20 @@ public partial class SwatGameState : BaseTvGameState
         base._Process(delta);
         if (Fly.flyCount == 0)
         {
-            ExitTv();
+            if (GameFlowHandler.isInDreamSequence)
+            {
+                GameFlowHandler.instance.FinishMinigame(this, false);
+            }
+            else
+                ExitTv();
             CanActivate = false;
         }
-        else
+    }
+    public override void Failure()
+    {
+        if (GameFlowHandler.isInDreamSequence)
         {
-            remainingTime -= delta;
-            if (remainingTime <= 0)
-            {
-                GameFlowHandler.instance.FailMinigame(this);
-            }
+            GameFlowHandler.instance.FinishMinigame(this, true);
         }
     }
 }

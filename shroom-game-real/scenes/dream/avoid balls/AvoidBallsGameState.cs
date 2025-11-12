@@ -1,10 +1,10 @@
 using Godot;
 using System;
+using ShroomGameReal;
 using ShroomGameReal.Tv.GameStates;
 
 public partial class AvoidBallsGameState : BaseTvGameState
 {
-    public float survivalDuration = 10;
     public override void _Ready()
     {
         base._Ready();
@@ -18,11 +18,13 @@ public partial class AvoidBallsGameState : BaseTvGameState
     public override void _Process(double delta)
     {
         base._Process(delta);
-        survivalDuration -= (float)delta;
-        if (survivalDuration <= 0)
+    }
+
+    public override void Failure()
+    {
+        if (GameFlowHandler.isInDreamSequence)
         {
-            ExitTv();
-            CanActivate = false;
+            GameFlowHandler.instance.FinishMinigame(this, true);
         }
     }
 }

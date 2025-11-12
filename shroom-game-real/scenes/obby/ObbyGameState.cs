@@ -34,7 +34,19 @@ public partial class ObbyGameState : BaseTvGameState
 
     public void FinishLevel()
     {
-        ExitTv();
-        CanActivate = false;
+        if (GameFlowHandler.isInDreamSequence)
+        {
+            GameFlowHandler.instance.FinishMinigame(this, false);
+        }
+        else
+            ExitTv();
+        CanActivate = true;
+    }
+    public override void Failure()
+    {
+        if (GameFlowHandler.isInDreamSequence)
+        {
+            GameFlowHandler.instance.FinishMinigame(this, true);
+        }
     }
 }

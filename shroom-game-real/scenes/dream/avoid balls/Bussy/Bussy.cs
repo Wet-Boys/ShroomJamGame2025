@@ -20,10 +20,7 @@ public partial class Bussy : Node3D
     {
         if (body.GetParent() is Ball ball)
         {
-            if (GameFlowHandler.isInDreamSequence)
-            {
-                GameFlowHandler.instance.FailMinigame(_gameState);
-            }
+            _gameState.Failure();
         }
     }
 

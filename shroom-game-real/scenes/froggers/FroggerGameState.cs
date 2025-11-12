@@ -11,6 +11,7 @@ public partial class FroggerGameState : BaseTvGameState
     private float _carTimer;
     private float _logTimer;
     public float logResetPoint = 0;
+    public float logSpeed = 1;
     public int[] carRows = [-22, -20, -18, -16, -14, -12, -10, -8];//8 rows -22 to -8
     public int[] logRows = [-4, -2, 0, 2, 4, 6, 8, 10, 12, 14];//10 rows -4 to 14
 
@@ -82,13 +83,25 @@ public partial class FroggerGameState : BaseTvGameState
             bool onRight = logRow % 2 == 0;
             newLog.Position = new Vector3(logRows[logRow], 0, onRight ? 19 : -19);
             newLog.speed = onRight ? -1 : 1;
-            newLog.speed *= logRow + 3;
+            newLog.speed *= logRow + 3 * logSpeed;
         }
 
         if (frog.Position.X > 14)
         {
-            ExitTv();
-            CanActivate = false;
+            if (GameFlowHandler.isInDreamSequence)
+            {
+                GameFlowHandler.instance.FinishMinigame(this, false);
+            }
+            else
+                ExitTv();
+            CanActivate = true;
+        }
+    }
+    public override void Failure()
+    {
+        if (GameFlowHandler.isInDreamSequence)
+        {
+            GameFlowHandler.instance.FinishMinigame(this, true);
         }
     }
 }

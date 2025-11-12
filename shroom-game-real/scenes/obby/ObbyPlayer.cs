@@ -148,7 +148,7 @@ public partial class ObbyPlayer : Node3D
     {
         if (GameFlowHandler.isInDreamSequence)
         {
-            GameFlowHandler.instance.FailMinigame(_gameState);
+            GameFlowHandler.instance.FinishMinigame(_gameState, true);
         }
         else
         {

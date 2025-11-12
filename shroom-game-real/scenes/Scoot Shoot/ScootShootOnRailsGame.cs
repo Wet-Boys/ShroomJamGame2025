@@ -103,14 +103,20 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
 
         CanActivate = false;
         
-        ExitTv();
+        if (GameFlowHandler.isInDreamSequence)
+        {
+            GameFlowHandler.instance.FinishMinigame(this, false);
+        }
+        else
+            ExitTv();
+        CanActivate = true;
     }
 
     private void OnGameLost()
     {
         if (GameFlowHandler.isInDreamSequence)
         {
-            GameFlowHandler.instance.FailMinigame(this);
+            GameFlowHandler.instance.FinishMinigame(this, true);
         }
         else
         {
@@ -118,7 +124,7 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
             EmitSignalOnGameFinished(false);
             GD.Print("Player lost");
 
-            CanActivate = false;
+            CanActivate = true;
         
             ExitTv();   
         }
