@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using ShroomGameReal;
 
 public partial class FireHopAvatar : Node3D
 {
@@ -42,7 +43,7 @@ public partial class FireHopAvatar : Node3D
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-        if (_gameState.IsActive)
+        if (_gameState.IsActive && !GlobalGameState.Instance.IsMainPaused)
         {
             if (Input.IsActionJustPressed("movement.jump"))
             {

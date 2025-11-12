@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://8awqfdjpqei6"]
+[gd_scene load_steps=19 format=3 uid="uid://8awqfdjpqei6"]
 
 [ext_resource type="Script" uid="uid://b2ekqf23iydes" path="res://scenes/HITW/HoleInTheWallGame.cs" id="1_ddbat"]
 [ext_resource type="PackedScene" uid="uid://cib1elxwbyfpr" path="res://scenes/HITW/Contestants/Contestant 1.tscn" id="2_fewlc"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://b0qh8j15dsdod" path="res://scenes/HITW/Contestants/Contestant 2.tscn" id="3_3td4r"]
 [ext_resource type="PackedScene" uid="uid://v16w1jgh6trc" path="res://scenes/HITW/Stage/Stage.glb" id="3_gixxu"]
 [ext_resource type="Material" uid="uid://c20i4fc06gmfr" path="res://scenes/HITW/Drawing/Draw Cut Overlay.tres" id="4_gixxu"]
+[ext_resource type="PackedScene" uid="uid://blty6w8srcj1f" path="res://scenes/HITW/Contestants/Contestant 3.tscn" id="4_x6wgw"]
 [ext_resource type="Texture2D" uid="uid://dnctv2qdsms0v" path="res://scenes/Scoot Shoot/zapper-crosshair.svg" id="4_xpe22"]
+[ext_resource type="PackedScene" uid="uid://oc2n54k4gmm5" path="res://scenes/HITW/Contestants/Contestant 4.tscn" id="5_j76ei"]
+[ext_resource type="PackedScene" uid="uid://duci6ta0rojdx" path="res://scenes/HITW/Contestants/Contestant 5.tscn" id="6_pj4w6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3og3x"]
 size = Vector3(4, 2, 4)
@@ -42,7 +45,7 @@ border_color = Color(0.2243011, 5.6601762e-05, 0.80448, 1)
 script = ExtResource("1_ddbat")
 imageSize = Vector2i(128, 128)
 budgetMultiplier = 2.5
-contestantPrefabs = [ExtResource("2_fewlc"), ExtResource("3_3td4r")]
+contestantPrefabs = [ExtResource("2_fewlc"), ExtResource("3_3td4r"), ExtResource("4_x6wgw"), ExtResource("5_j76ei"), ExtResource("6_pj4w6")]
 metadata/_custom_type_script = "uid://b2ekqf23iydes"
 
 [node name="Completion Timer" type="Node" parent="."]

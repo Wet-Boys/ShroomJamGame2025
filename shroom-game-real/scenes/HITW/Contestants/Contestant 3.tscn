@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://blty6w8srcj1f"]
+
+[ext_resource type="PackedScene" uid="uid://8dvdxvspd1ir" path="res://scenes/HITW/Contestants/Renderer/Base Contestant Prefab.tscn" id="1_moeiy"]
+[ext_resource type="PackedScene" uid="uid://n8na3ffpimjg" path="res://scenes/HITW/Contestants/Pose3.glb" id="2_moeiy"]
+
+[node name="Contestant 2" instance=ExtResource("1_moeiy")]
+
+[node name="Pose3" parent="Contestant Render Viewport/Contestant Render Root" index="0" instance=ExtResource("2_moeiy")]
+
+[node name="Skeleton3D" parent="Contestant Render Viewport/Contestant Render Root/Pose3/metarig" index="0"]
+bones/10/rotation = Quaternion(0.29651982, 0.32989475, 0.033407997, 0.8956167)
+bones/11/rotation = Quaternion(0.0033641069, -0.10304177, -0.001567598, 0.99467015)
+bones/12/rotation = Quaternion(0.1332489, 0.3642528, -0.0801279, 0.91822886)
+bones/15/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
+bones/17/rotation = Quaternion(0.35439327, -0.4477767, 0.16673486, 0.8038041)
+bones/18/rotation = Quaternion(0.003394501, 0.1030418, 0.0015817748, 0.99467)
+bones/19/rotation = Quaternion(-0.051934786, -0.30369177, -0.07059209, 0.9487312)
+bones/22/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
+bones/24/rotation = Quaternion(0.92590094, 0.28127548, -0.18543302, 0.17089814)
+bones/25/rotation = Quaternion(0.002144471, 7.963709e-09, 1.0816319e-08, 0.9999978)
+bones/26/rotation = Quaternion(-0.4681663, 0.08678014, 0.13441095, 0.8690359)
+bones/30/rotation = Quaternion(0.9550536, -0.2757495, -0.09677745, 0.04968924)
+bones/31/rotation = Quaternion(0.0021190348, 6.5462535e-10, -7.4492092e-09, 0.99999785)
+bones/32/rotation = Quaternion(-0.51364, 0.13753779, 0.04864673, 0.8455122)
+bones/33/rotation = Quaternion(-1.1066617e-07, 0.9612488, -0.2756822, -3.095097e-07)
+bones/35/position = Vector3(0.98184514, 2.1526365, -0.3286611)
+bones/35/rotation = Quaternion(-0.6421124, 0.29612774, -0.29612774, 0.6421124)
+bones/36/position = Vector3(0.8219646, 0.12300193, -0.07127791)
+bones/36/rotation = Quaternion(-0.69322103, -0.15430519, 0.17464182, 0.68200797)
+bones/38/position = Vector3(0.68679285, 0.7460591, 0.69907445)
+bones/39/position = Vector3(-1.2247353, 2.075013, 0.15436478)
+bones/39/rotation = Quaternion(-0.6341881, -0.31273875, 0.31273878, 0.634188)
+bones/40/position = Vector3(-0.6822014, 0.17782643, -0.15262115)
+bones/40/rotation = Quaternion(-0.68626297, 0.17042065, -0.17042062, 0.68626297)
+bones/41/rotation = Quaternion(0.48382312, 0.51566964, -0.51566976, -0.48382306)
+
+[editable path="Contestant Render Viewport/Contestant Render Root/Pose3"]

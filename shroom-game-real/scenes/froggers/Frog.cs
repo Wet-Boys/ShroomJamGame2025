@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using ShroomGameReal;
 
 public partial class Frog : Node3D
 {
@@ -53,7 +54,7 @@ public partial class Frog : Node3D
     public override void _Process(double delta)
     {
         base._Process(delta);
-        if (_gameState.IsActive)
+        if (_gameState.IsActive && !GlobalGameState.Instance.IsMainPaused)
         {
             if (Input.IsActionJustPressed("movement.move_forward"))
             {
@@ -99,6 +100,15 @@ public partial class Frog : Node3D
 
     public void Respawn()
     {
-        Position = respawnPosition;
+        if (GameFlowHandler.isInDreamSequence)
+        {
+            GameFlowHandler.Lives--;
+            _gameState.ExitTv();
+            _gameState.CanActivate = false;
+        }
+        else
+        {
+            Position = respawnPosition;
+        }
     }
 }

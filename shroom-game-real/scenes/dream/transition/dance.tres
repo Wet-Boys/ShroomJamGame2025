@@ -1,0 +1,474 @@
+[gd_resource type="SpriteFrames" load_steps=117 format=3 uid="uid://dlih64qvfd05d"]
+
+[ext_resource type="Texture2D" uid="uid://dwrv0di4tueek" path="res://scenes/dream/transition/Dance Pungas/0001.png" id="1_v0fr2"]
+[ext_resource type="Texture2D" uid="uid://ifcr4rlfrewx" path="res://scenes/dream/transition/Dance Pungas/0002.png" id="2_3whdc"]
+[ext_resource type="Texture2D" uid="uid://c8sqj8l8tnapv" path="res://scenes/dream/transition/Dance Pungas/0003.png" id="3_kw556"]
+[ext_resource type="Texture2D" uid="uid://blmxiochb8vv7" path="res://scenes/dream/transition/Dance Pungas/0004.png" id="4_y7n1s"]
+[ext_resource type="Texture2D" uid="uid://b16tjfrbrakie" path="res://scenes/dream/transition/Dance Pungas/0005.png" id="5_ijx4u"]
+[ext_resource type="Texture2D" uid="uid://dladm6t6ne7jc" path="res://scenes/dream/transition/Dance Pungas/0006.png" id="6_45lm5"]
+[ext_resource type="Texture2D" uid="uid://6l83x74nhn16" path="res://scenes/dream/transition/Dance Pungas/0007.png" id="7_nsnck"]
+[ext_resource type="Texture2D" uid="uid://bydmiiaio151k" path="res://scenes/dream/transition/Dance Pungas/0008.png" id="8_06vhw"]
+[ext_resource type="Texture2D" uid="uid://1nwxdmih6xpe" path="res://scenes/dream/transition/Dance Pungas/0009.png" id="9_4kikx"]
+[ext_resource type="Texture2D" uid="uid://cvlg1nrbc2ate" path="res://scenes/dream/transition/Dance Pungas/0010.png" id="10_rufvh"]
+[ext_resource type="Texture2D" uid="uid://pl2gld3rcrat" path="res://scenes/dream/transition/Dance Pungas/0011.png" id="11_2g048"]
+[ext_resource type="Texture2D" uid="uid://bvkh706unstix" path="res://scenes/dream/transition/Dance Pungas/0012.png" id="12_3ftvl"]
+[ext_resource type="Texture2D" uid="uid://cwukib2itkcm4" path="res://scenes/dream/transition/Dance Pungas/0013.png" id="13_x6wl7"]
+[ext_resource type="Texture2D" uid="uid://betwluf5x201e" path="res://scenes/dream/transition/Dance Pungas/0014.png" id="14_o7ujq"]
+[ext_resource type="Texture2D" uid="uid://b1ckcpx33rxnm" path="res://scenes/dream/transition/Dance Pungas/0015.png" id="15_8fjiw"]
+[ext_resource type="Texture2D" uid="uid://dik0qkjq40rhr" path="res://scenes/dream/transition/Dance Pungas/0016.png" id="16_2vh82"]
+[ext_resource type="Texture2D" uid="uid://bcbibi7qvjmkv" path="res://scenes/dream/transition/Dance Pungas/0017.png" id="17_hos3u"]
+[ext_resource type="Texture2D" uid="uid://bxi4hsjvjtq0f" path="res://scenes/dream/transition/Dance Pungas/0018.png" id="18_pbj0t"]
+[ext_resource type="Texture2D" uid="uid://bt4yyl2xea5wr" path="res://scenes/dream/transition/Dance Pungas/0019.png" id="19_ebh5d"]
+[ext_resource type="Texture2D" uid="uid://bpmnuv55cakvf" path="res://scenes/dream/transition/Dance Pungas/0020.png" id="20_uss6l"]
+[ext_resource type="Texture2D" uid="uid://cmu0ouhqesydq" path="res://scenes/dream/transition/Dance Pungas/0021.png" id="21_s8xwi"]
+[ext_resource type="Texture2D" uid="uid://cqgq6r4u5ffxc" path="res://scenes/dream/transition/Dance Pungas/0022.png" id="22_cwxse"]
+[ext_resource type="Texture2D" uid="uid://dljddfdillv5c" path="res://scenes/dream/transition/Dance Pungas/0023.png" id="23_bvddr"]
+[ext_resource type="Texture2D" uid="uid://ccfj66j4ic4tx" path="res://scenes/dream/transition/Dance Pungas/0024.png" id="24_wjmni"]
+[ext_resource type="Texture2D" uid="uid://til3xrndgfgs" path="res://scenes/dream/transition/Dance Pungas/0025.png" id="25_rqg41"]
+[ext_resource type="Texture2D" uid="uid://c8mxm81ya5vye" path="res://scenes/dream/transition/Dance Pungas/0026.png" id="26_a8pb2"]
+[ext_resource type="Texture2D" uid="uid://cth5hyrfg3yb5" path="res://scenes/dream/transition/Dance Pungas/0027.png" id="27_yqccm"]
+[ext_resource type="Texture2D" uid="uid://b4hp0hjobyb75" path="res://scenes/dream/transition/Dance Pungas/0028.png" id="28_ptiet"]
+[ext_resource type="Texture2D" uid="uid://cc582xaosamn5" path="res://scenes/dream/transition/Dance Pungas/0029.png" id="29_vkd7x"]
+[ext_resource type="Texture2D" uid="uid://bt3xb4fp63gn5" path="res://scenes/dream/transition/Dance Pungas/0030.png" id="30_3td6w"]
+[ext_resource type="Texture2D" uid="uid://d4fx2ai8peune" path="res://scenes/dream/transition/Dance Pungas/0031.png" id="31_qmj2p"]
+[ext_resource type="Texture2D" uid="uid://ump2vwr3cv6r" path="res://scenes/dream/transition/Dance Pungas/0032.png" id="32_kncde"]
+[ext_resource type="Texture2D" uid="uid://bv62ctt3glp44" path="res://scenes/dream/transition/Dance Pungas/0033.png" id="33_24d6o"]
+[ext_resource type="Texture2D" uid="uid://cqr84n7aqk7lo" path="res://scenes/dream/transition/Dance Pungas/0034.png" id="34_pjovg"]
+[ext_resource type="Texture2D" uid="uid://chilytv684n6i" path="res://scenes/dream/transition/Dance Pungas/0035.png" id="35_q7y7o"]
+[ext_resource type="Texture2D" uid="uid://yu1iiewrvqxo" path="res://scenes/dream/transition/Dance Pungas/0036.png" id="36_meprh"]
+[ext_resource type="Texture2D" uid="uid://bwrxpc7rvahfh" path="res://scenes/dream/transition/Dance Pungas/0037.png" id="37_eyh33"]
+[ext_resource type="Texture2D" uid="uid://cc0fja5vslh1i" path="res://scenes/dream/transition/Dance Pungas/0038.png" id="38_e6eel"]
+[ext_resource type="Texture2D" uid="uid://boxeig1qnp1nd" path="res://scenes/dream/transition/Dance Pungas/0039.png" id="39_qu4t6"]
+[ext_resource type="Texture2D" uid="uid://cilqm1tpmn6bq" path="res://scenes/dream/transition/Dance Pungas/0040.png" id="40_isiwc"]
+[ext_resource type="Texture2D" uid="uid://bns8ucrfs4l1g" path="res://scenes/dream/transition/Dance Pungas/0041.png" id="41_qybms"]
+[ext_resource type="Texture2D" uid="uid://c8po4kwdp83gi" path="res://scenes/dream/transition/Dance Pungas/0042.png" id="42_t72lr"]
+[ext_resource type="Texture2D" uid="uid://b0xqj12xp5m80" path="res://scenes/dream/transition/Dance Pungas/0043.png" id="43_wpurm"]
+[ext_resource type="Texture2D" uid="uid://1tmwhjgm7t52" path="res://scenes/dream/transition/Dance Pungas/0044.png" id="44_fvgcb"]
+[ext_resource type="Texture2D" uid="uid://ub7exlatggaf" path="res://scenes/dream/transition/Dance Pungas/0045.png" id="45_bkepf"]
+[ext_resource type="Texture2D" uid="uid://cr2lmk0hm1wu5" path="res://scenes/dream/transition/Dance Pungas/0046.png" id="46_2ml06"]
+[ext_resource type="Texture2D" uid="uid://ckkcllm25tdls" path="res://scenes/dream/transition/Dance Pungas/0047.png" id="47_a4byi"]
+[ext_resource type="Texture2D" uid="uid://468gsb410jef" path="res://scenes/dream/transition/Dance Pungas/0048.png" id="48_gedu6"]
+[ext_resource type="Texture2D" uid="uid://da2gu3h6cvpo2" path="res://scenes/dream/transition/Dance Pungas/0049.png" id="49_uf4mw"]
+[ext_resource type="Texture2D" uid="uid://dsn6nps2nbsiu" path="res://scenes/dream/transition/Dance Pungas/0050.png" id="50_5lkep"]
+[ext_resource type="Texture2D" uid="uid://df1drsd1i6s5y" path="res://scenes/dream/transition/Dance Pungas/0051.png" id="51_j0tvc"]
+[ext_resource type="Texture2D" uid="uid://q3yyqglre7f5" path="res://scenes/dream/transition/Dance Pungas/0052.png" id="52_38s3w"]
+[ext_resource type="Texture2D" uid="uid://bbtmhtf85v1e4" path="res://scenes/dream/transition/Dance Pungas/0053.png" id="53_gbwfs"]
+[ext_resource type="Texture2D" uid="uid://d1g0rc5wqmdjx" path="res://scenes/dream/transition/Dance Pungas/0054.png" id="54_wo8xa"]
+[ext_resource type="Texture2D" uid="uid://bn6akfxg3q2k4" path="res://scenes/dream/transition/Dance Pungas/0055.png" id="55_8vfi6"]
+[ext_resource type="Texture2D" uid="uid://n7ceq2h7idvo" path="res://scenes/dream/transition/Dance Pungas/0056.png" id="56_s1se2"]
+[ext_resource type="Texture2D" uid="uid://qxbhfq674ioa" path="res://scenes/dream/transition/Dance Pungas/0057.png" id="57_jpftu"]
+[ext_resource type="Texture2D" uid="uid://co2riaw536wso" path="res://scenes/dream/transition/Dance Pungas/0058.png" id="58_yksdm"]
+[ext_resource type="Texture2D" uid="uid://ds0i21odgiinf" path="res://scenes/dream/transition/Dance Pungas/0059.png" id="59_ndlcu"]
+[ext_resource type="Texture2D" uid="uid://ctqsxvdaprv3p" path="res://scenes/dream/transition/Dance Pungas/0060.png" id="60_d1xa8"]
+[ext_resource type="Texture2D" uid="uid://sbpvpgq0cdgq" path="res://scenes/dream/transition/Dance Pungas/0061.png" id="61_rqm02"]
+[ext_resource type="Texture2D" uid="uid://dxn2r5dke8snq" path="res://scenes/dream/transition/Dance Pungas/0062.png" id="62_x4f2i"]
+[ext_resource type="Texture2D" uid="uid://bmcspnok5llee" path="res://scenes/dream/transition/Dance Pungas/0063.png" id="63_834rg"]
+[ext_resource type="Texture2D" uid="uid://ck0uair682web" path="res://scenes/dream/transition/Dance Pungas/0064.png" id="64_2f0e6"]
+[ext_resource type="Texture2D" uid="uid://baj35bj75iwtq" path="res://scenes/dream/transition/Dance Pungas/0065.png" id="65_tq67n"]
+[ext_resource type="Texture2D" uid="uid://dcu5vk2kkkme6" path="res://scenes/dream/transition/Dance Pungas/0066.png" id="66_tf08v"]
+[ext_resource type="Texture2D" uid="uid://c77bnqwiv05ji" path="res://scenes/dream/transition/Dance Pungas/0067.png" id="67_kfykc"]
+[ext_resource type="Texture2D" uid="uid://4gquajfl0fsk" path="res://scenes/dream/transition/Dance Pungas/0068.png" id="68_8ctro"]
+[ext_resource type="Texture2D" uid="uid://dsbmp6uwocr0q" path="res://scenes/dream/transition/Dance Pungas/0069.png" id="69_k2baq"]
+[ext_resource type="Texture2D" uid="uid://bnk7lxivrrwv3" path="res://scenes/dream/transition/Dance Pungas/0070.png" id="70_i6pkt"]
+[ext_resource type="Texture2D" uid="uid://bnr8wvlp0eead" path="res://scenes/dream/transition/Dance Pungas/0071.png" id="71_47644"]
+[ext_resource type="Texture2D" uid="uid://duy1b557psv77" path="res://scenes/dream/transition/Dance Pungas/0072.png" id="72_w8ff3"]
+[ext_resource type="Texture2D" uid="uid://cvyu0m6o0yrks" path="res://scenes/dream/transition/Dance Pungas/0073.png" id="73_4uot7"]
+[ext_resource type="Texture2D" uid="uid://tjvifxag4iu5" path="res://scenes/dream/transition/Dance Pungas/0074.png" id="74_j2yb5"]
+[ext_resource type="Texture2D" uid="uid://c37s8tv6xgr14" path="res://scenes/dream/transition/Dance Pungas/0075.png" id="75_nl03w"]
+[ext_resource type="Texture2D" uid="uid://b2kluy60o32mo" path="res://scenes/dream/transition/Dance Pungas/0076.png" id="76_gk4ch"]
+[ext_resource type="Texture2D" uid="uid://bv5fx88727ukv" path="res://scenes/dream/transition/Dance Pungas/0077.png" id="77_1l58o"]
+[ext_resource type="Texture2D" uid="uid://bk7r8cs8twcsn" path="res://scenes/dream/transition/Dance Pungas/0078.png" id="78_px6vk"]
+[ext_resource type="Texture2D" uid="uid://drrrorm3h5byt" path="res://scenes/dream/transition/Dance Pungas/0079.png" id="79_jwxgc"]
+[ext_resource type="Texture2D" uid="uid://bjnjtvj60seo6" path="res://scenes/dream/transition/Dance Pungas/0080.png" id="80_esgvn"]
+[ext_resource type="Texture2D" uid="uid://41ey5hwpqu6c" path="res://scenes/dream/transition/Dance Pungas/0081.png" id="81_ufc1p"]
+[ext_resource type="Texture2D" uid="uid://epjq3aj6f3ch" path="res://scenes/dream/transition/Dance Pungas/0082.png" id="82_ds5r3"]
+[ext_resource type="Texture2D" uid="uid://ddx7xik1u7ou0" path="res://scenes/dream/transition/Dance Pungas/0083.png" id="83_ki85t"]
+[ext_resource type="Texture2D" uid="uid://do7cffa242m78" path="res://scenes/dream/transition/Dance Pungas/0084.png" id="84_jglhh"]
+[ext_resource type="Texture2D" uid="uid://6arqss38mlu8" path="res://scenes/dream/transition/Dance Pungas/0085.png" id="85_5866u"]
+[ext_resource type="Texture2D" uid="uid://df7fwmi4po02k" path="res://scenes/dream/transition/Dance Pungas/0086.png" id="86_0fxmm"]
+[ext_resource type="Texture2D" uid="uid://du12yy2fxlebc" path="res://scenes/dream/transition/Dance Pungas/0087.png" id="87_dv1gg"]
+[ext_resource type="Texture2D" uid="uid://b4bbaq0y7jvqk" path="res://scenes/dream/transition/Dance Pungas/0088.png" id="88_hnp6g"]
+[ext_resource type="Texture2D" uid="uid://di15e75g4t16i" path="res://scenes/dream/transition/Dance Pungas/0089.png" id="89_1f4jn"]
+[ext_resource type="Texture2D" uid="uid://b7d58slm6alu6" path="res://scenes/dream/transition/Dance Pungas/0090.png" id="90_e5n6j"]
+[ext_resource type="Texture2D" uid="uid://br2rdriu6m61x" path="res://scenes/dream/transition/Dance Pungas/0091.png" id="91_bomrx"]
+[ext_resource type="Texture2D" uid="uid://credtvcntoyb7" path="res://scenes/dream/transition/Dance Pungas/0092.png" id="92_6aajt"]
+[ext_resource type="Texture2D" uid="uid://decegw2v78ahi" path="res://scenes/dream/transition/Dance Pungas/0093.png" id="93_ii2lb"]
+[ext_resource type="Texture2D" uid="uid://b5you7ol8knqf" path="res://scenes/dream/transition/Dance Pungas/0094.png" id="94_41beg"]
+[ext_resource type="Texture2D" uid="uid://cua6q38p5k7ym" path="res://scenes/dream/transition/Dance Pungas/0095.png" id="95_r7q56"]
+[ext_resource type="Texture2D" uid="uid://bs5ldeb0j4yw1" path="res://scenes/dream/transition/Dance Pungas/0096.png" id="96_xqm6o"]
+[ext_resource type="Texture2D" uid="uid://bl66ppb7atwx2" path="res://scenes/dream/transition/Dance Pungas/0097.png" id="97_lcjfn"]
+[ext_resource type="Texture2D" uid="uid://b27r0yjvkv2n5" path="res://scenes/dream/transition/Dance Pungas/0098.png" id="98_e1d4k"]
+[ext_resource type="Texture2D" uid="uid://cwn20ihnuyoae" path="res://scenes/dream/transition/Dance Pungas/0099.png" id="99_612g5"]
+[ext_resource type="Texture2D" uid="uid://ormerm2of1i0" path="res://scenes/dream/transition/Dance Pungas/0100.png" id="100_peq55"]
+[ext_resource type="Texture2D" uid="uid://bimb1k7hbu3rv" path="res://scenes/dream/transition/Dance Pungas/0101.png" id="101_4hkg3"]
+[ext_resource type="Texture2D" uid="uid://1rwy6r7kvjid" path="res://scenes/dream/transition/Dance Pungas/0102.png" id="102_77qq1"]
+[ext_resource type="Texture2D" uid="uid://bn10jtxoolk3v" path="res://scenes/dream/transition/Dance Pungas/0103.png" id="103_djwf5"]
+[ext_resource type="Texture2D" uid="uid://cr2h0kmammqsf" path="res://scenes/dream/transition/Dance Pungas/0104.png" id="104_wsq50"]
+[ext_resource type="Texture2D" uid="uid://b1n0i5jpkjmrv" path="res://scenes/dream/transition/Dance Pungas/0105.png" id="105_ppa0m"]
+[ext_resource type="Texture2D" uid="uid://q8gxs70qw76i" path="res://scenes/dream/transition/Dance Pungas/0106.png" id="106_lupt1"]
+[ext_resource type="Texture2D" uid="uid://brv7kx6f76hfr" path="res://scenes/dream/transition/Dance Pungas/0107.png" id="107_n5yqv"]
+[ext_resource type="Texture2D" uid="uid://b1nrqtfx8x3sm" path="res://scenes/dream/transition/Dance Pungas/0108.png" id="108_ao30j"]
+[ext_resource type="Texture2D" uid="uid://dy2oktw53rjmp" path="res://scenes/dream/transition/Dance Pungas/0109.png" id="109_y35h0"]
+[ext_resource type="Texture2D" uid="uid://cvejonqux6lsl" path="res://scenes/dream/transition/Dance Pungas/0110.png" id="110_g3p2o"]
+[ext_resource type="Texture2D" uid="uid://bj21vgsscb50k" path="res://scenes/dream/transition/Dance Pungas/0111.png" id="111_erdwy"]
+[ext_resource type="Texture2D" uid="uid://b217x8iiyisro" path="res://scenes/dream/transition/Dance Pungas/0112.png" id="112_dypbb"]
+[ext_resource type="Texture2D" uid="uid://d02sdv4hahxaq" path="res://scenes/dream/transition/Dance Pungas/0113.png" id="113_6qqgx"]
+[ext_resource type="Texture2D" uid="uid://cgecy01uxgr54" path="res://scenes/dream/transition/Dance Pungas/0114.png" id="114_1nr40"]
+[ext_resource type="Texture2D" uid="uid://byb54cf2iue70" path="res://scenes/dream/transition/Dance Pungas/0115.png" id="115_gjgrc"]
+[ext_resource type="Texture2D" uid="uid://bqliw3sd5de0g" path="res://scenes/dream/transition/Dance Pungas/0116.png" id="116_bo6q5"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_v0fr2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3whdc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kw556")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y7n1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ijx4u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_45lm5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_nsnck")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_06vhw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4kikx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rufvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_2g048")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3ftvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_x6wl7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_o7ujq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8fjiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_2vh82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_hos3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_pbj0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ebh5d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_uss6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_s8xwi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cwxse")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_bvddr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_wjmni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_rqg41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_a8pb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_yqccm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ptiet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_vkd7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3td6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qmj2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_kncde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_24d6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_pjovg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_q7y7o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_meprh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_eyh33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_e6eel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_qu4t6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_isiwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_qybms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_t72lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_wpurm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_fvgcb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_bkepf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_2ml06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_a4byi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_gedu6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_uf4mw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_5lkep")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_j0tvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_38s3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_gbwfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_wo8xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_8vfi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_s1se2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_jpftu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_yksdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_ndlcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_d1xa8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_rqm02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_x4f2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_834rg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_2f0e6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_tq67n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_tf08v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_kfykc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_8ctro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_k2baq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_i6pkt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_47644")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_w8ff3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_4uot7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_j2yb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_nl03w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_gk4ch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_1l58o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_px6vk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_jwxgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_esgvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_ufc1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_ds5r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_ki85t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_jglhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_5866u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_0fxmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_dv1gg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_hnp6g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_1f4jn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_e5n6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_bomrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_6aajt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_ii2lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_41beg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_r7q56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_xqm6o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_lcjfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_e1d4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_612g5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_peq55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_4hkg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_77qq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_djwf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_wsq50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_ppa0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_lupt1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_n5yqv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_ao30j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_y35h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_g3p2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_erdwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_dypbb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_6qqgx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_1nr40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_gjgrc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_bo6q5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
