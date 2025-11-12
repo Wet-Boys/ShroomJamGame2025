@@ -33,7 +33,7 @@ project/assembly_name="ShroomGameReal"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/settings_helper/plugin.cfg")
+enabled=PackedStringArray("res://addons/light_shafts/plugin.cfg", "res://addons/settings_helper/plugin.cfg")
 
 [file_customization]
 

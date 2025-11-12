@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b576nki8sbja6"
+path="res://.godot/imported/Bounce 4.ogg-5460d3f718677ea30df3408131a6c161.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/obby/sfx/ball/Bounce 4.ogg"
+dest_files=["res://.godot/imported/Bounce 4.ogg-5460d3f718677ea30df3408131a6c161.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
