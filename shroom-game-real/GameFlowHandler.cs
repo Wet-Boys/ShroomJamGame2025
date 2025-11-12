@@ -171,7 +171,7 @@ public partial class GameFlowHandler : Node
                 break;
             case CurrentTime.Time12Am:
                 ResetPlayerPosition();
-                PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
+                // PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
                 PlayerController.instance.visualHandler.Succ();
                 isInDreamSequence = true;
                 PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
