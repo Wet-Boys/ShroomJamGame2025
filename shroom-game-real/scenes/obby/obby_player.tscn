@@ -155,27 +155,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70000005, 0.3000002, -3.00
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 current = true
 
-[node name="SpawnSounds" type="AudioStreamPlayer3D" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="SpawnSounds" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 transform = Transform3D(-1, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, -1, -0.6999998, -0.70000017, -3.0049963)
 stream = SubResource("AudioStreamRandomizer_cgjio")
+panning_strength = 0.0
 
-[node name="SpawnNumber10" type="AudioStreamPlayer3D" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="SpawnNumber10" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_r5waj")
+panning_strength = 0.0
 
-[node name="SpawnNumber20" type="AudioStreamPlayer3D" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="SpawnNumber20" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_xvp40")
+panning_strength = 0.0
 
-[node name="SpawnNumber7" type="AudioStreamPlayer3D" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="SpawnNumber7" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_cvsi3")
+panning_strength = 0.0
 
-[node name="Hit" type="AudioStreamPlayer3D" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="Hit" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_51kvk")
+panning_strength = 0.0
 
-[node name="Death" type="AudioStreamPlayer3D" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="Death" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_gssbo")
+panning_strength = 0.0
 
-[node name="Idle" type="AudioStreamPlayer3D" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="Idle" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_ktknw")
+panning_strength = 0.0
+
+[node name="SteamAudioListener" type="SteamAudioListener" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="CharacterBody/CameraContainer/CameraY/CameraX"]
 shape = SubResource("SphereShape3D_t1i3u")
