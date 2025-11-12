@@ -7,6 +7,9 @@ namespace ShroomGameReal.Camera.CompositorEffects;
 [GlobalClass]
 public partial class PainterlyPostProcessingEffects : BaseCompositorEffect
 {
+    [Export]
+    public bool enableInEditor = false;
+    
     [ExportGroup("Kuwahara Parameters")]
     [Export]
     public float kuwaharaRadius = 4;
@@ -54,6 +57,9 @@ public partial class PainterlyPostProcessingEffects : BaseCompositorEffect
     public override void _RenderCallback(int effectCallbackType, RenderData renderData)
     {
         if (Device is null || _shaderFile is null || !_pipeline.IsValid)
+            return;
+
+        if (Engine.IsEditorHint() && !enableInEditor)
             return;
         
         var renderSceneBuffers = renderData.GetRenderSceneBuffers();
