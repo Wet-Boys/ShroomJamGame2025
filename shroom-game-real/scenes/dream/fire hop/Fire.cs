@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using ShroomGameReal;
 
 public partial class Fire : Node3D
 {
@@ -20,7 +21,6 @@ public partial class Fire : Node3D
         {
             _hasBeenScored = true;
             player.score++;
-            GD.Print($"New score: {player.score}");
         }
     }
 
@@ -44,8 +44,9 @@ public partial class Fire : Node3D
         else if (body.GetParent() is FireHopAvatar player)
         {
             player.health--;
-            GD.Print($"New health: {player.health}");
             QueueFree();
+            
+            GameFlowHandler.instance.FailMinigame(player.gameState);
         }
     }
 }

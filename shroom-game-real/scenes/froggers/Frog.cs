@@ -102,9 +102,7 @@ public partial class Frog : Node3D
     {
         if (GameFlowHandler.isInDreamSequence)
         {
-            GameFlowHandler.Lives--;
-            _gameState.ExitTv();
-            _gameState.CanActivate = false;
+            GameFlowHandler.instance.FailMinigame(_gameState);
         }
         else
         {

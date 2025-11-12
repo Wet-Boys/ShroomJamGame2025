@@ -47,10 +47,11 @@ adjustment_saturation = 1.5
 
 [node name="DefaultGame" type="Node3D"]
 
-[node name="GameFlowHandler" type="Node" parent="." node_paths=PackedStringArray("_label")]
+[node name="GameFlowHandler" type="Node" parent="." node_paths=PackedStringArray("_label", "_dreamTimer")]
 script = ExtResource("1_rsuuh")
 microGames = Array[PackedScene]([ExtResource("2_w77kl"), ExtResource("3_10j7k"), ExtResource("4_4d0x0"), ExtResource("5_p52gt"), ExtResource("6_p52gt"), ExtResource("7_1xlbm"), ExtResource("8_pohcq")])
 _label = NodePath("../Floor/Player/Control/Label")
+_dreamTimer = NodePath("../Floor/Player/UI Root/DreamTimer")
 metadata/_custom_type_script = "uid://di11kxlibce8f"
 
 [node name="CRT TV" parent="." instance=ExtResource("3_ur8v4")]

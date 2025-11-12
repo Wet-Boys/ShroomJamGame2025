@@ -20,7 +20,10 @@ public partial class Bussy : Node3D
     {
         if (body.GetParent() is Ball ball)
         {
-            GD.Print("death");
+            if (GameFlowHandler.isInDreamSequence)
+            {
+                GameFlowHandler.instance.FailMinigame(_gameState);
+            }
         }
     }
 

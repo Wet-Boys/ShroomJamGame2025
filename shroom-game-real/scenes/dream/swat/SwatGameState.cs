@@ -1,10 +1,12 @@
 using Godot;
 using System;
+using ShroomGameReal;
 using ShroomGameReal.Tv.GameStates;
 using ShroomGameReal.Utilities;
 
 public partial class SwatGameState : BaseTvGameState
 {
+    public double remainingTime = 10;
     public override void _Ready()
     {
         base._Ready();
@@ -25,6 +27,14 @@ public partial class SwatGameState : BaseTvGameState
         {
             ExitTv();
             CanActivate = false;
+        }
+        else
+        {
+            remainingTime -= delta;
+            if (remainingTime <= 0)
+            {
+                GameFlowHandler.instance.FailMinigame(this);
+            }
         }
     }
 }

@@ -108,13 +108,20 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
 
     private void OnGameLost()
     {
-        GameOver = true;
-        EmitSignalOnGameFinished(false);
-        GD.Print("Player lost");
+        if (GameFlowHandler.isInDreamSequence)
+        {
+            GameFlowHandler.instance.FailMinigame(this);
+        }
+        else
+        {
+            GameOver = true;
+            EmitSignalOnGameFinished(false);
+            GD.Print("Player lost");
 
-        CanActivate = false;
+            CanActivate = false;
         
-        ExitTv();
+            ExitTv();   
+        }
     }
 
     public override void ExitTv()

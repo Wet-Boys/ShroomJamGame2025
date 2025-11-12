@@ -7,7 +7,7 @@ public partial class FireHopAvatar : Node3D
     [Export] private RigidBody3D _rigidBody3D;
     public int health = 3;
     public int score = 0;
-    private FireHopGameState _gameState;
+    public FireHopGameState gameState;
     [Export] public FireHopVisuals visualHandler;
 
     public bool Grounded => _rigidBody3D.Position.Y < -1.4f;
@@ -15,7 +15,7 @@ public partial class FireHopAvatar : Node3D
     public override void _Ready()
     {
         base._Ready();
-        _gameState = GetParent<FireHopGameState>();
+        gameState = GetParent<FireHopGameState>();
         visualHandler.player = _rigidBody3D;
         visualHandler.avatar = this;
     }
@@ -43,7 +43,7 @@ public partial class FireHopAvatar : Node3D
     public override void _PhysicsProcess(double delta)
     {
         base._PhysicsProcess(delta);
-        if (_gameState.IsActive && !GlobalGameState.Instance.IsMainPaused)
+        if (gameState.IsActive && !GlobalGameState.Instance.IsMainPaused)
         {
             if (Input.IsActionJustPressed("movement.jump"))
             {

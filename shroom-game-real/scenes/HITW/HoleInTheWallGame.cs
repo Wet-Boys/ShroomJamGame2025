@@ -152,7 +152,7 @@ public partial class HoleInTheWallGame : BaseTvGameState
         
         if (CanContestantFitCutShape())
         {
-            GD.Print("You won");
+            // GD.Print("You won");
 
             _gameProgression++;
 
@@ -176,8 +176,11 @@ public partial class HoleInTheWallGame : BaseTvGameState
         }
         else
         {
-            GD.Print("You lost");
-            
+            // GD.Print("You lost");
+            if (GameFlowHandler.isInDreamSequence)
+            {
+                GameFlowHandler.instance.FailMinigame(this);
+            }
             _wallCutOutMaterial.Set("shader_parameter/show_mistakes", true);
             _contestantBody.Freeze = false;
 

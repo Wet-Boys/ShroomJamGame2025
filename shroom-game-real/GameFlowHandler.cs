@@ -55,6 +55,8 @@ public partial class GameFlowHandler : Node
     private CurrentTime _currentTime;
     public static bool isInDreamSequence = false;
     [Export] private Label _label;
+    private double _macrogameTimer = 0;
+    [Export] private DreamTimer _dreamTimer;
 
     public static int Lives
     {
@@ -210,6 +212,7 @@ public partial class GameFlowHandler : Node
 
     private void SetupRandomGame()
     {
+        _macrogameTimer = 10;
         DreamTransition.instance.text.Text = ((BaseTvGameState)_currentGame).infoText;
         DreamTransition.instance.text.PivotOffset = DreamTransition.instance.text.Size * .5f;
         if (_currentGame is ObbyGameState obbyGameState)
@@ -307,5 +310,26 @@ public partial class GameFlowHandler : Node
     public void FoodInteract(FoodInteractable food)
     {
         PlayerController.instance.visualHandler.Eat();
+    }
+
+    public void FailMinigame(BaseTvGameState gameState)
+    {
+        Lives--;
+        gameState.ExitTv();
+        gameState.CanActivate = false;
+    }
+
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (_macrogameTimer > 0)
+        {
+            _dreamTimer.SetProgressBar(_macrogameTimer, 10);
+            _macrogameTimer -= delta;
+            if (_macrogameTimer < 0)
+            {
+                GD.Print("out of time");
+            }
+        }
     }
 }

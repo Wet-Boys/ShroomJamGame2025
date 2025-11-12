@@ -146,10 +146,17 @@ public partial class ObbyPlayer : Node3D
 
     private void Respawn()
     {
-        _needToRespawn = true;
-        idleSfx.Stop();
-        hitSfx.Stop();
-        deathSfx.Play();
+        if (GameFlowHandler.isInDreamSequence)
+        {
+            GameFlowHandler.instance.FailMinigame(_gameState);
+        }
+        else
+        {
+            _needToRespawn = true;
+            idleSfx.Stop();
+            hitSfx.Stop();
+            deathSfx.Play();   
+        }
     }
     private void DeathSfxFinished()
     {

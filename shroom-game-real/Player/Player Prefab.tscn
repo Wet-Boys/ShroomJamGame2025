@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dk5rx6k5tsxl1"]
+[gd_scene load_steps=20 format=3 uid="uid://dk5rx6k5tsxl1"]
 
 [ext_resource type="Script" uid="uid://byjq1fe68ukgj" path="res://Player/PlayerController.cs" id="1_ffodk"]
 [ext_resource type="PackedScene" uid="uid://d25p0awkpqnka" path="res://Player/player_visuals.tscn" id="2_l50ud"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dofhffbbgk7t" path="res://Ui/PauseMenu/Pause Menu.tscn" id="9_thgmb"]
 [ext_resource type="FontFile" uid="uid://cta4afpkksl5f" path="res://Ui/Fonts/Inter/Inter-Medium.ttf" id="10_nv1sy"]
 [ext_resource type="Theme" uid="uid://dmrcff1f44uiw" path="res://Ui/Main UI Theme.tres" id="15_h3yr6"]
+[ext_resource type="PackedScene" uid="uid://bwl32hgi18h8v" path="res://scenes/dream/timer/DreamTimer.tscn" id="16_ea2nr"]
 [ext_resource type="PackedScene" uid="uid://81njcsjyalcr" path="res://scenes/dream/transition/dream_transition.tscn" id="16_imhp6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p5fe0"]
@@ -62,34 +63,34 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="Player Model" parent="Visual Root/Node3D" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Node3D/Player Model/Player/Little John First Person/metarig" index="1"]
-bones/2/position = Vector3(0, 0.9892749, -0.05519997)
-bones/2/rotation = Quaternion(0.036358964, -3.8088454e-17, -3.020025e-18, 0.99933887)
+bones/2/position = Vector3(0, 0.93120724, -0.055199977)
+bones/2/rotation = Quaternion(0.03541418, -1.7359692e-17, -1.0419602e-18, 0.9993727)
 bones/3/rotation = Quaternion(-0.006019595, 2.706302e-21, 2.6999008e-18, 0.9999819)
 bones/4/rotation = Quaternion(-0.0005284548, 4.5208283e-20, 1.7665775e-19, 0.9999999)
 bones/5/rotation = Quaternion(0.0040802774, 7.0179296e-21, 1.2154085e-19, 0.99999166)
-bones/6/rotation = Quaternion(0.15418221, -1.06123865e-17, 1.4216446e-18, 0.98804253)
-bones/8/position = Vector3(4.7866543e-18, 0.73067224, 0.06728345)
+bones/6/rotation = Quaternion(0.15518531, -4.9080902e-18, 2.5913764e-19, 0.9878855)
+bones/8/position = Vector3(1.532898e-19, 0.2374978, -0.057128847)
 bones/8/rotation = Quaternion(-0.09371197, 0, 0, 0.9955994)
-bones/8/scale = Vector3(1, 1.0000002, 1.0000002)
-bones/10/rotation = Quaternion(-0.22023216, 0.8118809, -0.3621343, 0.4015049)
-bones/11/rotation = Quaternion(0.42728037, -0.090875596, -0.19910434, 0.8772289)
-bones/12/rotation = Quaternion(-0.18163382, -0.051304307, -0.07168602, 0.9794071)
+bones/8/scale = Vector3(1, 1, 1.0000001)
+bones/10/rotation = Quaternion(-0.20554613, 0.78161305, -0.43916592, 0.39238387)
+bones/11/rotation = Quaternion(0.30667108, -0.096965745, -0.14290275, 0.9360179)
+bones/12/rotation = Quaternion(-0.12390788, -0.053008612, -0.09605082, 0.9862106)
 bones/15/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
-bones/17/rotation = Quaternion(-0.22271106, -0.7997315, 0.3941578, 0.39429563)
-bones/18/rotation = Quaternion(0.38761297, 0.093145646, 0.18062006, 0.899142)
-bones/19/rotation = Quaternion(-0.16155425, 0.03867209, 0.025430113, 0.9857779)
+bones/17/rotation = Quaternion(-0.20733877, -0.75972503, 0.4802115, 0.38629714)
+bones/18/rotation = Quaternion(0.24236828, 0.09929056, 0.11293889, 0.9584592)
+bones/19/rotation = Quaternion(-0.09387023, 0.041898552, 0.05760761, 0.99303293)
 bones/22/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
-bones/24/rotation = Quaternion(0.9882944, 3.3096457e-09, -2.2554616e-08, 0.15255898)
-bones/25/rotation = Quaternion(0.2446962, 1.0979259e-15, 5.436797e-16, 0.96959984)
-bones/26/rotation = Quaternion(-0.5944543, 3.082044e-07, -2.0286319e-07, 0.8041295)
-bones/30/rotation = Quaternion(0.9882944, -4.474516e-09, 3.8456765e-08, 0.15255898)
-bones/31/rotation = Quaternion(0.2446962, -1.8851214e-15, -2.9505495e-16, 0.96959984)
-bones/32/rotation = Quaternion(-0.5944543, -3.2307906e-07, 1.9712033e-07, 0.8041295)
+bones/24/rotation = Quaternion(0.9731113, 3.4165326e-09, -2.1658693e-08, 0.23033553)
+bones/25/rotation = Quaternion(0.41373435, 1.8375058e-16, 1.2999306e-16, 0.91039777)
+bones/26/rotation = Quaternion(-0.67003137, 2.8661077e-07, -2.3377271e-07, 0.7423328)
+bones/30/rotation = Quaternion(0.9731113, -5.9010037e-09, 3.7408693e-08, 0.23033553)
+bones/31/rotation = Quaternion(0.41373435, 2.5348513e-15, 1.2277375e-15, 0.91039777)
+bones/32/rotation = Quaternion(-0.67003137, -3.019778e-07, 2.2951937e-07, 0.7423328)
 bones/33/rotation = Quaternion(-1.1064199e-07, 0.9612488, -0.2756822, -3.0175178e-07)
-bones/35/position = Vector3(0.38152587, 1.0502969, -0.05334942)
+bones/35/position = Vector3(0.3815259, 0.95262396, -0.05334942)
 bones/35/rotation = Quaternion(-0.025784606, 0.7066365, -0.7066365, 0.025784662)
 bones/37/position = Vector3(0.49290267, 1.6067429, -0.62285686)
-bones/39/position = Vector3(-0.37100703, 1.0318891, -0.05334942)
+bones/39/position = Vector3(-0.37100703, 0.93421596, -0.05334942)
 bones/39/rotation = Quaternion(-0.05800342, -0.70472383, 0.7047238, 0.05800341)
 bones/41/position = Vector3(-0.49290267, 1.6067429, -0.62285686)
 
@@ -243,6 +244,9 @@ mouse_filter = 2
 
 [node name="AnimatedSprite2D" parent="UI Root/Control" index="0"]
 frame_progress = 0.92921317
+
+[node name="DreamTimer" parent="UI Root" instance=ExtResource("16_ea2nr")]
+layout_mode = 1
 
 [editable path="Visual Root/Node3D/Player Model"]
 [editable path="Visual Root/Node3D/Player Model/Player"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwl32hgi18h8v"]
+
+[ext_resource type="Script" uid="uid://bk57y4vnwlcp1" path="res://scenes/dream/timer/DreamTimer.cs" id="1_j5oii"]
+[ext_resource type="Texture2D" uid="uid://8sp6l47psmif" path="res://scenes/dream/timer/DreamTimer.png" id="1_ktiwg"]
+
+[node name="DreamTimer" type="Control" node_paths=PackedStringArray("_progressBar")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_j5oii")
+_progressBar = NodePath("TextureProgressBar")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+step = 0.001
+fill_mode = 4
+texture_progress = ExtResource("1_ktiwg")
+tint_progress = Color(0, 0.8933981, 0.487594, 1)
