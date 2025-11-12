@@ -136,3 +136,4 @@ scroll_down={
 
 environment/volumetric_fog/volume_size=128
 environment/volumetric_fog/volume_depth=128
+lightmapping/denoising/denoiser=1
