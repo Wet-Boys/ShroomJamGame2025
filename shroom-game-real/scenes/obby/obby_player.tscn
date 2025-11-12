@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://7ecyirh0eyap"]
+[gd_scene load_steps=7 format=3 uid="uid://7ecyirh0eyap"]
 
 [ext_resource type="Script" uid="uid://ckkrkpbikrq4n" path="res://scenes/obby/ObbyPlayer.cs" id="1_8cktp"]
 [ext_resource type="PackedScene" uid="uid://dpao73iqwvb5m" path="res://scenes/obby/visuals_root.tscn" id="2_pgjcu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bn54t"]
 radius = 0.29
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_pgjcu"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t1i3u"]
 
@@ -50,6 +52,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70000005, 0.3000002, -3.00
 [node name="Camera3D" type="Camera3D" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 current = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+transform = Transform3D(-1, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, -1, -0.6999998, -0.70000017, -3.0049963)
+stream = SubResource("AudioStreamRandomizer_pgjcu")
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="CharacterBody/CameraContainer/CameraY/CameraX"]
 shape = SubResource("SphereShape3D_t1i3u")
