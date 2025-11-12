@@ -30,6 +30,15 @@ public partial class ObbyPlayer : Node3D
     private ObbyGameState _gameState;
     [Export] public PlayerVisualHandler visualHandler;
     
+    [Export] public AudioStreamPlayer3D spawnSfx;
+    [Export] public AudioStreamPlayer3D spawn10;
+    [Export] public AudioStreamPlayer3D spawn20;
+    [Export] public AudioStreamPlayer3D spawn7;
+    [Export] public AudioStreamPlayer3D hitSfx;
+    [Export] public AudioStreamPlayer3D deathSfx;
+    [Export] public AudioStreamPlayer3D idleSfx;
+    private int _currentRound = 1;
+    private double _nothingEverHappensTimer = 0;
     public override void _Ready()
     {
         Input.MouseMode = Input.MouseModeEnum.Captured;
@@ -43,6 +52,8 @@ public partial class ObbyPlayer : Node3D
         _gameState = GetParent().GetParent<ObbyGameState>();
         visualHandler.player = characterBody;
         cameraY.RotationDegrees = new Vector3(0, 180, 0);
+        spawnSfx.Play();
+        deathSfx.Finished += DeathSfxFinished;
     }
 
     private void HurtBoxOnBodyEntered(Node3D body)
@@ -112,7 +123,7 @@ public partial class ObbyPlayer : Node3D
             characterBody.GlobalPosition = ragdollBody.GlobalPosition;
             characterBody.GlobalRotation = ragdollBody.GlobalRotation;
             _ragdollTimer += delta;
-            if (_ragdollTimer > 4)
+            if (_ragdollTimer > 4 && characterBody.GlobalPosition.Y >= 0)
             {
                 EndRagdoll();
             }
@@ -120,12 +131,45 @@ public partial class ObbyPlayer : Node3D
 
         if (characterBody.GlobalPosition.Y < 0)
         {
-            EndRagdoll();
-            characterBody.GlobalPosition = _respawnPoint;
+            Respawn();
         }
         cameraContainer.GlobalRotation = Vector3.Zero;
         
         visualHandler.RotateVisuals(delta, characterBody.Velocity, false);
+        _nothingEverHappensTimer += delta;
+        if (_nothingEverHappensTimer > 60)
+        {
+            idleSfx.Play();
+        }
+    }
+
+    private void Respawn()
+    {
+        idleSfx.Stop();
+        hitSfx.Stop();
+        deathSfx.Play();
+    }
+    private void DeathSfxFinished()
+    {
+        _currentRound++;
+        EndRagdoll();
+        characterBody.GlobalPosition = _respawnPoint;
+        if (_currentRound == 7)
+        {
+            spawn7.Play();
+        }
+        else if (_currentRound == 10)
+        {
+            spawn10.Play();
+        }
+        else if (_currentRound == 20)
+        {
+            spawn20.Play();
+        }
+        else
+        {
+            spawnSfx.Play();
+        }
     }
     private void CameraRayCast()
     {
@@ -172,6 +216,9 @@ public partial class ObbyPlayer : Node3D
     {
         if (ragdollBody.Freeze)
         {
+            _nothingEverHappensTimer = 0;
+            hitSfx.Play();
+            idleSfx.Stop();
             ragdollBody.GlobalPosition = characterBody.GlobalPosition;
             ragdollBody.GlobalRotation = characterBody.GlobalRotation;
             ragdollBody.Freeze = false;
@@ -187,6 +234,7 @@ public partial class ObbyPlayer : Node3D
     {
         if (!ragdollBody.Freeze)
         {
+            _nothingEverHappensTimer = 0;
             ragdollBody.Freeze = true;
             characterBody.CollisionLayer = 8;
             characterBody.CollisionMask = 33;
