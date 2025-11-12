@@ -108,6 +108,7 @@ public partial class GameFlowHandler : Node
             case CurrentTime.Time6Pm:
                 //TODO switch this load scene to a segment to turn the TV off, then have the player interact with the couch
                 LoadScene(CurrentTime.Time12Am);
+                PlayerController.instance.visualHandler.Yawn();
                 break;
             case CurrentTime.RandomMinigame:
                 if (Lives != 0)
@@ -117,6 +118,10 @@ public partial class GameFlowHandler : Node
                 else
                 {
                     LoadScene(CurrentTime.Victory);
+                    PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 7.5f);
+                    PlayerController.instance.RotationDegrees = new Vector3(0, 180, 0);
+                    PlayerController.instance.headNode.GetParentNode3D().RotationDegrees = new Vector3(0, 180, 0);
+                    PlayerController.instance.visualHandler.WakeUp();
                 }
                 break;
             default:
@@ -297,5 +302,10 @@ public partial class GameFlowHandler : Node
         await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         SetupRandomGame();
         TvInteractable.instance.OnInteract(PlayerController.instance);
+    }
+
+    public void FoodInteract(FoodInteractable food)
+    {
+        PlayerController.instance.visualHandler.Eat();
     }
 }

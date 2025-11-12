@@ -136,8 +136,8 @@ public partial class FirstPersonOverworldPlayerState : BasePlayerState
         // Apply gravity if not on floor
         if (!Player.IsOnFloor())
             Player.Velocity += Vector3.Down * _gravity * mass;
-        else if (Input.IsActionJustPressed("movement.jump"))
-            Player.Velocity += Vector3.Up * 60;
+        // else if (Input.IsActionJustPressed("movement.jump"))
+        //     Player.Velocity += Vector3.Up * 60;
         Player.MoveAndSlide();
 
         // Apply friction only the horizontal velocity while copying over the vertical velocity
