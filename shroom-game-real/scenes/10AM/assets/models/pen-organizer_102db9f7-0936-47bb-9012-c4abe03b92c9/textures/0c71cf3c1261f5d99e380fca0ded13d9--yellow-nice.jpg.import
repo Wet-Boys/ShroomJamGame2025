@@ -3,19 +3,20 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctomtj8keugfm"
-path="res://.godot/imported/0c71cf3c1261f5d99e380fca0ded13d9--yellow-nice.jpg-e9b5acb9d0a80973d618d083838f7c7c.ctex"
+path.s3tc="res://.godot/imported/0c71cf3c1261f5d99e380fca0ded13d9--yellow-nice.jpg-e9b5acb9d0a80973d618d083838f7c7c.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
 source_file="res://scenes/10AM/assets/models/pen-organizer_102db9f7-0936-47bb-9012-c4abe03b92c9/textures/0c71cf3c1261f5d99e380fca0ded13d9--yellow-nice.jpg"
-dest_files=["res://.godot/imported/0c71cf3c1261f5d99e380fca0ded13d9--yellow-nice.jpg-e9b5acb9d0a80973d618d083838f7c7c.ctex"]
+dest_files=["res://.godot/imported/0c71cf3c1261f5d99e380fca0ded13d9--yellow-nice.jpg-e9b5acb9d0a80973d618d083838f7c7c.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +24,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +38,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

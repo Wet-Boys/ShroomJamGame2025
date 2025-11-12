@@ -1,0 +1,18 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=7 format=3 uid="uid://cwominls71m85"]
+
+[ext_resource type="AudioStream" uid="uid://cf2abd6sbardh" path="res://scenes/obby/sfx/ball/Bounce 1.ogg" id="1_7f4gm"]
+[ext_resource type="AudioStream" uid="uid://bkf3ah3htlhsc" path="res://scenes/obby/sfx/ball/Bounce 2.ogg" id="2_8j3ny"]
+[ext_resource type="AudioStream" uid="uid://cefs67ldfk11x" path="res://scenes/obby/sfx/ball/Bounce 3.ogg" id="3_8tt28"]
+[ext_resource type="AudioStream" uid="uid://b576nki8sbja6" path="res://scenes/obby/sfx/ball/Bounce 4.ogg" id="4_pkbpv"]
+[ext_resource type="AudioStream" uid="uid://cbcuyex0w7qmx" path="res://scenes/obby/sfx/ball/Bounce 5.ogg" id="5_wvdfj"]
+[ext_resource type="AudioStream" uid="uid://oc21hmjku6up" path="res://scenes/obby/sfx/ball/Bounce 6.ogg" id="6_5gcrp"]
+
+[resource]
+random_volume_offset_db = 0.5
+streams_count = 6
+stream_0/stream = ExtResource("1_7f4gm")
+stream_1/stream = ExtResource("2_8j3ny")
+stream_2/stream = ExtResource("3_8tt28")
+stream_3/stream = ExtResource("4_pkbpv")
+stream_4/stream = ExtResource("5_wvdfj")
+stream_5/stream = ExtResource("6_5gcrp")

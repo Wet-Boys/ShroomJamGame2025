@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://66hsfs6jpcqu"]
+[gd_scene load_steps=14 format=3 uid="uid://66hsfs6jpcqu"]
 
 [ext_resource type="Script" uid="uid://di11kxlibce8f" path="res://GameFlowHandler.cs" id="1_rsuuh"]
 [ext_resource type="PackedScene" uid="uid://dk5rx6k5tsxl1" path="res://Player/Player Prefab.tscn" id="2_hhwg2"]
@@ -18,32 +18,6 @@ data = PackedVector3Array(-50, -0.5, 50, -50, -0.5, -50, -50, 0.5, -50, 50, -0.5
 [sub_resource type="Theme" id="Theme_w77kl"]
 Label/constants/outline_size = 6
 Label/font_sizes/font_size = 29
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jskvd"]
-
-[sub_resource type="Sky" id="Sky_qv1eo"]
-sky_material = SubResource("ProceduralSkyMaterial_jskvd")
-
-[sub_resource type="Environment" id="Environment_pohcq"]
-resource_local_to_scene = true
-background_mode = 2
-sky = SubResource("Sky_qv1eo")
-tonemap_mode = 3
-ssao_enabled = true
-ssil_enabled = true
-ssil_intensity = 6.42
-glow_enabled = true
-glow_levels/2 = 0.54
-glow_levels/4 = 0.85
-glow_intensity = 3.62
-glow_strength = 0.37
-glow_bloom = 0.03
-glow_blend_mode = 0
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.06
-volumetric_fog_albedo = Color(0.60933006, 0.6093301, 0.60933006, 1)
-volumetric_fog_ambient_inject = 0.1
-volumetric_fog_temporal_reprojection_amount = 0.85
 
 [node name="DefaultGame" type="Node3D"]
 
@@ -96,4 +70,3 @@ theme = SubResource("Theme_w77kl")
 transform = Transform3D(1, 0, 0, 0, -0.82293814, 0.568131, 0, -0.568131, -0.82293814, 0, 19.365547, -44.279587)
 
 [node name="OverworldEnvironment" parent="." instance=ExtResource("11_1xlbm")]
-environment = SubResource("Environment_pohcq")

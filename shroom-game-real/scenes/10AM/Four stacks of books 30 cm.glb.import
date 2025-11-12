@@ -37,6 +37,21 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"Four stacks of books 30 cm_Books_30_A": {
+"generate/lightmap_uv": 1
+},
+"Four stacks of books 30 cm_Books_30_B": {
+"generate/lightmap_uv": 1
+},
+"Four stacks of books 30 cm_Books_30_C": {
+"generate/lightmap_uv": 1
+},
+"Four stacks of books 30 cm_Books_30_D": {
+"generate/lightmap_uv": 1
+}
+}
+}
 gltf/naming_version=0
 gltf/embedded_image_handling=1
