@@ -27,7 +27,17 @@ public enum CurrentTime
 [GlobalClass]
 public partial class GameFlowHandler : Node
 {
-    public Godot.Collections.Dictionary<CurrentTime, string> sceneList = new()
+    public Godot.Collections.Dictionary<CurrentTime, PackedScene> sceneList = new()
+    {
+        { CurrentTime.Time8Am,  (PackedScene)GD.Load("res://scenes/8AM/8am.tscn")},//res://scenes/8AM/8AM.tscn
+        { CurrentTime.Time10Am,  (PackedScene)GD.Load("res://scenes/10AM/10am.tscn")},
+        { CurrentTime.Time12Pm,  (PackedScene)GD.Load("res://scenes/12PM/12pm.tscn")},
+        { CurrentTime.Time3Pm,  (PackedScene)GD.Load("res://scenes/3PM/3pm.tscn")},
+        { CurrentTime.Time6Pm,  (PackedScene)GD.Load("res://scenes/6PM/6pm.tscn")},
+        { CurrentTime.Time12Am,  (PackedScene)GD.Load("res://scenes/12AM/12am.tscn")},
+        { CurrentTime.Victory,  (PackedScene)GD.Load("res://scenes/8AM_Victory/8am_victory.tscn")},
+    };
+    public Godot.Collections.Dictionary<CurrentTime, string> sceneNameList = new()
     {
         { CurrentTime.Time8Am,  "8am"},
         { CurrentTime.Time10Am, "10am"},
@@ -45,6 +55,8 @@ public partial class GameFlowHandler : Node
         { CurrentTime.Time6Pm,  (PackedScene)GD.Load("res://scenes/obby/obby.tscn")},
     };
 
+    private Godot.Collections.Dictionary<CurrentTime, Node3D> _loadedScenes = new();
+
     [Export]
     public Array<PackedScene> microGames;
     public List<int> lastMicrogames = new();
@@ -60,7 +72,6 @@ public partial class GameFlowHandler : Node
     private bool _lowerIsBad;
     public static int completedDreamLevels = 0;
     private double _timerMultiplier = 1;
-    [Export] private ResourcePreloader _preloader;
 
     public static int Lives
     {
@@ -253,6 +264,7 @@ public partial class GameFlowHandler : Node
     public async void TestStart()
     {
         await ToSignal(GetTree(), "physics_frame");
+        PreloadAllScenes();
         TvInteractable.instance.Interacted += TvInteracted;
         PlayerController.instance.GetNode<Label>("%TaskLabel").Text = "";
         LoadScene(CurrentTime.Time8Am);
@@ -292,11 +304,12 @@ public partial class GameFlowHandler : Node
         {
             await RandomMicroGame();
         }
-        else if (sceneList.TryGetValue(currentTime, out string overworldScene))
+        else
         {
             _currentScene?.QueueFree();
-            _currentScene = ((PackedScene)(_preloader.GetResource(overworldScene))).Instantiate<Node3D>();
-            GetParent().AddChild(_currentScene);
+            _currentScene = _loadedScenes[currentTime];
+            _currentScene.Visible = true;
+            // GetParent().AddChild(_currentScene);
         }
     }
 
@@ -365,6 +378,19 @@ public partial class GameFlowHandler : Node
                     FinishMinigame((BaseTvGameState)_currentGame, false);
                 }
             }
+        }
+    }
+
+    public async void PreloadAllScenes()
+    {
+        foreach (var scene in sceneList.Keys)
+        {
+            var newScene = sceneList[scene].Instantiate<Node3D>();
+            GetParent().AddChild(newScene);
+
+            await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+            newScene.Visible = false;
+            _loadedScenes.Add(scene, newScene);
         }
     }
 }
