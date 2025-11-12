@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://7ecyirh0eyap"]
+[gd_scene load_steps=50 format=3 uid="uid://7ecyirh0eyap"]
 
 [ext_resource type="Script" uid="uid://ckkrkpbikrq4n" path="res://scenes/obby/ObbyPlayer.cs" id="1_8cktp"]
 [ext_resource type="PackedScene" uid="uid://dpao73iqwvb5m" path="res://scenes/obby/visuals_root.tscn" id="2_pgjcu"]
@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://bvuqy8vd2aouk" path="res://scenes/obby/Announcer/Spawn3.wav" id="6_pk2v8"]
 [ext_resource type="AudioStream" uid="uid://b6lni3myl4q44" path="res://scenes/obby/Announcer/Spawn4.wav" id="7_b7jxi"]
 [ext_resource type="AudioStream" uid="uid://c0lpwukxprgcm" path="res://scenes/obby/Announcer/Spawn5.wav" id="8_ttc1u"]
-[ext_resource type="AudioStream" uid="uid://wcpm52woeau1" path="res://scenes/obby/Announcer/Spawn6.wav" id="9_rjw3o"]
 [ext_resource type="AudioStream" uid="uid://5xv1ek8wp0p5" path="res://scenes/obby/Announcer/Spawn7.wav" id="10_1vt65"]
 [ext_resource type="AudioStream" uid="uid://lepp14ogk2bl" path="res://scenes/obby/Announcer/Spawn8.wav" id="11_g4jl0"]
 [ext_resource type="AudioStream" uid="uid://p0jikowm1kcy" path="res://scenes/obby/Announcer/Spawn9.wav" id="12_wtb6u"]
@@ -45,18 +44,17 @@
 radius = 0.29
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cgjio"]
-streams_count = 11
+streams_count = 10
 stream_0/stream = ExtResource("3_xvp40")
 stream_1/stream = ExtResource("4_cvsi3")
 stream_2/stream = ExtResource("6_pk2v8")
 stream_3/stream = ExtResource("7_b7jxi")
 stream_4/stream = ExtResource("8_ttc1u")
-stream_5/stream = ExtResource("9_rjw3o")
-stream_6/stream = ExtResource("10_1vt65")
-stream_7/stream = ExtResource("11_g4jl0")
-stream_8/stream = ExtResource("12_wtb6u")
-stream_9/stream = ExtResource("13_51kvk")
-stream_10/stream = ExtResource("5_cqonw")
+stream_5/stream = ExtResource("10_1vt65")
+stream_6/stream = ExtResource("11_g4jl0")
+stream_7/stream = ExtResource("12_wtb6u")
+stream_8/stream = ExtResource("13_51kvk")
+stream_9/stream = ExtResource("5_cqonw")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_r5waj"]
 streams_count = 2
@@ -155,34 +153,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70000005, 0.3000002, -3.00
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 current = true
 
-[node name="SpawnSounds" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
-transform = Transform3D(-1, 0, 8.742276e-08, 0, 1, 0, -8.742276e-08, 0, -1, -0.6999998, -0.70000017, -3.0049963)
+[node name="SpawnSounds" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_cgjio")
-panning_strength = 0.0
 
-[node name="SpawnNumber10" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="SpawnNumber10" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_r5waj")
-panning_strength = 0.0
 
-[node name="SpawnNumber20" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="SpawnNumber20" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_xvp40")
-panning_strength = 0.0
 
-[node name="SpawnNumber7" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="SpawnNumber7" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_cvsi3")
-panning_strength = 0.0
 
-[node name="Hit" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="Hit" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_51kvk")
-panning_strength = 0.0
 
-[node name="Death" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="Death" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_gssbo")
-panning_strength = 0.0
 
-[node name="Idle" type="SteamAudioPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+[node name="Idle" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_ktknw")
-panning_strength = 0.0
 
 [node name="SteamAudioListener" type="SteamAudioListener" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 
