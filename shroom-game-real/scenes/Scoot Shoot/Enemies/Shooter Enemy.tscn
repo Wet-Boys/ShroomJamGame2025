@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=3 uid="uid://ct8wpe4p3fuok"]
+[gd_scene load_steps=9 format=3 uid="uid://ct8wpe4p3fuok"]
 
 [ext_resource type="Script" uid="uid://cgk8bwhpf4lmk" path="res://scenes/Scoot Shoot/Enemies/ShooterEnemy.cs" id="1_nqeqi"]
 [ext_resource type="PackedScene" uid="uid://bxo4tn437u1dg" path="res://scenes/Scoot Shoot/Models/Enemy 1.glb" id="2_n4142"]
 [ext_resource type="Script" uid="uid://hha3kds0lf64" path="res://scenes/HealthComponent.cs" id="3_gd413"]
+[ext_resource type="Texture2D" uid="uid://dje57uevf66dx" path="res://scenes/Scoot Shoot/Enemies/little john has a gun.png" id="3_v2wij"]
 [ext_resource type="Script" uid="uid://hutdt2ctord0" path="res://Tv/GameStates/TvGameTimer.cs" id="4_mia52"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n4142"]
-size = Vector3(0.8, 0.8, 0.8)
+size = Vector3(1.025, 0.93955076, 0.8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gd413"]
 size = Vector3(1.07, 1.478, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mia52"]
-size = Vector3(2.005, 1.884, 1)
+size = Vector3(1.08, 1.884, 1)
 
 [node name="ShooterEnemy" type="RigidBody3D"]
 collision_layer = 32
@@ -25,9 +26,14 @@ metadata/_custom_type_script = "uid://cgk8bwhpf4lmk"
 [node name="Visual Root" type="Node3D" parent="."]
 
 [node name="Enemy 1" parent="Visual Root" instance=ExtResource("2_n4142")]
+visible = false
+
+[node name="Sprite3D" type="Sprite3D" parent="Visual Root"]
+transform = Transform3D(0.875, 0, 0, 0, 0.875, 0, 0, 0, 0.875, 0.098986626, 2.2649066, 0)
+texture = ExtResource("3_v2wij")
 
 [node name="Head CollisionShape" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5730436, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.642819, 0)
 shape = SubResource("BoxShape3D_n4142")
 
 [node name="Legs CollisionShape" type="CollisionShape3D" parent="."]

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://celiusalnueaq"]
+
+[ext_resource type="Texture2D" uid="uid://bpa76pvf0bi4r" path="res://scenes/Scoot Shoot/Models/peter your horse is here.png" id="1_c3d8q"]
+
+[node name="Horse" type="Sprite3D"]
+texture = ExtResource("1_c3d8q")

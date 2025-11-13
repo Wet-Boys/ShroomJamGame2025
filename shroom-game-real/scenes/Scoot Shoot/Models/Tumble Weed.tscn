@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b603g6er0n84e"]
+
+[ext_resource type="Texture2D" uid="uid://ck5am8uigj6j0" path="res://scenes/Scoot Shoot/Models/tumblemaweed.png" id="1_kcnnn"]
+
+[node name="TumbleWeed" type="Sprite3D"]
+texture = ExtResource("1_kcnnn")
