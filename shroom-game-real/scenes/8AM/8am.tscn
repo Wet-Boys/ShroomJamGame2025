@@ -283,6 +283,11 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="Curve3D" id="Curve3D_c865i"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 2.9299994, 4.6242247, 7.0873814, 0, 0, 0, 0, 0, 0, 2.875, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"tilts": PackedFloat32Array(0, 0, 0)
+}
+point_count = 3
 
 [node name="Label3D" type="Label3D"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -402,7 +407,7 @@ curve = SubResource("Curve3D_jacut")
 script = ExtResource("3_67p13")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast"]
-transform = Transform3D(0.43212876, 0.12995023, -0.6178774, 0.05125275, 0.7390405, 0.1912778, 0.6293113, -0.1494222, 0.40869924, 0.114871025, 2.8878884, 0.095973015)
+transform = Transform3D(0.43212876, 0.12995023, -0.6178775, 0.05125275, 0.7390405, 0.19127783, 0.6293113, -0.1494222, 0.4086993, 0.114871025, 2.8878884, 0.095973015)
 light_color = Color(1, 0.9773333, 0.83, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
@@ -441,7 +446,7 @@ curve = SubResource("Curve3D_53brq")
 script = ExtResource("3_67p13")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast2"]
-transform = Transform3D(0.43212876, 0.12995023, -0.6178774, 0.05125275, 0.7390405, 0.1912778, 0.6293113, -0.1494222, 0.40869924, 0.114871025, 2.8878882, 0.09597278)
+transform = Transform3D(0.43212876, 0.12995023, -0.6178775, 0.05125275, 0.7390405, 0.19127783, 0.6293113, -0.1494222, 0.4086993, 0.114871025, 2.8878882, 0.09597278)
 light_color = Color(1, 0.9773333, 0.83, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
@@ -473,7 +478,11 @@ interior = true
 enable_shadows = true
 
 [node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.52235, 0)
 curve = SubResource("Curve3D_c865i")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.99996597, -0.0042402097, 0.0064990236, 2.3282971e-10, 0.83750683, 0.5464236, -0.007759917, -0.546406, 0.83748347, 2.9299994, 4.6242247, 7.0873814)
 
 [editable path="Non-Core"]
 [editable path="Non-Core/Block of multiple german boards games"]

@@ -142,9 +142,11 @@ public partial class GameFlowHandler : Node
                 {
                     completedDreamLevels++;
                     LoadScene(CurrentTime.RandomMinigame);
+                    ChangeSpeed(((float)Engine.TimeScale) + .025f);
                 }
                 else
                 {
+                    ChangeSpeed(1);
                     SetCurrentGame(CurrentTime.Time12Am);
                     GD.Print($"Final score: {completedDreamLevels}");
                     LoadScene(CurrentTime.Victory);
@@ -273,6 +275,7 @@ public partial class GameFlowHandler : Node
         {
             scootShootOnRailsGame.PlaySingleStage(_rng.RandiRange(0, scootShootOnRailsGame.stages.Length - 1));
             _timerMultiplier = 1.25;
+            _lowerIsBad = false;
         }
         else if (_currentGame is AvoidBallsGameState or FireHopGameState)
         {
@@ -428,7 +431,6 @@ public partial class GameFlowHandler : Node
         TvInteractable.instance.staticNoise.Play();
         isInDreamSequence = true;
         PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
-        MusicManager.Instance.PlaybackRate = 2;
         MusicManager.Instance.StartDreamSong();
         await ToSignal(GetTree().CreateTimer(4.2f), "timeout");
         DreamTransition.instance.Play();
@@ -446,5 +448,11 @@ public partial class GameFlowHandler : Node
             newScene.Position = new Vector3(100, 0, 0);
             _loadedScenes.Add(scene, newScene);
         }
+    }
+
+    private void ChangeSpeed(float newSpeed)
+    {
+        MusicManager.Instance.PlaybackRate = newSpeed;
+        Engine.TimeScale = newSpeed;
     }
 }
