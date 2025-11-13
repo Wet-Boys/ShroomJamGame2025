@@ -3,7 +3,6 @@
 [sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_j3pel"]
 resource_name = "PitchShift"
 oversampling = 8
-fft_size = 4
 
 [resource]
 bus/0/volume_db = -20.376356
