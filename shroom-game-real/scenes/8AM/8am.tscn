@@ -414,7 +414,7 @@ curve = SubResource("Curve3D_jacut")
 script = ExtResource("3_67p13")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast"]
-transform = Transform3D(0.43212876, 0.12995023, -0.61787754, 0.05125275, 0.7390405, 0.19127785, 0.6293113, -0.1494222, 0.40869933, 0.114871025, 2.8878884, 0.095973015)
+transform = Transform3D(0.43212876, 0.12995023, -0.6178775, 0.05125275, 0.7390405, 0.19127783, 0.6293113, -0.1494222, 0.4086993, 0.114871025, 2.8878884, 0.095973015)
 light_color = Color(1, 0.9773333, 0.83, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
@@ -453,7 +453,7 @@ curve = SubResource("Curve3D_53brq")
 script = ExtResource("3_67p13")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast2"]
-transform = Transform3D(0.43212876, 0.12995023, -0.61787754, 0.05125275, 0.7390405, 0.19127785, 0.6293113, -0.1494222, 0.40869933, 0.114871025, 2.8878882, 0.09597278)
+transform = Transform3D(0.43212876, 0.12995023, -0.6178775, 0.05125275, 0.7390405, 0.19127783, 0.6293113, -0.1494222, 0.4086993, 0.114871025, 2.8878882, 0.09597278)
 light_color = Color(1, 0.9773333, 0.83, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
@@ -519,8 +519,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.160961, 9.571094, -8.590512
 curve = SubResource("Curve3D_c865i")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.5908374, -0.3216443, -0.73986405, 0, 0.9169877, -0.39873317, 0.80668485, -0.23558083, -0.5418961, 15.417315, 4.865828, 22.203121)
-progress = 71.03419
+transform = Transform3D(-0.5908337, -0.32164294, -0.7398604, 0, 0.9169836, -0.39873126, 0.80667984, -0.23557982, -0.5418934, 14.892323, 4.5828953, 21.818602)
+progress = 70.323845
 rotation_mode = 2
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]

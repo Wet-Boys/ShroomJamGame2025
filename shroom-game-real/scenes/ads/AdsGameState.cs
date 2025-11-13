@@ -22,22 +22,22 @@ public partial class AdsGameState : BaseTvGameState
 
     private void KitchenGunOnFinished()
     {
-        _vendingMachines.Visible = true;
-        _vendingMachines.Play();
+        _pain.Visible = true;
+        _pain.Play();
         _kitchenGun.Visible = false;
     }
 
     private void PainOnFinished()
     {
-        _kitchenGun.Visible = true;
-        _kitchenGun.Play();
+        _vendingMachines.Visible = true;
+        _vendingMachines.Play();
         _pain.Visible = false;
     }
 
     private void VendingMachinesOnFinished()
     {
-        _pain.Visible = true;
-        _pain.Play();
+        _kitchenGun.Visible = true;
+        _kitchenGun.Play();
         _vendingMachines.Visible = false;
     }
 

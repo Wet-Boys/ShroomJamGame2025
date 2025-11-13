@@ -11,8 +11,8 @@ public partial class CreditsHandler : Label3D
     [Export] private Node3D _littleJohn;
     [Export] private Array<Label3D> _credits;
     public static CreditsHandler instance;
-    private float _desiredSpot = 0;
-    private float _moveSpeed = 1;
+    private int _currentSegment = 0;
+    private bool _finalSegment = false;
 
     public override void _Ready()
     {
@@ -28,7 +28,24 @@ public partial class CreditsHandler : Label3D
     public override void _Process(double delta)
     {
         base._Process(delta);
-        _pathFollow3D.Progress = Mathf.Lerp(_pathFollow3D.Progress, _desiredSpot, (float)delta) * _moveSpeed;
+        switch (_currentSegment)
+        {
+            case 1:
+                _pathFollow3D.Progress = Mathf.Lerp(_pathFollow3D.Progress, 0f, (float)delta);
+                break;
+            case 2:
+                _pathFollow3D.Progress = Mathf.Lerp(_pathFollow3D.Progress, 10.88f, (float)delta);
+                break;
+            case 3:
+                _pathFollow3D.Progress = Mathf.Lerp(_pathFollow3D.Progress, 21.23f, (float)delta);
+                break;
+            case 4:
+                _pathFollow3D.Progress = Mathf.Lerp(_pathFollow3D.Progress, 43.41f, (float)delta);
+                break;
+            case 5:
+                _pathFollow3D.Progress = Mathf.Lerp(_pathFollow3D.Progress, 70f, (float)delta * .33f);
+                break;
+        }
     }
 
     public void SetCameraToSpot(int spot)
@@ -40,25 +57,16 @@ public partial class CreditsHandler : Label3D
         {
             item.Visible = true;
         }
-        switch (spot)
+
+        _currentSegment = spot;
+        if (spot == 1)
         {
-            case 1:
-                _desiredSpot = 0f;
-                break;
-            case 2:
-                _desiredSpot = 10.88f;
-                break;
-            case 3:
-                _desiredSpot = 21.23f;
-                break;
-            case 4:
-                _desiredSpot = 43.41f;
-                break;
-            case 5:
-                _camera.RotationDegrees = new Vector3(0, 180, 0);
-                _desiredSpot = 70f;
-                _moveSpeed = .33f;
-                break;
+            _pathFollow3D.Progress = 0;
+        }
+        if (spot == 5)
+        {
+            _finalSegment = true;
+            _camera.RotationDegrees = new Vector3(0, 180, 0);
         }
     }
 }
