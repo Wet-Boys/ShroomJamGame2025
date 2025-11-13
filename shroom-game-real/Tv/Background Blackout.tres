@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c6quf000gxnbp"]
+
+[ext_resource type="Shader" uid="uid://vwanjgebufj1" path="res://Tv/Background Blackout.gdshader" id="1_e2ta6"]
+
+[resource]
+render_priority = -1
+shader = ExtResource("1_e2ta6")
+shader_parameter/blackout_color = Color(0, 0, 0, 1)
+shader_parameter/blackout_mix = 1.0

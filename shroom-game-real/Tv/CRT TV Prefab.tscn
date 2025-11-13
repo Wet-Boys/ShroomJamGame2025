@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cv1ufabh0k63e"]
+[gd_scene load_steps=17 format=3 uid="uid://cv1ufabh0k63e"]
 
 [ext_resource type="Script" uid="uid://eyhyubl50qtf" path="res://Tv/TvInteractable.cs" id="1_ifqpe"]
 [ext_resource type="PackedScene" uid="uid://3xmqky200xr8" path="res://Tv/Model/CRT.glb" id="1_r0ehp"]
@@ -7,9 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://buam6xk2w03da" path="res://scenes/dream/avoid balls/avoid_balls.tscn" id="4_hnmqc"]
 [ext_resource type="PackedScene" uid="uid://jcij2hin3jyb" path="res://scenes/10AM/Slavic Tv.glb" id="5_l1frq"]
 [ext_resource type="Material" uid="uid://r5xrehqr4it" path="res://Tv/CRT TV Prefab Background Fog Material.tres" id="6_hnmqc"]
+[ext_resource type="Material" uid="uid://c6quf000gxnbp" path="res://Tv/Background Blackout.tres" id="7_auab6"]
 [ext_resource type="AudioStream" uid="uid://c18h71mffkn88" path="res://Tv/TV Click1.wav" id="8_cudru"]
 [ext_resource type="AudioStream" uid="uid://bwb4b5jmgl5q8" path="res://Tv/TV Shutdown.wav" id="9_auab6"]
 [ext_resource type="AudioStream" uid="uid://cwjfvwaxmktyq" path="res://Tv/TV Static.wav" id="10_4631w"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_cudru"]
+material = ExtResource("7_auab6")
+size = Vector2(20, 20)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhbdq"]
 size = Vector3(5.8686314, 4.024925, 3.9865117)
@@ -50,6 +55,19 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5655675, 2, -1.0315812)
 size = Vector3(12, 12, 4.770499)
 material = ExtResource("6_hnmqc")
+
+[node name="Background" type="Node3D" parent="Model"]
+unique_name_in_owner = true
+
+[node name="Background Block" type="MeshInstance3D" parent="Model/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9331207, -2.7319171)
+mesh = SubResource("QuadMesh_cudru")
+skeleton = NodePath("../..")
+
+[node name="Background Block2" type="MeshInstance3D" parent="Model/Background"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.03898084, -8.077953)
+mesh = SubResource("QuadMesh_cudru")
+skeleton = NodePath("../..")
 
 [node name="Old Model" parent="." instance=ExtResource("1_r0ehp")]
 visible = false

@@ -150,6 +150,9 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
 
     public override void _Input(InputEvent @event)
     {
+        if (GameOver)
+            return;
+        
         if (@event.IsActionPressed("escape") && GameStarted && CanActivate && !GameOver && IsInstanceValid(_pauseMenu))
         {
             if (_pauseMenu.Visible)

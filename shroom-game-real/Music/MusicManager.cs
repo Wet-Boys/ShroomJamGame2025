@@ -187,6 +187,38 @@ public partial class MusicManager : Node
         _dreamPlayer.Play();
     }
 
+    public void StopDreamMusic()
+    {
+        _isDreamSong = false;
+        _dreamPlayer.Stop();
+    }
+
+    public void WarbleDreamMusic()
+    {
+        var warbleTween = CreateTween();
+
+        var min = PlaybackRate - 0.1;
+        var max = PlaybackRate + 0.1;
+
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.05f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", PlaybackRate, 0.1f);
+    }
+
     public void DuckOverworldMusic()
     {
         var duckTween = CreateTween().SetParallel();
@@ -197,6 +229,7 @@ public partial class MusicManager : Node
             {
                 Server.SetBusVolumeDb(IntroBusIndex, value);
             }), 0.0f, -40.0f, 0.5f);
+            duckTween.TweenCallback(Callable.From(() => Server.SetBusMute(IntroBusIndex, true)));
         }
 
         if (_isMiddleSong)
@@ -205,6 +238,7 @@ public partial class MusicManager : Node
             {
                 Server.SetBusVolumeDb(MiddleBusIndex, value);
             }), 0.0f, -40.0f, 0.5f);
+            duckTween.TweenCallback(Callable.From(() => Server.SetBusMute(MiddleBusIndex, true)));
         }
         
         if (_isDreamSong)
@@ -213,6 +247,7 @@ public partial class MusicManager : Node
             {
                 Server.SetBusVolumeDb(DreamBusIndex, value);
             }), 0.0f, -40.0f, 0.5f);
+            duckTween.TweenCallback(Callable.From(() => Server.SetBusMute(MiddleBusIndex, true)));
         }
     }
     
@@ -226,6 +261,7 @@ public partial class MusicManager : Node
             {
                 Server.SetBusVolumeDb(IntroBusIndex, value);
             }), -40.0f, 0.0f, 0.5f);
+            duckTween.TweenCallback(Callable.From(() => Server.SetBusMute(IntroBusIndex, false)));
         }
 
         if (_isMiddleSong)
@@ -234,6 +270,7 @@ public partial class MusicManager : Node
             {
                 Server.SetBusVolumeDb(MiddleBusIndex, value);
             }), -40.0f, 0.0f, 0.5f);
+            duckTween.TweenCallback(Callable.From(() => Server.SetBusMute(MiddleBusIndex, false)));
         }
         
         if (_isDreamSong)
@@ -242,6 +279,7 @@ public partial class MusicManager : Node
             {
                 Server.SetBusVolumeDb(DreamBusIndex, value);
             }), -40.0f, 0.0f, 0.5f);
+            duckTween.TweenCallback(Callable.From(() => Server.SetBusMute(DreamBusIndex, false)));
         }
     }
 

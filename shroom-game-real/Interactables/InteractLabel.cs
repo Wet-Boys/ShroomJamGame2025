@@ -24,6 +24,7 @@ public partial class InteractLabel : PanelContainer
 
     public void SetText(string text)
     {
+        _textLabel.Size = Vector2.Zero;
         _textLabel.Text = text;
         UpdatePivot();
     }   

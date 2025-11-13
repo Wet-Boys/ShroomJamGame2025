@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://ccyk7lygyf8gc"]
+[gd_scene load_steps=29 format=4 uid="uid://ccyk7lygyf8gc"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_bffct"]
 [ext_resource type="PackedScene" uid="uid://bmb7buiewbi8e" path="res://Interactables/Food/FoodTest.tscn" id="2_c2djg"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://cqxrganlxm2ki" path="res://scenes/10AM/Slavic Tv_tv_02_tv_out_Metallic-tv_02_tv_out_Roughness.png" id="14_fkct3"]
 [ext_resource type="Texture2D" uid="uid://soh8mr608bwy" path="res://scenes/10AM/Slavic Tv_tv_02_tv_out_Normal.png" id="15_78pmb"]
 [ext_resource type="LightmapGIData" uid="uid://ct67gv8vdgyr7" path="res://scenes/6PM/6pm.lmbake" id="16_uanb1"]
+[ext_resource type="Material" uid="uid://d3fr7v8c1ulc6" path="res://scenes/10AM/Hall Hide Bright.tres" id="18_s06qy"]
+[ext_resource type="QuadMesh" uid="uid://dnfdrdff0o52b" path="res://scenes/10AM/Hall Hide Quad.tres" id="18_w4r06"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e83x3"]
 resource_name = "Material.008"
@@ -383,6 +385,59 @@ light_indirect_energy = 16.0
 light_bake_mode = 1
 shadow_enabled = true
 spot_range = 29.0
+
+[node name="Hall Hider" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -13.931331, -9.536743e-07, 14.582419)
+
+[node name="Layer 1" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0.25755405)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
+
+[node name="Layer 2" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -0.4)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
+
+[node name="Layer 3" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -0.8)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
+
+[node name="Layer 4" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -1.2)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
+
+[node name="Layer 5" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -1.6)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
+
+[node name="Layer 6" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -2)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
+
+[node name="Layer 7" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -2.4)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
+
+[node name="Layer 8" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -2.7)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
+
+[node name="Layer 9" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -3.1000001)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
+
+[node name="Layer 10" type="MeshInstance3D" parent="Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -3.4000003)
+material_override = ExtResource("18_s06qy")
+mesh = ExtResource("18_w4r06")
 
 [editable path="Non-Core"]
 [editable path="Non-Core/Block of multiple german boards games"]
