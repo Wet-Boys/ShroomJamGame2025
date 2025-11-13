@@ -161,6 +161,14 @@ public partial class GameFlowHandler : Node
     private bool _timeToSleep;
     private async void TvInteracted()
     {
+        if (_currentTime != CurrentTime.Time12Am)
+        {
+            TvInteractable.instance.click.Play();
+        }
+        else
+        {
+            TvInteractable.instance.shutdown.Play();
+        }
         switch (_currentTime)
         {
             case CurrentTime.Time8Am:
@@ -411,6 +419,7 @@ public partial class GameFlowHandler : Node
         ResetPlayerPosition();
         // PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
         PlayerController.instance.visualHandler.Succ();
+        TvInteractable.instance.staticNoise.Play();
         isInDreamSequence = true;
         PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
         MusicManager.Instance.StartDreamSong();

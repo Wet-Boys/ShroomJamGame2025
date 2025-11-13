@@ -26,7 +26,7 @@ shape = SubResource("SphereShape3D_2rk0w")
 transform = Transform3D(0.1, 0, 0, 0, -7.3950827e-07, 0.1, 0, -0.1, -7.3950827e-07, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/CollisionShape3D/Node3D"]
-transform = Transform3D(0.3632003, 0, 0, 0, 0.3632003, 4.5474735e-13, 0, -4.5474735e-13, 0.3632003, -0.20502448, -0.41976824, -3.1042205e-06)
+transform = Transform3D(-0.1673416, 0.32235268, 2.3838252e-06, -0.32235268, -0.1673416, -3.923402e-06, -2.3838247e-06, -3.9234023e-06, 0.3632003, -0.20502448, 0.3669484, 2.7136139e-06)
 texture = ExtResource("2_idcaq")
 
 [node name="StartTimer" type="Timer" parent="."]

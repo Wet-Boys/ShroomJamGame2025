@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cv1ufabh0k63e"]
+[gd_scene load_steps=15 format=3 uid="uid://cv1ufabh0k63e"]
 
 [ext_resource type="Script" uid="uid://eyhyubl50qtf" path="res://Tv/TvInteractable.cs" id="1_ifqpe"]
 [ext_resource type="PackedScene" uid="uid://3xmqky200xr8" path="res://Tv/Model/CRT.glb" id="1_r0ehp"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://buam6xk2w03da" path="res://scenes/dream/avoid balls/avoid_balls.tscn" id="4_hnmqc"]
 [ext_resource type="PackedScene" uid="uid://jcij2hin3jyb" path="res://scenes/10AM/Slavic Tv.glb" id="5_l1frq"]
 [ext_resource type="Material" uid="uid://r5xrehqr4it" path="res://Tv/CRT TV Prefab Background Fog Material.tres" id="6_hnmqc"]
+[ext_resource type="AudioStream" uid="uid://c18h71mffkn88" path="res://Tv/TV Click1.wav" id="8_cudru"]
+[ext_resource type="AudioStream" uid="uid://bwb4b5jmgl5q8" path="res://Tv/TV Shutdown.wav" id="9_auab6"]
+[ext_resource type="AudioStream" uid="uid://cwjfvwaxmktyq" path="res://Tv/TV Static.wav" id="10_4631w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bhbdq"]
 size = Vector3(5.8686314, 4.024925, 3.9865117)
@@ -19,12 +22,15 @@ size = Vector2(4.07, 3.26)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nsevw"]
 size = Vector3(4.081482, 3.261322, 0.5)
 
-[node name="CRT TV" type="StaticBody3D"]
+[node name="CRT TV" type="StaticBody3D" node_paths=PackedStringArray("click", "shutdown", "staticNoise")]
 process_mode = 3
 collision_layer = 2
 collision_mask = 0
 input_ray_pickable = false
 script = ExtResource("1_ifqpe")
+click = NodePath("Click")
+shutdown = NodePath("Shutdown")
+staticNoise = NodePath("Static")
 outlineThickness = 0.02
 meshLayersOutlineMask = 1
 metadata/_custom_type_script = "uid://eyhyubl50qtf"
@@ -78,3 +84,15 @@ input_capture_on_drag = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Screen Quad/Mouse Interaction Area"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00015258789, -0.0036773682, 0)
 shape = SubResource("BoxShape3D_nsevw")
+
+[node name="Click" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("8_cudru")
+bus = &"SFX"
+
+[node name="Shutdown" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("9_auab6")
+bus = &"SFX"
+
+[node name="Static" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("10_4631w")
+bus = &"SFX"

@@ -14,6 +14,10 @@ public partial class TvInteractable : InteractableStaticBody3D
     [Signal]
     public delegate void InteractedEventHandler();
 
+    [Export] public AudioStreamPlayer3D click;
+    [Export] public AudioStreamPlayer3D shutdown;
+    [Export] public AudioStreamPlayer3D staticNoise;
+
     public override void _Ready()
     {
         base._Ready();

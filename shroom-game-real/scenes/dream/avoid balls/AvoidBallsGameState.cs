@@ -5,6 +5,7 @@ using ShroomGameReal.Tv.GameStates;
 
 public partial class AvoidBallsGameState : BaseTvGameState
 {
+    [Export] private AudioStreamPlayer _carCrash;
     public override void _Ready()
     {
         base._Ready();
@@ -22,6 +23,7 @@ public partial class AvoidBallsGameState : BaseTvGameState
 
     public override void Failure()
     {
+        _carCrash.Play();
         if (GameFlowHandler.isInDreamSequence)
         {
             GameFlowHandler.instance.FinishMinigame(this, true);
