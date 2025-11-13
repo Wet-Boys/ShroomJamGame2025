@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://blty6w8srcj1f"]
+[gd_scene load_steps=3 format=3 uid="uid://bmxtj14huis7h"]
 
 [ext_resource type="PackedScene" uid="uid://8dvdxvspd1ir" path="res://scenes/HITW/Contestants/Renderer/Base Contestant Prefab.tscn" id="1_moeiy"]
 [ext_resource type="PackedScene" uid="uid://n8na3ffpimjg" path="res://scenes/HITW/Contestants/Pose3.glb" id="2_moeiy"]
@@ -33,5 +33,23 @@ bones/39/rotation = Quaternion(-0.6341881, -0.31273875, 0.31273878, 0.634188)
 bones/40/position = Vector3(-0.6822014, 0.17782643, -0.15262115)
 bones/40/rotation = Quaternion(-0.68626297, 0.17042065, -0.17042062, 0.68626297)
 bones/41/rotation = Quaternion(0.48382312, 0.51566964, -0.51566976, -0.48382306)
+
+[node name="body" parent="Contestant Render Viewport/Contestant Render Root/Pose3/metarig/Skeleton3D" index="0"]
+gi_mode = 2
+
+[node name="eyes" parent="Contestant Render Viewport/Contestant Render Root/Pose3/metarig/Skeleton3D" index="1"]
+gi_mode = 2
+
+[node name="glasses" parent="Contestant Render Viewport/Contestant Render Root/Pose3/metarig/Skeleton3D" index="2"]
+gi_mode = 2
+
+[node name="hair" parent="Contestant Render Viewport/Contestant Render Root/Pose3/metarig/Skeleton3D" index="3"]
+gi_mode = 2
+
+[node name="shirt" parent="Contestant Render Viewport/Contestant Render Root/Pose3/metarig/Skeleton3D" index="4"]
+gi_mode = 2
+
+[node name="shorts" parent="Contestant Render Viewport/Contestant Render Root/Pose3/metarig/Skeleton3D" index="5"]
+gi_mode = 2
 
 [editable path="Contestant Render Viewport/Contestant Render Root/Pose3"]

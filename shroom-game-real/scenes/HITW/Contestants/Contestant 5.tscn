@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://duci6ta0rojdx"]
+[gd_scene load_steps=3 format=3 uid="uid://whefpt6215v2"]
 
 [ext_resource type="PackedScene" uid="uid://8dvdxvspd1ir" path="res://scenes/HITW/Contestants/Renderer/Base Contestant Prefab.tscn" id="1_qieu1"]
 [ext_resource type="PackedScene" uid="uid://druphnni0l4rp" path="res://scenes/HITW/Contestants/Pose5.glb" id="2_qieu1"]

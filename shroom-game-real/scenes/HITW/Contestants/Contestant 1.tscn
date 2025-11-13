@@ -6,3 +6,26 @@
 [node name="Contestant 1" instance=ExtResource("1_8qb8h")]
 
 [node name="Little John" parent="Contestant Render Viewport/Contestant Render Root" index="0" instance=ExtResource("2_cqasu")]
+
+[node name="body" parent="Contestant Render Viewport/Contestant Render Root/Little John/metarig/Skeleton3D" index="0"]
+gi_mode = 2
+
+[node name="body_001" parent="Contestant Render Viewport/Contestant Render Root/Little John/metarig/Skeleton3D" index="1"]
+gi_mode = 2
+
+[node name="eyes" parent="Contestant Render Viewport/Contestant Render Root/Little John/metarig/Skeleton3D" index="2"]
+gi_mode = 2
+
+[node name="glasses" parent="Contestant Render Viewport/Contestant Render Root/Little John/metarig/Skeleton3D" index="3"]
+gi_mode = 2
+
+[node name="hair" parent="Contestant Render Viewport/Contestant Render Root/Little John/metarig/Skeleton3D" index="4"]
+gi_mode = 2
+
+[node name="shirt" parent="Contestant Render Viewport/Contestant Render Root/Little John/metarig/Skeleton3D" index="5"]
+gi_mode = 2
+
+[node name="shorts" parent="Contestant Render Viewport/Contestant Render Root/Little John/metarig/Skeleton3D" index="6"]
+gi_mode = 2
+
+[editable path="Contestant Render Viewport/Contestant Render Root/Little John"]

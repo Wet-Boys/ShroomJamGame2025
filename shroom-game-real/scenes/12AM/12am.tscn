@@ -114,11 +114,6 @@ blend_shape_mode = 0
 
 [node name="Label3D" type="Label3D"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
-text = "12AM
-
-
-
-"
 font_size = 642
 
 [node name="Room" parent="." instance=ExtResource("1_pxao3")]
@@ -275,8 +270,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.912017, 7.7588534, 12.7880
 [node name="OmniLight3D" type="OmniLight3D" parent="Lamp Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.018125564, 0.24927044, 0.002263993)
 light_color = Color(1, 0.9666667, 0.75, 1)
-light_energy = 2.0
-light_indirect_energy = 8.0
+light_indirect_energy = 4.0
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 25.0
@@ -284,8 +278,7 @@ omni_range = 25.0
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lamp Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.604084, 4.2096786, -12.787194)
 light_color = Color(1, 0.9666667, 0.75, 1)
-light_energy = 2.0
-light_indirect_energy = 8.0
+light_indirect_energy = 4.0
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 25.0

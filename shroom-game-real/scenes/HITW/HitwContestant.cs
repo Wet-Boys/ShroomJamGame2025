@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
+using ShroomGameReal.Utilities;
 
 namespace ShroomGameReal.scenes.HITW;
 
@@ -51,10 +52,27 @@ public partial class HitwContestant : Node3D
         _renderViewport.RenderTargetClearMode = SubViewport.ClearMode.Never;
         _renderViewport.RenderTargetUpdateMode = SubViewport.UpdateMode.Disabled;
         
-        foreach (var mesh in _contestantRenderRoot.GetChildren().OfType<Node3D>())
+        foreach (var node in _contestantRenderRoot.GetChildren().OfType<Node3D>())
         {
-            var instance = mesh.Duplicate();
+            var instance = node.Duplicate();
             AddChild(instance);
+
+            foreach (var meshInstance in instance.GetChildrenRecursively<MeshInstance3D>())
+            {
+                var mesh = (Mesh)meshInstance.Mesh.DuplicateDeep();
+                meshInstance.Mesh = mesh;
+
+                for (int i = 0; i < mesh.GetSurfaceCount(); i++)
+                {
+                    var material = (StandardMaterial3D)mesh.SurfaceGetMaterial(i);
+                    if (material is null)
+                        continue;
+
+                    material.Metallic = 0f;
+                    
+                    meshInstance.SetSurfaceOverrideMaterial(i, (Material)material.DuplicateDeep());
+                }
+            }
         }
         
         EmitSignalImageReady();
