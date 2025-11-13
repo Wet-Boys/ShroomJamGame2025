@@ -1,4 +1,5 @@
 using Godot;
+using SettingsHelper;
 
 namespace ShroomGameReal.Music;
 
@@ -57,6 +58,18 @@ public partial class MusicManager : Node
 
         _middlePlayer.Finished += () => _middlePlayer.Play();
         _dreamPlayer.Finished += () => _dreamPlayer.Play();
+    }
+
+    private void LoadAudioSettings()
+    {
+        Server.SetBusVolumeLinear(MasterBusIndex, SettingsManager.Volume.Master.Value);
+        SettingsManager.Volume.Master.Changed += () => Server.SetBusVolumeLinear(MasterBusIndex, SettingsManager.Volume.Master.Value);
+        
+        Server.SetBusVolumeLinear(MusicBusIndex, SettingsManager.Volume.Music.Value);
+        SettingsManager.Volume.Music.Changed += () => Server.SetBusVolumeLinear(MusicBusIndex, SettingsManager.Volume.Music.Value);
+        
+        Server.SetBusVolumeLinear(SfxBusIndex, SettingsManager.Volume.Sfx.Value);
+        SettingsManager.Volume.Sfx.Changed += () => Server.SetBusVolumeLinear(SfxBusIndex, SettingsManager.Volume.Sfx.Value);
     }
 
     public override void _EnterTree()
@@ -144,6 +157,7 @@ public partial class MusicManager : Node
 
     public void StartDreamSong()
     {
+        _isIntroSong = false;
         _isMiddleSong = false;
         _isDreamSong = true;
         
@@ -160,12 +174,22 @@ public partial class MusicManager : Node
             Server.SetBusVolumeDb(DreamBusIndex, value);
         }), -40.0f, 0.0f, 0.5f);
         
-        dreamTween.TweenCallback(Callable.From(() => Server.SetBusMute(MiddleBusIndex, true)));
+        dreamTween.TweenCallback(Callable.From(() =>
+        {
+            Server.SetBusMute(IntroBusIndex, true);
+            Server.SetBusMute(MiddleBusIndex, true);
+            
+            _introPlayer.Stop();
+            _middlePlayer.Stop();
+        }));
+
+        // UnDuckOverworldMusic();
+        _dreamPlayer.Play();
     }
 
     public void DuckOverworldMusic()
     {
-        var duckTween = CreateTween();
+        var duckTween = CreateTween().SetParallel();
         
         if (_isIntroSong)
         {
@@ -194,7 +218,7 @@ public partial class MusicManager : Node
     
     public void UnDuckOverworldMusic()
     {
-        var duckTween = CreateTween();
+        var duckTween = CreateTween().SetParallel();
         
         if (_isIntroSong)
         {
@@ -236,7 +260,9 @@ public partial class MusicManager : Node
         where T : AudioEffect
         => (T)Server.GetBusEffect(MusicBusIndex, (int)effect);
 
+    public int MasterBusIndex => Server.GetBusIndex("Master");
     public int MusicBusIndex => Server.GetBusIndex("Music");
+    public int SfxBusIndex => Server.GetBusIndex("SFX");
     
     public int IntroBusIndex => Server.GetBusIndex("Overworld Intro Music");
     

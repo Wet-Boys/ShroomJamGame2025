@@ -9,17 +9,21 @@ public partial class PauseMenuController : Control
     public Button baitQuitButton;
     private Button _quitButton;
     private Control _vhsEffect;
+    private Control _buttons;
+    private Control _settingsUi;
     
     public override void _Ready()
     {
         baitQuitButton = GetNode<Button>("%Bait Quit Button");
         _quitButton = GetNode<Button>("%Quit Button");
         _vhsEffect = GetNode<Control>("%VHS");
+        _buttons = GetNode<Control>("%Buttons");
+        _settingsUi = GetNode<Control>("%Settings Menu");
     }
 
     public override void _Input(InputEvent @event)
     {
-        if (@event.IsActionPressed("escape") && !GlobalGameState.Instance.InBaitMode)
+        if (@event.IsActionPressed("escape") && !GlobalGameState.Instance.InBaitMode && !_settingsUi.Visible)
         {
             if (Visible)
             {
@@ -30,6 +34,22 @@ public partial class PauseMenuController : Control
                 Pause();
             }
         }
+    }
+
+    public void ShowSettings()
+    {
+        _buttons.Visible = false;
+        _settingsUi.Visible = true;
+        
+        MouseReleaser.Instance.RequestFreeMouse();
+    }
+
+    public void HideSettings()
+    {
+        _settingsUi.Visible = false;
+        _buttons.Visible = true;
+        
+        MouseReleaser.Instance.RequestLockedMouse();
     }
 
     public void Pause()

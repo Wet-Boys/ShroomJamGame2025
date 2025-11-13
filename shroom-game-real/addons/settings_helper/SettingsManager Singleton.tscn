@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyg8fq8ga2sps"]
+[gd_scene load_steps=9 format=3 uid="uid://cyg8fq8ga2sps"]
 
 [ext_resource type="Script" uid="uid://8u4pfcwiqg7m" path="res://addons/settings_helper/SettingsManager.cs" id="1_su1s0"]
 [ext_resource type="Script" uid="uid://b5xhvhv3dpuxo" path="res://addons/settings_helper/SettingsEntries/FloatSettingsEntry.cs" id="2_8lbnx"]
@@ -25,7 +25,28 @@ Max = 140.0
 Key = "camera.fov"
 metadata/_custom_type_script = "uid://dklkxqbwayfil"
 
+[sub_resource type="Resource" id="Resource_su1s0"]
+script = ExtResource("2_8lbnx")
+DefaultValue = 0.6
+Max = 1.0
+Key = "volume.master"
+metadata/_custom_type_script = "uid://b5xhvhv3dpuxo"
+
+[sub_resource type="Resource" id="Resource_8lbnx"]
+script = ExtResource("2_8lbnx")
+DefaultValue = 0.6
+Max = 1.0
+Key = "volume.music"
+metadata/_custom_type_script = "uid://b5xhvhv3dpuxo"
+
+[sub_resource type="Resource" id="Resource_eym7j"]
+script = ExtResource("2_8lbnx")
+DefaultValue = 0.6
+Max = 1.0
+Key = "volume.sfx"
+metadata/_custom_type_script = "uid://b5xhvhv3dpuxo"
+
 [node name="SettngsManagerSingleton" type="Node"]
 script = ExtResource("1_su1s0")
 _fileName = "settings"
-Entries = [SubResource("Resource_7njba"), SubResource("Resource_kmose"), SubResource("Resource_kc4pf")]
+Entries = [SubResource("Resource_7njba"), SubResource("Resource_kmose"), SubResource("Resource_kc4pf"), SubResource("Resource_su1s0"), SubResource("Resource_8lbnx"), SubResource("Resource_eym7j")]

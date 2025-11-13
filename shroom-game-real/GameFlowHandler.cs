@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Godot;
 using Godot.Collections;
+using ShroomGameReal.Music;
 using ShroomGameReal.Player;
 using ShroomGameReal.scenes.HITW;
 using ShroomGameReal.scenes.obby;
@@ -107,6 +108,7 @@ public partial class GameFlowHandler : Node
         switch (_currentTime)
         {
             case CurrentTime.Time8Am:
+                MusicManager.Instance.StartIntroSong();
                 PlayerController.instance.visualHandler.CoughingBaby();
                 SetObjectiveText("Put on the game shows");
                 LoadScene(CurrentTime.Time10Am);
@@ -116,6 +118,7 @@ public partial class GameFlowHandler : Node
                 LoadScene(CurrentTime.Time12Pm);
                 break;
             case CurrentTime.Time12Pm:
+                MusicManager.Instance.StartMiddleSong();
                 SetObjectiveText("");
                 LoadScene(CurrentTime.Time3Pm);
                 SetCurrentGame(_currentTime);
@@ -127,6 +130,7 @@ public partial class GameFlowHandler : Node
                 LoadScene(CurrentTime.Time12Am);
                 SetObjectiveText("Turn off the TV and head to bed");
                 PlayerController.instance.visualHandler.Yawn();
+                MusicManager.Instance.DuckOverworldMusic();
                 break;
             case CurrentTime.RandomMinigame:
                 if (Lives != 0)
@@ -405,6 +409,7 @@ public partial class GameFlowHandler : Node
         PlayerController.instance.visualHandler.Succ();
         isInDreamSequence = true;
         PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
+        MusicManager.Instance.StartDreamSong();
         await ToSignal(GetTree().CreateTimer(4.2f), "timeout");
         DreamTransition.instance.Play();
     }

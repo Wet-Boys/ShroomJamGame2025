@@ -63,34 +63,34 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 [node name="Player Model" parent="Visual Root/Node3D" instance=ExtResource("2_l50ud")]
 
 [node name="Skeleton3D" parent="Visual Root/Node3D/Player Model/Player/Little John First Person/metarig" index="1"]
-bones/2/position = Vector3(0, 0.93120724, -0.055199977)
-bones/2/rotation = Quaternion(0.03541418, -1.7359692e-17, -1.0419602e-18, 0.9993727)
+bones/2/position = Vector3(0, 0.9951627, -0.055199984)
+bones/2/rotation = Quaternion(0.036483046, -1.5696516e-17, -1.1751878e-18, 0.99933434)
 bones/3/rotation = Quaternion(-0.006019595, 2.706302e-21, 2.6999008e-18, 0.9999819)
 bones/4/rotation = Quaternion(-0.0005284548, 4.5208283e-20, 1.7665775e-19, 0.9999999)
 bones/5/rotation = Quaternion(0.0040802774, 7.0179296e-21, 1.2154085e-19, 0.99999166)
-bones/6/rotation = Quaternion(0.15518531, -4.9080902e-18, 2.5913764e-19, 0.9878855)
-bones/8/position = Vector3(1.532898e-19, 0.2374978, -0.057128847)
+bones/6/rotation = Quaternion(0.15422574, 1.5558187e-17, -2.7919252e-18, 0.98803574)
+bones/8/position = Vector3(8.382052e-18, 0.24357414, -0.05792758)
 bones/8/rotation = Quaternion(-0.09371197, 0, 0, 0.9955994)
 bones/8/scale = Vector3(1, 1, 1.0000001)
-bones/10/rotation = Quaternion(-0.20554613, 0.78161305, -0.43916592, 0.39238387)
-bones/11/rotation = Quaternion(0.30667108, -0.096965745, -0.14290275, 0.9360179)
-bones/12/rotation = Quaternion(-0.12390788, -0.053008612, -0.09605082, 0.9862106)
+bones/10/rotation = Quaternion(-0.22171897, 0.8141055, -0.3551123, 0.40245295)
+bones/11/rotation = Quaternion(0.43729445, -0.09025786, -0.20377065, 0.8712662)
+bones/12/rotation = Quaternion(-0.18657453, -0.05093137, -0.0700099, 0.97861874)
 bones/15/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
-bones/17/rotation = Quaternion(-0.20733877, -0.75972503, 0.4802115, 0.38629714)
-bones/18/rotation = Quaternion(0.24236828, 0.09929056, 0.11293889, 0.9584592)
-bones/19/rotation = Quaternion(-0.09387023, 0.041898552, 0.05760761, 0.99303293)
+bones/17/rotation = Quaternion(-0.22418153, -0.80258125, 0.38664702, 0.39510766)
+bones/18/rotation = Quaternion(0.39909375, 0.09251699, 0.18596984, 0.8930734)
+bones/19/rotation = Quaternion(-0.16703723, 0.038154233, 0.023242839, 0.98493797)
 bones/22/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
-bones/24/rotation = Quaternion(0.9731113, 3.4165326e-09, -2.1658693e-08, 0.23033553)
-bones/25/rotation = Quaternion(0.41373435, 1.8375058e-16, 1.2999306e-16, 0.91039777)
-bones/26/rotation = Quaternion(-0.67003137, 2.8661077e-07, -2.3377271e-07, 0.7423328)
-bones/30/rotation = Quaternion(0.9731113, -5.9010037e-09, 3.7408693e-08, 0.23033553)
-bones/31/rotation = Quaternion(0.41373435, 2.5348513e-15, 1.2277375e-15, 0.91039777)
-bones/32/rotation = Quaternion(-0.67003137, -3.019778e-07, 2.2951937e-07, 0.7423328)
+bones/24/rotation = Quaternion(0.9900076, 9.261491e-09, -2.5210378e-08, 0.14101464)
+bones/25/rotation = Quaternion(0.21931486, 2.137294e-15, -4.401905e-16, 0.9756542)
+bones/26/rotation = Quaternion(-0.5830146, 3.1154758e-07, -1.917448e-07, 0.8124616)
+bones/30/rotation = Quaternion(0.9900076, -1.0233278e-08, 4.112549e-08, 0.14101464)
+bones/31/rotation = Quaternion(0.21931486, -2.8795928e-16, -9.2491e-16, 0.9756542)
+bones/32/rotation = Quaternion(-0.5830146, -3.26339e-07, 1.8579088e-07, 0.8124616)
 bones/33/rotation = Quaternion(-1.1064199e-07, 0.9612488, -0.2756822, -3.0175178e-07)
-bones/35/position = Vector3(0.3815259, 0.95262396, -0.05334942)
+bones/35/position = Vector3(0.38152587, 1.0602854, -0.05334942)
 bones/35/rotation = Quaternion(-0.025784606, 0.7066365, -0.7066365, 0.025784662)
 bones/37/position = Vector3(0.49290267, 1.6067429, -0.62285686)
-bones/39/position = Vector3(-0.37100703, 0.93421596, -0.05334942)
+bones/39/position = Vector3(-0.37100703, 1.0418775, -0.05334942)
 bones/39/rotation = Quaternion(-0.05800342, -0.70472383, 0.7047238, 0.05800341)
 bones/41/position = Vector3(-0.49290267, 1.6067429, -0.62285686)
 
@@ -206,11 +206,6 @@ layout_mode = 2
 label_settings = SubResource("LabelSettings_sy1gk")
 vertical_alignment = 2
 
-[node name="Pause Menu" parent="UI Root" instance=ExtResource("9_thgmb")]
-visible = false
-layout_mode = 1
-mouse_filter = 1
-
 [node name="Tasks" type="Control" parent="UI Root"]
 layout_mode = 1
 anchors_preset = 1
@@ -247,6 +242,11 @@ frame_progress = 0.92921317
 
 [node name="DreamTimer" parent="UI Root" instance=ExtResource("16_ea2nr")]
 layout_mode = 1
+
+[node name="Pause Menu" parent="UI Root" instance=ExtResource("9_thgmb")]
+visible = false
+layout_mode = 1
+mouse_filter = 1
 
 [editable path="Visual Root/Node3D/Player Model"]
 [editable path="Visual Root/Node3D/Player Model/Player"]

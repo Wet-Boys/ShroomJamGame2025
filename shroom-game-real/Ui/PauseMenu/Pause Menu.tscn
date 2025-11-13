@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dofhffbbgk7t"]
+[gd_scene load_steps=16 format=3 uid="uid://dofhffbbgk7t"]
 
 [ext_resource type="Theme" uid="uid://dmrcff1f44uiw" path="res://Ui/Main UI Theme.tres" id="1_016cm"]
 [ext_resource type="Script" uid="uid://ctw51c8yf2es2" path="res://Ui/PauseMenu/PauseMenuController.cs" id="1_wix5u"]
@@ -8,6 +8,8 @@
 [ext_resource type="Material" uid="uid://cll6ptrwl04v0" path="res://Ui/PauseMenu/VHS Effect/VHS Glitch.tres" id="5_6sppg"]
 [ext_resource type="FontFile" uid="uid://dxye7ru5qc0s2" path="res://Ui/Fonts/OSD Mono/VCR_OSD_MONO_1.001.ttf" id="5_jcwe2"]
 [ext_resource type="FontFile" uid="uid://cukg4glixq1g1" path="res://Ui/Fonts/Jersey/Jersey10-Regular.ttf" id="6_5jtq2"]
+[ext_resource type="Script" uid="uid://c1exrvq5blpko" path="res://Ui/PauseMenu/SettingsMenuController.cs" id="9_1l5g8"]
+[ext_resource type="FontFile" uid="uid://cta4afpkksl5f" path="res://Ui/Fonts/Inter/Inter-Medium.ttf" id="9_x7sfa"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_6sppg"]
 font = ExtResource("5_jcwe2")
@@ -16,6 +18,25 @@ font_size = 64
 [sub_resource type="LabelSettings" id="LabelSettings_016cm"]
 font = ExtResource("6_5jtq2")
 font_size = 96
+
+[sub_resource type="LabelSettings" id="LabelSettings_1l5g8"]
+font = ExtResource("9_x7sfa")
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_tw4im"]
+font = ExtResource("9_x7sfa")
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1l5g8"]
+content_margin_left = 48.0
+content_margin_top = 16.0
+content_margin_right = 48.0
+content_margin_bottom = 16.0
+bg_color = Color(0.063928306, 0.6481759, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="Pause Menu" type="Control"]
 layout_mode = 3
@@ -136,6 +157,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Buttons" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -178,6 +200,248 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("9_1l5g8")
+metadata/_custom_type_script = "uid://c1exrvq5blpko"
+
+[node name="PanelContainer" type="PanelContainer" parent="Settings Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -447.0
+offset_top = -76.5
+offset_right = 453.0
+offset_bottom = 76.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings Menu/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings Menu/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Audio Header" type="Label" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Audio"
+label_settings = SubResource("LabelSettings_1l5g8")
+horizontal_alignment = 1
+
+[node name="Audio Settings" type="GridContainer" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Master" type="Label" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings"]
+layout_mode = 2
+text = "                          Master"
+label_settings = SubResource("LabelSettings_tw4im")
+horizontal_alignment = 2
+
+[node name="Control" type="Control" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Master Volume Slider" type="HSlider" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -6.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="Music" type="Label" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings"]
+layout_mode = 2
+text = "Music"
+label_settings = SubResource("LabelSettings_tw4im")
+horizontal_alignment = 2
+
+[node name="Control2" type="Control" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Music Volume Slider" type="HSlider" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings/Control2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -6.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="Sfx" type="Label" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings"]
+layout_mode = 2
+text = "Sfx"
+label_settings = SubResource("LabelSettings_tw4im")
+horizontal_alignment = 2
+
+[node name="Control3" type="Control" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Sfx Volume Slider" type="HSlider" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings/Control3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -6.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="Audio Sep" type="HSeparator" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Gameplay" type="Label" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Gameplay"
+label_settings = SubResource("LabelSettings_1l5g8")
+horizontal_alignment = 1
+
+[node name="Gameplay Settings" type="GridContainer" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Fov" type="Label" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings"]
+visible = false
+layout_mode = 2
+text = "Fov"
+label_settings = SubResource("LabelSettings_tw4im")
+horizontal_alignment = 2
+
+[node name="Control" type="Control" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Fov Slider" type="HSlider" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings/Control"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -6.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="Horizontal Sensitivity" type="Label" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings"]
+layout_mode = 2
+text = "Horizontal Sensitivity"
+label_settings = SubResource("LabelSettings_tw4im")
+horizontal_alignment = 2
+
+[node name="Control2" type="Control" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Horizontal Sensitivity Slider" type="HSlider" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings/Control2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -6.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="Vertical Sensitivity" type="Label" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings"]
+layout_mode = 2
+text = "Vertical Sensitivity"
+label_settings = SubResource("LabelSettings_tw4im")
+horizontal_alignment = 2
+
+[node name="Control3" type="Control" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Vertical Sensitivity Slider" type="HSlider" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings/Control3"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -6.5
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.001
+
+[node name="Gameplay Sep" type="HSeparator" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Graphics" type="Label" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Graphics"
+label_settings = SubResource("LabelSettings_1l5g8")
+horizontal_alignment = 1
+
+[node name="Graphics Sep" type="HSeparator" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_1l5g8")
+text = "Save"
 
 [connection signal="pressed" from="Buttons/Resume Button" to="." method="Resume"]
+[connection signal="pressed" from="Buttons/Settings Button" to="." method="ShowSettings"]
 [connection signal="pressed" from="Buttons/Quit Button" to="." method="QuitToDesktop"]
+[connection signal="value_changed" from="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings/Control/Master Volume Slider" to="Settings Menu" method="MasterVolumeChanged"]
+[connection signal="value_changed" from="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings/Control2/Music Volume Slider" to="Settings Menu" method="MusicVolumeChanged"]
+[connection signal="value_changed" from="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Audio Settings/Control3/Sfx Volume Slider" to="Settings Menu" method="SfxVolumeChanged"]
+[connection signal="value_changed" from="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings/Control/Fov Slider" to="Settings Menu" method="FovChanged"]
+[connection signal="value_changed" from="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings/Control2/Horizontal Sensitivity Slider" to="Settings Menu" method="HorizontalSensitivityChanged"]
+[connection signal="value_changed" from="Settings Menu/PanelContainer/MarginContainer/VBoxContainer/Gameplay Settings/Control3/Vertical Sensitivity Slider" to="Settings Menu" method="VerticalSensitivityChanged"]
