@@ -153,7 +153,10 @@ public partial class HoleInTheWallGame : BaseTvGameState
         if (CanContestantFitCutShape())
         {
             // GD.Print("You won");
-
+            if (GameFlowHandler.isInDreamSequence)
+            {
+                GameFlowHandler.instance.FinishMinigame(this, false);
+            }
             _gameProgression++;
 
             var nextContestantTimer = new TvGameTimer();

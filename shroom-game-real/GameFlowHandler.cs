@@ -36,7 +36,7 @@ public partial class GameFlowHandler : Node
         { CurrentTime.Time3Pm,  (PackedScene)GD.Load("res://scenes/3PM/3pm.tscn")},
         { CurrentTime.Time6Pm,  (PackedScene)GD.Load("res://scenes/6PM/6pm.tscn")},
         { CurrentTime.Time12Am,  (PackedScene)GD.Load("res://scenes/12AM/12am.tscn")},
-        { CurrentTime.Victory,  (PackedScene)GD.Load("res://scenes/8AM_Victory/8am_victory.tscn")},
+        { CurrentTime.Victory,  (PackedScene)GD.Load("res://scenes/8AM/8am.tscn")},
     };
     public Godot.Collections.Dictionary<CurrentTime, string> sceneNameList = new()
     {
@@ -243,7 +243,7 @@ public partial class GameFlowHandler : Node
         {
             holeInTheWallGame.SetOrderAndStart([_rng.RandiRange(0, holeInTheWallGame.contestantPrefabs.Length-1)]);
             holeInTheWallGame.CanActivate = true;
-            _lowerIsBad = false;
+            _timerMultiplier = .8;
         }
         else if (_currentGame is FroggerGameState froggerGameState)
         {
@@ -313,6 +313,7 @@ public partial class GameFlowHandler : Node
             _currentScene?.QueueFree();
             _currentScene = scene;
             _currentScene.Visible = true;
+            _currentScene.Position = new Vector3(0, 0, 0);
         }
     }
 
@@ -417,6 +418,7 @@ public partial class GameFlowHandler : Node
 
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
             newScene.Visible = false;
+            newScene.Position = new Vector3(100, 0, 0);
             _loadedScenes.Add(scene, newScene);
         }
     }
