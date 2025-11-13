@@ -209,6 +209,6 @@ public partial class HoleInTheWallGame : BaseTvGameState
         }
         else
             ExitTv();
-        CanActivate = true;
+        CanActivate = false;
     }
 }

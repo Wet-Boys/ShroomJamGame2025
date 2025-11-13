@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://icuho76p1nes"]
+
+[ext_resource type="Script" uid="uid://mb21ivhag2lf" path="res://scenes/ads/AdsGameState.cs" id="1_4m8rg"]
+[ext_resource type="PackedScene" uid="uid://2qddlfqrliuh" path="res://scenes/dream/transition/Static.tscn" id="2_ryfp2"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_4m8rg")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+fov = 28.317986
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = 4.0
+offset_right = 39.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" parent="Control" instance=ExtResource("2_ryfp2")]
+autoplay = "default"

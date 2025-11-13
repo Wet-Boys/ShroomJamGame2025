@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bsh17ymkfrnte"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_yb58s"]
-[ext_resource type="PackedScene" uid="uid://bmb7buiewbi8e" path="res://Interactables/Food/FoodTest.tscn" id="2_w7gwu"]
+[ext_resource type="PackedScene" uid="uid://k35ix3lg403y" path="res://Interactables/Food/Juice.tscn" id="3_7x5ek"]
 
 [node name="Label3D" type="Label3D"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -15,5 +15,5 @@ font_size = 642
 [node name="Room" parent="." instance=ExtResource("1_yb58s")]
 transform = Transform3D(-1.307, 0, 1.9735153e-07, 0, 1.307, 0, -1.9735153e-07, 0, -1.307, 0, 0, 0)
 
-[node name="FoodTest" parent="." instance=ExtResource("2_w7gwu")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.8485181, 1.0579251, -2.141092)
+[node name="FoodTest2" parent="." instance=ExtResource("3_7x5ek")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.747535, 1.0579237, -2.1715572)

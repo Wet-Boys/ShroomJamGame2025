@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://2qddlfqrliuh"]
+
+[ext_resource type="Texture2D" uid="uid://c6afbypqw6w4e" path="res://scenes/dream/transition/static.png" id="1_c0vmt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxn1a"]
+atlas = ExtResource("1_c0vmt")
+region = Rect2(0, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v36cd"]
+atlas = ExtResource("1_c0vmt")
+region = Rect2(320, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6b4r"]
+atlas = ExtResource("1_c0vmt")
+region = Rect2(640, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22wqw"]
+atlas = ExtResource("1_c0vmt")
+region = Rect2(960, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2b0u"]
+atlas = ExtResource("1_c0vmt")
+region = Rect2(1280, 0, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ta8al"]
+atlas = ExtResource("1_c0vmt")
+region = Rect2(0, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4dxe"]
+atlas = ExtResource("1_c0vmt")
+region = Rect2(320, 240, 320, 240)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jagf4"]
+atlas = ExtResource("1_c0vmt")
+region = Rect2(640, 240, 320, 240)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g70qc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxn1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v36cd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6b4r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22wqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2b0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ta8al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4dxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jagf4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+modulate = Color(0.8346143, 0.8346143, 0.8346143, 1)
+texture_filter = 1
+scale = Vector2(6.019, 4.5)
+sprite_frames = SubResource("SpriteFrames_g70qc")
+frame_progress = 0.03761218

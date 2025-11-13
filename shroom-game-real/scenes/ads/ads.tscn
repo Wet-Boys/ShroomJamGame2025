@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7rxbph2yryi0"]
+
+[ext_resource type="Script" uid="uid://mb21ivhag2lf" path="res://scenes/ads/AdsGameState.cs" id="1_plaww"]
+[ext_resource type="VideoStream" uid="uid://ccunrwlxtewmr" path="res://Tv/Videos/vending machine segment.ogv" id="2_kc0xd"]
+[ext_resource type="VideoStream" uid="uid://b10jtvbuiod7r" path="res://Tv/Videos/pain.ogv" id="3_p3dow"]
+[ext_resource type="VideoStream" uid="uid://c3j2dhq3ax6er" path="res://Tv/Videos/kitchengun.ogv" id="4_lo1b7"]
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("_vendingMachines", "_pain", "_kitchenGun")]
+script = ExtResource("1_plaww")
+_vendingMachines = NodePath("Camera3D/vendingmachine")
+_pain = NodePath("Camera3D/pain")
+_kitchenGun = NodePath("Camera3D/kitchengun")
+_interactable = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+fov = 28.317986
+
+[node name="vendingmachine" type="VideoStreamPlayer" parent="Camera3D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("2_kc0xd")
+autoplay = true
+
+[node name="pain" type="VideoStreamPlayer" parent="Camera3D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_p3dow")
+
+[node name="kitchengun" type="VideoStreamPlayer" parent="Camera3D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -240.0
+offset_right = 320.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("4_lo1b7")

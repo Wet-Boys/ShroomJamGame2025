@@ -21,6 +21,7 @@ public enum CurrentTime
     Time3Pm,
     Time6Pm,
     Time12Am,
+    Time12AmStatic,
     Victory,
     RandomMinigame,
 }
@@ -29,7 +30,7 @@ public partial class GameFlowHandler : Node
 {
     public Godot.Collections.Dictionary<CurrentTime, PackedScene> sceneList = new()
     {
-        { CurrentTime.Time8Am,  (PackedScene)GD.Load("res://scenes/8AM/8am.tscn")},//res://scenes/8AM/8AM.tscn
+        { CurrentTime.Time8Am,  (PackedScene)GD.Load("res://scenes/8AM/8am.tscn")},
         { CurrentTime.Time10Am,  (PackedScene)GD.Load("res://scenes/10AM/10am.tscn")},
         { CurrentTime.Time12Pm,  (PackedScene)GD.Load("res://scenes/12PM/12pm.tscn")},
         { CurrentTime.Time3Pm,  (PackedScene)GD.Load("res://scenes/3PM/3pm.tscn")},
@@ -51,8 +52,11 @@ public partial class GameFlowHandler : Node
     {
         { CurrentTime.Time8Am,  (PackedScene)GD.Load("res://scenes/Scoot Shoot/Scoot Shoot Game.tscn")},
         { CurrentTime.Time10Am,  (PackedScene)GD.Load("res://scenes/HITW/Hole In The Wall Game.tscn")},
-        { CurrentTime.Time12Pm,  (PackedScene)GD.Load("res://scenes/froggers/frogger.tscn")},
+        { CurrentTime.Time3Pm,  (PackedScene)GD.Load("res://scenes/froggers/frogger.tscn")},
         { CurrentTime.Time6Pm,  (PackedScene)GD.Load("res://scenes/obby/obby.tscn")},
+        { CurrentTime.Time12Pm,  (PackedScene)GD.Load("res://scenes/ads/ads.tscn")},
+        { CurrentTime.Time12Am,  (PackedScene)GD.Load("res://scenes/off/off.tscn")},
+        { CurrentTime.Time12AmStatic,  (PackedScene)GD.Load("res://scenes/off/static.tscn")},
     };
 
     private Godot.Collections.Dictionary<CurrentTime, Node3D> _loadedScenes = new();
@@ -104,21 +108,24 @@ public partial class GameFlowHandler : Node
         {
             case CurrentTime.Time8Am:
                 PlayerController.instance.visualHandler.CoughingBaby();
-                SetObjectiveText("Put on the cool hole in the wall show");
+                SetObjectiveText("Put on the game shows");
                 LoadScene(CurrentTime.Time10Am);
                 break;
             case CurrentTime.Time10Am:
-                SetObjectiveText("Cool ads");
+                SetObjectiveText("Get some lunch");
                 LoadScene(CurrentTime.Time12Pm);
                 break;
             case CurrentTime.Time12Pm:
+                SetObjectiveText("");
                 LoadScene(CurrentTime.Time3Pm);
+                SetCurrentGame(_currentTime);
                 break;
             case CurrentTime.Time3Pm:
                 LoadScene(CurrentTime.Time6Pm);
                 break;
             case CurrentTime.Time6Pm:
                 LoadScene(CurrentTime.Time12Am);
+                SetObjectiveText("Turn off the TV and head to bed");
                 PlayerController.instance.visualHandler.Yawn();
                 break;
             case CurrentTime.RandomMinigame:
@@ -129,6 +136,7 @@ public partial class GameFlowHandler : Node
                 }
                 else
                 {
+                    SetCurrentGame(CurrentTime.Time12Am);
                     GD.Print($"Final score: {completedDreamLevels}");
                     LoadScene(CurrentTime.Victory);
                     PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 7.5f);
@@ -141,6 +149,8 @@ public partial class GameFlowHandler : Node
                 break;
         }
     }
+
+    private bool _timeToSleep;
     private async void TvInteracted()
     {
         switch (_currentTime)
@@ -156,20 +166,20 @@ public partial class GameFlowHandler : Node
                 }
                 else
                 {
+                    SetObjectiveText("");
                     SetCurrentGame(_currentTime);
-                    SetObjectiveText("Watch the show");
                 }
                 break;
             case CurrentTime.Time12Pm:
                 if (_canEnterTv)
                 {
+                    SetObjectiveText("Interact to stop watching");
                     EnterTv();
                     _canEnterTv = true;
                 }
                 else
                 {
                     SetCurrentGame(_currentTime);
-                    SetObjectiveText("Play the game");
                 }
                 break;
             case CurrentTime.Time3Pm:
@@ -178,23 +188,17 @@ public partial class GameFlowHandler : Node
             case CurrentTime.Time6Pm:
                 if (_canEnterTv)
                 {
-                    ((ObbyGameState)_currentGame).SpawnLevel(0);
                     EnterTv();
                 }
                 else
                 {
                     SetCurrentGame(_currentTime);
-                    SetObjectiveText("Watch the show");
                 }
                 break;
             case CurrentTime.Time12Am:
-                ResetPlayerPosition();
-                // PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
-                PlayerController.instance.visualHandler.Succ();
-                isInDreamSequence = true;
-                PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
-                await ToSignal(GetTree().CreateTimer(4.2f), "timeout");
-                DreamTransition.instance.Play();
+                SetObjectiveText("");
+                SetCurrentGame(_currentTime);
+                _timeToSleep = true;
                 break;
             case CurrentTime.Victory:
                 break;
@@ -304,12 +308,11 @@ public partial class GameFlowHandler : Node
         {
             await RandomMicroGame();
         }
-        else
+        else if (_loadedScenes.TryGetValue(currentTime, out var scene))
         {
             _currentScene?.QueueFree();
-            _currentScene = _loadedScenes[currentTime];
+            _currentScene = scene;
             _currentScene.Visible = true;
-            // GetParent().AddChild(_currentScene);
         }
     }
 
@@ -337,7 +340,13 @@ public partial class GameFlowHandler : Node
     public void FoodInteract(FoodInteractable food)
     {
         PlayerController.instance.visualHandler.Eat();
-        //TODO load ads and make Tv interactable
+        SetCurrentGame(_currentTime);
+        if (_currentTime == CurrentTime.Time6Pm)
+        {
+            ((ObbyGameState)_currentGame).SpawnLevel(0);
+        }
+        food.Visible = false;
+        SetObjectiveText("");
     }
 
     public static bool transitioning;
@@ -379,6 +388,24 @@ public partial class GameFlowHandler : Node
                 }
             }
         }
+
+        if (_timeToSleep && PlayerController.instance.Position.DistanceTo(new Vector3(2.725f, 6.962f, 5.685f)) < 1.2f)
+        {
+            BeginDream();
+        }
+    }
+
+    private async void BeginDream()
+    {
+        SetCurrentGame(CurrentTime.Time12AmStatic);
+        _timeToSleep = false;
+        ResetPlayerPosition();
+        // PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
+        PlayerController.instance.visualHandler.Succ();
+        isInDreamSequence = true;
+        PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
+        await ToSignal(GetTree().CreateTimer(4.2f), "timeout");
+        DreamTransition.instance.Play();
     }
 
     public async void PreloadAllScenes()

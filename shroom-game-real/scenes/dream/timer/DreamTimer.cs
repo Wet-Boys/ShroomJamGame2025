@@ -6,6 +6,8 @@ public partial class DreamTimer : Control
     [Export] private TextureProgressBar _progressBar;
     public void SetProgressBar(double currentTime, double maxTime, bool lowerIsBad)
     {
+
+        _progressBar.Visible = currentTime > 0;
         float progress = (float)(currentTime / maxTime);
         if (lowerIsBad)
         {

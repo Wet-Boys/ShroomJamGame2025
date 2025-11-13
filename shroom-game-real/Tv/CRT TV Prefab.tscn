@@ -25,6 +25,7 @@ collision_layer = 2
 collision_mask = 0
 input_ray_pickable = false
 script = ExtResource("1_ifqpe")
+outlineThickness = 0.02
 meshLayersOutlineMask = 1
 metadata/_custom_type_script = "uid://eyhyubl50qtf"
 

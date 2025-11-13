@@ -1,7 +1,7 @@
-[gd_scene load_steps=134 format=3 uid="uid://81njcsjyalcr"]
+[gd_scene load_steps=125 format=3 uid="uid://81njcsjyalcr"]
 
 [ext_resource type="Script" uid="uid://d2yi06d5v3xo3" path="res://scenes/dream/transition/DreamTransition.cs" id="1_ut6ut"]
-[ext_resource type="Texture2D" uid="uid://c6afbypqw6w4e" path="res://scenes/dream/transition/static.png" id="2_vsbky"]
+[ext_resource type="PackedScene" uid="uid://2qddlfqrliuh" path="res://scenes/dream/transition/Static.tscn" id="2_m7ja1"]
 [ext_resource type="Theme" uid="uid://dmrcff1f44uiw" path="res://Ui/Main UI Theme.tres" id="3_arvtt"]
 [ext_resource type="Texture2D" uid="uid://cmlt8jvo0i6pt" path="res://scenes/dream/transition/Death Pungas/0001.png" id="4_m7ja1"]
 [ext_resource type="Texture2D" uid="uid://cnx5odbab2dtq" path="res://scenes/dream/transition/Death Pungas/0002.png" id="5_85lb8"]
@@ -120,70 +120,6 @@
 [ext_resource type="Texture2D" uid="uid://dwfdgnywonkua" path="res://scenes/dream/transition/Death Pungas/0115.png" id="118_013au"]
 [ext_resource type="Texture2D" uid="uid://cjy0lxp2v0kev" path="res://scenes/dream/transition/Death Pungas/0116.png" id="119_wmmxd"]
 [ext_resource type="SpriteFrames" uid="uid://dlih64qvfd05d" path="res://scenes/dream/transition/dance.tres" id="120_lqqu6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kxn1a"]
-atlas = ExtResource("2_vsbky")
-region = Rect2(0, 0, 320, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v36cd"]
-atlas = ExtResource("2_vsbky")
-region = Rect2(320, 0, 320, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l6b4r"]
-atlas = ExtResource("2_vsbky")
-region = Rect2(640, 0, 320, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_22wqw"]
-atlas = ExtResource("2_vsbky")
-region = Rect2(960, 0, 320, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o2b0u"]
-atlas = ExtResource("2_vsbky")
-region = Rect2(1280, 0, 320, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ta8al"]
-atlas = ExtResource("2_vsbky")
-region = Rect2(0, 240, 320, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c4dxe"]
-atlas = ExtResource("2_vsbky")
-region = Rect2(320, 240, 320, 240)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jagf4"]
-atlas = ExtResource("2_vsbky")
-region = Rect2(640, 240, 320, 240)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_g70qc"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kxn1a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v36cd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l6b4r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_22wqw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o2b0u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ta8al")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c4dxe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jagf4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 24.0
-}]
 
 [sub_resource type="Animation" id="Animation_vsbky"]
 length = 0.001
@@ -666,13 +602,8 @@ _animator = NodePath("AnimationPlayer")
 activeHealth = [NodePath("Control/HBoxContainer2/DeathLife4"), NodePath("Control/HBoxContainer2/DeathLife3"), NodePath("Control/HBoxContainer2/DeathLife2"), NodePath("Control/HBoxContainer2/DeathLife1")]
 dyingHealth = [NodePath("Control/HBoxContainer/DeathLife4"), NodePath("Control/HBoxContainer/DeathLife3"), NodePath("Control/HBoxContainer/DeathLife2"), NodePath("Control/HBoxContainer/DeathLife1")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-modulate = Color(0.8346143, 0.8346143, 0.8346143, 1)
-texture_filter = 1
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("2_m7ja1")]
 position = Vector2(960, 540)
-scale = Vector2(6.019, 4.5)
-sprite_frames = SubResource("SpriteFrames_g70qc")
-frame_progress = 0.03761218
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

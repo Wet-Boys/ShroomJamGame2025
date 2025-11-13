@@ -94,7 +94,7 @@ public partial class FroggerGameState : BaseTvGameState
             }
             else
                 ExitTv();
-            CanActivate = true;
+            CanActivate = false;
         }
     }
     public override void Failure()

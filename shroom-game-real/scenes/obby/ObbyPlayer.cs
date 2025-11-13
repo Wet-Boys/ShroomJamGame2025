@@ -37,6 +37,7 @@ public partial class ObbyPlayer : Node3D
     [Export] public AudioStreamPlayer hitSfx;
     [Export] public AudioStreamPlayer deathSfx;
     [Export] public AudioStreamPlayer idleSfx;
+    [Export] private AudioStreamPlayer _audioStreamPlayer;
     private int _currentRound = 1;
     private double _nothingEverHappensTimer = 0;
     private bool _needToRespawn = false;
@@ -73,6 +74,7 @@ public partial class ObbyPlayer : Node3D
         }
         else if (body is BigRedBall)
         {
+            _audioStreamPlayer.Play();
             _ragdollTimer = 3.8f;
             if (ragdollBody.Freeze)
             {
@@ -83,6 +85,7 @@ public partial class ObbyPlayer : Node3D
         }
         else
         {
+            _audioStreamPlayer.Play();
             if (ragdollBody.Freeze)
             {
                 _ragdollTimer = 0;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://7ecyirh0eyap"]
+[gd_scene load_steps=51 format=3 uid="uid://7ecyirh0eyap"]
 
 [ext_resource type="Script" uid="uid://ckkrkpbikrq4n" path="res://scenes/obby/ObbyPlayer.cs" id="1_8cktp"]
 [ext_resource type="PackedScene" uid="uid://dpao73iqwvb5m" path="res://scenes/obby/visuals_root.tscn" id="2_pgjcu"]
@@ -38,6 +38,7 @@
 [ext_resource type="AudioStream" uid="uid://cyx7awpomy55n" path="res://scenes/obby/Announcer/Idle2.wav" id="37_45je1"]
 [ext_resource type="AudioStream" uid="uid://tb1kkrcvd335" path="res://scenes/obby/Announcer/Idle3.wav" id="38_hgop0"]
 [ext_resource type="AudioStream" uid="uid://tgufbd7suxgm" path="res://scenes/obby/Announcer/Idle4.wav" id="39_msyna"]
+[ext_resource type="AudioStream" uid="uid://cwominls71m85" path="res://scenes/obby/sfx/ball/Ball FX.tres" id="40_a12he"]
 [ext_resource type="AudioStream" uid="uid://kearyooiebfm" path="res://scenes/obby/Announcer/Idle5.wav" id="40_gm2v4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bn54t"]
@@ -107,7 +108,7 @@ stream_4/stream = ExtResource("40_gm2v4")
 radius = 0.29
 height = 2.01
 
-[node name="ObbyPlayer" type="Node3D" node_paths=PackedStringArray("cameraContainer", "cameraX", "cameraY", "cameraPosition", "camera", "cameraRay", "ragdollBody", "characterBody", "hurtBox", "visualHandler", "spawnSfx", "spawn10", "spawn20", "spawn7", "hitSfx", "deathSfx", "idleSfx")]
+[node name="ObbyPlayer" type="Node3D" node_paths=PackedStringArray("cameraContainer", "cameraX", "cameraY", "cameraPosition", "camera", "cameraRay", "ragdollBody", "characterBody", "hurtBox", "visualHandler", "spawnSfx", "spawn10", "spawn20", "spawn7", "hitSfx", "deathSfx", "idleSfx", "_audioStreamPlayer")]
 transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
 script = ExtResource("1_8cktp")
 cameraContainer = NodePath("CharacterBody/CameraContainer")
@@ -127,6 +128,7 @@ spawn7 = NodePath("CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/
 hitSfx = NodePath("CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Hit")
 deathSfx = NodePath("CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Death")
 idleSfx = NodePath("CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Idle")
+_audioStreamPlayer = NodePath("AudioStreamPlayer")
 
 [node name="CharacterBody" type="CharacterBody3D" parent="."]
 collision_layer = 8
@@ -193,3 +195,7 @@ collision_mask = 33
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("CapsuleShape3D_bn54t")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("40_a12he")
+volume_db = 3.0
