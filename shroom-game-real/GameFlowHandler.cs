@@ -417,6 +417,7 @@ public partial class GameFlowHandler : Node
 
         if (_timeToSleep && PlayerController.instance.Position.DistanceTo(new Vector3(2.725f, 6.962f, 5.685f)) < 1.2f)
         {
+            
             BeginDream();
         }
     }
@@ -426,13 +427,14 @@ public partial class GameFlowHandler : Node
         SetCurrentGame(CurrentTime.Time12AmStatic);
         _timeToSleep = false;
         ResetPlayerPosition();
+        PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 7.5f);
         // PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
         PlayerController.instance.visualHandler.Succ();
         TvInteractable.instance.staticNoise.Play();
         isInDreamSequence = true;
         PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
         MusicManager.Instance.StartDreamSong();
-        await ToSignal(GetTree().CreateTimer(4.2f), "timeout");
+        await ToSignal(GetTree().CreateTimer(7.85f), "timeout");
         DreamTransition.instance.Play();
     }
 
