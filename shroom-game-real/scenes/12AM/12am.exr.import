@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://b4ab1bvf04hw3"
+path.bptc="res://.godot/imported/12am.exr-bf15302b5340c9203c1aae7efe7c2d61.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://scenes/12AM/12am.exr"
+dest_files=["res://.godot/imported/12am.exr-bf15302b5340c9203c1aae7efe7c2d61.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=4

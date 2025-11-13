@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://dgswtom0xcjl2"
+path.bptc="res://.godot/imported/3pm.exr-de7fa1dd621d72ccea84d50baab58d5f.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://scenes/3PM/3pm.exr"
+dest_files=["res://.godot/imported/3pm.exr-de7fa1dd621d72ccea84d50baab58d5f.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=4

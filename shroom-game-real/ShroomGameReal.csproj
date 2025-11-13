@@ -33,6 +33,7 @@
       <Content Include="scenes\HITW\Hole In The Wall Game.tscn" />
       <Content Include="scenes\HITW\HoleInTheWallGame.cs.uid" />
       <Content Include="Ui\PauseMenu\SettingsMenuController.cs.uid" />
+      <Content Include="Utilities\DirectionalLightHelper.cs.uid" />
     </ItemGroup>
     
 </Project>
