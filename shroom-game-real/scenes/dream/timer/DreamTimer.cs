@@ -19,4 +19,9 @@ public partial class DreamTimer : Control
         }
         _progressBar.Value = progress * 100;
     }
+
+    public void HideIt()
+    {
+        _progressBar.Visible = false;
+    }
 }

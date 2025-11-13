@@ -45,10 +45,11 @@ size = Vector3(0.24536133, 0.34075928, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_8few7"]
 size = Vector3(0.15324402, 3.119873, 1)
 
-[node name="Fire" type="Node3D" node_paths=PackedStringArray("_rigidBody", "_area")]
+[node name="Fire" type="Node3D" node_paths=PackedStringArray("_rigidBody", "_area", "_damageChecker")]
 script = ExtResource("1_8few7")
 _rigidBody = NodePath("RigidBody3D")
 _area = NodePath("RigidBody3D/ScoreTracker")
+_damageChecker = NodePath("RigidBody3D/DamageChecker")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 2
@@ -77,3 +78,11 @@ collision_mask = 8
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/ScoreTracker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0047073364, 0.6680908, 0)
 shape = SubResource("BoxShape3D_8few7")
+
+[node name="DamageChecker" type="Area3D" parent="RigidBody3D"]
+collision_layer = 0
+collision_mask = 1048576
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/DamageChecker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008911133, -0.029876709, 0)
+shape = SubResource("BoxShape3D_phvmq")

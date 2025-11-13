@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://w3slbrxj45wg"]
+[gd_scene load_steps=6 format=3 uid="uid://w3slbrxj45wg"]
 
 [ext_resource type="Script" uid="uid://b8ys6dymbslay" path="res://scenes/dream/fire hop/FireHopAvatar.cs" id="1_ag2dt"]
 [ext_resource type="PackedScene" uid="uid://dpao73iqwvb5m" path="res://scenes/obby/visuals_root.tscn" id="2_jin7j"]
@@ -6,6 +6,10 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ag2dt"]
 radius = 0.13378906
+height = 0.82592773
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vpp1q"]
+radius = 0.13964844
 height = 0.82592773
 
 [node name="FireHopAvatar" type="Node3D" node_paths=PackedStringArray("_rigidBody3D", "visualHandler")]
@@ -32,23 +36,38 @@ transform = Transform3D(0.43850037, 0, 0, 0, 0.43850037, 0, 0, 0, 0.43850037, 0.
 script = ExtResource("3_vpp1q")
 
 [node name="Skeleton3D" parent="RigidBody3D/Visuals Root/Node3D/Little John/metarig" index="0"]
-bones/2/position = Vector3(0, 0.96752936, -0.055199984)
-bones/2/rotation = Quaternion(0.03548484, -1.7364855e-17, 1.9205916e-18, 0.9993703)
-bones/6/rotation = Quaternion(0.15527089, 1.8474955e-17, -2.5706836e-18, 0.987872)
-bones/10/rotation = Quaternion(-0.21481535, 0.8025641, -0.38894385, 0.39808044)
-bones/11/rotation = Quaternion(0.38754863, -0.093149126, -0.18059003, 0.8991755)
-bones/12/rotation = Quaternion(-0.16214229, -0.05239228, -0.079016544, 0.98220235)
-bones/17/rotation = Quaternion(-0.2172804, -0.78784275, 0.4230311, 0.39132828)
-bones/18/rotation = Quaternion(0.34172225, 0.09543927, 0.1592359, 0.9212825)
-bones/19/rotation = Quaternion(-0.13974863, 0.040344067, 0.034810405, 0.98875225)
-bones/24/rotation = Quaternion(0.98237664, 2.3966409e-09, -2.1794294e-08, 0.18691242)
-bones/25/rotation = Quaternion(0.3198623, 1.4280167e-16, 3.7006712e-18, 0.9474641)
-bones/26/rotation = Quaternion(-0.6281606, 2.9903873e-07, -2.1763621e-07, 0.7780838)
-bones/30/rotation = Quaternion(0.98237664, -4.140764e-09, 3.7643364e-08, 0.18691242)
-bones/31/rotation = Quaternion(0.3198623, 9.331513e-16, -1.0491555e-17, 0.9474641)
-bones/32/rotation = Quaternion(-0.6281606, -3.1414586e-07, 2.1253628e-07, 0.7780838)
-bones/35/position = Vector3(0.38152587, 1.0137401, -0.05334942)
-bones/39/position = Vector3(-0.37100706, 0.9953322, -0.05334942)
+bones/2/position = Vector3(0, 0.834981, -0.055199973)
+bones/2/rotation = Quaternion(0.15449156, 1.9861923e-16, 4.1462312e-17, 0.98799413)
+bones/6/rotation = Quaternion(0.08319992, -2.0244993e-16, 1.4961743e-17, 0.99653286)
+bones/10/rotation = Quaternion(-0.28094527, 0.7402724, -0.40334663, 0.45866996)
+bones/11/rotation = Quaternion(0.49027336, -0.08666842, -0.22845766, 0.83661693)
+bones/12/rotation = Quaternion(-0.0938806, 0.011463509, -0.042775076, 0.99459815)
+bones/17/rotation = Quaternion(-0.39981633, -0.7584945, 0.31652057, 0.4057681)
+bones/18/rotation = Quaternion(0.5011488, 0.08586079, 0.23352547, 0.82882065)
+bones/19/rotation = Quaternion(-0.11933034, -0.13307422, -0.0041371523, 0.9838874)
+bones/24/rotation = Quaternion(0.7272748, 9.34609e-09, -2.1001874e-08, 0.6863464)
+bones/25/rotation = Quaternion(0.75576305, -1.3258022e-15, -5.086539e-16, 0.6548451)
+bones/26/rotation = Quaternion(-0.34077078, 3.591504e-07, -1.2643312e-07, 0.94014645)
+bones/30/rotation = Quaternion(0.9926004, -1.1425961e-08, 3.8205744e-08, 0.12142727)
+bones/31/rotation = Quaternion(0.4100092, -1.8174754e-15, 1.3174809e-15, 0.91208136)
+bones/32/rotation = Quaternion(-0.8158668, -2.428178e-07, 2.6494286e-07, 0.5782399)
+bones/35/position = Vector3(0.3363568, 0.88760537, 0.07218343)
+bones/35/rotation = Quaternion(-0.02877384, 0.61388135, -0.7885557, 0.022400146)
+bones/36/position = Vector3(0.1396544, 0.3101006, 0.20176642)
+bones/36/rotation = Quaternion(-0.36299568, 3.4060492e-17, -3.4060495e-17, 0.9317908)
+bones/39/position = Vector3(-0.28915852, 0.9059159, -0.053850316)
+bones/39/rotation = Quaternion(-0.057803467, -0.7071453, 0.70229393, 0.058202766)
+bones/40/position = Vector3(-0.1396544, 0.08976586, -0.47130108)
+bones/40/rotation = Quaternion(-0.7015494, -1.4477684e-16, 1.4477691e-16, 0.71262085)
+bones/41/position = Vector3(-0.28515646, 1.2665445, -0.35740563)
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D"]
+collision_layer = 1048576
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015701275, 1.3774871, 0)
+shape = SubResource("CapsuleShape3D_vpp1q")
 
 [editable path="RigidBody3D/Visuals Root"]
 [editable path="RigidBody3D/Visuals Root/Node3D/Little John"]

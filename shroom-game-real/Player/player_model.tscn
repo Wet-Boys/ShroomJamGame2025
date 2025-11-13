@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=4 uid="uid://bq111dof5116h"]
+[gd_scene load_steps=33 format=4 uid="uid://bq111dof5116h"]
 
 [ext_resource type="PackedScene" uid="uid://p24tg15ubdu1" path="res://Player/Model/Little John First Person.glb" id="1_kfcni"]
 [ext_resource type="Texture2D" uid="uid://bbfsohde3dvqi" path="res://Player/Model/Little John First Person_Material001Layer02.png" id="2_fcfwr"]
 [ext_resource type="Texture2D" uid="uid://bqojka86laqfj" path="res://Player/Model/Little John First Person_Material001Layer04.png" id="3_0y7oe"]
 [ext_resource type="AnimationLibrary" uid="uid://bjv0k40sfchi0" path="res://Player/Animations_new/PlayerAnimations.res" id="4_b43qf"]
-[ext_resource type="AnimationNodeBlendTree" uid="uid://c2ewrmh2ljigb" path="res://Player/LittleJohnAnimator.tres" id="7_y4k3s"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ty1us"]
 resource_name = "Material.001"
@@ -96,49 +95,159 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_s5w8n"]
+animation = &"PlayerAnimations/Walking"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p6nc6"]
+animation = &"PlayerAnimations/Coughing"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_gaqsb"]
+animation = &"PlayerAnimations/Jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y2u7b"]
+animation = &"PlayerAnimations/FallIntoTv"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ecnei"]
+animation = &"PlayerAnimations/Running"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hr01n"]
+animation = &"PlayerAnimations/Yawning"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_aegh6"]
+animation = &"PlayerAnimations/Eating"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0n4ac"]
+animation = &"PlayerAnimations/Idle"
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_bqn7q"]
+fadein_time = 0.1
+fadeout_time = 0.3
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_t6gfx"]
+fadein_time = 0.2
+fadeout_time = 0.1
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_bh7bw"]
+fadein_time = 0.1
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_jom8a"]
+fadein_time = 0.2
+fadeout_time = 0.2
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_yw8k8"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mfj6i"]
+animation = &"PlayerAnimations/WakeUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_b43qf"]
+animation = &"PlayerAnimations/WakeUpFreeze"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5lox5"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kfcni"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_y4k3s"]
+states/PlayerAnimations_WakeUp/node = SubResource("AnimationNodeAnimation_mfj6i")
+states/PlayerAnimations_WakeUp/position = Vector2(398, 174)
+states/PlayerAnimations_WakeUpFreeze/node = SubResource("AnimationNodeAnimation_b43qf")
+states/PlayerAnimations_WakeUpFreeze/position = Vector2(823, 207)
+transitions = ["Start", "PlayerAnimations_WakeUp", SubResource("AnimationNodeStateMachineTransition_5lox5"), "PlayerAnimations_WakeUp", "PlayerAnimations_WakeUpFreeze", SubResource("AnimationNodeStateMachineTransition_kfcni")]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_k5bd7"]
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_hk2uy"]
+fadein_time = 0.2
+fadeout_time = 0.2
+
+[sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_m8lkk"]
+fadeout_time = 0.2
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_fcfwr"]
+graph_offset = Vector2(799.92786, 163.81815)
+nodes/output/position = Vector2(2500, 500)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_0n4ac")
+nodes/Animation/position = Vector2(-80, 60)
+"nodes/Animation 5/node" = SubResource("AnimationNodeAnimation_y2u7b")
+"nodes/Animation 5/position" = Vector2(1200, 500)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_s5w8n")
+"nodes/Animation 2/position" = Vector2(-60, 300)
+nodes/Coughing/node = SubResource("AnimationNodeOneShot_bqn7q")
+nodes/Coughing/position = Vector2(1240, 180)
+"nodes/Animation 3/node" = SubResource("AnimationNodeAnimation_p6nc6")
+"nodes/Animation 3/position" = Vector2(960, 400)
+nodes/FallIntoTv/node = SubResource("AnimationNodeOneShot_bh7bw")
+nodes/FallIntoTv/position = Vector2(1460, 280)
+"nodes/Animation 4/node" = SubResource("AnimationNodeAnimation_gaqsb")
+"nodes/Animation 4/position" = Vector2(660, 500)
+nodes/Jumping/node = SubResource("AnimationNodeOneShot_jom8a")
+nodes/Jumping/position = Vector2(780, 180)
+nodes/Walking/node = SubResource("AnimationNodeOneShot_hk2uy")
+nodes/Walking/position = Vector2(300, 100)
+nodes/OneShot/node = SubResource("AnimationNodeOneShot_yw8k8")
+nodes/OneShot/position = Vector2(540, 140)
+"nodes/Animation 6/node" = SubResource("AnimationNodeAnimation_ecnei")
+"nodes/Animation 6/position" = Vector2(380, 460)
+nodes/Eating/node = SubResource("AnimationNodeOneShot_t6gfx")
+nodes/Eating/position = Vector2(1700.6672, 415.08533)
+nodes/Yawning/node = SubResource("AnimationNodeOneShot_m8lkk")
+nodes/Yawning/position = Vector2(1940, 480)
+nodes/Wakeup/node = SubResource("AnimationNodeOneShot_k5bd7")
+nodes/Wakeup/position = Vector2(2240, 520)
+nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_y4k3s")
+nodes/StateMachine/position = Vector2(1960, 800)
+"nodes/Animation 8/node" = SubResource("AnimationNodeAnimation_hr01n")
+"nodes/Animation 8/position" = Vector2(1680, 740)
+"nodes/Animation 9/node" = SubResource("AnimationNodeAnimation_aegh6")
+"nodes/Animation 9/position" = Vector2(1420, 660)
+node_connections = [&"output", 0, &"Wakeup", &"Coughing", 0, &"Jumping", &"Coughing", 1, &"Animation 3", &"FallIntoTv", 0, &"Coughing", &"FallIntoTv", 1, &"Animation 5", &"Jumping", 0, &"OneShot", &"Jumping", 1, &"Animation 4", &"Walking", 0, &"Animation", &"Walking", 1, &"Animation 2", &"OneShot", 0, &"Walking", &"OneShot", 1, &"Animation 6", &"Eating", 0, &"FallIntoTv", &"Eating", 1, &"Animation 9", &"Yawning", 0, &"Eating", &"Yawning", 1, &"Animation 8", &"Wakeup", 0, &"Yawning", &"Wakeup", 1, &"StateMachine"]
+
 [node name="Player" type="Node3D"]
 
 [node name="Little John First Person" parent="." instance=ExtResource("1_kfcni")]
 transform = Transform3D(1.25, 0, 0, 0, 1.25, 0, 0, 0, 1.25, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Little John First Person/metarig" index="1"]
-bones/1/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
-bones/2/position = Vector3(0, 0.9721311, -0.055199966)
-bones/2/rotation = Quaternion(0.036047023, -3.8442488e-17, -2.6338086e-18, 0.99935013)
-bones/3/rotation = Quaternion(-0.006019595, 2.706302e-21, 2.6999008e-18, 0.9999819)
-bones/4/rotation = Quaternion(-0.0005284548, 4.5208283e-20, 1.7665775e-19, 0.9999999)
-bones/5/rotation = Quaternion(0.0040802774, 7.0179296e-21, 1.2154085e-19, 0.99999166)
-bones/6/rotation = Quaternion(0.15448749, -8.876366e-18, 1.0678521e-18, 0.9879948)
-bones/7/rotation = Quaternion(-0.094857514, 0, 0, 0.99549085)
-bones/10/rotation = Quaternion(-0.21595937, 0.80470407, -0.38311163, 0.39879626)
-bones/11/rotation = Quaternion(0.3963978, -0.092666656, -0.18471363, 0.8945181)
-bones/12/rotation = Quaternion(-0.16647698, -0.052207034, -0.07728195, 0.9816249)
-bones/15/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
-bones/17/rotation = Quaternion(-0.21844222, -0.7905865, 0.4166902, 0.39195094)
-bones/18/rotation = Quaternion(0.35204706, 0.09495308, 0.16404702, 0.916589)
-bones/19/rotation = Quaternion(-0.14461493, 0.040029783, 0.03262029, 0.98813975)
-bones/22/rotation = Quaternion(-3.134688e-08, 0.6969363, 0.7171331, -3.0464047e-08)
-bones/24/rotation = Quaternion(0.9835895, 1.03749e-08, -2.48277e-08, 0.18042132)
-bones/25/rotation = Quaternion(0.30574006, 1.9658872e-15, 3.9748498e-16, 0.952115)
-bones/26/rotation = Quaternion(-0.62180835, 3.007996e-07, -2.1519259e-07, 0.78316945)
-bones/30/rotation = Quaternion(0.9835895, -1.2009075e-08, 4.0688494e-08, 0.18042132)
-bones/31/rotation = Quaternion(0.30574006, -6.443002e-15, -1.2338628e-15, 0.952115)
-bones/32/rotation = Quaternion(-0.62180835, -3.1586438e-07, 2.0996902e-07, 0.78316945)
-bones/33/rotation = Quaternion(-1.1064199e-07, 0.9612488, -0.2756822, -3.0175178e-07)
-bones/35/position = Vector3(0.38152587, 1.02146, -0.05334942)
-bones/35/rotation = Quaternion(-0.025784606, 0.7066365, -0.7066365, 0.025784662)
-bones/36/position = Vector3(0.1396544, 0.08520002, -0.084361754)
-bones/36/rotation = Quaternion(-0.7071067, 0, 0, 0.7071068)
-bones/37/position = Vector3(0.49290267, 1.6067429, -0.62285686)
-bones/37/rotation = Quaternion(-0.48382312, 0.51566964, -0.51566976, 0.48382306)
-bones/38/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
-bones/39/position = Vector3(-0.37100706, 1.0030521, -0.05334942)
-bones/39/rotation = Quaternion(-0.05800342, -0.70472383, 0.7047238, 0.05800341)
-bones/40/position = Vector3(-0.1396544, 0.08520002, -0.084361754)
-bones/40/rotation = Quaternion(-0.7071067, 0, 0, 0.7071068)
-bones/41/position = Vector3(-0.49290267, 1.6067429, -0.62285686)
+bones/1/position = Vector3(0.12843625, 1.3819671, -0.32098582)
+bones/1/rotation = Quaternion(-0.7026636, 0.008739979, 0.012344977, 0.71136147)
+bones/2/position = Vector3(0.07989581, 0.72601986, -0.3470952)
+bones/2/rotation = Quaternion(0.035558008, 0.6112655, -0.011859812, 0.79053754)
+bones/3/rotation = Quaternion(0.012568412, -0.12988766, -0.0069221323, 0.99142486)
+bones/4/rotation = Quaternion(-0.009237595, -0.073117174, 0.0060769124, 0.9972621)
+bones/5/rotation = Quaternion(0.003365503, -0.016488522, -0.0012982803, 0.9998576)
+bones/6/rotation = Quaternion(0.14133504, -0.39740753, 0.10650939, 0.9004151)
+bones/7/rotation = Quaternion(-0.08872233, 0.015028581, -0.0017110074, 0.99594164)
+bones/8/rotation = Quaternion(-0.08757629, 0.015082582, 0.0011407183, 0.996043)
+bones/10/rotation = Quaternion(-0.51437294, 0.6705235, -0.012922915, 0.534464)
+bones/11/rotation = Quaternion(0.7008766, -0.0653411, -0.32659447, 0.6307445)
+bones/12/rotation = Quaternion(0.6811236, 0.6502202, -0.11536144, 0.31618983)
+bones/15/rotation = Quaternion(-4.1505974e-08, 0.6969363, 0.7171331, -2.268317e-08)
+bones/17/rotation = Quaternion(0.22315979, -0.720712, 0.56038123, 0.34168243)
+bones/18/rotation = Quaternion(0.6307486, 0.074002035, 0.29391667, 0.71434784)
+bones/19/rotation = Quaternion(0.40913367, -0.65268016, 0.08046536, 0.63256913)
+bones/22/rotation = Quaternion(-4.1505974e-08, 0.6969363, 0.7171331, -2.268317e-08)
+bones/24/rotation = Quaternion(0.5983413, 0.14232112, -0.12408074, 0.77867615)
+bones/25/rotation = Quaternion(0.29833293, 1.8221358e-09, -7.1220816e-09, 0.9544619)
+bones/26/rotation = Quaternion(-0.6516249, -0.021657119, 0.14718518, 0.74380946)
+bones/30/rotation = Quaternion(0.68138194, 0.08494143, -0.096081406, 0.7206053)
+bones/31/rotation = Quaternion(0.063227385, -3.941497e-11, 6.979284e-10, 0.9979992)
+bones/32/rotation = Quaternion(-0.5138881, -0.009013861, 0.08700607, 0.85338604)
+bones/33/rotation = Quaternion(-1.0283824e-07, 0.9612488, -0.2756822, -3.0193593e-07)
+bones/35/position = Vector3(0.2989356, 0.97007567, -0.68910426)
+bones/35/rotation = Quaternion(-0.10692218, 0.014306003, -0.55247116, 0.826522)
+bones/36/position = Vector3(1.0151881, 0.7126788, -0.6092136)
+bones/36/rotation = Quaternion(-0.7642647, -0.03001216, 0.64383435, 0.021818757)
+bones/37/position = Vector3(-0.49383157, 0.5452819, -1.2714283)
+bones/38/position = Vector3(0.73417693, 1.1492134, -0.5624072)
+bones/39/position = Vector3(0.23538357, 0.95177007, -0.07051198)
+bones/39/rotation = Quaternion(-0.6638875, -0.7105921, -0.1902601, -0.13458604)
+bones/40/position = Vector3(0.99568725, 0.7126788, -0.22296341)
+bones/40/rotation = Quaternion(-0.76138073, -0.0039784014, 0.64635074, 0.05014229)
+bones/41/position = Vector3(-0.12853551, 0.40147245, 0.69359434)
 bones/41/rotation = Quaternion(0.48382312, 0.51566964, -0.51566976, -0.48382306)
-bones/42/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
+bones/42/position = Vector3(0.70100796, 1.1492134, -0.2140246)
 
 [node name="body" parent="Little John First Person/metarig/Skeleton3D" index="0"]
 mesh = SubResource("ArrayMesh_s5w8n")
@@ -155,7 +264,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="Little John First Person"]
-tree_root = ExtResource("7_y4k3s")
+tree_root = SubResource("AnimationNodeBlendTree_fcfwr")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Coughing/active = false
 parameters/Coughing/internal_active = false
@@ -178,8 +287,8 @@ parameters/Eating/request = 0
 parameters/Yawning/active = false
 parameters/Yawning/internal_active = false
 parameters/Yawning/request = 0
-parameters/Wakeup/active = false
-parameters/Wakeup/internal_active = false
+parameters/Wakeup/active = true
+parameters/Wakeup/internal_active = true
 parameters/Wakeup/request = 0
 
 [editable path="Little John First Person"]

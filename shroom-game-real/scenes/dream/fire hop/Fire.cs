@@ -6,6 +6,7 @@ public partial class Fire : Node3D
 {
     [Export] private RigidBody3D _rigidBody;
     [Export] private Area3D _area;
+    [Export] private Area3D _damageChecker;
     private float _moveDirection = 0;
     private bool _hasBeenScored = false;
 
@@ -13,6 +14,7 @@ public partial class Fire : Node3D
     {
         _rigidBody.BodyEntered += RigidBodyOnBodyEntered;
         _area.BodyEntered += AreaOnBodyEntered;
+        _damageChecker.AreaEntered += DamageCheckerOnAreaEntered;
     }
 
     private void AreaOnBodyEntered(Node3D body)
@@ -41,12 +43,15 @@ public partial class Fire : Node3D
             _rigidBody.SetGravityScale(0);
             _moveDirection = GlobalPosition.X > 0 ? -1 : 1;
         }
-        else if (body.GetParent() is FireHopAvatar player)
+    }
+    private void DamageCheckerOnAreaEntered(Area3D area)
+    {
+        if (area.GetParent().GetParent() is FireHopAvatar player)
         {
             player.health--;
             QueueFree();
             
-            GameFlowHandler.instance.FinishMinigame(player.gameState, true);
+            GameFlowHandler.instance.FinishMinigame(player.gameState, true);   
         }
     }
 }

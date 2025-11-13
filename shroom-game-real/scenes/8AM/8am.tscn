@@ -1,6 +1,7 @@
-[gd_scene load_steps=37 format=4 uid="uid://bamkm6krucn3a"]
+[gd_scene load_steps=40 format=4 uid="uid://bamkm6krucn3a"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_asoc8"]
+[ext_resource type="Script" uid="uid://b34fd7vtgdriy" path="res://scenes/8AM/CreditsHandler.cs" id="1_r0vsh"]
 [ext_resource type="PackedScene" uid="uid://bhxxomuj2livf" path="res://scenes/non_core.tscn" id="2_i5lgk"]
 [ext_resource type="Script" uid="uid://c1u7eyhigk821" path="res://addons/light_shafts/local_transform_listener.gd" id="3_67p13"]
 [ext_resource type="Texture2D" uid="uid://bt8udkwxddwra" path="res://scenes/10AM/Vineshroom.png" id="3_biuu5"]
@@ -18,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cqxrganlxm2ki" path="res://scenes/10AM/Slavic Tv_tv_02_tv_out_Metallic-tv_02_tv_out_Roughness.png" id="13_1r6gn"]
 [ext_resource type="Texture2D" uid="uid://soh8mr608bwy" path="res://scenes/10AM/Slavic Tv_tv_02_tv_out_Normal.png" id="14_10vi8"]
 [ext_resource type="LightmapGIData" uid="uid://c4dfo61fwgjoc" path="res://scenes/8AM/8am.lmbake" id="15_67p13"]
+[ext_resource type="PackedScene" uid="uid://b64f63dkq0uv8" path="res://8AMJohn.tscn" id="20_0ohna"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjohu"]
 resource_name = "Boite mouchoirs - papier mouchoir"
@@ -282,7 +284,14 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[node name="Label3D" type="Label3D"]
+[sub_resource type="Curve3D" id="Curve3D_c865i"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11.361794, 0, 9.536743e-07, 0, 0, -5.735, 0, 0, 0, 12.101881, -3.6811357, 9.726715, 0, 0, 0, 0, 0, 0, -4.458371, -6.0389485, 8.670029, -4.485, 0, 0, 0, 0, 0, -5.011791, -6.143981, 7.2402973, 0, 0, 0, 0, 0, 0, 15.417315, 4.8658276, 22.203117),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[node name="Label3D" type="Label3D" node_paths=PackedStringArray("_pathFollow3D", "_camera", "_littleJohn", "_credits")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 text = "
 
@@ -290,6 +299,11 @@ text = "
 
 "
 font_size = 642
+script = ExtResource("1_r0vsh")
+_pathFollow3D = NodePath("Path3D/PathFollow3D")
+_camera = NodePath("Path3D/PathFollow3D/Camera3D")
+_littleJohn = NodePath("Little John")
+_credits = [NodePath("Label3D"), NodePath("Label3D2"), NodePath("Label3D3"), NodePath("Label3D4")]
 
 [node name="Room" parent="." instance=ExtResource("1_asoc8")]
 transform = Transform3D(-1.307, 0, 1.14261574e-07, 0, 1.307, 0, -1.14261574e-07, 0, -1.307, 0, 0, 0)
@@ -472,7 +486,7 @@ enable_shadows = true
 
 [node name="Label3D" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2363126, 9.842669, -12.09183)
-text = "Programming
+text = "Programming:
 Rune
 Nunchuk"
 font_size = 200
@@ -480,7 +494,7 @@ outline_size = 37
 
 [node name="Label3D2" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.699003, 9.842669, -12.091829)
-text = "Music
+text = "Music:
 Unsaved Trash
 Rune"
 font_size = 200
@@ -488,17 +502,36 @@ outline_size = 37
 
 [node name="Label3D3" type="Label3D" parent="."]
 transform = Transform3D(7.482505e-06, 0, -1, 0, 1, 0, 1, 0, 7.482505e-06, 18.82777, 6.1111083, 0.78524613)
-text = "Animation
+text = "Animation:
 Nunchuk"
 font_size = 200
 outline_size = 37
 
 [node name="Label3D4" type="Label3D" parent="."]
 transform = Transform3D(0.99124193, 0, -0.13205862, 0, 1, 0, 0.13205862, 0, 0.99124193, -0.96929353, 3.2761037, -6.260022)
-text = "Modelling
+text = "Player Modelling:
 Unsaved Trash"
 font_size = 200
 outline_size = 37
+
+[node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.160961, 9.571094, -8.590512)
+curve = SubResource("Curve3D_c865i")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-0.5908374, -0.3216443, -0.73986405, 0, 0.9169877, -0.39873317, 0.80668485, -0.23558083, -0.5418961, 15.417315, 4.865828, 22.203121)
+progress = 71.03419
+rotation_mode = 2
+
+[node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
+transform = Transform3D(-4.371144e-08, 0, 1, 0, 1.0000012, 0, -1.0000012, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Little John" parent="." instance=ExtResource("20_0ohna")]
+transform = Transform3D(1.6170063, 0, 0, 0, 1.6170063, 0, 0, 0, 1.6170063, -1.2436506, -0.6605729, -6.493291)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Little John"]
+transform = Transform3D(0.61842674, 0, 3.5527137e-15, 0, 0.61842674, 0, -3.5527137e-15, 0, 0.61842674, -0.47511494, 2.9187183, 0.6878779)
+omni_range = 2.63
 
 [editable path="Non-Core"]
 [editable path="Non-Core/Block of multiple german boards games"]

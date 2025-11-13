@@ -146,19 +146,35 @@ public partial class GameFlowHandler : Node
                 }
                 else
                 {
-                    ChangeSpeed(1);
-                    SetCurrentGame(CurrentTime.Time12Am);
-                    GD.Print($"Final score: {completedDreamLevels}");
-                    LoadScene(CurrentTime.Victory);
-                    PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 7.5f);
-                    PlayerController.instance.RotationDegrees = new Vector3(0, 180, 0);
-                    PlayerController.instance.headNode.GetParentNode3D().RotationDegrees = new Vector3(0, 180, 0);
-                    PlayerController.instance.visualHandler.WakeUp();
+                    EndDream();
                 }
                 break;
             default:
                 break;
         }
+    }
+
+    private async void EndDream()
+    {
+        ChangeSpeed(1);
+        SetCurrentGame(CurrentTime.Time12Am);
+        GD.Print($"Final score: {completedDreamLevels}");
+        LoadScene(CurrentTime.Victory);
+        PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 7.5f);
+        PlayerController.instance.RotationDegrees = new Vector3(0, 180, 0);
+        PlayerController.instance.headNode.GetParentNode3D().RotationDegrees = new Vector3(0, 180, 0);
+        _dreamTimer.HideIt();
+        PlayerController.instance.visualHandler.WakeUp();
+        await ToSignal(GetTree().CreateTimer(5f), "timeout");
+        CreditsHandler.instance.SetCameraToSpot(1);
+        await ToSignal(GetTree().CreateTimer(6f), "timeout");
+        CreditsHandler.instance.SetCameraToSpot(2);
+        await ToSignal(GetTree().CreateTimer(6f), "timeout");
+        CreditsHandler.instance.SetCameraToSpot(3);
+        await ToSignal(GetTree().CreateTimer(6f), "timeout");
+        CreditsHandler.instance.SetCameraToSpot(4);
+        await ToSignal(GetTree().CreateTimer(6f), "timeout");
+        CreditsHandler.instance.SetCameraToSpot(5);
     }
 
     private bool _timeToSleep;
@@ -415,7 +431,7 @@ public partial class GameFlowHandler : Node
             }
         }
 
-        if (_timeToSleep && PlayerController.instance.Position.DistanceTo(new Vector3(2.725f, 6.962f, 5.685f)) < 1.2f)
+        if (_timeToSleep && PlayerController.instance.Position.DistanceTo(new Vector3(2.725f, 6.962f, 5.685f)) < 1.5f)
         {
             
             BeginDream();
