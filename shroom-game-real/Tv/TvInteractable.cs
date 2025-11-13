@@ -8,11 +8,17 @@ namespace ShroomGameReal.Tv;
 public partial class TvInteractable : InteractableStaticBody3D
 {
     public TvController TvController { get; private set; }
+    
+    public bool InteractOverride { get; set; }
+    
+    public string InteractText { get; set; } = "Interact";
 
-    public override bool CanInteract => TvController.CanActivateGameState;
+    public override bool CanInteract => TvController.CanActivateGameState && !InteractOverride;
     public static TvInteractable instance;
     [Signal]
     public delegate void InteractedEventHandler();
+    
+    
 
     [Export] public AudioStreamPlayer3D click;
     [Export] public AudioStreamPlayer3D shutdown;
@@ -31,4 +37,6 @@ public partial class TvInteractable : InteractableStaticBody3D
 
         EmitSignalInteracted();
     }
+
+    public override string GetInteractText() => InteractText;
 }

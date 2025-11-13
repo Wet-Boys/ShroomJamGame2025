@@ -301,6 +301,12 @@ transform = Transform3D(3.7255428, 0, -1.4561255, 0, 3.9999967, 0, 1.4561255, 0,
 [node name="Cube" parent="Non-Core/Tissue Box/Tissue Box2" index="0"]
 transform = Transform3D(1, 0, -2.9802322e-08, 0, 0.99999994, 0, 2.9802322e-08, 0, 1, 0, -0.05220963, 0)
 
+[node name="Plane" parent="Non-Core/Tissue Box/Tissue Box2" index="1"]
+transform = Transform3D(1, 0, -5.9604645e-08, 0, 0.9999999, 0, 5.9604645e-08, 0, 1, 0, -0.07819252, 0)
+
+[node name="Plane_019" parent="Non-Core/Tissue Box/Tissue Box2" index="2"]
+transform = Transform3D(1, 0, -5.9604645e-08, 0, 0.9999999, 0, 5.9604645e-08, 0, 1, 0, -0.056751087, 0)
+
 [node name="Plastic Box with Lego Bricks" parent="Non-Core" index="20"]
 transform = Transform3D(-0.8741874, 0, 0.48558784, 0, 0.99999946, 0, -0.48558784, 0, -0.8741874, 9.1050625, -0.59771806, 7.7080564)
 
@@ -425,7 +431,7 @@ curve = SubResource("Curve3D_jn5a1")
 script = ExtResource("5_mtyqa")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast"]
-transform = Transform3D(8.689022e-08, 0.3825555, -0.6626056, -5.01661e-08, 0.6626056, 0.38255548, 0.765111, 5.436441e-15, 1.0033218e-07, 0.114871025, 2.8878884, 0.095973015)
+transform = Transform3D(8.689022e-08, 0.3825555, -0.66260564, -5.01661e-08, 0.6626056, 0.3825555, 0.765111, 5.436441e-15, 1.0033219e-07, 0.114871025, 2.8878884, 0.095973015)
 light_color = Color(1, 0.9946667, 0.92, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
@@ -464,7 +470,7 @@ curve = SubResource("Curve3D_3po3q")
 script = ExtResource("5_mtyqa")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast2"]
-transform = Transform3D(8.689022e-08, 0.3825555, -0.6626056, -5.01661e-08, 0.6626056, 0.38255548, 0.765111, 5.436441e-15, 1.0033218e-07, 0.114871025, 2.8878882, 0.09597278)
+transform = Transform3D(8.689022e-08, 0.3825555, -0.66260564, -5.01661e-08, 0.6626056, 0.3825555, 0.765111, 5.436441e-15, 1.0033219e-07, 0.114871025, 2.8878882, 0.09597278)
 light_color = Color(1, 0.9946667, 0.92, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
