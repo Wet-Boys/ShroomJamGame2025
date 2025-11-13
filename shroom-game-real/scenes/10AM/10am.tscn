@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://ckbq3521r8wcp"]
+[gd_scene load_steps=27 format=4 uid="uid://ckbq3521r8wcp"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_632cx"]
 [ext_resource type="PackedScene" uid="uid://c3lqsowth1x4l" path="res://scenes/overworld/OverworldEnvironment Prefab.tscn" id="3_8qw3q"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://y4nola47m81f" path="res://scenes/10AM/Slavic Tv_tv_02_tv_out_BaseColor.jpg" id="12_ras1b"]
 [ext_resource type="Texture2D" uid="uid://cqxrganlxm2ki" path="res://scenes/10AM/Slavic Tv_tv_02_tv_out_Metallic-tv_02_tv_out_Roughness.png" id="13_1a0qa"]
 [ext_resource type="Texture2D" uid="uid://soh8mr608bwy" path="res://scenes/10AM/Slavic Tv_tv_02_tv_out_Normal.png" id="14_7lgly"]
+[ext_resource type="PackedScene" uid="uid://bhxxomuj2livf" path="res://scenes/non_core.tscn" id="15_4aeh5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jskvd"]
 
@@ -367,6 +368,9 @@ light_bake_mode = 1
 shadow_enabled = true
 spot_range = 71.48809
 spot_angle = 40.75
+
+[node name="Non-Core" parent="." instance=ExtResource("15_4aeh5")]
+transform = Transform3D(1.307, 0, 0, 0, 1.307, 0, 0, 0, 1.307, 0, 0, 0)
 
 [editable path="Widnow Frame Shadow Cast"]
 [editable path="Widnow Frame Shadow Cast/Widnow Frame Shadow Cast2"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://pg7cb3cschu7"]
+[gd_scene load_steps=3 format=3 uid="uid://pg7cb3cschu7"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_pxao3"]
+[ext_resource type="PackedScene" uid="uid://bhxxomuj2livf" path="res://scenes/non_core.tscn" id="2_37c4k"]
 
 [node name="Label3D" type="Label3D"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -13,3 +14,6 @@ font_size = 642
 
 [node name="Room" parent="." instance=ExtResource("1_pxao3")]
 transform = Transform3D(-1.307, 0, 1.14261574e-07, 0, 1.307, 0, -1.14261574e-07, 0, -1.307, 0, 0, 0)
+
+[node name="Non-Core" parent="." instance=ExtResource("2_37c4k")]
+transform = Transform3D(-1.307, 0, 1.9735153e-07, 0, 1.307, 0, -1.9735153e-07, 0, -1.307, 0, 0, 0)
