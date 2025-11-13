@@ -187,6 +187,38 @@ public partial class MusicManager : Node
         _dreamPlayer.Play();
     }
 
+    public void StopDreamMusic()
+    {
+        _isDreamSong = false;
+        _dreamPlayer.Stop();
+    }
+
+    public void WarbleDreamMusic()
+    {
+        var warbleTween = CreateTween();
+
+        var min = PlaybackRate - 0.1;
+        var max = PlaybackRate + 0.1;
+
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.05f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", min, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", max, 0.1f);
+        warbleTween.TweenProperty(_dreamPlayer, "pitch_scale", PlaybackRate, 0.1f);
+    }
+
     public void DuckOverworldMusic()
     {
         var duckTween = CreateTween().SetParallel();

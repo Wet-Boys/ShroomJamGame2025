@@ -79,6 +79,8 @@ public partial class GameFlowHandler : Node
     private double _timerMultiplier = 1;
     [Export] public AudioStreamPlayer cough;
     [Export] public AudioStreamPlayer yawn;
+    [Export] public AudioStreamPlayer3D tvSucc;
+    [Export] public GpuParticles3D succParticles;
 
     public static int Lives
     {
@@ -384,12 +386,14 @@ public partial class GameFlowHandler : Node
         if (failure)
         {
             Lives--;
+            MusicManager.Instance.WarbleDreamMusic();
         }
 
         if (Lives != 0)
         {
             DreamTransition.instance.Play();
             await ToSignal(GetTree().CreateTimer(.5f), "timeout");
+            MusicManager.Instance.StopDreamMusic();
         }
         gameState.ExitTv();
         gameState.CanActivate = false;
@@ -430,12 +434,16 @@ public partial class GameFlowHandler : Node
         PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 7.5f);
         // PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
         PlayerController.instance.visualHandler.Succ();
+        tvSucc.Play();
+        succParticles.Emitting = true;
         TvInteractable.instance.staticNoise.Play();
         isInDreamSequence = true;
         PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
         MusicManager.Instance.StartDreamSong();
         await ToSignal(GetTree().CreateTimer(7.85f), "timeout");
         DreamTransition.instance.Play();
+        tvSucc.Stop();
+        succParticles.Emitting = false;
     }
 
     public async void PreloadAllScenes()
