@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjkryu57tmvhc"]
+[gd_scene load_steps=9 format=3 uid="uid://bjkryu57tmvhc"]
 
 [ext_resource type="Script" uid="uid://chj2xpk7ee36j" path="res://scenes/dream/swat/SwatGameState.cs" id="1_foepb"]
 [ext_resource type="PackedScene" uid="uid://biquo2ggwekir" path="res://scenes/dream/swat/Background.glb" id="1_s0qyg"]
 [ext_resource type="PackedScene" uid="uid://cx072cwkrciue" path="res://scenes/2D Camera.tscn" id="2_3je0u"]
 [ext_resource type="PackedScene" uid="uid://dkni3hugwlk2q" path="res://scenes/dream/swat/Fly.tscn" id="3_3je0u"]
 [ext_resource type="PackedScene" uid="uid://0kheumkpenf0" path="res://scenes/dream/swat/FlySwatter.tscn" id="4_3de6a"]
+[ext_resource type="AudioStream" uid="uid://bffmuq6a3pi5f" path="res://scenes/dream/swat/Fly.wav" id="6_hvhg5"]
+[ext_resource type="AudioStream" uid="uid://bji705tj0dyk8" path="res://scenes/dream/swat/SwatSfx.wav" id="7_a62w0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s0qyg"]
 size = Vector3(10.161621, 0.53118896, 2.2094727)
@@ -71,6 +73,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99662346, -1.0803871, 1.133
 [node name="Fly8" parent="." instance=ExtResource("3_3je0u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.89675736, -1.0803871, 1.8083129)
 
-[node name="FlySwatter" parent="." node_paths=PackedStringArray("_camera3D") instance=ExtResource("4_3de6a")]
+[node name="FlySwatter" parent="." node_paths=PackedStringArray("_camera3D", "_swat") instance=ExtResource("4_3de6a")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 1.6540456)
 _camera3D = NodePath("../Camera3D")
+_swat = NodePath("../Swat")
+
+[node name="Flysfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_hvhg5")
+autoplay = true
+bus = &"SFX"
+
+[node name="Swat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_a62w0")
+bus = &"SFX"

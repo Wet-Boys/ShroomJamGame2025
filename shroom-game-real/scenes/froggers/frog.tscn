@@ -1,14 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://droxinqo8f145"]
+[gd_scene load_steps=7 format=3 uid="uid://droxinqo8f145"]
 
 [ext_resource type="Script" uid="uid://d2cbmnkax0sw7" path="res://scenes/froggers/Frog.cs" id="1_i2nw7"]
+[ext_resource type="AudioStream" uid="uid://fr6qxhffbusi" path="res://scenes/froggers/splat.wav" id="3_4f5yn"]
 [ext_resource type="PackedScene" uid="uid://depq15x363n2g" path="res://scenes/froggers/Models/Schlegel's Tree Frog.glb" id="3_7duo8"]
+[ext_resource type="AudioStream" uid="uid://cidyvwku1tkfx" path="res://scenes/froggers/Horn.wav" id="4_ymqx8"]
+[ext_resource type="AudioStream" uid="uid://cnsmh3tqlwbhg" path="res://scenes/froggers/splash.wav" id="5_8g55w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1076e"]
 size = Vector3(1.6963501, 3.1425476, 1.5491028)
 
-[node name="Frog" type="Node3D" node_paths=PackedStringArray("_hitbox")]
+[node name="Frog" type="Node3D" node_paths=PackedStringArray("_hitbox", "_splat", "_sploosh", "_horn")]
 script = ExtResource("1_i2nw7")
 _hitbox = NodePath("Area3D")
+_splat = NodePath("Splat")
+_sploosh = NodePath("Splash")
+_horn = NodePath("Honk")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 33
@@ -19,3 +25,18 @@ shape = SubResource("BoxShape3D_1076e")
 
 [node name="Schlegel\'s Tree Frog" parent="." instance=ExtResource("3_7duo8")]
 transform = Transform3D(-3.8274248e-08, 0, 0.87561274, 0, 0.87561274, 0, -0.87561274, 0, -3.8274248e-08, 0, 0, 0)
+
+[node name="Splat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4f5yn")
+volume_db = 3.0
+bus = &"SFX"
+
+[node name="Honk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ymqx8")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="Splash" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8g55w")
+volume_db = 1.5
+bus = &"SFX"

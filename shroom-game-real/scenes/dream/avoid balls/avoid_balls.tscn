@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://buam6xk2w03da"]
+[gd_scene load_steps=10 format=3 uid="uid://buam6xk2w03da"]
 
 [ext_resource type="Script" uid="uid://lnulau21do8o" path="res://scenes/dream/avoid balls/AvoidBallsGameState.cs" id="1_bjhn5"]
 [ext_resource type="PackedScene" uid="uid://ccj3k51na6cm4" path="res://scenes/dream/avoid balls/Background.glb" id="1_fkod1"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cx072cwkrciue" path="res://scenes/2D Camera.tscn" id="2_xfgk3"]
 [ext_resource type="PackedScene" uid="uid://bf3m7bxsj4cd8" path="res://scenes/dream/avoid balls/ball.tscn" id="4_46cp5"]
 [ext_resource type="AudioStream" uid="uid://dx48ar6y4lj5a" path="res://scenes/dream/avoid balls/Car Crash.wav" id="6_3wful"]
+[ext_resource type="PackedScene" uid="uid://dhvxfwt8vwtm4" path="res://scenes/obby/Models/Stands.glb" id="7_adqmv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fkod1"]
 size = Vector3(19.85791, 1.3533936, 12.840332)
@@ -13,8 +14,9 @@ size = Vector3(19.85791, 1.3533936, 12.840332)
 [sub_resource type="BoxShape3D" id="BoxShape3D_xfgk3"]
 size = Vector3(0.68792725, 3.128357, 18.408447)
 
-[node name="AvoidBalls" type="Node3D"]
+[node name="AvoidBalls" type="Node3D" node_paths=PackedStringArray("_carCrash")]
 script = ExtResource("1_bjhn5")
+_carCrash = NodePath("AudioStreamPlayer")
 
 [node name="Background" parent="." instance=ExtResource("1_fkod1")]
 
@@ -86,3 +88,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.995982, 1.547334, 3.4872105
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_3wful")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="Stands" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.528109, 2.2823696, -6.5688534)
+
+[node name="Stands2" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.528109, 2.2823696, -6.5688534)
+
+[node name="Stands3" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5281091, 2.2823696, -6.5688534)
+
+[node name="Stands4" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4718909, 2.2823696, -6.5688534)
+
+[node name="Stands5" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.471891, 2.2823696, -6.5688534)
+
+[node name="Stands6" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.471891, 2.2823696, -6.5688534)
+
+[node name="Stands7" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -4.3711385e-08, 9.807889, 2.2823694, -3.981453)
+
+[node name="Stands8" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -4.3711385e-08, 9.807889, 2.2823694, -0.98145294)
+
+[node name="Stands9" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -4.3711385e-08, 9.807889, 2.2823696, 2.018547)
+
+[node name="Stands10" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -4.3711385e-08, 9.807889, 2.2823696, 5.0185466)
+
+[node name="Stands11" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -4.3711385e-08, 9.807889, 2.2823699, 8.018547)
+
+[node name="Stands12" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(-4.371139e-08, -4.371139e-08, -1, 4.371139e-08, 1, -4.371139e-08, 1, -4.371139e-08, -4.3711385e-08, 9.807889, 2.2823699, 11.018547)
+
+[node name="Stands13" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1.3113416e-07, 4.371139e-08, 1, -4.371139e-08, 1, -4.371138e-08, -1, -4.371138e-08, 1.3113417e-07, -9.832687, 2.28237, 11.018547)
+
+[node name="Stands14" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1.3113416e-07, 4.371139e-08, 1, -4.371139e-08, 1, -4.371138e-08, -1, -4.371138e-08, 1.3113417e-07, -9.832686, 2.2823699, 8.018547)
+
+[node name="Stands15" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1.3113416e-07, 4.371139e-08, 1, -4.371139e-08, 1, -4.371138e-08, -1, -4.371138e-08, 1.3113417e-07, -9.832686, 2.2823699, 5.018547)
+
+[node name="Stands16" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1.3113416e-07, 4.371139e-08, 1, -4.371139e-08, 1, -4.371138e-08, -1, -4.371138e-08, 1.3113417e-07, -9.832686, 2.2823694, 2.0185475)
+
+[node name="Stands17" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1.3113416e-07, 4.371139e-08, 1, -4.371139e-08, 1, -4.371138e-08, -1, -4.371138e-08, 1.3113417e-07, -9.832686, 2.2823694, -0.98145294)
+
+[node name="Stands18" parent="." instance=ExtResource("7_adqmv")]
+transform = Transform3D(1.3113416e-07, 4.371139e-08, 1, -4.371139e-08, 1, -4.371138e-08, -1, -4.371138e-08, 1.3113417e-07, -9.832685, 2.2823691, -3.981453)

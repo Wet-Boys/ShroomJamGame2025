@@ -10,7 +10,7 @@ public partial class FroggerGameState : BaseTvGameState
 {
     private float _carTimer;
     private float _logTimer;
-    public float logResetPoint = 0;
+    public float logResetPoint = 0.1f;
     public float logSpeed = 1;
     public int[] carRows = [-22, -20, -18, -16, -14, -12, -10, -8];//8 rows -22 to -8
     public int[] logRows = [-4, -2, 0, 2, 4, 6, 8, 10, 12, 14];//10 rows -4 to 14

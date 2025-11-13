@@ -9,6 +9,9 @@ public partial class Frog : Node3D
     private Vector3 _currentLogPrevPosition = Vector3.Zero;
     public Vector3 respawnPosition;
     private FroggerGameState _gameState;
+    [Export] private AudioStreamPlayer _splat;
+    [Export] private AudioStreamPlayer _sploosh;
+    [Export] private AudioStreamPlayer _horn;
 
     public override void _Ready()
     {
@@ -34,6 +37,7 @@ public partial class Frog : Node3D
         await ToSignal(GetTree(), "physics_frame");
         if (Position.X > -6 && Position.X < 16 && _currentLog is null)
         {
+            _sploosh.Play();
             Respawn();
         }
     }
@@ -47,6 +51,8 @@ public partial class Frog : Node3D
         }
         else
         {
+            _splat.Play();
+            _horn.Play();
             Respawn();
         }
     }

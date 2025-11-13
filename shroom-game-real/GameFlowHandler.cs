@@ -106,6 +106,7 @@ public partial class GameFlowHandler : Node
 
     private void ExitTv()
     {
+        _foodHasWorkedThisTimeslot = false;
         ResetPlayerPosition();
         switch (_currentTime)
         {
@@ -354,13 +355,18 @@ public partial class GameFlowHandler : Node
         TvInteractable.instance.OnInteract(PlayerController.instance);
     }
 
+    private bool _foodHasWorkedThisTimeslot;
     public void FoodInteract(FoodInteractable food)
     {
         PlayerController.instance.visualHandler.Eat();
-        SetCurrentGame(_currentTime);
-        if (_currentTime == CurrentTime.Time6Pm)
+        if (!_foodHasWorkedThisTimeslot)
         {
-            ((ObbyGameState)_currentGame).SpawnLevel(0);
+            _foodHasWorkedThisTimeslot = true;
+            SetCurrentGame(_currentTime);
+            if (_currentTime == CurrentTime.Time6Pm)
+            {
+                ((ObbyGameState)_currentGame).SpawnLevel(0);
+            }
         }
         food.Visible = false;
         SetObjectiveText("");
@@ -422,6 +428,7 @@ public partial class GameFlowHandler : Node
         TvInteractable.instance.staticNoise.Play();
         isInDreamSequence = true;
         PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
+        MusicManager.Instance.PlaybackRate = 2;
         MusicManager.Instance.StartDreamSong();
         await ToSignal(GetTree().CreateTimer(4.2f), "timeout");
         DreamTransition.instance.Play();

@@ -58,14 +58,11 @@ border_color = Color(0.2243011, 5.6601762e-05, 0.80448, 1)
 
 [sub_resource type="Environment" id="Environment_gixxu"]
 
-[node name="HoleInTheWallGame" type="Node3D" node_paths=PackedStringArray("drumRollPlayer", "drumRollFinishPlayer", "buzzerPlayer")]
+[node name="HoleInTheWallGame" type="Node3D"]
 script = ExtResource("1_ddbat")
 imageSize = Vector2i(128, 128)
 budgetMultiplier = 2.5
 contestantPrefabs = [ExtResource("2_fewlc"), ExtResource("3_3td4r"), ExtResource("4_x6wgw"), ExtResource("5_j76ei"), ExtResource("6_pj4w6")]
-drumRollPlayer = NodePath("Sfx/Drum Roll")
-drumRollFinishPlayer = NodePath("Sfx/Droll Roll Finish Victory")
-buzzerPlayer = NodePath("Sfx/Buzzer")
 metadata/_custom_type_script = "uid://b2ekqf23iydes"
 
 [node name="Completion Timer" type="Node" parent="."]
@@ -200,8 +197,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("2_rk4ln")
-brushRadius = 7
-maxBrushRadius = 32
+brushRadius = 14
 metadata/_custom_type_script = "uid://bfopv1ynirse8"
 
 [node name="TextureRect" type="TextureRect" parent="HITW Camera/UI Root/MouseDraw"]

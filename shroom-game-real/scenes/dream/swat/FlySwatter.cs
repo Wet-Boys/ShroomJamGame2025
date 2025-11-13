@@ -12,6 +12,7 @@ public partial class FlySwatter : Node3D
     [Export] private Timer _hitBoxTimer;
     [Export] private Area3D _area3D;
     private SwatGameState _gameState;
+    [Export] private AudioStreamPlayer _swat;
 
     public override void _Ready()
     {
@@ -75,6 +76,7 @@ public partial class FlySwatter : Node3D
                 {
                     _hitBoxTimer.Start(.25f);
                     _animationTree.Set($"parameters/Swat/request", (int)AnimationNodeOneShot.OneShotRequest.Fire);
+                    _swat.Play();
                     _currentCooldown = _cooldown;
                 }   
             }   

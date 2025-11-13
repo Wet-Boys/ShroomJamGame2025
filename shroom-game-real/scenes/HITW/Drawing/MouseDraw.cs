@@ -6,13 +6,13 @@ namespace ShroomGameReal.scenes.HITW.Drawing;
 public partial class MouseDraw : Control
 {
     [Export]
-    public int brushRadius = 3;
+    public int brushRadius = 10;
     
-    [Export]
-    public int maxBrushRadius = 15;
-    
-    [Export]
-    public int minBrushRadius = 1;
+    // [Export]
+    // public int maxBrushRadius = 15;
+    //
+    // [Export]
+    // public int minBrushRadius = 1;
 
     public int CurrentUsage { get; private set; }
     
@@ -86,19 +86,19 @@ public partial class MouseDraw : Control
         if (@event.IsActionReleased("secondary_action"))
             _eraseButtonHeld = false;
 
-        if (@event.IsActionPressed("scroll_up"))
-        {
-            brushRadius++;
-            if (brushRadius >= maxBrushRadius)
-                brushRadius = maxBrushRadius;
-        }
-        
-        if (@event.IsActionPressed("scroll_down"))
-        {
-            brushRadius--;
-            if (brushRadius <= minBrushRadius)
-                brushRadius = minBrushRadius;
-        }
+        // if (@event.IsActionPressed("scroll_up"))
+        // {
+        //     brushRadius++;
+        //     if (brushRadius >= maxBrushRadius)
+        //         brushRadius = maxBrushRadius;
+        // }
+        //
+        // if (@event.IsActionPressed("scroll_down"))
+        // {
+        //     brushRadius--;
+        //     if (brushRadius <= minBrushRadius)
+        //         brushRadius = minBrushRadius;
+        // }
 
         if (@event is InputEventMouse mouseEvent)
         {
