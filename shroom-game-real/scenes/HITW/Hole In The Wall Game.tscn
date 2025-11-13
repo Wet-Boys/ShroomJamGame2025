@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://8awqfdjpqei6"]
+[gd_scene load_steps=28 format=3 uid="uid://8awqfdjpqei6"]
 
 [ext_resource type="Script" uid="uid://b2ekqf23iydes" path="res://scenes/HITW/HoleInTheWallGame.cs" id="1_ddbat"]
 [ext_resource type="PackedScene" uid="uid://cib1elxwbyfpr" path="res://scenes/HITW/Contestants/Contestant 1.tscn" id="2_fewlc"]
@@ -7,32 +7,30 @@
 [ext_resource type="PackedScene" uid="uid://b0qh8j15dsdod" path="res://scenes/HITW/Contestants/Contestant 2.tscn" id="3_3td4r"]
 [ext_resource type="PackedScene" uid="uid://v16w1jgh6trc" path="res://scenes/HITW/Stage/Stage.glb" id="3_gixxu"]
 [ext_resource type="Material" uid="uid://c20i4fc06gmfr" path="res://scenes/HITW/Drawing/Draw Cut Overlay.tres" id="4_gixxu"]
-[ext_resource type="PackedScene" path="res://scenes/HITW/Contestants/Contestant 3.tscn" id="4_x6wgw"]
+[ext_resource type="PackedScene" uid="uid://bmxtj14huis7h" path="res://scenes/HITW/Contestants/Contestant 3.tscn" id="4_x6wgw"]
 [ext_resource type="Texture2D" uid="uid://dnctv2qdsms0v" path="res://scenes/Scoot Shoot/zapper-crosshair.svg" id="4_xpe22"]
-[ext_resource type="PackedScene" path="res://scenes/HITW/Contestants/Contestant 4.tscn" id="5_j76ei"]
-[ext_resource type="PackedScene" path="res://scenes/HITW/Contestants/Contestant 5.tscn" id="6_pj4w6"]
+[ext_resource type="PackedScene" uid="uid://b6xaur1kntk4d" path="res://scenes/HITW/Contestants/Contestant 4.tscn" id="5_j76ei"]
+[ext_resource type="PackedScene" uid="uid://whefpt6215v2" path="res://scenes/HITW/Contestants/Contestant 5.tscn" id="6_pj4w6"]
+[ext_resource type="PackedScene" uid="uid://dorc5rqfdn3hi" path="res://scenes/HITW/Stage/Rails.tscn" id="8_tjwfg"]
+[ext_resource type="Material" uid="uid://bqxge65xkoqkh" path="res://scenes/HITW/Stage/Water.tres" id="10_hncln"]
+[ext_resource type="AudioStream" uid="uid://b1gymc3rmgcu5" path="res://scenes/HITW/Sfx/Drum Roll.ogg" id="12_j76ei"]
+[ext_resource type="AudioStream" uid="uid://bf345tufvgmmm" path="res://scenes/HITW/Sfx/Drum Roll Finish.ogg" id="13_pj4w6"]
+[ext_resource type="AudioStream" uid="uid://d33tao4g3damu" path="res://scenes/HITW/Sfx/Buzzer.ogg" id="14_1hbut"]
+[ext_resource type="PackedScene" uid="uid://dhvxfwt8vwtm4" path="res://scenes/obby/Models/Stands.glb" id="17_h6ry1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6wgw"]
 albedo_color = Color(0, 0.7666669, 1, 1)
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_j76ei"]
-resource_name = "Stage_Cube_001"
-_surfaces = [{
-"aabb": AABB(-2, -18, -2, 4, 19, 4),
-"attribute_data": PackedByteArray("ZINLPrLBpT5kg0s+ssGlPmSDSz6ywaU+AAAgPwAAAAAAAGA/AACAPgAAID8AAIA/ZINLPkw+2j5kg0s+TD7aPmSDSz5MPto+AAAgPwAAQD8AAGA/AAAAPwAAID8AAEA/TT6aPrTBpT5NPpo+tMGlPk0+mj60waU+AAAgPwAAgD4AACA/AACAPgAAID8AAIA+TT6aPlA+2j5NPpo+UD7aPk0+mj5QPto+AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AADAPgAAQD8AAAA+AAAAPwAAwD4AAEA/AADAPgAAAAAAAAA+AACAPgAAwD4AAIA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAAA/AADAPgAAgD4AAMA+AACAPgAAwD4AAIA+ZINLPkw+2j5kg0s+TD7aPmSDSz5MPto+ZINLPrLBpT5kg0s+ssGlPmSDSz6ywaU+TT6aPlA+2j5NPpo+UD7aPk0+mj5QPto+TT6aPrTBpT5NPpo+tMGlPk0+mj60waU+"),
-"format": 34359742487,
-"index_count": 84,
-"index_data": PackedByteArray("HQALAAUAHQAaAAsAGAAVAAkAGAAeABUAIAARABcAIAAjABEAIQADAA8AIQAbAAMAFAAvAA4AFAAsAC8AFgAEAAoAFgAQAAQABwAcAAEABwAZABwAEwAZAAcAEwAfABkADQAfABMADQAiAB8AAQAiAA0AAQAcACIAJQAuACsAJQAoAC4AAgAmAAgAAgApACYADAAnAAAADAAtACcABgAqABIABgAkACoA"),
-"material": SubResource("StandardMaterial3D_x6wgw"),
-"primitive": 3,
-"uv_scale": Vector4(0, 0, 0, 0),
-"vertex_count": 48,
-"vertex_data": PackedByteArray("bvJRPwAAgL9u8lG/bvJRPwAAgL9u8lG/bvJRPwAAgL9u8lG/AAAAQAAAgD8AAADAAAAAQAAAgD8AAADAAAAAQAAAgD8AAADAbvJRPwAAgL9u8lE/bvJRPwAAgL9u8lE/bvJRPwAAgL9u8lE/AAAAQAAAgD8AAABAAAAAQAAAgD8AAABAAAAAQAAAgD8AAABAbvJRvwAAgL9u8lG/bvJRvwAAgL9u8lG/bvJRvwAAgL9u8lG/AAAAwAAAgD8AAADAAAAAwAAAgD8AAADAAAAAwAAAgD8AAADAbvJRvwAAgL9u8lE/bvJRvwAAgL9u8lE/bvJRvwAAgL9u8lE/AAAAwAAAgD8AAABAAAAAwAAAgD8AAABAAAAAwAAAgD8AAABAAAAAQAAAgL8AAABAAAAAQAAAgL8AAABAAAAAQAAAgL8AAABAAAAAQAAAgL8AAADAAAAAQAAAgL8AAADAAAAAQAAAgL8AAADAAAAAwAAAgL8AAABAAAAAwAAAgL8AAABAAAAAwAAAgL8AAABAAAAAwAAAgL8AAADAAAAAwAAAgL8AAADAAAAAwAAAgL8AAADAbvJRPwAAkMFu8lE/bvJRPwAAkMFu8lE/bvJRPwAAkMFu8lE/bvJRPwAAkMFu8lG/bvJRPwAAkMFu8lG/bvJRPwAAkMFu8lG/bvJRvwAAkMFu8lE/bvJRvwAAkMFu8lE/bvJRvwAAkMFu8lE/bvJRvwAAkMFu8lG/bvJRvwAAkMFu8lG/bvJRvwAAkMFu8lG//////////7//fwAAAAD/v////3////+///////9/////f///////v////3//f////3//f////z//fwAAAAD/v////3////+//3//f/9/////f///////v////3//f////////////7//fwAAAAD/vwAA/3////+///////9/////f///////vwAA/3//f////3//f////z//fwAAAAD/vwAA/3////+//3//f/9/////f///////vwAA/3//f////3//f/9/////fwAAAAD/v////3//f/////////9/////fwAAAAD/v////3//f////3//f/9/////fwAAAAD/vwAA/3//f/////////9/////fwAAAAD/vwAA/3//f////3//f////z//fwAAAAD/v////3////+//////////7//fwAAAAD/v////3////+//3//f////z//fwAAAAD/vwAA/3////+//////////7//fwAAAAD/vwAA/3////+/")
-}]
-blend_shape_mode = 0
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_3og3x"]
-size = Vector3(4, 2, 4)
+size = Vector3(4, 2, 2)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tjwfg"]
+size = Vector2(500, 500)
+orientation = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_57xdu"]
+material = SubResource("StandardMaterial3D_x6wgw")
+size = Vector3(10, 50, 500)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3og3x"]
 radius = 0.75
@@ -60,11 +58,14 @@ border_color = Color(0.2243011, 5.6601762e-05, 0.80448, 1)
 
 [sub_resource type="Environment" id="Environment_gixxu"]
 
-[node name="HoleInTheWallGame" type="Node3D"]
+[node name="HoleInTheWallGame" type="Node3D" node_paths=PackedStringArray("drumRollPlayer", "drumRollFinishPlayer", "buzzerPlayer")]
 script = ExtResource("1_ddbat")
 imageSize = Vector2i(128, 128)
 budgetMultiplier = 2.5
 contestantPrefabs = [ExtResource("2_fewlc"), ExtResource("3_3td4r"), ExtResource("4_x6wgw"), ExtResource("5_j76ei"), ExtResource("6_pj4w6")]
+drumRollPlayer = NodePath("Sfx/Drum Roll")
+drumRollFinishPlayer = NodePath("Sfx/Droll Roll Finish Victory")
+buzzerPlayer = NodePath("Sfx/Buzzer")
 metadata/_custom_type_script = "uid://b2ekqf23iydes"
 
 [node name="Completion Timer" type="Node" parent="."]
@@ -75,6 +76,12 @@ metadata/_custom_type_script = "uid://hutdt2ctord0"
 [node name="Stage Root" type="Node3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.25, -3.1)
+
+[node name="Rails" parent="Stage Root" instance=ExtResource("8_tjwfg")]
+transform = Transform3D(0.8660254, -0.5, 0, 0.5, 0.8660254, 0, 0, 0, 1, -2.4912052, 5.25, 7.102986)
+
+[node name="Rails2" parent="Stage Root" instance=ExtResource("8_tjwfg")]
+transform = Transform3D(0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0, 1, 2.5087948, 5.25, 7.102986)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Stage Root"]
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 4.4394665, 3)
@@ -88,10 +95,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 [node name="Stage" parent="Stage Root/Stage" instance=ExtResource("3_gixxu")]
 
 [node name="Platform" parent="Stage Root/Stage/Stage" index="0"]
-mesh = SubResource("ArrayMesh_j76ei")
+material_override = SubResource("StandardMaterial3D_x6wgw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage Root/Stage"]
 shape = SubResource("BoxShape3D_3og3x")
+
+[node name="Water" type="MeshInstance3D" parent="Stage Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+material_override = ExtResource("10_hncln")
+mesh = SubResource("QuadMesh_tjwfg")
+
+[node name="Wall" type="MeshInstance3D" parent="Stage Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -24, 0)
+mesh = SubResource("BoxMesh_57xdu")
+
+[node name="Wall4" type="MeshInstance3D" parent="Stage Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 5, 0)
+mesh = SubResource("BoxMesh_57xdu")
+
+[node name="Wall5" type="MeshInstance3D" parent="Stage Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 5, 0)
+mesh = SubResource("BoxMesh_57xdu")
+
+[node name="Wall2" type="MeshInstance3D" parent="Stage Root"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -24, 0)
+mesh = SubResource("BoxMesh_57xdu")
+
+[node name="Wall3" type="MeshInstance3D" parent="Stage Root"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1, 5, -23.999998)
+mesh = SubResource("BoxMesh_57xdu")
 
 [node name="Contestant Spawn" type="Marker3D" parent="."]
 unique_name_in_owner = true
@@ -210,5 +242,70 @@ show_percentage = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gixxu")
+
+[node name="Sfx" type="Node" parent="."]
+
+[node name="Drum Roll" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource("12_j76ei")
+bus = &"SFX"
+
+[node name="Droll Roll Finish Victory" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource("13_pj4w6")
+volume_db = 2.0
+bus = &"SFX"
+
+[node name="Buzzer" type="AudioStreamPlayer" parent="Sfx"]
+stream = ExtResource("14_1hbut")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 10, 0)
+
+[node name="Stands" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.77748, -1.2524354, -7.4901943)
+
+[node name="Stands2" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.77748, -1.2524354, -10.490194)
+
+[node name="Stands3" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.77748, -1.2524354, -13.490194)
+
+[node name="Stands4" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.77748, -1.2524354, -16.490194)
+
+[node name="Stands5" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.77748, -1.2524354, -19.490194)
+
+[node name="Stands6" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.77748, -1.2524354, -4.4901943)
+
+[node name="Stands7" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.77748, -1.2524354, -1.4901943)
+
+[node name="Stands8" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9.77748, -1.2524354, 1.5098057)
+
+[node name="Stands9" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.777, -1.2524354, -10.490196)
+
+[node name="Stands10" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.777, -1.2524354, -7.490196)
+
+[node name="Stands11" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.777, -1.2524354, -4.490196)
+
+[node name="Stands12" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.776999, -1.2524354, -1.4901962)
+
+[node name="Stands13" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.776999, -1.2524354, 1.5098038)
+
+[node name="Stands14" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.777, -1.2524354, -13.490196)
+
+[node name="Stands15" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.777001, -1.2524354, -16.490196)
+
+[node name="Stands16" parent="." instance=ExtResource("17_h6ry1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.777001, -1.2524354, -19.490196)
 
 [editable path="Stage Root/Stage/Stage"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dorc5rqfdn3hi"]
+
+[ext_resource type="PackedScene" uid="uid://qpsgapa8x7yl" path="res://scenes/HITW/Stage/Stage Env.glb" id="1_makj1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_makj1"]
+albedo_color = Color(0.50140655, 0.5014065, 0.5014065, 1)
+metallic = 0.29
+roughness = 0.44
+
+[node name="Rails" type="Node3D"]
+
+[node name="Stage Env" parent="." instance=ExtResource("1_makj1")]
+
+[node name="Rail" parent="Stage Env" index="0"]
+material_override = SubResource("StandardMaterial3D_makj1")
+
+[node name="Cylinder" parent="Stage Env/Rail" index="0"]
+material_override = SubResource("StandardMaterial3D_makj1")
+
+[editable path="Stage Env"]

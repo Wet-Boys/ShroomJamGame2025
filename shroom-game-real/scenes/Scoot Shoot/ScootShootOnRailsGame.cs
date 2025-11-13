@@ -140,6 +140,8 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
             MouseReleaser.Instance.RequestLockedMouse();
         }
         
+        _pauseMenu.QueueFree();
+        
         _screenZapper.Visible = false;
         GlobalGameState.Instance.InBaitMode = false;
         GameOver = true;
@@ -148,7 +150,7 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
 
     public override void _Input(InputEvent @event)
     {
-        if (@event.IsActionPressed("escape") && GameStarted && CanActivate)
+        if (@event.IsActionPressed("escape") && GameStarted && CanActivate && !GameOver && IsInstanceValid(_pauseMenu))
         {
             if (_pauseMenu.Visible)
             {

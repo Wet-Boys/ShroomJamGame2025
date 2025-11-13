@@ -23,6 +23,14 @@ public partial class HoleInTheWallGame : BaseTvGameState
     
     [Export]
     public PackedScene[] contestantPrefabs = [];
+    
+    [ExportGroup("Sfx")]
+    [Export]
+    public AudioStreamPlayer drumRollPlayer;
+    [Export]
+    public AudioStreamPlayer drumRollFinishPlayer;
+    [Export]
+    public AudioStreamPlayer buzzerPlayer;
 
     private MouseDraw _mouseDraw;
     private MeshInstance3D _wallQuad;
@@ -96,6 +104,8 @@ public partial class HoleInTheWallGame : BaseTvGameState
 
         _mouseDraw.ResetImage();
         _mouseDraw.CanDraw = true;
+        
+        drumRollPlayer.Play();
     }
 
     public override void _Process(double delta)
@@ -116,7 +126,6 @@ public partial class HoleInTheWallGame : BaseTvGameState
         _wallCutOutMaterial.Set("shader_parameter/show_mistakes", false);
 
         _contestantBody.GlobalTransform = _contestantSpawn.GlobalTransform;
-        
         
         _currentContestant = contestantPrefab.Instantiate<HitwContestant>();
         _contestantRoot.AddChild(_currentContestant);
@@ -148,10 +157,14 @@ public partial class HoleInTheWallGame : BaseTvGameState
 
     private void CutOutTimeDone()
     {
+        drumRollPlayer.Stop();
+        
         _mouseDraw.CanDraw = false;
         
         if (CanContestantFitCutShape())
         {
+            drumRollFinishPlayer.Play();
+            
             // GD.Print("You won");
             if (GameFlowHandler.isInDreamSequence)
             {
@@ -179,6 +192,8 @@ public partial class HoleInTheWallGame : BaseTvGameState
         }
         else
         {
+            buzzerPlayer.Play();
+            
             // GD.Print("You lost");
             if (GameFlowHandler.isInDreamSequence)
             {

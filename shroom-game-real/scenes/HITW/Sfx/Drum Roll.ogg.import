@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b1gymc3rmgcu5"
+path="res://.godot/imported/Drum Roll.ogg-f72c4c55b5fa359071376a4515e3a095.oggvorbisstr"
+
+[deps]
+
+source_file="res://scenes/HITW/Sfx/Drum Roll.ogg"
+dest_files=["res://.godot/imported/Drum Roll.ogg-f72c4c55b5fa359071376a4515e3a095.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

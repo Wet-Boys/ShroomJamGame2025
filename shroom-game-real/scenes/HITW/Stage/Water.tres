@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bqxge65xkoqkh"]
+
+[ext_resource type="Shader" uid="uid://182pytwtnx4o" path="res://scenes/HITW/Stage/Water.gdshader" id="1_20122"]
+[ext_resource type="Texture2D" uid="uid://c43x7fjsrmtmp" path="res://scenes/HITW/Stage/water.png" id="2_k6aak"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_20122")
+shader_parameter/slide_speed = 0.3
+shader_parameter/wobble_speed = 1.0
+shader_parameter/wobble_intensity = 0.4
+shader_parameter/texture_scale = 0.175
+shader_parameter/water = ExtResource("2_k6aak")
