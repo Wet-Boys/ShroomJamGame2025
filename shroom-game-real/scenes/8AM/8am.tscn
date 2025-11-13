@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://7qp7ykwx0m6o"]
+[gd_scene load_steps=3 format=3 uid="uid://7qp7ykwx0m6o"]
+
+[ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_asoc8"]
+[ext_resource type="PackedScene" uid="uid://bhxxomuj2livf" path="res://scenes/non_core.tscn" id="2_i5lgk"]
 
 [node name="Label3D" type="Label3D"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -8,3 +11,29 @@ text = "8AM
 
 "
 font_size = 642
+
+[node name="Room" parent="." instance=ExtResource("1_asoc8")]
+transform = Transform3D(-1.307, 0, 1.14261574e-07, 0, 1.307, 0, -1.14261574e-07, 0, -1.307, 0, 0, 0)
+
+[node name="Non-Core" parent="." instance=ExtResource("2_i5lgk")]
+transform = Transform3D(-1.307, 0, 1.9735153e-07, 0, 1.307, 0, -1.9735153e-07, 0, -1.307, 0, 0, 0)
+
+[node name="Vineshroom" parent="Non-Core" index="32"]
+transform = Transform3D(-0.030756863, 0, 0.2632479, 0, 0.26503867, 0, -0.2632479, 0, -0.030756863, -14.067189, 2.0218954, 3.805597)
+
+[editable path="Non-Core"]
+[editable path="Non-Core/Block of multiple german boards games"]
+[editable path="Non-Core/Folded Clothes Stack"]
+[editable path="Non-Core/Four stacks of books 30 cm"]
+[editable path="Non-Core/Pen Organizer"]
+[editable path="Non-Core/Stack of Towels"]
+[editable path="Non-Core/Toy Rocket"]
+[editable path="Non-Core/Traditional rug"]
+[editable path="Non-Core/Wooden Toy Blocks"]
+[editable path="Non-Core/Tissue Box"]
+[editable path="Non-Core/Plastic Box with Lego Bricks"]
+[editable path="Non-Core/Mug"]
+[editable path="Non-Core/Bowl with peanuts"]
+[editable path="Non-Core/Gaming Console"]
+[editable path="Non-Core/Gaming Console2"]
+[editable path="Non-Core/Block of multiple german boards games2"]

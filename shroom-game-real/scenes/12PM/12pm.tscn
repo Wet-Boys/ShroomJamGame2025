@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bsh17ymkfrnte"]
+[gd_scene load_steps=4 format=3 uid="uid://bsh17ymkfrnte"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_yb58s"]
+[ext_resource type="PackedScene" uid="uid://bmb7buiewbi8e" path="res://Interactables/Food/FoodTest.tscn" id="2_w7gwu"]
+[ext_resource type="PackedScene" uid="uid://bhxxomuj2livf" path="res://scenes/non_core.tscn" id="3_7x5ek"]
 [ext_resource type="PackedScene" uid="uid://k35ix3lg403y" path="res://Interactables/Food/Juice.tscn" id="3_7x5ek"]
 
 [node name="Label3D" type="Label3D"]
@@ -17,3 +19,206 @@ transform = Transform3D(-1.307, 0, 1.9735153e-07, 0, 1.307, 0, -1.9735153e-07, 0
 
 [node name="FoodTest2" parent="." instance=ExtResource("3_7x5ek")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.747535, 1.0579237, -2.1715572)
+
+[node name="Non-Core" parent="." instance=ExtResource("3_7x5ek")]
+transform = Transform3D(-1.307, 0, 1.9735153e-07, 0, 1.307, 0, -1.9735153e-07, 0, -1.307, 0, 0, 0)
+
+[node name="Old coffee table" parent="Non-Core" index="0"]
+transform = Transform3D(3.88098, 0, -0.9684966, 0, 3.9999988, 0, 0.9684966, 0, 3.88098, 0.78320247, -0.7882997, -0.2466978)
+
+[node name="Rideau" parent="Non-Core/Curtain Parametric/Plane_013/Plane_009" index="3"]
+transform = Transform3D(1.723209, 0, 1.4210855e-14, 0, 0.9847044, 0, 7.1054274e-15, 0, 0.99999994, 0.04668033, -2.2339644, -0.0016040802)
+
+[node name="Plane_004" parent="Non-Core/Curtain Parametric/Plane_013/Plane_012" index="3"]
+transform = Transform3D(1.403368, 0, 2.842171e-14, 0, 0.98470455, 0, 7.1054274e-15, 0, 1, 0.38812065, -2.2359643, -0.00024843216)
+
+[node name="Plane_016" parent="Non-Core/Curtain Parametric_001/Plane_005/Plane_007" index="2"]
+transform = Transform3D(1.4912786, 0, 1.4210855e-14, 0, 0.9847044, 0, 3.5527137e-15, 0, 0.99999994, 0.3705349, -2.2359643, -0.00024938583)
+
+[node name="Rideau_001" parent="Non-Core/Curtain Parametric_001/Plane_005/Plane_011" index="3"]
+transform = Transform3D(1.7098422, 0, 1.4210855e-14, 0, 0.9847044, 0, 7.1054274e-15, 0, 0.99999994, -0.19669533, -2.2339644, -0.0016040802)
+
+[node name="Blanket" parent="Non-Core/Sofa G" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7191887, 0.33337596, -0.36367905)
+
+[node name="Pillow_1" parent="Non-Core/Sofa G" index="1"]
+transform = Transform3D(0.681453, 0.11806098, 0.72227734, 0.58800435, 0.49927577, -0.63637847, -0.4357463, 0.8583632, 0.27081203, -0.15328866, 0.030462995, -0.97538704)
+
+[node name="Pillow_2" parent="Non-Core/Sofa G" index="2"]
+transform = Transform3D(0.79202896, 0.41963887, -0.4433911, 0.6082297, -0.60479885, 0.5140793, -0.0524349, -0.6768486, -0.7342539, 1.6448451, 0.07301306, 0.048079014)
+
+[node name="Sofa_001" parent="Non-Core/Sofa G" index="4"]
+transform = Transform3D(0.9828885, 0.050485328, 0.17715368, -0.09336849, -0.69247866, 0.7153726, 0.15879056, -0.71967113, -0.675915, 0.0067287683, 0.76768285, 0.6140058)
+
+[node name="Floral Modern Armchair 3" parent="Non-Core" index="4"]
+transform = Transform3D(-2.8938107, 0, 2.7614963, 0, 4, 0, -2.7614963, 0, -2.8938107, -9.249631, -0.7882997, 3.3232856)
+
+[node name="Square Wood Side Table" parent="Non-Core" index="5"]
+transform = Transform3D(3.4087627, 0, -2.0929246, 0, 3.9999998, 0, 2.0929246, 0, 3.4087627, -5.164185, -0.7882997, 2.5295455)
+
+[node name="LOW" parent="Non-Core/Stack of folded t-shirts" index="0"]
+transform = Transform3D(0.8581903, -0.51333153, 0, 0, 0, -0.99999994, 0.51333153, 0.8581903, 0, 0.13239011, -0.0038764477, 0.07147234)
+
+[node name="03" parent="Non-Core/Childs Drawing On Paper 03" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39642674, -0.42390716, 3.0370412)
+
+[node name="Chair" parent="Non-Core" index="10"]
+transform = Transform3D(-1.1573858, 0, 3.3004074, 0, 3.4974604, 0, -3.3004074, 0, -1.1573858, 10.5109825, -0.7882997, -1.3100075)
+
+[node name="Block of multiple german boards games2" parent="Non-Core/Block of multiple german boards games" index="0"]
+transform = Transform3D(1, 0, 5.9604645e-08, 0, 1, 0, -5.9604645e-08, 0, 1, 4.9077644, 1.2265189, 19.577496)
+
+[node name="remeshed" parent="Non-Core/Folded Clothes Stack/Folded Clothes Stack2" index="0"]
+transform = Transform3D(3.8647738, 0.119103506, -1.0243698, -0.4733277, 3.734879, -1.3515306, 0.9162308, 1.4270561, 3.6227105, 0.34107208, 0.47800767, 0.59334755)
+
+[node name="Cylinder" parent="Non-Core/Pen Organizer/Pen Organizer2" index="0"]
+transform = Transform3D(4.1270404, 0, 0, 0, 4.1270404, 0, 0, 0, 4.1270404, -0.31552505, 0, 0.90482795)
+
+[node name="Towels" parent="Non-Core/Stack of Towels/Stack of Towels2" index="0"]
+transform = Transform3D(0.066603675, -2.3283064e-10, -3.7252903e-09, 3.4924597e-10, 0.06660368, 0, 0, 0, 0.066603675, -0.21248436, -0.6882813, 0)
+
+[node name="Toy Rocket2" parent="Non-Core/Toy Rocket" index="0"]
+transform = Transform3D(0.21680552, -0.9341239, -0.28356355, 0.5214274, -0.13475613, 0.84258837, -0.8252934, -0.3305355, 0.4578617, 0, 0.18432927, 0)
+
+[node name="Traditional rug2" parent="Non-Core/Traditional rug" index="0"]
+transform = Transform3D(0.849497, 0, -0.5275935, 0, 1, 0, 0.5275935, 0, 0.849497, -1.5133568, 0, -0.9685593)
+
+[node name="Wooden Toy Blocks" parent="Non-Core" index="18"]
+transform = Transform3D(-0.27385813, 0, -0.43378723, 0, 0.5130008, 0, 0.43378723, 0, -0.27385813, 10.310186, -0.7936264, 4.583001)
+
+[node name="1" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="0"]
+transform = Transform3D(3.321408, 0, 2.228957, 0, 4.0000005, 0, -2.228957, 0, 3.321408, 0.709641, 0.35110283, -0.11645126)
+
+[node name="2" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="2"]
+transform = Transform3D(2.1135693, 0, 3.3960018, 0, 4.0000005, 0, -3.3960018, 0, 2.1135693, 0.74391985, 0.041869164, -0.08104515)
+
+[node name="3" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="3"]
+transform = Transform3D(-3.4181023, 1.8700795, -0.9051949, -1.2402215, -0.43838042, 3.777523, 1.6668614, 3.5086508, 0.9544363, 1.5841546, 0.15524673, -6.0911694)
+
+[node name="A" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="10"]
+transform = Transform3D(3.3758414, -1.8340013, 1.1136187, -0.7883845, 0.87059, 3.8236818, -1.9955345, -3.4465237, 0.37326875, 0.2591176, 0.0657748, -4.667454)
+
+[node name="B" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="11"]
+transform = Transform3D(3.8789098, 0, 0.97675717, 0, 4.0000005, 0, -0.97675717, 0, 3.8789098, 2.5790086, 0.05135286, -3.4721012)
+
+[node name="C" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="12"]
+transform = Transform3D(3.9856668, -0.12127006, 0.3158328, -0.25296858, 1.4112389, 3.734223, -0.22464132, -3.7408152, 1.3985121, 1.3934503, 0.0999223, -5.1873074)
+
+[node name="D" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="13"]
+transform = Transform3D(1.9322363, 0, 3.5023506, 0, 4.0000005, 0, -3.5023506, 0, 1.9322363, 0.9243865, 1.6843023, -0.3534851)
+
+[node name="E" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="14"]
+transform = Transform3D(3.5255404, -1.8802372, 0.18781906, 0.80102634, 1.847221, 3.456318, -1.7114105, -3.0087352, 2.0046422, -0.7540822, 0.13450229, -3.8117027)
+
+[node name="I" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="18"]
+transform = Transform3D(0.79981124, -3.872782, 0.6015524, 2.0115976, 0.93256104, 3.3292348, -3.3635955, -0.3631693, 2.1340873, -1.6335888, 0.052855372, -3.0329895)
+
+[node name="J" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="19"]
+transform = Transform3D(2.0636206, 0, 3.4265828, 0, 4.0000005, 0, -3.4265828, 0, 2.0636206, 0.92633486, 1.3454819, -0.3603649)
+
+[node name="K" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="20"]
+transform = Transform3D(3.2967103, 0, 2.2653265, 0, 4.0000005, 0, -2.2653265, 0, 3.2967103, 2.1275315, -0.049770355, -2.2566586)
+
+[node name="L" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="21"]
+transform = Transform3D(-1.1217871, 1.5310706, 3.5209968, 3.8382313, 0.5407189, 0.9877319, -0.097895205, 3.655605, -1.6207931, 1.7402701, 0.10590196, -1.7234764)
+
+[node name="M" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="22"]
+transform = Transform3D(2.2703853, -3.2931647, -0.02043426, 0.53584355, 0.34492058, 3.9489133, -3.2493422, -2.2441244, 0.6369307, 3.2354865, 0.1808753, -2.4320602)
+
+[node name="N" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="23"]
+transform = Transform3D(2.419644, -3.01108, 1.0386124, 1.1794311, 2.0585895, 3.220428, -2.958761, -1.6418289, 2.1331034, -1.2083077, 0.07185936, -3.4897232)
+
+[node name="O" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="24"]
+transform = Transform3D(3.9964886, 0.1451751, -0.083713315, -0.07911848, -0.12691277, -3.9972053, -0.1477294, 3.9953501, -0.12392998, 0.9272933, 2.2018325, -0.5039444)
+
+[node name="P" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="25"]
+transform = Transform3D(3.2719574, 2.01504, -1.110816, 1.0170408, 0.46563998, 3.8404179, 2.0639586, -3.4238572, -0.13145599, 1.1049266, 0.03842354, -2.3918438)
+
+[node name="Q" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="26"]
+transform = Transform3D(2.5172024, 3.0323107, -0.6846763, 0.2149257, 0.709127, 3.9307709, 3.1012094, -2.5104241, 0.28332347, 2.2292647, 0.20312977, -2.7936516)
+
+[node name="R" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="27"]
+transform = Transform3D(-3.3424768, 0, 2.1972368, 0, 4.0000005, 0, -2.1972368, 0, -3.3424768, 0.9401078, 0.6544964, -0.40142822)
+
+[node name="S" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="28"]
+transform = Transform3D(3.520572, -1.8924052, 0.15612555, 0.004343168, 0.33691034, 3.9857852, -1.898829, -3.5078895, 0.2985838, -0.22145605, 0.1447475, -4.306513)
+
+[node name="T" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="29"]
+transform = Transform3D(1.8506176, 0, -3.5461545, 0, 4.0000005, 0, 3.5461545, 0, 1.8506176, 0.9115987, 1.0085157, -0.38391113)
+
+[node name="U" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="30"]
+transform = Transform3D(2.4929624, -3.1234293, 0.17123285, -0.0102073625, 0.210836, 3.9944289, -3.1281033, -2.4899259, 0.12343158, 0.9024062, 0.11800945, -5.030472)
+
+[node name="V" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="31"]
+transform = Transform3D(1.2532076, -3.731823, 0.7092022, -1.3962185, 0.24199595, 3.7405906, -3.532711, -1.4194857, -1.2267919, -1.8159161, 0.08835924, -2.41193)
+
+[node name="W" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="32"]
+transform = Transform3D(-0.90406996, 0.6239588, 3.8462095, -3.6613529, 1.214819, -1.0576949, -1.3331015, -3.7596397, 0.29656398, -0.09509325, 0.03859985, -2.1684341)
+
+[node name="X" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="33"]
+transform = Transform3D(1.1718841, -2.2790837, -3.0712314, -3.6859398, -1.5298036, -0.27120847, -1.020068, 2.9095497, -2.5483294, 0.10144091, 0.27188015, 1.4778614)
+
+[node name="Y" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="34"]
+transform = Transform3D(-0.031203896, -0.3314575, -3.9861207, -3.957865, 0.57880455, -0.017146695, 0.5782173, 3.9439983, -0.33248127, 1.1817789, 0.071091056, 2.6035194)
+
+[node name="Z" parent="Non-Core/Wooden Toy Blocks/Wooden Toy Blocks2" index="35"]
+transform = Transform3D(-1.3078249, 3.7722454, 0.24446246, 0.5413902, -0.069099806, 3.9625916, 3.7411883, 1.3286817, -0.48797116, 0.85674334, 0.27370226, -0.86769485)
+
+[node name="Tissue Box" parent="Non-Core" index="19"]
+transform = Transform3D(3.7255428, 0, -1.4561255, 0, 3.9999967, 0, 1.4561255, 0, 3.7255428, 0.15768449, 1.0295235, -1.705973)
+
+[node name="Cube" parent="Non-Core/Tissue Box/Tissue Box2" index="0"]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 0.99999994, 0, 2.9802322e-08, 0, 1, 0, -0.05220963, 0)
+
+[node name="Plastic Box with Lego Bricks" parent="Non-Core" index="20"]
+transform = Transform3D(-0.8741874, 0, 0.48558784, 0, 0.99999946, 0, -0.48558784, 0, -0.8741874, 9.1050625, -0.59771806, 7.7080564)
+
+[node name="Box" parent="Non-Core/Plastic Box with Lego Bricks/Plastic Box with Lego Bricks2" index="0"]
+transform = Transform3D(0.99999994, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 0.99999994, 0, 0.010027856, 0)
+
+[node name="Mug2" parent="Non-Core/Mug" index="0"]
+transform = Transform3D(4, 0, 2.3841858e-07, 0, 4, 0, -2.3841858e-07, 0, 4, -7.4347663, -1.7201369, 8.227027)
+
+[node name="Girl with Doll in the Fields - Painting" parent="Non-Core/Girl with Doll in the Fields - painting on paper" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 1.1636741, -0.39610404, -1.2739625)
+
+[node name="Apple Juice" parent="Non-Core" index="24"]
+transform = Transform3D(0.5230864, -1.5576464, 5.7780554e-08, 1.6496667e-15, -7.182354e-08, -1.6431309, 1.5576454, 0.5230865, -4.7037407e-08, 4.704676, -0.6631718, -2.8099065)
+
+[node name="Child\'s drawing" parent="Non-Core" index="25"]
+transform = Transform3D(3.0230398, 0, -0.4770178, 0, 3.0604439, 0, 0.4770178, 0, 3.0230398, -0.48005548, -2.121069, 1.7635125)
+
+[node name="Bowl with peanuts" parent="Non-Core" index="26"]
+transform = Transform3D(3.0604439, 0, 2.842171e-14, 0, 3.0604439, 0, -2.842171e-14, 0, 3.0604439, -0.6791823, 0.6198403, -0.38014236)
+
+[node name="Cylinder" parent="Non-Core/Bowl with peanuts/Bowl with peanuts2" index="0"]
+transform = Transform3D(0.10986916, 0, 8.881784e-16, 0, 0.10986916, 0, -8.881784e-16, 0, 0.10986916, -0.0024448633, 0.11023486, -0.0021157265)
+
+[node name="Fried Noodle" parent="Non-Core" index="27"]
+transform = Transform3D(3.0604446, 0, 1.1368684e-13, 0, 3.0604446, 0, -1.1368684e-13, 0, 3.0604446, 14.560409, 2.4951456, -0.080560476)
+
+[node name="Toy Duck" parent="Non-Core" index="33"]
+transform = Transform3D(-1.484427, 5.777815, 4.3885546, -3.6666796, -4.4627438, 4.6352377, 6.2608304, -1.243719, 3.7551606, 14.129273, 4.910919, 3.1182954)
+
+[node name="Toy Duck2" parent="Non-Core" index="34"]
+transform = Transform3D(-2.1130302, 0, -7.0979714, 0, 7.405815, 0, 7.0979714, 0, -2.1130302, 14.140211, 4.5079546, 4.5054255)
+
+[node name="Toy Duck3" parent="Non-Core" index="35"]
+transform = Transform3D(0.9439408, -6.440491, 3.5320103, -7.090774, -1.7284535, -1.2567391, 1.91727, -3.2215781, -6.3868246, 12.315398, -0.49743843, 3.6529827)
+
+[editable path="Non-Core"]
+[editable path="Non-Core/Block of multiple german boards games"]
+[editable path="Non-Core/Folded Clothes Stack"]
+[editable path="Non-Core/Four stacks of books 30 cm"]
+[editable path="Non-Core/Pen Organizer"]
+[editable path="Non-Core/Stack of Towels"]
+[editable path="Non-Core/Toy Rocket"]
+[editable path="Non-Core/Traditional rug"]
+[editable path="Non-Core/Wooden Toy Blocks"]
+[editable path="Non-Core/Tissue Box"]
+[editable path="Non-Core/Plastic Box with Lego Bricks"]
+[editable path="Non-Core/Mug"]
+[editable path="Non-Core/Bowl with peanuts"]
+[editable path="Non-Core/Gaming Console"]
+[editable path="Non-Core/Gaming Console2"]
+[editable path="Non-Core/Block of multiple german boards games2"]
