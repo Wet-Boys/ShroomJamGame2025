@@ -1,9 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bsh17ymkfrnte"]
+[gd_scene load_steps=5 format=3 uid="uid://bsh17ymkfrnte"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_yb58s"]
 [ext_resource type="PackedScene" uid="uid://bmb7buiewbi8e" path="res://Interactables/Food/FoodTest.tscn" id="2_w7gwu"]
 [ext_resource type="PackedScene" uid="uid://bhxxomuj2livf" path="res://scenes/non_core.tscn" id="3_7x5ek"]
-[ext_resource type="PackedScene" uid="uid://k35ix3lg403y" path="res://Interactables/Food/Juice.tscn" id="3_7x5ek"]
+[ext_resource type="PackedScene" uid="uid://k35ix3lg403y" path="res://Interactables/Food/Juice.tscn" id="4_umvqs"]
 
 [node name="Label3D" type="Label3D"]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
@@ -17,8 +17,8 @@ font_size = 642
 [node name="Room" parent="." instance=ExtResource("1_yb58s")]
 transform = Transform3D(-1.307, 0, 1.9735153e-07, 0, 1.307, 0, -1.9735153e-07, 0, -1.307, 0, 0, 0)
 
-[node name="FoodTest2" parent="." instance=ExtResource("3_7x5ek")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.747535, 1.0579237, -2.1715572)
+[node name="FoodTest" parent="." instance=ExtResource("2_w7gwu")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.8485181, 1.0579251, -2.141092)
 
 [node name="Non-Core" parent="." instance=ExtResource("3_7x5ek")]
 transform = Transform3D(-1.307, 0, 1.9735153e-07, 0, 1.307, 0, -1.9735153e-07, 0, -1.307, 0, 0, 0)
@@ -205,6 +205,9 @@ transform = Transform3D(-2.1130302, 0, -7.0979714, 0, 7.405815, 0, 7.0979714, 0,
 
 [node name="Toy Duck3" parent="Non-Core" index="35"]
 transform = Transform3D(0.9439408, -6.440491, 3.5320103, -7.090774, -1.7284535, -1.2567391, 1.91727, -3.2215781, -6.3868246, 12.315398, -0.49743843, 3.6529827)
+
+[node name="FoodTest2" parent="." instance=ExtResource("4_umvqs")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2.6393356, 1.0579232, -1.8418949)
 
 [editable path="Non-Core"]
 [editable path="Non-Core/Block of multiple german boards games"]
