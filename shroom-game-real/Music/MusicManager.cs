@@ -29,6 +29,8 @@ public partial class MusicManager : Node
     private bool _isIntroSong;
     [Export]
     private bool _isMiddleSong;
+    [Export]
+    private bool _isDreamSong;
     
     [ExportGroup("Tracks")]
     [Export]
@@ -42,6 +44,7 @@ public partial class MusicManager : Node
     
     private AudioStreamPlayer _introPlayer;
     private AudioStreamPlayer _middlePlayer;
+    private AudioStreamPlayer _dreamPlayer; 
 
     private bool _introRepeatLock;
     private bool _middleRepeatLock;
@@ -50,13 +53,10 @@ public partial class MusicManager : Node
     {
         _introPlayer = GetNode<AudioStreamPlayer>("%3rd Story Culdesac");
         _middlePlayer = GetNode<AudioStreamPlayer>("%Post Meridiem");
+        _dreamPlayer = GetNode<AudioStreamPlayer>("%Cathode Star");
 
         _middlePlayer.Finished += () => _middlePlayer.Play();
-        
-        if (Engine.IsEditorHint())
-            return;
-        
-        StartIntroSong();
+        _dreamPlayer.Finished += () => _dreamPlayer.Play();
     }
 
     public override void _EnterTree()
@@ -102,9 +102,14 @@ public partial class MusicManager : Node
     {
         if (@event is InputEventKey eventKey)
         {
-            if (eventKey is { Keycode: Key.Key2, Pressed: true } && _isIntroSong)
+            if (eventKey is { Keycode: Key.Key2, Pressed: true } && !_isMiddleSong)
             {
                 StartMiddleSong();
+            }
+            
+            if (eventKey is { Keycode: Key.Key3, Pressed: true } && !_isDreamSong)
+            {
+                StartDreamSong();
             }
         }
     }
@@ -137,6 +142,85 @@ public partial class MusicManager : Node
         introTween.TweenCallback(Callable.From(() => Server.SetBusMute(IntroBusIndex, true)));
     }
 
+    public void StartDreamSong()
+    {
+        _isMiddleSong = false;
+        _isDreamSong = true;
+        
+        var dreamTween = CreateTween();
+        
+        Server.SetBusMute(DreamBusIndex, false);
+        
+        dreamTween.TweenMethod(Callable.From<float>(value =>
+        {
+            Server.SetBusVolumeDb(MiddleBusIndex, value);
+        }), 0.0f, -40.0f, 0.5f);
+        dreamTween.Parallel().TweenMethod(Callable.From<float>(value =>
+        {
+            Server.SetBusVolumeDb(DreamBusIndex, value);
+        }), -40.0f, 0.0f, 0.5f);
+        
+        dreamTween.TweenCallback(Callable.From(() => Server.SetBusMute(MiddleBusIndex, true)));
+    }
+
+    public void DuckOverworldMusic()
+    {
+        var duckTween = CreateTween();
+        
+        if (_isIntroSong)
+        {
+            duckTween.TweenMethod(Callable.From<float>(value =>
+            {
+                Server.SetBusVolumeDb(IntroBusIndex, value);
+            }), 0.0f, -40.0f, 0.5f);
+        }
+
+        if (_isMiddleSong)
+        {
+            duckTween.TweenMethod(Callable.From<float>(value =>
+            {
+                Server.SetBusVolumeDb(MiddleBusIndex, value);
+            }), 0.0f, -40.0f, 0.5f);
+        }
+        
+        if (_isDreamSong)
+        {
+            duckTween.TweenMethod(Callable.From<float>(value =>
+            {
+                Server.SetBusVolumeDb(DreamBusIndex, value);
+            }), 0.0f, -40.0f, 0.5f);
+        }
+    }
+    
+    public void UnDuckOverworldMusic()
+    {
+        var duckTween = CreateTween();
+        
+        if (_isIntroSong)
+        {
+            duckTween.TweenMethod(Callable.From<float>(value =>
+            {
+                Server.SetBusVolumeDb(IntroBusIndex, value);
+            }), -40.0f, 0.0f, 0.5f);
+        }
+
+        if (_isMiddleSong)
+        {
+            duckTween.TweenMethod(Callable.From<float>(value =>
+            {
+                Server.SetBusVolumeDb(MiddleBusIndex, value);
+            }), -40.0f, 0.0f, 0.5f);
+        }
+        
+        if (_isDreamSong)
+        {
+            duckTween.TweenMethod(Callable.From<float>(value =>
+            {
+                Server.SetBusVolumeDb(DreamBusIndex, value);
+            }), -40.0f, 0.0f, 0.5f);
+        }
+    }
+
     private void UpdatePitchShift()
     {
         var pitchShift = GetMusicBusEffect<AudioEffectPitchShift>(MusicBusEffects.PitchShift);
@@ -144,6 +228,7 @@ public partial class MusicManager : Node
         
         _introPlayer.PitchScale = PlaybackRate;
         _middlePlayer.PitchScale = PlaybackRate;
+        _dreamPlayer.PitchScale = PlaybackRate;
     }
 
     private AudioEffect GetMusicBusEffect(MusicBusEffects effect) => Server.GetBusEffect(MusicBusIndex, (int)effect);
@@ -156,6 +241,8 @@ public partial class MusicManager : Node
     public int IntroBusIndex => Server.GetBusIndex("Overworld Intro Music");
     
     public int MiddleBusIndex => Server.GetBusIndex("Overworld Middle Music");
+    
+    public int DreamBusIndex => Server.GetBusIndex("Dream Sequence Music");
     
     public enum MusicBusEffects
     {

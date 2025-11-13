@@ -27,3 +27,9 @@ unique_name_in_owner = true
 stream = ExtResource("3_me3x1")
 max_polyphony = 2
 bus = &"Overworld Middle Music"
+
+[node name="Cathode Star" type="AudioStreamPlayer" parent="Overworld"]
+unique_name_in_owner = true
+stream = ExtResource("1_8btxe")
+max_polyphony = 2
+bus = &"Dream Sequence Music"

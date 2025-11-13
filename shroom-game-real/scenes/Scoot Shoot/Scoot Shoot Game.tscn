@@ -466,13 +466,13 @@ attackSpot = NodePath("../Marker3D2")
 transform = Transform3D(1.2132285, 0, 0, 0, 1.2132285, 0, 0, 0, 1.2132285, -5.7291307, 1.6959918, -6.708481)
 
 [node name="Wooden Crate" parent="Stages/Stage 2" instance=ExtResource("9_k2yoo")]
-transform = Transform3D(1.3892329, 0, 0.386731, 0, 1.4420571, 0, -0.386731, 0, 1.3892329, 3.8746095, 0.19947621, -9.929594)
+transform = Transform3D(1.7710533, 0, 0.49302116, 0, 1.8383958, 0, -0.49302116, 0, 1.7710533, 4.1642346, 0.12729797, -9.970619)
 
 [node name="Wooden Crate2" parent="Stages/Stage 2" instance=ExtResource("9_k2yoo")]
-transform = Transform3D(1.4413906, 0, 0.043837026, 0, 1.4420571, 0, -0.043837026, 0, 1.4413906, 2.6033273, 0.19947693, -9.759396)
+transform = Transform3D(1.8375462, 0, 0.055885307, 0, 1.8383958, 0, -0.055885307, 0, 1.8375462, 2.5435498, 0.12729889, -9.753643)
 
 [node name="Wooden Crate3" parent="Stages/Stage 2" instance=ExtResource("9_k2yoo")]
-transform = Transform3D(1.4420571, 0, 0, 0, 1.4420571, 0, 0, 0, 1.4420571, 3.2440186, 0.9873253, -9.651982)
+transform = Transform3D(1.8383958, 0, 0, 0, 1.8383958, 0, 0, 0, 1.8383958, 3.3603303, 1.1316816, -9.616709)
 
 [node name="Stage 3" type="Node3D" parent="Stages" node_paths=PackedStringArray("enemies")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 0, 16)

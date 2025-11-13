@@ -1,5 +1,8 @@
 shader_type spatial;
-render_mode unshaded;
+render_mode unshaded, depth_test_disabled;
+
+uniform vec3 wall_color : source_color;
+uniform vec3 overlay_color : source_color;
 
 uniform float alpha : hint_range(0.0, 1.0, 0.01) = 0.9;
 uniform float hint_visibility : hint_range(0.0, 1.0, 0.01) = 0.75f;
@@ -27,11 +30,11 @@ void fragment() {
 	
 	if (show_mistakes) {
 		float mask = 1.0 - overlay;
-		ALBEDO = vec3(overlay) + (mask * mistakes_color);
+		ALBEDO = (wall_color * overlay) + (mask * mistakes_color);
 		ALPHA = 1.0;
 	}
 	else {
-		ALBEDO = mix(vec3(1.0), vec3(overlay), hint_visibility);
+		ALBEDO = vec3(overlay_color * (1.0 - overlay)) + (wall_color * overlay);
 		ALPHA = alpha;
 	}
 }

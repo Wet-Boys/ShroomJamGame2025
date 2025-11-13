@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://8awqfdjpqei6"]
+[gd_scene load_steps=21 format=4 uid="uid://8awqfdjpqei6"]
 
 [ext_resource type="Script" uid="uid://b2ekqf23iydes" path="res://scenes/HITW/HoleInTheWallGame.cs" id="1_ddbat"]
 [ext_resource type="PackedScene" uid="uid://cib1elxwbyfpr" path="res://scenes/HITW/Contestants/Contestant 1.tscn" id="2_fewlc"]
@@ -7,10 +7,29 @@
 [ext_resource type="PackedScene" uid="uid://b0qh8j15dsdod" path="res://scenes/HITW/Contestants/Contestant 2.tscn" id="3_3td4r"]
 [ext_resource type="PackedScene" uid="uid://v16w1jgh6trc" path="res://scenes/HITW/Stage/Stage.glb" id="3_gixxu"]
 [ext_resource type="Material" uid="uid://c20i4fc06gmfr" path="res://scenes/HITW/Drawing/Draw Cut Overlay.tres" id="4_gixxu"]
-[ext_resource type="PackedScene" uid="uid://blty6w8srcj1f" path="res://scenes/HITW/Contestants/Contestant 3.tscn" id="4_x6wgw"]
+[ext_resource type="PackedScene" path="res://scenes/HITW/Contestants/Contestant 3.tscn" id="4_x6wgw"]
 [ext_resource type="Texture2D" uid="uid://dnctv2qdsms0v" path="res://scenes/Scoot Shoot/zapper-crosshair.svg" id="4_xpe22"]
-[ext_resource type="PackedScene" uid="uid://oc2n54k4gmm5" path="res://scenes/HITW/Contestants/Contestant 4.tscn" id="5_j76ei"]
-[ext_resource type="PackedScene" uid="uid://duci6ta0rojdx" path="res://scenes/HITW/Contestants/Contestant 5.tscn" id="6_pj4w6"]
+[ext_resource type="PackedScene" path="res://scenes/HITW/Contestants/Contestant 4.tscn" id="5_j76ei"]
+[ext_resource type="PackedScene" path="res://scenes/HITW/Contestants/Contestant 5.tscn" id="6_pj4w6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6wgw"]
+albedo_color = Color(0, 0.7666669, 1, 1)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j76ei"]
+resource_name = "Stage_Cube_001"
+_surfaces = [{
+"aabb": AABB(-2, -18, -2, 4, 19, 4),
+"attribute_data": PackedByteArray("ZINLPrLBpT5kg0s+ssGlPmSDSz6ywaU+AAAgPwAAAAAAAGA/AACAPgAAID8AAIA/ZINLPkw+2j5kg0s+TD7aPmSDSz5MPto+AAAgPwAAQD8AAGA/AAAAPwAAID8AAEA/TT6aPrTBpT5NPpo+tMGlPk0+mj60waU+AAAgPwAAgD4AACA/AACAPgAAID8AAIA+TT6aPlA+2j5NPpo+UD7aPk0+mj5QPto+AAAgPwAAAD8AACA/AAAAPwAAID8AAAA/AADAPgAAQD8AAAA+AAAAPwAAwD4AAEA/AADAPgAAAAAAAAA+AACAPgAAwD4AAIA/AADAPgAAAD8AAMA+AAAAPwAAwD4AAAA/AADAPgAAgD4AAMA+AACAPgAAwD4AAIA+ZINLPkw+2j5kg0s+TD7aPmSDSz5MPto+ZINLPrLBpT5kg0s+ssGlPmSDSz6ywaU+TT6aPlA+2j5NPpo+UD7aPk0+mj5QPto+TT6aPrTBpT5NPpo+tMGlPk0+mj60waU+"),
+"format": 34359742487,
+"index_count": 84,
+"index_data": PackedByteArray("HQALAAUAHQAaAAsAGAAVAAkAGAAeABUAIAARABcAIAAjABEAIQADAA8AIQAbAAMAFAAvAA4AFAAsAC8AFgAEAAoAFgAQAAQABwAcAAEABwAZABwAEwAZAAcAEwAfABkADQAfABMADQAiAB8AAQAiAA0AAQAcACIAJQAuACsAJQAoAC4AAgAmAAgAAgApACYADAAnAAAADAAtACcABgAqABIABgAkACoA"),
+"material": SubResource("StandardMaterial3D_x6wgw"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 48,
+"vertex_data": PackedByteArray("bvJRPwAAgL9u8lG/bvJRPwAAgL9u8lG/bvJRPwAAgL9u8lG/AAAAQAAAgD8AAADAAAAAQAAAgD8AAADAAAAAQAAAgD8AAADAbvJRPwAAgL9u8lE/bvJRPwAAgL9u8lE/bvJRPwAAgL9u8lE/AAAAQAAAgD8AAABAAAAAQAAAgD8AAABAAAAAQAAAgD8AAABAbvJRvwAAgL9u8lG/bvJRvwAAgL9u8lG/bvJRvwAAgL9u8lG/AAAAwAAAgD8AAADAAAAAwAAAgD8AAADAAAAAwAAAgD8AAADAbvJRvwAAgL9u8lE/bvJRvwAAgL9u8lE/bvJRvwAAgL9u8lE/AAAAwAAAgD8AAABAAAAAwAAAgD8AAABAAAAAwAAAgD8AAABAAAAAQAAAgL8AAABAAAAAQAAAgL8AAABAAAAAQAAAgL8AAABAAAAAQAAAgL8AAADAAAAAQAAAgL8AAADAAAAAQAAAgL8AAADAAAAAwAAAgL8AAABAAAAAwAAAgL8AAABAAAAAwAAAgL8AAABAAAAAwAAAgL8AAADAAAAAwAAAgL8AAADAAAAAwAAAgL8AAADAbvJRPwAAkMFu8lE/bvJRPwAAkMFu8lE/bvJRPwAAkMFu8lE/bvJRPwAAkMFu8lG/bvJRPwAAkMFu8lG/bvJRPwAAkMFu8lG/bvJRvwAAkMFu8lE/bvJRvwAAkMFu8lE/bvJRvwAAkMFu8lE/bvJRvwAAkMFu8lG/bvJRvwAAkMFu8lG/bvJRvwAAkMFu8lG//////////7//fwAAAAD/v////3////+///////9/////f///////v////3//f////3//f////z//fwAAAAD/v////3////+//3//f/9/////f///////v////3//f////////////7//fwAAAAD/vwAA/3////+///////9/////f///////vwAA/3//f////3//f////z//fwAAAAD/vwAA/3////+//3//f/9/////f///////vwAA/3//f////3//f/9/////fwAAAAD/v////3//f/////////9/////fwAAAAD/v////3//f////3//f/9/////fwAAAAD/vwAA/3//f/////////9/////fwAAAAD/vwAA/3//f////3//f////z//fwAAAAD/v////3////+//////////7//fwAAAAD/v////3////+//3//f////z//fwAAAAD/vwAA/3////+//////////7//fwAAAAD/vwAA/3////+/")
+}]
+blend_shape_mode = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3og3x"]
 size = Vector3(4, 2, 4)
@@ -67,6 +86,9 @@ spot_range = 10.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Stage" parent="Stage Root/Stage" instance=ExtResource("3_gixxu")]
+
+[node name="Platform" parent="Stage Root/Stage/Stage" index="0"]
+mesh = SubResource("ArrayMesh_j76ei")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Stage Root/Stage"]
 shape = SubResource("BoxShape3D_3og3x")
@@ -188,3 +210,5 @@ show_percentage = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gixxu")
+
+[editable path="Stage Root/Stage/Stage"]

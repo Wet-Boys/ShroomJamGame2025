@@ -5,7 +5,9 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_rlj8a")
-shader_parameter/alpha = 0.90999997965968
+shader_parameter/wall_color = Color(0.23910919, 0.56107086, 1, 1)
+shader_parameter/overlay_color = Color(1, 0.40000004, 0, 1)
+shader_parameter/alpha = 0.92999997921264
 shader_parameter/hint_visibility = 0.96999997831856
 shader_parameter/show_mistakes = false
 shader_parameter/mistakes_color = Color(1, 0, 0, 1)
