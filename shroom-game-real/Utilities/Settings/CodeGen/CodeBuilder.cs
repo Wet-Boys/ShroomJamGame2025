@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace SettingsHelper.CodeGen;
+namespace ShroomGameReal.Utilities.Settings.CodeGen;
 
 internal class CodeBuilder
 {

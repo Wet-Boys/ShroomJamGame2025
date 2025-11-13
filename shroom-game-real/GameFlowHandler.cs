@@ -444,6 +444,9 @@ public partial class GameFlowHandler : Node
         {
             DreamTransition.instance.Play();
             await ToSignal(GetTree().CreateTimer(.5f), "timeout");
+        }
+        else
+        {
             MusicManager.Instance.StopDreamMusic();
         }
         gameState.ExitTv();

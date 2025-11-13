@@ -1,8 +1,8 @@
 using Godot;
-using SettingsHelper;
-using SettingsHelper.SettingsEntries;
 using ShroomGameReal.Interactables;
 using ShroomGameReal.Utilities;
+using FloatSettingsEntry = ShroomGameReal.Utilities.Settings.SettingsEntries.FloatSettingsEntry;
+using SettingsManager = ShroomGameReal.Utilities.Settings.SettingsManager;
 
 namespace ShroomGameReal.Player.PlayerStates;
 

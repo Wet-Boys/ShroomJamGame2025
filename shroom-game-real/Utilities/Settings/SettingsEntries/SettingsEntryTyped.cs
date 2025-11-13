@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-namespace SettingsHelper.SettingsEntries;
+namespace ShroomGameReal.Utilities.Settings.SettingsEntries;
 
 public abstract partial class SettingsEntryTyped<[MustBeVariant] T> : SettingsEntry
     where T : IEquatable<T>

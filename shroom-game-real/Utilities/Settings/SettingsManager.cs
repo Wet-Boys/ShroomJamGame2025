@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Godot;
-using SettingsHelper.CodeGen;
-using SettingsHelper.SettingsEntries;
+using ShroomGameReal.Utilities.Settings.CodeGen;
+using ShroomGameReal.Utilities.Settings.SettingsEntries;
 using Tomlet;
 using Tomlet.Models;
 
-namespace SettingsHelper;
+namespace ShroomGameReal.Utilities.Settings;
 
 [Tool]
 [GlobalClass]

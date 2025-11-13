@@ -34,6 +34,17 @@
       <Content Include="scenes\HITW\HoleInTheWallGame.cs.uid" />
       <Content Include="Ui\PauseMenu\SettingsMenuController.cs.uid" />
       <Content Include="Utilities\DirectionalLightHelper.cs.uid" />
+      <Content Include="Utilities\Settings\Icons\bool.svg" />
+      <Content Include="Utilities\Settings\Icons\bool.svg.import" />
+      <Content Include="Utilities\Settings\Icons\float.svg" />
+      <Content Include="Utilities\Settings\Icons\float.svg.import" />
+      <Content Include="Utilities\Settings\Icons\Tools.svg" />
+      <Content Include="Utilities\Settings\Icons\Tools.svg.import" />
+      <Content Include="Utilities\Settings\SettingsManager Singleton.tscn" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="addons\" />
     </ItemGroup>
     
 </Project>

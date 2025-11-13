@@ -1,4 +1,4 @@
-namespace SettingsHelper.CodeGen;
+namespace ShroomGameReal.Utilities.Settings.CodeGen;
 
 internal static class StringUtils
 {

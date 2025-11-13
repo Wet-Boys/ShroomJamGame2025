@@ -2,7 +2,7 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using Godot;
 
-namespace SettingsHelper;
+namespace ShroomGameReal.Utilities.Settings;
 
 internal static class AddonResourceLoader
 {

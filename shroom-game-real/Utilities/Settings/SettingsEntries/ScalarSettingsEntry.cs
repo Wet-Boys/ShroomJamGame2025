@@ -2,7 +2,7 @@ using System;
 using System.Numerics;
 using Godot;
 
-namespace SettingsHelper.SettingsEntries;
+namespace ShroomGameReal.Utilities.Settings.SettingsEntries;
 
 public abstract partial class ScalarSettingsEntry<[MustBeVariant] T> : SettingsEntryTyped<T>
     where T : IComparisonOperators<T, T, bool>, IEquatable<T>

@@ -1,7 +1,7 @@
 using Godot;
 using Tomlet.Models;
 
-namespace SettingsHelper.SettingsEntries;
+namespace ShroomGameReal.Utilities.Settings.SettingsEntries;
 
 [Tool]
 [GlobalClass]
