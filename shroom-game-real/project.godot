@@ -18,9 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 MouseReleaserSingleton="*res://Utilities/MouseReleaser Singleton.tscn"
-SettingsManagerSingleton="*res://addons/settings_helper/SettingsManager Singleton.tscn"
 GlobalGameStateSingleton="*res://Singletons/Global Game State Singleton.tscn"
 MusicManagerSingleton="*res://Music/Music Manager Singleton.tscn"
+SettingsManagerSingleton="*res://Utilities/Settings/SettingsManager Singleton.tscn"
 
 [display]
 

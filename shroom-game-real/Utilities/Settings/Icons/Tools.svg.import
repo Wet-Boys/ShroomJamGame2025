@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdgg5ox3ev8pd"
-path="res://.godot/imported/float.svg-d36a5681f2732ef87e5df859d33409fa.ctex"
+uid="uid://dtjh4sbqwhedc"
+path="res://.godot/imported/Tools.svg-1601ce13ef6f886d8218f2f3f2c6a6a3.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/settings_helper/Icons/float.svg"
-dest_files=["res://.godot/imported/float.svg-d36a5681f2732ef87e5df859d33409fa.ctex"]
+source_file="res://Utilities/Settings/Icons/Tools.svg"
+dest_files=["res://.godot/imported/Tools.svg-1601ce13ef6f886d8218f2f3f2c6a6a3.ctex"]
 
 [params]
 

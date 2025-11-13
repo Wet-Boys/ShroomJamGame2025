@@ -1,6 +1,6 @@
-using SettingsHelper.SettingsEntries;
+using ShroomGameReal.Utilities.Settings.SettingsEntries;
 
-namespace SettingsHelper
+namespace ShroomGameReal.Utilities.Settings
 {
 	public partial class SettingsManager
 	{

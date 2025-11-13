@@ -1,5 +1,5 @@
 using Godot;
-using SettingsHelper;
+using SettingsManager = ShroomGameReal.Utilities.Settings.SettingsManager;
 
 namespace ShroomGameReal.Ui.PauseMenu;
 

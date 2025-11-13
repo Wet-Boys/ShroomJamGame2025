@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtjh4sbqwhedc"
-path="res://.godot/imported/Tools.svg-2d5bc6687744b1119887e679712b3e68.ctex"
+uid="uid://bewk4mgd57qn7"
+path="res://.godot/imported/bool.svg-3eab324226f6c69dbf2481cf3d5dc7d2.ctex"
 metadata={
 "has_editor_variant": true,
 "vram_texture": false
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/settings_helper/Icons/Tools.svg"
-dest_files=["res://.godot/imported/Tools.svg-2d5bc6687744b1119887e679712b3e68.ctex"]
+source_file="res://Utilities/Settings/Icons/bool.svg"
+dest_files=["res://.godot/imported/bool.svg-3eab324226f6c69dbf2481cf3d5dc7d2.ctex"]
 
 [params]
 

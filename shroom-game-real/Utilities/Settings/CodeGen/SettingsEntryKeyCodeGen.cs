@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Godot;
-using SettingsHelper.SettingsEntries;
+using ShroomGameReal.Utilities.Settings.SettingsEntries;
 
-namespace SettingsHelper.CodeGen;
+namespace ShroomGameReal.Utilities.Settings.CodeGen;
 
 internal static class SettingsEntryKeyCodeGen
 {
@@ -13,8 +13,7 @@ internal static class SettingsEntryKeyCodeGen
         if (!Engine.IsEditorHint())
             return;
         
-        var fileLocal = SettingsHelperPlugin.GetPathRelativeToAddon("SettingsManager.Keys.cs");
-        var fullFilePath = ProjectSettings.GlobalizePath(fileLocal);
+        var fullFilePath = ProjectSettings.GlobalizePath("res://Utilities/Settings/SettingsManager.Keys.cs");
 
         if (fullFilePath is null)
         {
@@ -44,8 +43,8 @@ internal static class SettingsEntryKeyCodeGen
         }
 
         var code = new CodeBuilder()
-            .WithNamespace("SettingsHelper")
-            .WithImports("SettingsHelper.SettingsEntries");
+            .WithNamespace("ShroomGameReal.Utilities.Settings")
+            .WithImports("ShroomGameReal.Utilities.Settings.SettingsEntries");
 
         code.AppendLine("public partial class SettingsManager\n{");
 

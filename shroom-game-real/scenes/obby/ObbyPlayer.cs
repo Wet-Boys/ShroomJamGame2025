@@ -1,9 +1,9 @@
 using Godot;
 using System;
-using SettingsHelper;
-using SettingsHelper.SettingsEntries;
 using ShroomGameReal;
 using ShroomGameReal.scenes.obby;
+using FloatSettingsEntry = ShroomGameReal.Utilities.Settings.SettingsEntries.FloatSettingsEntry;
+using SettingsManager = ShroomGameReal.Utilities.Settings.SettingsManager;
 
 public partial class ObbyPlayer : Node3D
 {

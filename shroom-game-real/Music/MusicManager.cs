@@ -1,5 +1,5 @@
 using Godot;
-using SettingsHelper;
+using SettingsManager = ShroomGameReal.Utilities.Settings.SettingsManager;
 
 namespace ShroomGameReal.Music;
 
@@ -49,6 +49,7 @@ public partial class MusicManager : Node
 
     private bool _introRepeatLock;
     private bool _middleRepeatLock;
+    private bool _dreamRepeatLock;
 
     public override void _Ready()
     {

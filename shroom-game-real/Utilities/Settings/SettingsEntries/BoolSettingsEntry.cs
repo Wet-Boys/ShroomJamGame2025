@@ -1,21 +1,15 @@
 using Godot;
 using Tomlet.Models;
 
-namespace SettingsHelper.SettingsEntries;
+namespace ShroomGameReal.Utilities.Settings.SettingsEntries;
 
 [Tool]
 [GlobalClass]
-public partial class FloatSettingsEntry : ScalarSettingsEntry<float>
+public partial class BoolSettingsEntry : SettingsEntryTyped<bool>
 {
     [Export]
-    protected override float DefaultValue { get; set; }
-
-    [Export]
-    public override float Min { get; set; }
-
-    [Export]
-    public override float Max { get; set; }
-
+    protected override bool DefaultValue { get; set; }
+    
     public override void Serialize(TomlDocument document)
     {
         document.Put(Key, Value);
@@ -28,15 +22,15 @@ public partial class FloatSettingsEntry : ScalarSettingsEntry<float>
             GD.PushWarning($"Key '{Key}' not found! skipping entry!");
             return;
         }
-        
+
         var tomlValue = document.GetValue(Key);
 
-        if (tomlValue is TomlDouble tomlDouble)
+        if (tomlValue is TomlBoolean tomlBoolean)
         {
-            Value = (float)tomlDouble.Value;
+            Value = tomlBoolean.Value;
             return;
         }
-        
+
         Value = DefaultValue;
     }
 }
