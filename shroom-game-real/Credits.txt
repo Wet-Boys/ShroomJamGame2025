@@ -14,3 +14,6 @@ Dual Kawase Down - CC0 - https://godotshaders.com/shader/dual-kawase-down-fast-b
 Dual Kawase Up - CC0 - https://godotshaders.com/shader/dual-kawase-up-fast-blur/
 
 Kenny Input Prompts - CC0 - https://kenney.nl/assets/input-prompts
+
+Western Scene (1923) - Zamecnik midi
+sketchfab.com/3d-models/vinesauce-vinnys-vineshroom-befbb6b5c3f44ae8911ba9a0b6b22d00
