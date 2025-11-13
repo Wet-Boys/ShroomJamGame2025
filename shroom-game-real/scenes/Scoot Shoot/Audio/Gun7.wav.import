@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bpyjntiamdtn"
+path="res://.godot/imported/Gun7.wav-8c6ee654406dc897c493683de42be2d0.sample"
+
+[deps]
+
+source_file="res://scenes/Scoot Shoot/Audio/Gun7.wav"
+dest_files=["res://.godot/imported/Gun7.wav-8c6ee654406dc897c493683de42be2d0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

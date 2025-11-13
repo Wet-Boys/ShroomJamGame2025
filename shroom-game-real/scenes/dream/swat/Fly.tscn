@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkni3hugwlk2q"]
 
-[ext_resource type="Texture2D" uid="uid://bp20v24njqckn" path="res://scenes/dream/swat/enemy_game_spider.png" id="1_2rk0w"]
 [ext_resource type="Script" uid="uid://cq2hxtwwj7ynr" path="res://scenes/dream/swat/Fly.cs" id="1_idcaq"]
+[ext_resource type="Texture2D" uid="uid://d1wnlpxfxwssd" path="res://scenes/dream/swat/fly.png" id="2_idcaq"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_2rk0w"]
 radius = 0.231
@@ -26,6 +26,7 @@ shape = SubResource("SphereShape3D_2rk0w")
 transform = Transform3D(0.1, 0, 0, 0, -7.3950827e-07, 0.1, 0, -0.1, -7.3950827e-07, 0, 0, 0)
 
 [node name="Sprite3D" type="Sprite3D" parent="RigidBody3D/CollisionShape3D/Node3D"]
-texture = ExtResource("1_2rk0w")
+transform = Transform3D(0.3632003, 0, 0, 0, 0.3632003, 4.5474735e-13, 0, -4.5474735e-13, 0.3632003, -0.20502448, -0.41976824, -3.1042205e-06)
+texture = ExtResource("2_idcaq")
 
 [node name="StartTimer" type="Timer" parent="."]

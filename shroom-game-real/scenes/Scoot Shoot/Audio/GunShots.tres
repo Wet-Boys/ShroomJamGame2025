@@ -1,0 +1,21 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=9 format=3 uid="uid://cc1ja66ytbyob"]
+
+[ext_resource type="AudioStream" uid="uid://nv0pbgfimmin" path="res://scenes/Scoot Shoot/Audio/Gun1.wav" id="1_1bwet"]
+[ext_resource type="AudioStream" uid="uid://mlnpkgyqrhl2" path="res://scenes/Scoot Shoot/Audio/Gun2.wav" id="2_aiyrq"]
+[ext_resource type="AudioStream" uid="uid://qaefcc387qjn" path="res://scenes/Scoot Shoot/Audio/Gun3.wav" id="3_vohch"]
+[ext_resource type="AudioStream" uid="uid://cpullod8apgnu" path="res://scenes/Scoot Shoot/Audio/Gun4.wav" id="4_cshh0"]
+[ext_resource type="AudioStream" uid="uid://lkgxmrkduvdg" path="res://scenes/Scoot Shoot/Audio/Gun5.wav" id="5_myvk7"]
+[ext_resource type="AudioStream" uid="uid://boxnvls3gwkm2" path="res://scenes/Scoot Shoot/Audio/Gun6.wav" id="6_7sh13"]
+[ext_resource type="AudioStream" uid="uid://bpyjntiamdtn" path="res://scenes/Scoot Shoot/Audio/Gun7.wav" id="7_2jbml"]
+[ext_resource type="AudioStream" uid="uid://s60edqfcuw0n" path="res://scenes/Scoot Shoot/Audio/Gun8.wav" id="8_r2ihs"]
+
+[resource]
+streams_count = 8
+stream_0/stream = ExtResource("1_1bwet")
+stream_1/stream = ExtResource("2_aiyrq")
+stream_2/stream = ExtResource("3_vohch")
+stream_3/stream = ExtResource("4_cshh0")
+stream_4/stream = ExtResource("5_myvk7")
+stream_5/stream = ExtResource("6_7sh13")
+stream_6/stream = ExtResource("7_2jbml")
+stream_7/stream = ExtResource("8_r2ihs")

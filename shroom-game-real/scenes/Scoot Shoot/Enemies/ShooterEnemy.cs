@@ -13,10 +13,10 @@ public partial class ShooterEnemy : RigidBody3D, IHealthProvider
     public float maxDamage = 10f;
 
     [Export]
-    public float minTimeBetweenShots = 3f;
+    public float minTimeBetweenShots = 4f;
 
     [Export]
-    public float maxTimeBetweenShots = 7f;
+    public float maxTimeBetweenShots = 8f;
     
     [Export]
     public float attackDelay = 1f;
@@ -74,7 +74,7 @@ public partial class ShooterEnemy : RigidBody3D, IHealthProvider
         _tween.TweenInterval(attackDelay);
         _tween.TweenCallback(Callable.From(() =>
         {
-            game.DamagePlayer(_rng.RandfRange(minDamage, maxDamage));
+            game.DamagePlayer(100);
             
             _damagePlayerTimer.WaitTime = GetNextShotTime();
             _damagePlayerTimer.Start();

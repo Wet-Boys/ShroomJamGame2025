@@ -14,7 +14,7 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
     public float playerHealth = 100f;
 
     [Export]
-    public float playerDamage = 50f;
+    public float playerDamage = 100f;
     
     [Export]
     public ScootShootStage[] stages = [];
@@ -35,6 +35,8 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
     private RayCast3D _zapperRayCast;
     private PauseMenuController _pauseMenu;
     public MainMenuController mainMenu;
+    [Export]
+    public AudioStreamPlayer gunShots;
 
     public override void _Ready()
     {
@@ -74,6 +76,7 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
     {
         if (GameOver)
             return;
+        gunShots.Play();
         
         playerHealth -= amount;
         if (playerHealth <= 0)
@@ -169,6 +172,7 @@ public partial class ScootShootOnRailsGame : BaseTvGameState
         
         if (@event.IsActionPressed("primary_action"))
         {
+            gunShots.Play();
             _zapperRayCast.ForceRaycastUpdate();
             if (_zapperRayCast.IsColliding())
             {

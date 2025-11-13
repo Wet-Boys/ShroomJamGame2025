@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://foskdcl1e87l"]
 
 [ext_resource type="Script" uid="uid://bjx5xth4yglw6" path="res://scenes/dream/avoid balls/Bussy/Bussy.cs" id="1_hb483"]
-[ext_resource type="PackedScene" uid="uid://1hnxkta2i1yo" path="res://scenes/dream/avoid balls/Bussy/Bussy.glb" id="1_rcf2g"]
+[ext_resource type="PackedScene" uid="uid://blrvih68jdogo" path="res://scenes/froggers/Models/RedCar.glb" id="2_hb483"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hb483"]
 size = Vector3(0.38781738, 0.47265625, 0.8222656)
@@ -19,8 +19,6 @@ axis_lock_angular_z = true
 contact_monitor = true
 max_contacts_reported = 3
 
-[node name="Bussy" parent="RigidBody3D" instance=ExtResource("1_rcf2g")]
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1035156e-05, 0.23144531, 0.06738281)
 shape = SubResource("BoxShape3D_hb483")
@@ -32,3 +30,6 @@ collision_mask = 32
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1035156e-05, 0.23144531, 0.06738281)
 shape = SubResource("BoxShape3D_hb483")
+
+[node name="RedCar" parent="RigidBody3D" instance=ExtResource("2_hb483")]
+transform = Transform3D(0.21004891, 0, 0, 0, 0.21004891, 0, 0, 0, 0.21004891, 0, 0, 0.029140562)

@@ -77,6 +77,8 @@ public partial class GameFlowHandler : Node
     private bool _lowerIsBad;
     public static int completedDreamLevels = 0;
     private double _timerMultiplier = 1;
+    [Export] public AudioStreamPlayer cough;
+    [Export] public AudioStreamPlayer yawn;
 
     public static int Lives
     {
@@ -110,6 +112,7 @@ public partial class GameFlowHandler : Node
             case CurrentTime.Time8Am:
                 MusicManager.Instance.StartIntroSong();
                 PlayerController.instance.visualHandler.CoughingBaby();
+                cough.Play();
                 SetObjectiveText("Put on the game shows");
                 LoadScene(CurrentTime.Time10Am);
                 break;
@@ -130,6 +133,7 @@ public partial class GameFlowHandler : Node
                 LoadScene(CurrentTime.Time12Am);
                 SetObjectiveText("Turn off the TV and head to bed");
                 PlayerController.instance.visualHandler.Yawn();
+                yawn.Play();
                 MusicManager.Instance.DuckOverworldMusic();
                 break;
             case CurrentTime.RandomMinigame:

@@ -60,25 +60,25 @@ projection = 0
 fov = 66.5
 
 [node name="Ball" parent="." instance=ExtResource("4_46cp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3451185, 1.547334, 4.3805323)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.008193, 1.547334, 4.842498)
 
 [node name="Ball2" parent="." instance=ExtResource("4_46cp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4539804, 1.547334, -3.8929825)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.083858, 1.547334, -4.894679)
 
 [node name="Ball3" parent="." instance=ExtResource("4_46cp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.736472, 1.547334, -4.292144)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12866, 1.547334, -4.920326)
 
 [node name="Ball4" parent="." instance=ExtResource("4_46cp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2626386, 1.547334, 4.07209)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.179445, 1.547334, 4.9379635)
 
 [node name="Ball7" parent="." instance=ExtResource("4_46cp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.530752, 1.547334, -4.3465743)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.096111, 1.547334, -3.3958116)
 
 [node name="Ball8" parent="." instance=ExtResource("4_46cp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7043796, 1.547334, 4.0176597)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.167871, 1.547334, 3.6101904)
 
 [node name="Ball5" parent="." instance=ExtResource("4_46cp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.371501, 1.547334, -0.35496712)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.152485, 1.547334, -3.5977466)
 
 [node name="Ball6" parent="." instance=ExtResource("4_46cp5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6717043, 1.547334, -0.010237485)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.995982, 1.547334, 3.4872105)

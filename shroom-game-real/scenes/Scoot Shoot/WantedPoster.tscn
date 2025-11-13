@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvo8a6c3tekgw"]
+
+[ext_resource type="Texture2D" uid="uid://cp42vrtswrvnk" path="res://scenes/Scoot Shoot/WantedPoster.jpg" id="1_x75mp"]
+
+[node name="Sprite3D" type="Sprite3D"]
+transform = Transform3D(0.07947481, 0, 0, 0, 0.07947481, 0, 0, 0, 0.07947481, 0, 0, 0)
+texture = ExtResource("1_x75mp")

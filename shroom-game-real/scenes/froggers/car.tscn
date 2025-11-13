@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://b743b0qfg0ksp"]
+[gd_scene load_steps=5 format=3 uid="uid://b743b0qfg0ksp"]
 
 [ext_resource type="PackedScene" uid="uid://ba6donuxbdwlb" path="res://scenes/froggers/Car.glb" id="1_6p6c1"]
 [ext_resource type="Script" uid="uid://cx7liehhf2upp" path="res://scenes/froggers/CarLogMover.cs" id="1_squox"]
+[ext_resource type="PackedScene" uid="uid://blrvih68jdogo" path="res://scenes/froggers/Models/RedCar.glb" id="3_emwk1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6p6c1"]
-size = Vector3(1.9849854, 1.9848022, 2.0111084)
+size = Vector3(1.9849854, 1.9848022, 3.7904816)
 
 [node name="Car" type="Node3D"]
 script = ExtResource("1_squox")
 
 [node name="Car" parent="." instance=ExtResource("1_6p6c1")]
+visible = false
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 32
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008972168, 0.004547119, -0.0051879883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008972168, 0.004547119, -0.03551483)
 shape = SubResource("BoxShape3D_6p6c1")
+
+[node name="RedCar" parent="." instance=ExtResource("3_emwk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8941467, -0.19659996)

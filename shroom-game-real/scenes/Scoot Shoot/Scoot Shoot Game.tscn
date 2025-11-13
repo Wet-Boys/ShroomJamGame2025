@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://l0o5yekikrdc"]
+[gd_scene load_steps=34 format=3 uid="uid://l0o5yekikrdc"]
 
 [ext_resource type="Script" uid="uid://bfpku0gl8etli" path="res://scenes/Scoot Shoot/ScootShootOnRailsGame.cs" id="1_eqt36"]
 [ext_resource type="PackedScene" uid="uid://dlkdxx6x5qj3l" path="res://scenes/Scoot Shoot/Models/Straight Hall.glb" id="1_ex37d"]
@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://d2w7jlt7wv4qj" path="res://scenes/Scoot Shoot/ScootShootStage.cs" id="10_x81cp"]
 [ext_resource type="Script" uid="uid://boyg2gdep7c4m" path="res://scenes/Scoot Shoot/Main Menu/MainMenuController.cs" id="11_d7sgu"]
 [ext_resource type="Texture2D" uid="uid://bhaj4ucy7mh1s" path="res://scenes/Scoot Shoot/Main Menu/Scoot pog.png" id="11_e6wbm"]
+[ext_resource type="PackedScene" uid="uid://dvo8a6c3tekgw" path="res://scenes/Scoot Shoot/WantedPoster.tscn" id="11_k2lld"]
 [ext_resource type="PackedScene" uid="uid://celiusalnueaq" path="res://scenes/Scoot Shoot/Models/Horse.tscn" id="13_0elft"]
 [ext_resource type="FontFile" uid="uid://cicwamu45tttv" path="res://scenes/Scoot Shoot/Main Menu/Fonts/Arbutus/Arbutus-Regular.ttf" id="13_0s1lt"]
 [ext_resource type="Theme" uid="uid://8m3ndueviodv" path="res://scenes/Scoot Shoot/Main Menu/Scoot Shoot Main Menu Theme.tres" id="14_0s1lt"]
@@ -24,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://ic6ww30ehsrl" path="res://scenes/Scoot Shoot/Models/Carriage.glb" id="15_f43bh"]
 [ext_resource type="PackedScene" uid="uid://b603g6er0n84e" path="res://scenes/Scoot Shoot/Models/Tumble Weed.tscn" id="16_8aqhd"]
 [ext_resource type="PackedScene" uid="uid://b2cvts1aj6yfw" path="res://scenes/Scoot Shoot/Models/Saloon.glb" id="17_jgbeg"]
+[ext_resource type="AudioStream" uid="uid://cc1ja66ytbyob" path="res://scenes/Scoot Shoot/Audio/GunShots.tres" id="26_72moq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_k2yoo"]
 size = Vector2(500, 500)
@@ -67,9 +69,10 @@ font_color = Color(0, 0.75, 1, 1)
 shadow_size = 26
 shadow_color = Color(0.13, 0.13, 0.13, 1)
 
-[node name="ScootShootGame" type="Node3D" node_paths=PackedStringArray("stages")]
+[node name="ScootShootGame" type="Node3D" node_paths=PackedStringArray("stages", "gunShots")]
 script = ExtResource("1_eqt36")
 stages = [NodePath("Stages/Stage 1"), NodePath("Stages/Stage 2"), NodePath("Stages/Stage 3")]
+gunShots = NodePath("AudioStreamPlayer")
 metadata/_custom_type_script = "uid://bfpku0gl8etli"
 
 [node name="Zapper RayCast" type="RayCast3D" parent="."]
@@ -237,6 +240,32 @@ transform = Transform3D(9.68835, 0, 0, 0, 9.68835, 0, 0, 0, 9.68835, -185.84944,
 
 [node name="Horse" parent="Level Real/Walls" instance=ExtResource("13_0elft")]
 transform = Transform3D(-1.4651093e-07, 0, -3.351779, 0, 3.351779, 0, 3.351779, 0, -1.4651093e-07, -178.09006, -15, 91.59357)
+
+[node name="Posters" type="Node3D" parent="Level Real"]
+
+[node name="Sprite3D" parent="Level Real/Posters" instance=ExtResource("11_k2lld")]
+transform = Transform3D(6.0001812e-09, 0, -0.07947481, 0, 0.07947481, 0, 0.07947481, 0, 6.0001812e-09, 12.098644, 3.6503148, -48.456158)
+
+[node name="Sprite3D2" parent="Level Real/Posters" instance=ExtResource("11_k2lld")]
+transform = Transform3D(3.0000906e-09, 0, -0.039737403, 0, 0.039737403, 0, 0.039737403, 0, 3.0000906e-09, 10.008502, 3.6503148, -31.339073)
+
+[node name="Sprite3D3" parent="Level Real/Posters" instance=ExtResource("11_k2lld")]
+transform = Transform3D(3.0000906e-09, 0, -0.039737403, 0, 0.039737403, 0, 0.039737403, 0, 3.0000906e-09, 10.132752, 3.6503167, -3.2975655)
+
+[node name="Sprite3D4" parent="Level Real/Posters" instance=ExtResource("11_k2lld")]
+transform = Transform3D(-0.039737403, 0, -6.0001812e-09, 0, 0.039737403, 0, 6.0001812e-09, 0, -0.039737403, 3.1297307, 3.6503167, 25.133636)
+
+[node name="Sprite3D5" parent="Level Real/Posters" instance=ExtResource("11_k2lld")]
+transform = Transform3D(-0.039737403, 0, -6.0001812e-09, 0, 0.039737403, 0, 6.0001812e-09, 0, -0.039737403, 1.0657043, 3.6503172, 41.295216)
+
+[node name="Sprite3D6" parent="Level Real/Posters" instance=ExtResource("11_k2lld")]
+transform = Transform3D(-1.7369771e-09, 0, 0.039737403, 0, 0.039737403, 0, -0.039737403, 0, -1.7369771e-09, -69.1778, 3.6503172, 14.227532)
+
+[node name="Sprite3D7" parent="Level Real/Posters" instance=ExtResource("11_k2lld")]
+transform = Transform3D(0.039737403, 0, 1.110223e-16, 0, 0.039737403, 0, -1.110223e-16, 0, 0.039737403, -41.712635, 3.6503181, 4.7816286)
+
+[node name="Sprite3D8" parent="Level Real/Posters" instance=ExtResource("11_k2lld")]
+transform = Transform3D(-1.7369771e-09, 0, 0.039737403, 0, 0.039737403, 0, -0.039737403, 0, -1.7369771e-09, -11.412964, 3.6503181, -3.862669)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1lmy4")
@@ -644,6 +673,10 @@ texture = ExtResource("8_eqt36")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.8660254, -0.4330127, -0.25000003, 0, -0.50000006, 0.8660254, -0.5, -0.75, -0.43301275, 0, 20, 0)
 light_color = Color(1, 0.862, 0.53999996, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("26_72moq")
+bus = &"SFX"
 
 [connection signal="pressed" from="UI Root/Main Menu/VBoxContainer/Start Button" to="UI Root/Main Menu" method="OnStartPressed"]
 [connection signal="pressed" from="UI Root/Main Menu/VBoxContainer/Quit Button" to="UI Root/Main Menu" method="OnQuitPressed"]

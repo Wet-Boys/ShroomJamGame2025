@@ -157,24 +157,31 @@ current = true
 
 [node name="SpawnSounds" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_cgjio")
+bus = &"SFX"
 
 [node name="SpawnNumber10" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_r5waj")
+bus = &"SFX"
 
 [node name="SpawnNumber20" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_xvp40")
+bus = &"SFX"
 
 [node name="SpawnNumber7" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_cvsi3")
+bus = &"SFX"
 
 [node name="Hit" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_51kvk")
+bus = &"SFX"
 
 [node name="Death" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_gssbo")
+bus = &"SFX"
 
 [node name="Idle" type="AudioStreamPlayer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 stream = SubResource("AudioStreamRandomizer_ktknw")
+bus = &"SFX"
 
 [node name="SteamAudioListener" type="SteamAudioListener" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
 
@@ -199,3 +206,4 @@ shape = SubResource("CapsuleShape3D_bn54t")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("40_a12he")
 volume_db = 3.0
+bus = &"SFX"

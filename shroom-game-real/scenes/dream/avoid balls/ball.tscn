@@ -1,13 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf3m7bxsj4cd8"]
+[gd_scene load_steps=8 format=3 uid="uid://bf3m7bxsj4cd8"]
 
 [ext_resource type="PackedScene" uid="uid://cr0kv1ct0cqkj" path="res://scenes/dream/avoid balls/Ball.glb" id="1_hoelo"]
 [ext_resource type="Script" uid="uid://bdy4cr6wx2io5" path="res://scenes/dream/avoid balls/Ball.cs" id="1_ubt56"]
+[ext_resource type="Material" uid="uid://dystsjvjfj08q" path="res://scenes/obby/red.tres" id="3_jgqim"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hoelo"]
 bounce = 1.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ubt56"]
 radius = 0.6929842
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8hke"]
+albedo_color = Color(0.83734995, 0.29221436, 0.29153126, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_m80bg"]
+material = SubResource("StandardMaterial3D_m8hke")
+radius = 0.693
+height = 1.386
 
 [node name="Ball" type="Node3D" node_paths=PackedStringArray("_rigidBody3D")]
 script = ExtResource("1_ubt56")
@@ -23,3 +32,8 @@ physics_material_override = SubResource("PhysicsMaterial_hoelo")
 shape = SubResource("SphereShape3D_ubt56")
 
 [node name="Ball" parent="RigidBody3D" instance=ExtResource("1_hoelo")]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+material_override = ExtResource("3_jgqim")
+mesh = SubResource("SphereMesh_m80bg")
