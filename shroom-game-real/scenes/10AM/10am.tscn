@@ -1,9 +1,9 @@
-[gd_scene load_steps=27 format=4 uid="uid://ckbq3521r8wcp"]
+[gd_scene load_steps=26 format=4 uid="uid://ckbq3521r8wcp"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_632cx"]
-[ext_resource type="PackedScene" uid="uid://c3lqsowth1x4l" path="res://scenes/overworld/OverworldEnvironment Prefab.tscn" id="3_8qw3q"]
 [ext_resource type="PackedScene" uid="uid://btcc4r2khe584" path="res://scenes/10AM/Widnow Frame Shadow Cast.glb" id="3_yspwh"]
 [ext_resource type="Material" uid="uid://dqgh45ow7ygkh" path="res://addons/light_shafts/default_light_shaft.material" id="4_7lgly"]
+[ext_resource type="Script" uid="uid://d4pd8jdgfayc" path="res://Utilities/DirectionalLightHelper.cs" id="4_efv43"]
 [ext_resource type="LightmapGIData" uid="uid://bjb3jkygp680m" path="res://scenes/10AM/10am.lmbake" id="4_gg2yc"]
 [ext_resource type="Script" uid="uid://bslqtjuwuelro" path="res://addons/light_shafts/light_shaft_3d.gd" id="4_ras1b"]
 [ext_resource type="Script" uid="uid://c1u7eyhigk821" path="res://addons/light_shafts/local_transform_listener.gd" id="6_85las"]
@@ -16,32 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://soh8mr608bwy" path="res://scenes/10AM/Slavic Tv_tv_02_tv_out_Normal.png" id="14_7lgly"]
 [ext_resource type="PackedScene" uid="uid://bhxxomuj2livf" path="res://scenes/non_core.tscn" id="15_4aeh5"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jskvd"]
-
-[sub_resource type="Sky" id="Sky_qv1eo"]
-sky_material = SubResource("ProceduralSkyMaterial_jskvd")
-
-[sub_resource type="Environment" id="Environment_7lgly"]
-resource_local_to_scene = true
-background_mode = 2
-sky = SubResource("Sky_qv1eo")
-tonemap_mode = 3
-tonemap_exposure = 1.1
-ssao_enabled = true
-ssil_intensity = 6.42
-glow_enabled = true
-glow_levels/2 = 0.54
-glow_levels/4 = 0.85
-glow_intensity = 3.62
-glow_strength = 0.37
-glow_bloom = 0.03
-glow_blend_mode = 0
-volumetric_fog_density = 0.06
-volumetric_fog_albedo = Color(0.60933006, 0.6093301, 0.60933006, 1)
-volumetric_fog_temporal_reprojection_amount = 0.85
-adjustment_enabled = true
-adjustment_saturation = 1.5
-
 [sub_resource type="BoxMesh" id="BoxMesh_7lgly"]
 size = Vector3(50, 1, 50)
 
@@ -53,8 +27,8 @@ size = Vector3(1, 50, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5hcka"]
 _surfaces = [{
-"aabb": AABB(0, -2.704412, -1.275, 5.3148346, 8.204412, 2.5500004),
-"attribute_data": PackedByteArray("//+gCQAAAAAAAIA///+gCQAAAAAAAAAA//+gCQAAAAAAAIA///+gCQAAAAAAAAAA//+gCQAAAAAAAIA///+gCQAAAAAAAAAA//+gCQAAAAAAAIA///+gCQAAAAAAAAAA//+gCQAAAAAAAIA///+gCQAAAAAAAAAA"),
+"aabb": AABB(-0.12086201, -4.7661204, -2.4607623, 2.6697187, 9.966118, 3.7014358),
+"attribute_data": PackedByteArray("//3gFAAAAAAAAIA///3gFAAAAAAAAAAA//3gFAAAAAAAAIA///3gFAAAAAAAAAAA//3gFAAAAAAAAIA///3gFAAAAAAAAAAA//3gFAAAAAAAAIA///3gFAAAAAAAAAAA//3gFAAAAAAAAIA///3gFAAAAAAAAAAA"),
 "format": 34359742495,
 "index_count": 24,
 "index_data": PackedByteArray("AAABAAIAAgABAAMAAgADAAQABAADAAUABAAFAAYABgAFAAcABgAHAAgACAAHAAkA"),
@@ -62,13 +36,35 @@ _surfaces = [{
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 10,
-"vertex_data": PackedByteArray("AAAAADAzsz4wM6M/IBOqQBYVLcA3M6M/AAAAAAAAsEAwM6M/IBOqQISEHEA3M6M/AAAAAAAAsEAzM6O/IBOqQISEHEAsM6O/AAAAADAzsz4zM6O/IBOqQBYVLcAsM6O/AAAAADAzsz4wM6M/IBOqQBYVLcA3M6M//3+Rm9p4lZD/f5Gb2niVkP9/6OduHFK9/3/o524cUr0WmP//WQXHsRaY//9ZBcexbeT//9JekoNt5P//0l6Sg/9/kZvaeJWQ/3+Rm9p4lZA=")
+"vertex_data": PackedByteArray("gIb3vbTMzD6Y7l2/eCAjQA+EmMB5DxbAgIb3vWFmpkA4pXu/eCAjQIDDCj0hfR3AgIb3vWJmpkDcpXs/eCAjQADECj3gUv2+gIb3vbTMzD5kzp4/eCAjQA+EmMAQynK+gIb3vbTMzD6Y7l2/eCAjQA+EmMB5DxbA5CTZ9ExJIYzkJNn0TEkhjJVpiv0HBlizlWmK/QcGWLOLfZXpkhn2vIt9lemSGfa8N3cQnWN/z483dxCdY3/Pj+Qk2fRMSSGM5CTZ9ExJIYw=")
 }]
 
-[sub_resource type="Curve3D" id="Curve3D_1a0qa"]
+[sub_resource type="Curve3D" id="Curve3D_ras1b"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.35, 1.275, 0, 0, 0, 0, 0, 0, 0, 5.5, 1.275, 0, 0, 0, 0, 0, 0, 0, 5.5, -1.275, 0, 0, 0, 0, 0, 0, 0, 0.35, -1.275),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.39999962, -0.8669224, 0, 0, 0, 0, 0, 0, 0, 5.1999993, -0.9829898, 0, 0, 0, 0, 0, 0, 0, 5.2, 0.983, 0, 0, 0, 0, 0, 0, 0, 0.39999962, 1.240674),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_efv43"]
+_surfaces = [{
+"aabb": AABB(-0.12100029, -4.7682858, -1.9671382, 2.6660652, 10.068285, 3.0334191),
+"attribute_data": PackedByteArray("//3gFAAAAAAAAIA///3gFAAAAAAAAAAA//3gFAAAAAAAAIA///3gFAAAAAAAAAAA//3gFAAAAAAAAIA///3gFAAAAAAAAAAA//3gFAAAAAAAAIA///3gFAAAAAAAAAAA//3gFAAAAAAAAIA///3gFAAAAAAAAAAA"),
+"format": 34359742495,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAgADAAQABAADAAUABAAFAAYABgAFAAcABgAHAAgACAAHAAkA"),
+"material": ExtResource("4_7lgly"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("AM/3vcDMzD7oYce+WOIiQMyVmMAX4O6/AM/3vZSZqUBIDvu+WOIiQIDfBj4vy/u/AM/3vZeZqUAYBIY/WOIiQODfBj4UDty+AM/3vcDMzD7ke4g/WOIiQMyVmMDkLtK+AM/3vcDMzD7oYce+WOIiQMyVmMAX4O6/PDj77rMuLJg8OPvusy4smMJyYP2RA/u4wnJg/ZED+7iafeHogBrYvJp94eiAGti8PXZBoJt9OpI9dkGgm306kjw4++6zLiyYPDj77rMuLJg=")
+}]
+
+[sub_resource type="Curve3D" id="Curve3D_efv43"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0.39999962, -0.38941884, 0, 0, 0, 0, 0, 0, 0, 5.2999983, -0.49034333, 0, 0, 0, 0, 0, 0, 0, 5.3, 1.047, 0, 0, 0, 0, 0, 0, 0, 0.39999986, 1.0662808),
 "tilts": PackedFloat32Array(0, 0, 0, 0)
 }
 point_count = 4
@@ -129,9 +125,6 @@ blend_shape_mode = 0
 
 [node name="Room-core" parent="." instance=ExtResource("1_632cx")]
 
-[node name="OverworldEnvironment" parent="Room-core" instance=ExtResource("3_8qw3q")]
-environment = SubResource("Environment_7lgly")
-
 [node name="Shadow Fixes" type="Node3D" parent="Room-core"]
 transform = Transform3D(0.76511085, 0, 0, 0, 0.76511085, 0, 0, 0, 0.76511085, 0, 0, 0)
 
@@ -151,8 +144,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 12)
 cast_shadow = 3
 mesh = SubResource("BoxMesh_5hcka")
 
+[node name="Non-Core" parent="." instance=ExtResource("15_4aeh5")]
+transform = Transform3D(1.307, 0, 0, 0, 1.307, 0, 0, 0, 1.307, 0, 0, 0)
+
 [node name="Window Light Dir" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -902.3934, 510.3354, -4.371139e-05)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -469.38065, 876.36053, 249.72998)
 
 [node name="origin" type="Marker3D" parent="Window Light Dir"]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 0, 4.277)
@@ -162,15 +158,38 @@ script = ExtResource("6_85las")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.184)
 script = ExtResource("6_85las")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.49999997, 1.5999477e-08, -0.8660253, 0.8660253, -5.971087e-08, 0.49999997, -4.371139e-08, -1, -4.371139e-08, -36.367996, 10.335394, 6.3948846e-14)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." node_paths=PackedStringArray("LightShafts", "Lights")]
+transform = Transform3D(0.50000006, 0.75, -0.43301263, 7.704457e-09, 0.4999999, 0.8660255, 0.86602545, -0.43301275, 0.25, -36.368, 10.335, -0.27)
+light_color = Color(1, 0.99215686, 0.8784314, 1)
 light_energy = 5.0
 light_indirect_energy = 20.0
 light_bake_mode = 1
 shadow_enabled = true
+script = ExtResource("4_efv43")
+LightShafts = [NodePath("../Window Frame Shadow Cast/LightShaft3D"), NodePath("../Window Frame Shadow Cast2/LightShaft3D")]
+Length = 6.0
+Opacity = 0.08
+Lights = [NodePath("../Window Frame Shadow Cast/Window Light"), NodePath("../Window Frame Shadow Cast2/Window Light"), NodePath("Day Room Lighting")]
+metadata/_custom_type_script = "uid://d4pd8jdgfayc"
+
+[node name="Day Room Lighting" type="SpotLight3D" parent="DirectionalLight3D"]
+transform = Transform3D(-1.620008e-08, 0.8393543, -0.5435848, 2.5014703e-08, 0.5435848, 0.8393543, 1, -7.1054274e-15, -2.9802315e-08, -12.156842, 8.286969, -0.59746194)
+top_level = true
+light_color = Color(1, 0.99215686, 0.8784314, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 72.9742
+spot_angle = 51.55
 
 [node name="Light Remote" type="RemoteTransform3D" parent="DirectionalLight3D"]
-remote_path = NodePath("../../Spot Lights/SpotLight3D")
+remote_path = NodePath("../../Window Frame Shadow Cast/Window Light")
+update_position = false
+update_scale = false
+
+[node name="Light Remote2" type="RemoteTransform3D" parent="DirectionalLight3D"]
+remote_path = NodePath("../../Window Frame Shadow Cast2/Window Light")
 update_position = false
 update_scale = false
 
@@ -180,74 +199,87 @@ remote_path = NodePath("../../Window Light Dir")
 update_rotation = false
 update_scale = false
 
-[node name="Widnow Frame Shadow Cast" parent="." instance=ExtResource("3_yspwh")]
-transform = Transform3D(1.307, 0, 0, 0, 1.307, 0, 0, 0, 1.307, -18.542059, 2.3899448, -6.1836863)
+[node name="Window Frame Shadow Cast" parent="." instance=ExtResource("3_yspwh")]
+transform = Transform3D(1.307, 0, 0, 0, 1.307, 0, 0, 0, 1.307, -17.735, 2.39, -6.454)
 
-[node name="Top Frame" parent="Widnow Frame Shadow Cast" index="0"]
+[node name="Top Frame" parent="Window Frame Shadow Cast" index="0"]
 cast_shadow = 3
 
-[node name="Widnow Frame Shadow Cast2" parent="Widnow Frame Shadow Cast" instance=ExtResource("3_yspwh")]
+[node name="Widnow Frame Shadow Cast2" parent="Window Frame Shadow Cast" instance=ExtResource("3_yspwh")]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -2.5849316, 0)
 
-[node name="Top Frame" parent="Widnow Frame Shadow Cast/Widnow Frame Shadow Cast2" index="0"]
+[node name="Top Frame" parent="Window Frame Shadow Cast/Widnow Frame Shadow Cast2" index="0"]
 cast_shadow = 3
 
-[node name="LightShaft3D" type="MeshInstance3D" parent="Widnow Frame Shadow Cast" node_paths=PackedStringArray("outline", "origin")]
+[node name="LightShaft3D" type="MeshInstance3D" parent="Window Frame Shadow Cast" node_paths=PackedStringArray("outline", "origin")]
+gi_mode = 0
 mesh = SubResource("ArrayMesh_5hcka")
 script = ExtResource("4_ras1b")
-outline = NodePath("Path3D")
+outline = NodePath("outline")
 origin = NodePath("../../Window Light Dir/origin2")
-length = 6.13
+length = 6.0
 spread = false
-color = Color(1, 1, 0.627451, 0.03529412)
+color = Color(1, 0.99215686, 0.8784314, 0.08)
 uv_tile_count = 0
 metadata/_custom_type_script = "uid://bslqtjuwuelro"
 
-[node name="Path3D" type="Path3D" parent="Widnow Frame Shadow Cast/LightShaft3D"]
-curve = SubResource("Curve3D_1a0qa")
-metadata/_edit_group_ = true
+[node name="outline" type="Path3D" parent="Window Frame Shadow Cast/LightShaft3D"]
+transform = Transform3D(0.9999997, 0, 0, 0, 0.9999997, 0, 0, 0, 0.9999997, -0.12086201, 0, 0)
+curve = SubResource("Curve3D_ras1b")
+script = ExtResource("6_85las")
 
-[node name="Widnow Frame Shadow Cast2" parent="." instance=ExtResource("3_yspwh")]
-transform = Transform3D(1.307, 0, 0, 0, 1.307, 0, 0, 0, 1.307, -18.542059, 2.3899448, 4.2771025)
-
-[node name="Top Frame" parent="Widnow Frame Shadow Cast2" index="0"]
-cast_shadow = 3
-
-[node name="Widnow Frame Shadow Cast2" parent="Widnow Frame Shadow Cast2" instance=ExtResource("3_yspwh")]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -2.5849316, 0)
-
-[node name="Top Frame" parent="Widnow Frame Shadow Cast2/Widnow Frame Shadow Cast2" index="0"]
-cast_shadow = 3
-
-[node name="LightShaft3D" type="MeshInstance3D" parent="Widnow Frame Shadow Cast2" node_paths=PackedStringArray("outline", "origin")]
-mesh = SubResource("ArrayMesh_5hcka")
-script = ExtResource("4_ras1b")
-outline = NodePath("Path3D")
-origin = NodePath("../../Window Light Dir/origin")
-length = 6.13
-spread = false
-color = Color(1, 1, 0.627451, 0.03529412)
-uv_tile_count = 0
-metadata/_custom_type_script = "uid://bslqtjuwuelro"
-
-[node name="Path3D" type="Path3D" parent="Widnow Frame Shadow Cast2/LightShaft3D"]
-curve = SubResource("Curve3D_1a0qa")
-metadata/_edit_group_ = true
-
-[node name="Spot Lights" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31289196, 0, 0)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="Spot Lights"]
-transform = Transform3D(0.5, 1.5999477e-08, -0.8660254, 0.8660254, -5.971087e-08, 0.5, -4.3711392e-08, -1, -4.371139e-08, -18.48133, 9.408583, -1)
+[node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast"]
+transform = Transform3D(0.38255548, 0.57383317, -0.33130267, 5.8947633e-09, 0.38255537, 0.6626055, 0.66260546, -0.3313028, 0.1912777, 0.11487198, 2.8878884, 0.09597254)
+light_color = Color(1, 0.99215686, 0.8784314, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
 light_bake_mode = 1
 shadow_enabled = true
-spot_range = 39.71554
-spot_angle = 73.258865
+spot_range = 50.0
+spot_angle = 29.0
+
+[node name="Window Frame Shadow Cast2" parent="." instance=ExtResource("3_yspwh")]
+transform = Transform3D(1.307, 0, 0, 0, 1.307, 0, 0, 0, 1.307, -18.542059, 2.3899448, 4.2771025)
+
+[node name="Top Frame" parent="Window Frame Shadow Cast2" index="0"]
+cast_shadow = 3
+
+[node name="Widnow Frame Shadow Cast2" parent="Window Frame Shadow Cast2" instance=ExtResource("3_yspwh")]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, -2.5849316, 0)
+
+[node name="Top Frame" parent="Window Frame Shadow Cast2/Widnow Frame Shadow Cast2" index="0"]
+cast_shadow = 3
+
+[node name="LightShaft3D" type="MeshInstance3D" parent="Window Frame Shadow Cast2" node_paths=PackedStringArray("outline", "origin")]
+gi_mode = 0
+mesh = SubResource("ArrayMesh_efv43")
+script = ExtResource("4_ras1b")
+outline = NodePath("outline")
+origin = NodePath("../../Window Light Dir/origin")
+length = 6.0
+spread = false
+color = Color(1, 0.99215686, 0.8784314, 0.08)
+uv_tile_count = 0
+metadata/_custom_type_script = "uid://bslqtjuwuelro"
+
+[node name="outline" type="Path3D" parent="Window Frame Shadow Cast2/LightShaft3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, -0.121, 0, 0)
+curve = SubResource("Curve3D_efv43")
+script = ExtResource("6_85las")
+
+[node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast2"]
+transform = Transform3D(0.38255548, 0.57383317, -0.33130267, 5.8947633e-09, 0.38255537, 0.6626055, 0.66260546, -0.3313028, 0.1912777, 0.114871025, 2.8878884, 0.09597254)
+light_color = Color(1, 0.99215686, 0.8784314, 1)
+light_energy = 7.0
+light_indirect_energy = 16.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 50.0
+spot_angle = 29.0
 
 [node name="Slavic Tv - Lightmap Baking" parent="." instance=ExtResource("8_yk5iw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.507, 1.836, -11.147)
+visible = false
 
 [node name="Slavic_Tv_Mesh" parent="Slavic Tv - Lightmap Baking/Slavic Tv2" index="0"]
 mesh = SubResource("ArrayMesh_85las")
@@ -267,113 +299,8 @@ box_projection = true
 interior = true
 enable_shadows = true
 
-[node name="Light Probes" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.135262, 0, -1.3009186)
-
-[node name="LightmapProbe" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
-
-[node name="LightmapProbe13" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -3)
-
-[node name="LightmapProbe14" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -3)
-
-[node name="LightmapProbe15" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -3)
-
-[node name="LightmapProbe2" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
-
-[node name="LightmapProbe3" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
-
-[node name="LightmapProbe4" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -6)
-
-[node name="LightmapProbe5" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5)
-
-[node name="LightmapProbe6" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4)
-
-[node name="LightmapProbe7" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -4)
-
-[node name="LightmapProbe8" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -5)
-
-[node name="LightmapProbe9" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6)
-
-[node name="LightmapProbe10" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -7)
-
-[node name="LightmapProbe11" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -7)
-
-[node name="LightmapProbe12" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -7)
-
-[node name="LightmapProbe16" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.5159473)
-
-[node name="LightmapProbe17" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 7.5159473)
-
-[node name="LightmapProbe18" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 7.5159473)
-
-[node name="LightmapProbe19" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 7.5159473)
-
-[node name="LightmapProbe20" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.5159473)
-
-[node name="LightmapProbe21" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.5159473)
-
-[node name="LightmapProbe22" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 4.5159473)
-
-[node name="LightmapProbe23" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5.5159473)
-
-[node name="LightmapProbe24" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 6.5159473)
-
-[node name="LightmapProbe25" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 6.5159473)
-
-[node name="LightmapProbe26" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 5.5159473)
-
-[node name="LightmapProbe27" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.5159473)
-
-[node name="LightmapProbe28" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 3.5159473)
-
-[node name="LightmapProbe29" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 3.5159473)
-
-[node name="LightmapProbe30" type="LightmapProbe" parent="Light Probes"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 3.5159473)
-
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.7071068, -0.35355335, -0.61237246, 0, -0.8660255, 0.49999988, -0.7071068, -0.35355335, -0.6123725, 9.417459, 10.855734, -18.774652)
-light_energy = 16.0
-light_indirect_energy = 0.0
-light_bake_mode = 1
-shadow_enabled = true
-spot_range = 71.48809
-spot_angle = 40.75
-
-[node name="Non-Core" parent="." instance=ExtResource("15_4aeh5")]
-transform = Transform3D(1.307, 0, 0, 0, 1.307, 0, 0, 0, 1.307, 0, 0, 0)
-
-[editable path="Widnow Frame Shadow Cast"]
-[editable path="Widnow Frame Shadow Cast/Widnow Frame Shadow Cast2"]
-[editable path="Widnow Frame Shadow Cast2"]
-[editable path="Widnow Frame Shadow Cast2/Widnow Frame Shadow Cast2"]
+[editable path="Window Frame Shadow Cast"]
+[editable path="Window Frame Shadow Cast/Widnow Frame Shadow Cast2"]
+[editable path="Window Frame Shadow Cast2"]
+[editable path="Window Frame Shadow Cast2/Widnow Frame Shadow Cast2"]
 [editable path="Slavic Tv - Lightmap Baking"]
