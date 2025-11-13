@@ -11,7 +11,7 @@ public partial class TvGamePlayerState : BasePlayerState
     
     [ExportGroup("Fog")]
     [Export]
-    public FogMaterial backgroundFogMaterial;
+    public ShaderMaterial backgroundFogMaterial;
     
     [Export]
     public float enterDensity = 3f;
@@ -33,10 +33,9 @@ public partial class TvGamePlayerState : BasePlayerState
         Camera.Fov = fov;
         
         _tween?.Kill();
-        _tween = CreateTween();
+        _tween = CreateTween().SetParallel();
 
-        _tween.TweenProperty(backgroundFogMaterial, "density", enterDensity, enterDuration)
-            .SetEase(Tween.EaseType.In);
+        _tween.TweenProperty(backgroundFogMaterial, "shader_parameter/blackout_mix", enterDensity, enterDuration);
         
         tvController.EnterTvState(Player);
         Player.visualHandler.Visible = false;
@@ -46,9 +45,8 @@ public partial class TvGamePlayerState : BasePlayerState
     {
         _tween?.Kill();
         _tween = CreateTween();
-        
-        _tween.TweenProperty(backgroundFogMaterial, "density", exitDensity, exitDuration)
-            .SetEase(Tween.EaseType.Out);
+
+        _tween.TweenProperty(backgroundFogMaterial, "shader_parameter/blackout_mix", exitDensity, exitDuration);
         
         Camera.ClearGlobalTransformOverride();
         Camera.SetPlayerModelVisibility(true);

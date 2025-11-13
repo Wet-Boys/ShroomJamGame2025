@@ -27,6 +27,7 @@ public partial class TvController : Node
     private bool _lastScreenPosInitialized;
     private float _lastEventTime = -1f;
     private PlayerController _player;
+    private Node3D _background;
     
     public bool HasSubWorld => GameState is not null;
     
@@ -45,6 +46,7 @@ public partial class TvController : Node
         _viewport = GetNode<SubViewport>("%SubWorld");
         _mouseArea = GetNode<Area3D>("%Mouse Interaction Area");
         _screenQuad = GetNode<MeshInstance3D>("%Screen Quad");
+        _background = GetNode<Node3D>("%Background");
         
         _mouseArea.MouseEntered += MouseEnteredScreen;
         _mouseArea.MouseExited += MouseExitedScreen;
@@ -64,6 +66,8 @@ public partial class TvController : Node
 
     public void EnterTvState(PlayerController player)
     {
+        _background.Scale = Vector3.One;
+        
         _player = player;
         _isActive = true;
 
@@ -72,6 +76,8 @@ public partial class TvController : Node
 
     public void ExitTvState()
     {
+        _background.Scale = Vector3.Zero;
+        
         EmitSignalExitTv();
         _isActive = false;
     }
