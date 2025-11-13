@@ -414,7 +414,7 @@ curve = SubResource("Curve3D_jacut")
 script = ExtResource("3_67p13")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast"]
-transform = Transform3D(0.43212876, 0.12995023, -0.6178774, 0.05125275, 0.7390405, 0.1912778, 0.6293113, -0.1494222, 0.40869924, 0.114871025, 2.8878884, 0.095973015)
+transform = Transform3D(0.43212876, 0.12995023, -0.61787754, 0.05125275, 0.7390405, 0.19127785, 0.6293113, -0.1494222, 0.40869933, 0.114871025, 2.8878884, 0.095973015)
 light_color = Color(1, 0.9773333, 0.83, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
@@ -453,7 +453,7 @@ curve = SubResource("Curve3D_53brq")
 script = ExtResource("3_67p13")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast2"]
-transform = Transform3D(0.43212876, 0.12995023, -0.6178774, 0.05125275, 0.7390405, 0.1912778, 0.6293113, -0.1494222, 0.40869924, 0.114871025, 2.8878882, 0.09597278)
+transform = Transform3D(0.43212876, 0.12995023, -0.61787754, 0.05125275, 0.7390405, 0.19127785, 0.6293113, -0.1494222, 0.40869933, 0.114871025, 2.8878882, 0.09597278)
 light_color = Color(1, 0.9773333, 0.83, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0

@@ -79,6 +79,8 @@ public partial class GameFlowHandler : Node
     private double _timerMultiplier = 1;
     [Export] public AudioStreamPlayer cough;
     [Export] public AudioStreamPlayer yawn;
+    [Export] public AudioStreamPlayer3D tvSucc;
+    [Export] public GpuParticles3D succParticles;
 
     public static int Lives
     {
@@ -115,6 +117,7 @@ public partial class GameFlowHandler : Node
                 PlayerController.instance.visualHandler.CoughingBaby();
                 cough.Play();
                 SetObjectiveText("Put on the game shows");
+                TvInteractable.instance.InteractText = "Change Channel";
                 LoadScene(CurrentTime.Time10Am);
                 break;
             case CurrentTime.Time10Am:
@@ -126,6 +129,7 @@ public partial class GameFlowHandler : Node
                 SetObjectiveText("");
                 LoadScene(CurrentTime.Time3Pm);
                 SetCurrentGame(_currentTime);
+                TvInteractable.instance.InteractText = "Watch Channel";
                 break;
             case CurrentTime.Time3Pm:
                 LoadScene(CurrentTime.Time6Pm);
@@ -133,6 +137,7 @@ public partial class GameFlowHandler : Node
             case CurrentTime.Time6Pm:
                 LoadScene(CurrentTime.Time12Am);
                 SetObjectiveText("Turn off the TV and head to bed");
+                TvInteractable.instance.InteractText = "Turn Off Tv";
                 PlayerController.instance.visualHandler.Yawn();
                 yawn.Play();
                 MusicManager.Instance.DuckOverworldMusic();
@@ -187,6 +192,7 @@ public partial class GameFlowHandler : Node
         else
         {
             TvInteractable.instance.shutdown.Play();
+            TvInteractable.instance.InteractOverride = true;
         }
         switch (_currentTime)
         {
@@ -317,6 +323,37 @@ public partial class GameFlowHandler : Node
         _canEnterTv = true;
         _currentGame?.QueueFree();
         _currentGame = (Node3D)TvController.instance.SetTvSubWorld(tvGameList[gameTime]);
+
+        switch (gameTime)
+        {
+            case CurrentTime.Time8Am:
+                TvInteractable.instance.InteractText = "Play Scoot Shoot";
+                break;
+            case CurrentTime.Time10Am:
+                TvInteractable.instance.InteractText = "Watch Wall Cutter";
+                break;
+            case CurrentTime.Time12Pm:
+                TvInteractable.instance.InteractText = "Watch Ad";
+                break;
+            case CurrentTime.Time3Pm:
+                TvInteractable.instance.InteractText = "Play Frogger";
+                break;
+            case CurrentTime.Time6Pm:
+                TvInteractable.instance.InteractText = "Watch Fall People";
+                break;
+            case CurrentTime.Time12Am:
+                TvInteractable.instance.InteractText = "You shouldn't be able to read this";
+                break;
+            case CurrentTime.Time12AmStatic:
+                break;
+            case CurrentTime.Victory:
+                break;
+            case CurrentTime.RandomMinigame:
+                break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(gameTime), gameTime, null);
+        }
+        
         ((BaseTvGameState)_currentGame).CanActivate = true;
         if (forceInteract)
         {
@@ -400,12 +437,14 @@ public partial class GameFlowHandler : Node
         if (failure)
         {
             Lives--;
+            MusicManager.Instance.WarbleDreamMusic();
         }
 
         if (Lives != 0)
         {
             DreamTransition.instance.Play();
             await ToSignal(GetTree().CreateTimer(.5f), "timeout");
+            MusicManager.Instance.StopDreamMusic();
         }
         gameState.ExitTv();
         gameState.CanActivate = false;
@@ -446,12 +485,17 @@ public partial class GameFlowHandler : Node
         PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 7.5f);
         // PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
         PlayerController.instance.visualHandler.Succ();
+        TvInteractable.instance.InteractOverride = false;
+        tvSucc.Play();
+        succParticles.Emitting = true;
         TvInteractable.instance.staticNoise.Play();
         isInDreamSequence = true;
         PlayerController.instance.visualHandler.animationTree.AnimationFinished += AnimationTreeOnAnimationFinished;
         MusicManager.Instance.StartDreamSong();
         await ToSignal(GetTree().CreateTimer(7.85f), "timeout");
         DreamTransition.instance.Play();
+        tvSucc.Stop();
+        succParticles.Emitting = false;
     }
 
     public async void PreloadAllScenes()

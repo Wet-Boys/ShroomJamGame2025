@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://66hsfs6jpcqu"]
+[gd_scene load_steps=24 format=3 uid="uid://66hsfs6jpcqu"]
 
 [ext_resource type="Script" uid="uid://di11kxlibce8f" path="res://GameFlowHandler.cs" id="1_rsuuh"]
 [ext_resource type="PackedScene" uid="uid://dk5rx6k5tsxl1" path="res://Player/Player Prefab.tscn" id="2_hhwg2"]
@@ -10,9 +10,33 @@
 [ext_resource type="PackedScene" uid="uid://dw0j2rdqywcvy" path="res://scenes/froggers/frogger.tscn" id="6_p52gt"]
 [ext_resource type="PackedScene" uid="uid://8awqfdjpqei6" path="res://scenes/HITW/Hole In The Wall Game.tscn" id="7_1xlbm"]
 [ext_resource type="PackedScene" uid="uid://l0o5yekikrdc" path="res://scenes/Scoot Shoot/Scoot Shoot Game.tscn" id="8_pohcq"]
+[ext_resource type="AudioStream" uid="uid://dp5535pioq8dx" path="res://scenes/12AM/Sfx/wind-cut-376415_5121236-hq.ogg" id="10_gh8de"]
 [ext_resource type="PackedScene" uid="uid://c3lqsowth1x4l" path="res://scenes/overworld/OverworldEnvironment Prefab.tscn" id="11_1xlbm"]
+[ext_resource type="Texture2D" uid="uid://bgkr1bjlmsrkf" path="res://scenes/12AM/2d_lights_and_shadows_neutral_point_light_webp.png" id="11_h2jvv"]
 [ext_resource type="AudioStream" uid="uid://e26fa3lui88x" path="res://Player/Coughing.wav" id="12_5um4o"]
 [ext_resource type="AudioStream" uid="uid://4uds57n4ewmb" path="res://Player/Yawning.wav" id="13_gh8de"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_gh8de"]
+emission_shape = 3
+emission_box_extents = Vector3(20, 10, 10)
+gravity = Vector3(0, 0, 0)
+turbulence_enabled = true
+turbulence_noise_scale = 0.0
+turbulence_influence_min = 0.0
+collision_mode = 2
+collision_use_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gh8de"]
+transparency = 1
+albedo_texture = ExtResource("11_h2jvv")
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_gh8de"]
+material = SubResource("StandardMaterial3D_gh8de")
+size = Vector2(0.25, 0.25)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hhwg2"]
 data = PackedVector3Array(-50, -0.5, 50, -50, -0.5, -50, -50, 0.5, -50, 50, -0.5, -50, -50, -0.5, -50, -50, -0.5, 50, -50, 0.5, -50, -50, -0.5, -50, 50, -0.5, -50, -50, 0.5, -50, -50, 0.5, 50, -50, -0.5, 50, -50, -0.5, 50, -50, 0.5, 50, 50, 0.5, 50, 50, 0.5, 50, -50, 0.5, 50, -50, 0.5, -50, -50, -0.5, 50, 50, -0.5, 50, 50, -0.5, -50, 50, 0.5, 50, 50, -0.5, 50, -50, -0.5, 50, 50, -0.5, -50, 50, -0.5, 50, 50, 0.5, 50, 50, -0.5, -50, 50, 0.5, -50, -50, 0.5, -50, -50, 0.5, -50, 50, 0.5, -50, 50, 0.5, 50, 50, 0.5, 50, 50, 0.5, -50, 50, -0.5, -50)
@@ -49,17 +73,44 @@ adjustment_saturation = 1.5
 
 [node name="DefaultGame" type="Node3D"]
 
-[node name="GameFlowHandler" type="Node" parent="." node_paths=PackedStringArray("_label", "_dreamTimer", "cough", "yawn")]
+[node name="GameFlowHandler" type="Node" parent="." node_paths=PackedStringArray("_label", "_dreamTimer", "cough", "yawn", "tvSucc", "succParticles")]
 script = ExtResource("1_rsuuh")
 microGames = Array[PackedScene]([ExtResource("2_w77kl"), ExtResource("3_10j7k"), ExtResource("4_4d0x0"), ExtResource("5_p52gt"), ExtResource("6_p52gt"), ExtResource("7_1xlbm"), ExtResource("8_pohcq")])
 _label = NodePath("../Floor/Player/Control/Label")
 _dreamTimer = NodePath("../Floor/Player/UI Root/DreamTimer")
 cough = NodePath("../Cough")
 yawn = NodePath("../Yawn")
+tvSucc = NodePath("../CRT TV/Succ Noise")
+succParticles = NodePath("../CRT TV/Succ Particles")
 metadata/_custom_type_script = "uid://di11kxlibce8f"
 
 [node name="CRT TV" parent="." instance=ExtResource("3_ur8v4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.058746338, 3.8362422, -10.677518)
+
+[node name="Succ Noise" type="AudioStreamPlayer3D" parent="CRT TV"]
+stream = ExtResource("10_gh8de")
+attenuation_model = 2
+volume_db = 6.0
+unit_size = 15.0
+max_db = 6.0
+bus = &"SFX"
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="CRT TV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5365906, -0.1622057, -6.0687513)
+size = Vector3(9.301941, 10.709261, 27.038609)
+
+[node name="GPUParticlesAttractorBox3D" type="GPUParticlesAttractorBox3D" parent="CRT TV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60536575, 0, 1.4723978)
+strength = 128.0
+size = Vector3(50, 20, 50)
+
+[node name="Succ Particles" type="GPUParticles3D" parent="CRT TV"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.354434)
+emitting = false
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_gh8de")
+draw_pass_1 = SubResource("QuadMesh_gh8de")
 
 [node name="Floor" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.9960504, 0)

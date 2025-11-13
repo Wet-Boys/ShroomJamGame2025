@@ -52,7 +52,7 @@ public partial class Interactor : RayCast3D
         if (!interactable.CanInteract)
             return;
 
-        if (interactable != _currentInteractable)
+        if (interactable == _currentInteractable)
             _interactLabel.SetText(interactable.GetInteractText());
 
         interactable.OnSelected();

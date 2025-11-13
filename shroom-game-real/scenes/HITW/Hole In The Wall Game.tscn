@@ -246,6 +246,7 @@ environment = SubResource("Environment_gixxu")
 
 [node name="Drum Roll" type="AudioStreamPlayer" parent="Sfx"]
 stream = ExtResource("12_j76ei")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="Droll Roll Finish Victory" type="AudioStreamPlayer" parent="Sfx"]

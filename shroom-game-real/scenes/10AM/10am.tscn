@@ -1,6 +1,8 @@
-[gd_scene load_steps=26 format=4 uid="uid://ckbq3521r8wcp"]
+[gd_scene load_steps=28 format=4 uid="uid://ckbq3521r8wcp"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_632cx"]
+[ext_resource type="Material" uid="uid://dcq87i5xasvq5" path="res://scenes/10AM/Hall Hide Dark.tres" id="2_efv43"]
+[ext_resource type="QuadMesh" uid="uid://dnfdrdff0o52b" path="res://scenes/10AM/Hall Hide Quad.tres" id="3_ras1b"]
 [ext_resource type="PackedScene" uid="uid://btcc4r2khe584" path="res://scenes/10AM/Widnow Frame Shadow Cast.glb" id="3_yspwh"]
 [ext_resource type="Material" uid="uid://dqgh45ow7ygkh" path="res://addons/light_shafts/default_light_shaft.material" id="4_7lgly"]
 [ext_resource type="Script" uid="uid://d4pd8jdgfayc" path="res://Utilities/DirectionalLightHelper.cs" id="4_efv43"]
@@ -143,6 +145,59 @@ mesh = SubResource("BoxMesh_85las")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 12)
 cast_shadow = 3
 mesh = SubResource("BoxMesh_5hcka")
+
+[node name="Hall Hider" type="Node3D" parent="Room-core"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -11.412872)
+
+[node name="Layer 1" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0.25755405)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
+
+[node name="Layer 2" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -0.4)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
+
+[node name="Layer 3" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -0.8)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
+
+[node name="Layer 4" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -1.2)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
+
+[node name="Layer 5" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -1.6)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
+
+[node name="Layer 6" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -2)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
+
+[node name="Layer 7" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -2.4)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
+
+[node name="Layer 8" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -2.7)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
+
+[node name="Layer 9" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -3.1000001)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
+
+[node name="Layer 10" type="MeshInstance3D" parent="Room-core/Hall Hider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -3.4000003)
+material_override = ExtResource("2_efv43")
+mesh = ExtResource("3_ras1b")
 
 [node name="Non-Core" parent="." instance=ExtResource("15_4aeh5")]
 transform = Transform3D(1.307, 0, 0, 0, 1.307, 0, 0, 0, 1.307, 0, 0, 0)
