@@ -1,12 +1,25 @@
-[gd_scene load_steps=8 format=3 uid="uid://dw0j2rdqywcvy"]
+[gd_scene load_steps=14 format=3 uid="uid://dw0j2rdqywcvy"]
 
 [ext_resource type="Script" uid="uid://b4sjpo4dmc3ft" path="res://scenes/froggers/FroggerGameState.cs" id="1_fm2k6"]
 [ext_resource type="PackedScene" uid="uid://llnicj42rant" path="res://scenes/froggers/Collection.glb" id="1_obs73"]
 [ext_resource type="PackedScene" uid="uid://droxinqo8f145" path="res://scenes/froggers/frog.tscn" id="2_r4xsi"]
 [ext_resource type="PackedScene" uid="uid://b743b0qfg0ksp" path="res://scenes/froggers/car.tscn" id="2_vieri"]
 [ext_resource type="PackedScene" uid="uid://djgssrh4u54rn" path="res://scenes/froggers/log.tscn" id="3_0ybi4"]
-[ext_resource type="PackedScene" uid="uid://cx072cwkrciue" path="res://scenes/2D Camera.tscn" id="3_fm2k6"]
+[ext_resource type="PackedScene" path="res://scenes/2D Camera.tscn" id="3_fm2k6"]
 [ext_resource type="PackedScene" uid="uid://db3kqj612eni" path="res://scenes/froggers/leaf.tscn" id="4_ix7rd"]
+[ext_resource type="FontFile" uid="uid://cta4afpkksl5f" path="res://Ui/Fonts/Inter/Inter-Medium.ttf" id="8_w4weh"]
+[ext_resource type="Texture2D" uid="uid://bxpjecjit8gnl" path="res://Ui/keyboard_w.svg" id="9_ryakh"]
+[ext_resource type="Texture2D" uid="uid://btw1a0dvvevkq" path="res://Ui/keyboard_a.svg" id="10_lwk6a"]
+[ext_resource type="Texture2D" uid="uid://cwq2xv4o0vv6q" path="res://Ui/keyboard_s.svg" id="11_3kho0"]
+[ext_resource type="Texture2D" uid="uid://bev3tfeej7dpy" path="res://Ui/keyboard_d.svg" id="12_oay5j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mk1ao"]
+font = ExtResource("8_w4weh")
+font_size = 32
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="Frogger" type="Node3D" node_paths=PackedStringArray("frog")]
 script = ExtResource("1_fm2k6")
@@ -23,3 +36,106 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 2, 0)
 [node name="Camera3D" parent="." instance=ExtResource("3_fm2k6")]
 transform = Transform3D(-4.371139e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, 4.371139e-08, 1.9106855e-15, -4.257932, 30.65831, -1.8612013e-07)
 projection = 0
+
+[node name="Control" type="Control" parent="Camera3D"]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -259.33496
+offset_top = -11.72998
+offset_right = -219.33496
+offset_bottom = 28.27002
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Camera3D/Control"]
+layout_mode = 0
+offset_left = -32.81494
+offset_top = -3.8900146
+offset_right = 259.18506
+offset_bottom = 227.10999
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Camera3D/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera3D/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="Camera3D/Control/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Move Forward"
+label_settings = SubResource("LabelSettings_mk1ao")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera3D/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_ryakh")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Camera3D/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera3D/Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="Camera3D/Control/VBoxContainer/HBoxContainer3/MarginContainer"]
+layout_mode = 2
+text = "Move Left"
+label_settings = SubResource("LabelSettings_mk1ao")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera3D/Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("10_lwk6a")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Camera3D/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera3D/Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="Camera3D/Control/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+text = "Move Backward"
+label_settings = SubResource("LabelSettings_mk1ao")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera3D/Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("11_3kho0")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Camera3D/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Camera3D/Control/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="Camera3D/Control/VBoxContainer/HBoxContainer4/MarginContainer"]
+layout_mode = 2
+text = "Move Right"
+label_settings = SubResource("LabelSettings_mk1ao")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="Camera3D/Control/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("12_oay5j")
+expand_mode = 3
+stretch_mode = 5

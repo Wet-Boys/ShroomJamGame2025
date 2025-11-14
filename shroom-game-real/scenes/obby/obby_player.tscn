@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://7ecyirh0eyap"]
+[gd_scene load_steps=58 format=3 uid="uid://7ecyirh0eyap"]
 
 [ext_resource type="Script" uid="uid://ckkrkpbikrq4n" path="res://scenes/obby/ObbyPlayer.cs" id="1_8cktp"]
 [ext_resource type="PackedScene" uid="uid://dpao73iqwvb5m" path="res://scenes/obby/visuals_root.tscn" id="2_pgjcu"]
@@ -38,8 +38,14 @@
 [ext_resource type="AudioStream" uid="uid://cyx7awpomy55n" path="res://scenes/obby/Announcer/Idle2.wav" id="37_45je1"]
 [ext_resource type="AudioStream" uid="uid://tb1kkrcvd335" path="res://scenes/obby/Announcer/Idle3.wav" id="38_hgop0"]
 [ext_resource type="AudioStream" uid="uid://tgufbd7suxgm" path="res://scenes/obby/Announcer/Idle4.wav" id="39_msyna"]
-[ext_resource type="AudioStream" uid="uid://cwominls71m85" path="res://scenes/obby/sfx/ball/Ball FX.tres" id="40_a12he"]
+[ext_resource type="AudioStream" path="res://scenes/obby/sfx/ball/Ball FX.tres" id="40_a12he"]
+[ext_resource type="FontFile" uid="uid://cta4afpkksl5f" path="res://Ui/Fonts/Inter/Inter-Medium.ttf" id="40_et5un"]
 [ext_resource type="AudioStream" uid="uid://kearyooiebfm" path="res://scenes/obby/Announcer/Idle5.wav" id="40_gm2v4"]
+[ext_resource type="Texture2D" uid="uid://bxpjecjit8gnl" path="res://Ui/keyboard_w.svg" id="41_2quyu"]
+[ext_resource type="Texture2D" uid="uid://btw1a0dvvevkq" path="res://Ui/keyboard_a.svg" id="42_fnx27"]
+[ext_resource type="Texture2D" uid="uid://cwq2xv4o0vv6q" path="res://Ui/keyboard_s.svg" id="43_1j27d"]
+[ext_resource type="Texture2D" uid="uid://bev3tfeej7dpy" path="res://Ui/keyboard_d.svg" id="44_lovr2"]
+[ext_resource type="Texture2D" uid="uid://b4mb7g3pkspke" path="res://Ui/keyboard_space.svg" id="45_2quyu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bn54t"]
 radius = 0.29
@@ -101,6 +107,14 @@ stream_1/stream = ExtResource("37_45je1")
 stream_2/stream = ExtResource("38_hgop0")
 stream_3/stream = ExtResource("39_msyna")
 stream_4/stream = ExtResource("40_gm2v4")
+
+[sub_resource type="LabelSettings" id="LabelSettings_weehl"]
+font = ExtResource("40_et5un")
+font_size = 32
+outline_size = 1
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 7
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_t1i3u"]
 
@@ -184,6 +198,129 @@ stream = SubResource("AudioStreamRandomizer_ktknw")
 bus = &"SFX"
 
 [node name="SteamAudioListener" type="SteamAudioListener" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+
+[node name="Control" type="Control" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D"]
+layout_mode = 3
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -259.33496
+offset_top = -11.72998
+offset_right = -219.33496
+offset_bottom = 28.27002
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control"]
+layout_mode = 0
+offset_left = -32.81494
+offset_top = -3.8900146
+offset_right = 259.18506
+offset_bottom = 227.10999
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Move Forward"
+label_settings = SubResource("LabelSettings_weehl")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("41_2quyu")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer3/MarginContainer"]
+layout_mode = 2
+text = "Move Left"
+label_settings = SubResource("LabelSettings_weehl")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("42_fnx27")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+text = "Move Backward"
+label_settings = SubResource("LabelSettings_weehl")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("43_1j27d")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer4/MarginContainer"]
+layout_mode = 2
+text = "Move Right"
+label_settings = SubResource("LabelSettings_weehl")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("44_lovr2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer5/MarginContainer"]
+layout_mode = 2
+text = "Jump"
+label_settings = SubResource("LabelSettings_weehl")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="CharacterBody/CameraContainer/CameraY/CameraX/CameraPosition/Camera3D/Control/VBoxContainer/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("45_2quyu")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="CharacterBody/CameraContainer/CameraY/CameraX"]
 shape = SubResource("SphereShape3D_t1i3u")
