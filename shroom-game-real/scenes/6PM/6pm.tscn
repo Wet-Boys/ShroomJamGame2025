@@ -24,6 +24,7 @@
 resource_name = "Material.008"
 cull_mode = 2
 shading_mode = 0
+albedo_color = Color(0.70380783, 0.70380783, 0.70380783, 1)
 albedo_texture = ExtResource("4_y8n28")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_w4r06"]

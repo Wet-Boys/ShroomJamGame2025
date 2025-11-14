@@ -25,6 +25,7 @@
 resource_name = "Material.008"
 cull_mode = 2
 shading_mode = 0
+albedo_color = Color(0.28485027, 0.28485027, 0.28485027, 1)
 albedo_texture = ExtResource("4_n556t")
 albedo_texture_force_srgb = true
 
@@ -433,7 +434,7 @@ curve = SubResource("Curve3D_jn5a1")
 script = ExtResource("5_mtyqa")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast"]
-transform = Transform3D(8.689022e-08, 0.3825555, -0.6626056, -5.01661e-08, 0.6626056, 0.38255548, 0.765111, 5.436441e-15, 1.0033218e-07, 0.114871025, 2.8878884, 0.095973015)
+transform = Transform3D(8.689022e-08, 0.3825555, -0.66260564, -5.01661e-08, 0.6626056, 0.3825555, 0.765111, 5.436441e-15, 1.0033219e-07, 0.114871025, 2.8878884, 0.095973015)
 light_color = Color(1, 0.9946667, 0.92, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
@@ -472,7 +473,7 @@ curve = SubResource("Curve3D_3po3q")
 script = ExtResource("5_mtyqa")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast2"]
-transform = Transform3D(8.689022e-08, 0.3825555, -0.6626056, -5.01661e-08, 0.6626056, 0.38255548, 0.765111, 5.436441e-15, 1.0033218e-07, 0.114871025, 2.8878882, 0.09597278)
+transform = Transform3D(8.689022e-08, 0.3825555, -0.66260564, -5.01661e-08, 0.6626056, 0.3825555, 0.765111, 5.436441e-15, 1.0033219e-07, 0.114871025, 2.8878882, 0.09597278)
 light_color = Color(1, 0.9946667, 0.92, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0

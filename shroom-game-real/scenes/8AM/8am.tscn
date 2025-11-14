@@ -71,6 +71,8 @@ blend_shape_mode = 0
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e83x3"]
 resource_name = "Material.008"
 cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.641934, 0.641934, 0.641934, 1)
 albedo_texture = ExtResource("3_biuu5")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_biuu5"]
