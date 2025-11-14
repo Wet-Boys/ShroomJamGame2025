@@ -23,6 +23,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e83x3"]
 resource_name = "Material.008"
 cull_mode = 2
+shading_mode = 0
 albedo_texture = ExtResource("4_y8n28")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_w4r06"]

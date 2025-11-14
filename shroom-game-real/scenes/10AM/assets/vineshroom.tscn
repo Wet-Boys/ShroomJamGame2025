@@ -7,6 +7,8 @@
 resource_name = "Material.008"
 cull_mode = 2
 albedo_texture = ExtResource("2_vuvs0")
+emission_enabled = true
+emission_energy_multiplier = 1.03
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_dqeg0"]
 resource_name = "Vineshroom_Circle_003"
