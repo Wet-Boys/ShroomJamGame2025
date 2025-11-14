@@ -69,7 +69,7 @@ public partial class GameFlowHandler : Node
     public static GameFlowHandler instance;
     private Node3D _currentScene;
     private Node3D _currentGame;
-    private CurrentTime _currentTime;
+    public static CurrentTime currentTime;
     public static bool isInDreamSequence = false;
     [Export] private Label _label;
     private double _macrogameTimer = 0;
@@ -110,7 +110,7 @@ public partial class GameFlowHandler : Node
     {
         _foodHasWorkedThisTimeslot = false;
         ResetPlayerPosition();
-        switch (_currentTime)
+        switch (currentTime)
         {
             case CurrentTime.Time8Am:
                 MusicManager.Instance.StartIntroSong();
@@ -129,7 +129,7 @@ public partial class GameFlowHandler : Node
                 MusicManager.Instance.StartMiddleSong();
                 SetObjectiveText("");
                 LoadScene(CurrentTime.Time3Pm);
-                SetCurrentGame(_currentTime);
+                SetCurrentGame(currentTime);
                 TvInteractable.instance.InteractText = "Watch Channel";
                 break;
             case CurrentTime.Time3Pm:
@@ -171,8 +171,8 @@ public partial class GameFlowHandler : Node
         PlayerController.instance.headNode.GetParentNode3D().RotationDegrees = new Vector3(0, 180, 0);
         _dreamTimer.HideIt();
         PlayerController.instance.visualHandler.WakeUp();
-        //TODO credit song
         await ToSignal(GetTree().CreateTimer(5f), "timeout");
+        MusicManager.Instance.StartDreamSong();
         CreditsHandler.instance.SetCameraToSpot(1);
         await ToSignal(GetTree().CreateTimer(6f), "timeout");
         CreditsHandler.instance.SetCameraToSpot(2);
@@ -189,7 +189,7 @@ public partial class GameFlowHandler : Node
     private bool _timeToSleep;
     private async void TvInteracted()
     {
-        if (_currentTime != CurrentTime.Time12Am)
+        if (currentTime != CurrentTime.Time12Am)
         {
             TvInteractable.instance.click.Play();
         }
@@ -198,7 +198,7 @@ public partial class GameFlowHandler : Node
             TvInteractable.instance.shutdown.Play();
             TvInteractable.instance.InteractOverride = true;
         }
-        switch (_currentTime)
+        switch (currentTime)
         {
             case CurrentTime.Time8Am:
                 EnterTv();
@@ -212,7 +212,7 @@ public partial class GameFlowHandler : Node
                 else
                 {
                     SetObjectiveText("");
-                    SetCurrentGame(_currentTime);
+                    SetCurrentGame(currentTime);
                 }
                 break;
             case CurrentTime.Time12Pm:
@@ -225,7 +225,7 @@ public partial class GameFlowHandler : Node
                 }
                 else
                 {
-                    SetCurrentGame(_currentTime);
+                    SetCurrentGame(currentTime);
                 }
                 break;
             case CurrentTime.Time3Pm:
@@ -238,12 +238,12 @@ public partial class GameFlowHandler : Node
                 }
                 else
                 {
-                    SetCurrentGame(_currentTime);
+                    SetCurrentGame(currentTime);
                 }
                 break;
             case CurrentTime.Time12Am:
                 SetObjectiveText("Head to bed");
-                SetCurrentGame(_currentTime);
+                SetCurrentGame(currentTime);
                 _timeToSleep = true;
                 break;
             case CurrentTime.Victory:
@@ -319,7 +319,7 @@ public partial class GameFlowHandler : Node
         TvInteractable.instance.Interacted += TvInteracted;
         PlayerController.instance.GetNode<Label>("%TaskLabel").Text = "";
         LoadScene(CurrentTime.Time8Am);
-        SetCurrentGame(_currentTime, true);
+        SetCurrentGame(currentTime, true);
         TvController.instance.ExitTv += ExitTv;
     }
 
@@ -380,7 +380,7 @@ public partial class GameFlowHandler : Node
 
     public async void LoadScene(CurrentTime currentTime)
     {
-        _currentTime = currentTime;
+        GameFlowHandler.currentTime = currentTime;
 
         if (currentTime == CurrentTime.RandomMinigame)
         {
@@ -423,8 +423,8 @@ public partial class GameFlowHandler : Node
         if (!_foodHasWorkedThisTimeslot)
         {
             _foodHasWorkedThisTimeslot = true;
-            SetCurrentGame(_currentTime);
-            if (_currentTime == CurrentTime.Time6Pm)
+            SetCurrentGame(currentTime);
+            if (currentTime == CurrentTime.Time6Pm)
             {
                 ((ObbyGameState)_currentGame).SpawnLevel(0);
             }

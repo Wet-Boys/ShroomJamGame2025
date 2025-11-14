@@ -15,13 +15,10 @@ public abstract partial class SettingsEntryTyped<[MustBeVariant] T> : SettingsEn
             
             return (T)BoxedValue;
         }
-        protected set
+        set
         {
-            var originalValue = Value;
             BoxedValue = value;
-            
-            if (originalValue.Equals(value))
-                OnValueChanged?.Invoke(value);
+            OnValueChanged?.Invoke(value);
         }
     }
 

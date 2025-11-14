@@ -47,32 +47,45 @@ public partial class SettingsMenuController : Control
 
     public void MasterVolumeChanged(float volume)
     {
-        SettingsManager.Volume.Master.BoxedValue = volume;
+        SettingsManager.Volume.Master.Value = volume;
     }
 
     public void MusicVolumeChanged(float volume)
     {
-        SettingsManager.Volume.Music.BoxedValue = volume;
+        SettingsManager.Volume.Music.Value = volume;
     }
 
     public void SfxVolumeChanged(float volume)
     {
-        SettingsManager.Volume.Sfx.BoxedValue = volume;
+        SettingsManager.Volume.Sfx.Value = volume;
     }
 
     public void FovChanged(float fov)
     {
-        SettingsManager.Camera.Fov.BoxedValue = fov;
+        SettingsManager.Camera.Fov.Value = fov;
     }
     
     public void HorizontalSensitivityChanged(float value)
     {
-        SettingsManager.Gameplay.Mouse.HorizontalSensitivity.BoxedValue = value;
+        SettingsManager.Gameplay.Mouse.HorizontalSensitivity.Value = value;
     }
 
     public void VerticalSensitivityChanged(float value)
     {
-        SettingsManager.Gameplay.Mouse.VerticalSensitivity.BoxedValue = value;
+        SettingsManager.Gameplay.Mouse.VerticalSensitivity.Value = value;
+    }
+
+    public void ToggleFullScreen()
+    {
+        var current = DisplayServer.WindowGetMode();
+        if (current != DisplayServer.WindowMode.Fullscreen)
+        {
+            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
+        }
+        else
+        {
+            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+        }
     }
 
     public void Save()

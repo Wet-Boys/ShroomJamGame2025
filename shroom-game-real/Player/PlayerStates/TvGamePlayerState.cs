@@ -57,7 +57,7 @@ public partial class TvGamePlayerState : BasePlayerState
 
     public override void _Input(InputEvent @event)
     {
-        if (@event.IsActionPressed("interact") && IsActive)
+        if (@event.IsActionPressed("interact") && IsActive && GameFlowHandler.currentTime == CurrentTime.Time12Pm)
         {
             tvController.GameState.ExitTv();
             GetViewport().SetInputAsHandled();

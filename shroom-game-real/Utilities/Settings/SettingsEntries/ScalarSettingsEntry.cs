@@ -10,7 +10,7 @@ public abstract partial class ScalarSettingsEntry<[MustBeVariant] T> : SettingsE
     public override T Value
     {
         get => base.Value;
-        protected set
+        set
         {
             if (value > Max)
             {

@@ -59,18 +59,20 @@ public partial class MusicManager : Node
 
         _middlePlayer.Finished += () => _middlePlayer.Play();
         _dreamPlayer.Finished += () => _dreamPlayer.Play();
+
+        LoadAudioSettings();
     }
 
     private void LoadAudioSettings()
     {
         Server.SetBusVolumeLinear(MasterBusIndex, SettingsManager.Volume.Master.Value);
-        SettingsManager.Volume.Master.Changed += () => Server.SetBusVolumeLinear(MasterBusIndex, SettingsManager.Volume.Master.Value);
+        SettingsManager.Volume.Master.OnValueChanged += (value) => Server.SetBusVolumeLinear(MasterBusIndex, value);
         
         Server.SetBusVolumeLinear(MusicBusIndex, SettingsManager.Volume.Music.Value);
-        SettingsManager.Volume.Music.Changed += () => Server.SetBusVolumeLinear(MusicBusIndex, SettingsManager.Volume.Music.Value);
+        SettingsManager.Volume.Music.OnValueChanged += (value) => Server.SetBusVolumeLinear(MusicBusIndex, value);
         
         Server.SetBusVolumeLinear(SfxBusIndex, SettingsManager.Volume.Sfx.Value);
-        SettingsManager.Volume.Sfx.Changed += () => Server.SetBusVolumeLinear(SfxBusIndex, SettingsManager.Volume.Sfx.Value);
+        SettingsManager.Volume.Sfx.OnValueChanged += (value) => Server.SetBusVolumeLinear(SfxBusIndex, value);
     }
 
     public override void _EnterTree()
@@ -108,22 +110,6 @@ public partial class MusicManager : Node
             else if (currentTime < middleSongLoopEndOffset)
             {
                 _middleRepeatLock = false;
-            }
-        }
-    }
-
-    public override void _Input(InputEvent @event)
-    {
-        if (@event is InputEventKey eventKey)
-        {
-            if (eventKey is { Keycode: Key.Key2, Pressed: true } && !_isMiddleSong)
-            {
-                StartMiddleSong();
-            }
-            
-            if (eventKey is { Keycode: Key.Key3, Pressed: true } && !_isDreamSong)
-            {
-                StartDreamSong();
             }
         }
     }
