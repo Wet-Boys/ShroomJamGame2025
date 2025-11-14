@@ -125,6 +125,7 @@ public partial class GameFlowHandler : Node
                 LoadScene(CurrentTime.Time12Pm);
                 break;
             case CurrentTime.Time12Pm:
+                MusicManager.Instance.UnDuckOverworldMusic();
                 MusicManager.Instance.StartMiddleSong();
                 SetObjectiveText("");
                 LoadScene(CurrentTime.Time3Pm);
@@ -215,6 +216,7 @@ public partial class GameFlowHandler : Node
             case CurrentTime.Time12Pm:
                 if (_canEnterTv)
                 {
+                    MusicManager.Instance.DuckOverworldMusic();
                     SetObjectiveText("Interact to stop watching");
                     EnterTv();
                     _canEnterTv = true;
@@ -238,7 +240,7 @@ public partial class GameFlowHandler : Node
                 }
                 break;
             case CurrentTime.Time12Am:
-                SetObjectiveText("");
+                SetObjectiveText("Head to bed");
                 SetCurrentGame(_currentTime);
                 _timeToSleep = true;
                 break;
@@ -488,6 +490,7 @@ public partial class GameFlowHandler : Node
         ResetPlayerPosition();
         PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 7.5f);
         // PlayerController.instance.RotationDegrees = new Vector3(0, 0, 0);
+        SetObjectiveText("");
         PlayerController.instance.visualHandler.Succ();
         TvInteractable.instance.InteractOverride = false;
         tvSucc.Play();
