@@ -56,6 +56,7 @@ public partial class ObbyPlayer : Node3D
         cameraY.RotationDegrees = new Vector3(0, 180, 0);
         spawnSfx.Play();
         deathSfx.Finished += DeathSfxFinished;
+        SpinObstacle.spinSpeed = 1;
     }
 
     private void HurtBoxOnBodyEntered(Node3D body)
@@ -158,7 +159,11 @@ public partial class ObbyPlayer : Node3D
             _needToRespawn = true;
             idleSfx.Stop();
             hitSfx.Stop();
-            deathSfx.Play();   
+            deathSfx.Play();
+            if (SpinObstacle.spinSpeed > .5f)
+            {
+                SpinObstacle.spinSpeed -= .025f;
+            }
         }
     }
     private void DeathSfxFinished()

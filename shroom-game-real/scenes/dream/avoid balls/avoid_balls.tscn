@@ -88,7 +88,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.995982, 1.547334, 3.4872105
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_3wful")
-volume_db = -3.0
+volume_db = -7.0
 bus = &"SFX"
 
 [node name="Stands" parent="." instance=ExtResource("7_adqmv")]
