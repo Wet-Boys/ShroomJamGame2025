@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://l0o5yekikrdc"]
+[gd_scene load_steps=37 format=3 uid="uid://l0o5yekikrdc"]
 
 [ext_resource type="Script" uid="uid://bfpku0gl8etli" path="res://scenes/Scoot Shoot/ScootShootOnRailsGame.cs" id="1_eqt36"]
 [ext_resource type="PackedScene" uid="uid://dlkdxx6x5qj3l" path="res://scenes/Scoot Shoot/Models/Straight Hall.glb" id="1_ex37d"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://ic6ww30ehsrl" path="res://scenes/Scoot Shoot/Models/Carriage.glb" id="15_f43bh"]
 [ext_resource type="PackedScene" uid="uid://b603g6er0n84e" path="res://scenes/Scoot Shoot/Models/Tumble Weed.tscn" id="16_8aqhd"]
 [ext_resource type="PackedScene" uid="uid://b2cvts1aj6yfw" path="res://scenes/Scoot Shoot/Models/Saloon.glb" id="17_jgbeg"]
+[ext_resource type="FontFile" uid="uid://cta4afpkksl5f" path="res://Ui/Fonts/Inter/Inter-Medium.ttf" id="24_0kh5l"]
+[ext_resource type="Texture2D" uid="uid://c5t05tdw7n7mt" path="res://Ui/mouse_left.svg" id="25_3xg02"]
 [ext_resource type="AudioStream" uid="uid://cc1ja66ytbyob" path="res://scenes/Scoot Shoot/Audio/GunShots.tres" id="26_72moq"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_k2yoo"]
@@ -60,6 +62,10 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0)
 }
 point_count = 3
+
+[sub_resource type="LabelSettings" id="LabelSettings_f2fjg"]
+font = ExtResource("24_0kh5l")
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_0s1lt"]
 line_spacing = -16.0
@@ -567,6 +573,46 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("14_0s1lt")
 script = ExtResource("9_pbqn1")
+
+[node name="Control" type="Control" parent="UI Root"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -172.18506
+offset_top = 45.890015
+offset_right = -132.18506
+offset_bottom = 85.890015
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI Root/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI Root/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI Root/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="UI Root/Control/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Shoot"
+label_settings = SubResource("LabelSettings_f2fjg")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI Root/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("25_3xg02")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Main Menu" type="Control" parent="UI Root"]
 unique_name_in_owner = true

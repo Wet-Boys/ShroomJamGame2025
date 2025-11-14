@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://8awqfdjpqei6"]
+[gd_scene load_steps=33 format=3 uid="uid://8awqfdjpqei6"]
 
 [ext_resource type="Script" uid="uid://b2ekqf23iydes" path="res://scenes/HITW/HoleInTheWallGame.cs" id="1_ddbat"]
 [ext_resource type="PackedScene" uid="uid://cib1elxwbyfpr" path="res://scenes/HITW/Contestants/Contestant 1.tscn" id="2_fewlc"]
@@ -16,6 +16,10 @@
 [ext_resource type="AudioStream" uid="uid://b1gymc3rmgcu5" path="res://scenes/HITW/Sfx/Drum Roll.ogg" id="12_j76ei"]
 [ext_resource type="AudioStream" uid="uid://bf345tufvgmmm" path="res://scenes/HITW/Sfx/Drum Roll Finish.ogg" id="13_pj4w6"]
 [ext_resource type="AudioStream" uid="uid://d33tao4g3damu" path="res://scenes/HITW/Sfx/Buzzer.ogg" id="14_1hbut"]
+[ext_resource type="FontFile" uid="uid://cta4afpkksl5f" path="res://Ui/Fonts/Inter/Inter-Medium.ttf" id="14_1n26w"]
+[ext_resource type="Texture2D" uid="uid://c5t05tdw7n7mt" path="res://Ui/mouse_left.svg" id="15_bhlps"]
+[ext_resource type="Texture2D" uid="uid://yuvc7sm68ygt" path="res://Ui/mouse_right.svg" id="16_rdu8t"]
+[ext_resource type="Texture2D" uid="uid://dbj48pct7vnkf" path="res://Ui/mouse_scroll_vertical.svg" id="17_bhlps"]
 [ext_resource type="PackedScene" uid="uid://dhvxfwt8vwtm4" path="res://scenes/obby/Models/Stands.glb" id="17_h6ry1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x6wgw"]
@@ -55,6 +59,14 @@ border_width_left = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0.2243011, 5.6601762e-05, 0.80448, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5rcnk"]
+font = ExtResource("14_1n26w")
+font_size = 32
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Environment" id="Environment_gixxu"]
 
@@ -238,6 +250,86 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_xpe22")
 value = 100.0
 fill_mode = 3
 show_percentage = false
+
+[node name="Control" type="Control" parent="HITW Camera/UI Root/Hud Elements"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -297.72998
+offset_top = 45.890015
+offset_right = -257.72998
+offset_bottom = 85.890015
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HITW Camera/UI Root/Hud Elements/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+text = "Cut"
+label_settings = SubResource("LabelSettings_5rcnk")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("15_bhlps")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer/HBoxContainer2/MarginContainer"]
+layout_mode = 2
+text = "Fill"
+label_settings = SubResource("LabelSettings_5rcnk")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("16_rdu8t")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="Interact Label Text" type="Label" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer/HBoxContainer3/MarginContainer"]
+layout_mode = 2
+text = "Change Size"
+label_settings = SubResource("LabelSettings_5rcnk")
+vertical_alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HITW Camera/UI Root/Hud Elements/Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("17_bhlps")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_gixxu")

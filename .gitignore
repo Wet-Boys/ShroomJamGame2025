@@ -11,3 +11,5 @@ mono_crash.*.json
 # but keep main Blender files
 !*.blend
 !*.blend.*
+
+Dist/*
