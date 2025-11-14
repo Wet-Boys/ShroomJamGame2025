@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using Godot.Collections;
+using ShroomGameReal;
 using ShroomGameReal.Player;
 using Array = Godot.Collections.Array;
 
@@ -57,16 +58,25 @@ public partial class CreditsHandler : Label3D
         {
             item.Visible = true;
         }
+        _credits[4].Visible = false;
 
         _currentSegment = spot;
         if (spot == 1)
         {
             _pathFollow3D.Progress = 0;
         }
+        _camera.RotationDegrees = new Vector3(0, 90, 0);
         if (spot == 5)
         {
             _finalSegment = true;
             _camera.RotationDegrees = new Vector3(0, 180, 0);
+            for (int i = 0; i < 4; i++)
+            {
+                _credits[i].Visible = false;
+            }
+
+            _credits[4].Visible = true;
+            _credits[4].Text = $"Dream sequence score: {GameFlowHandler.completedDreamLevels}";
         }
     }
 }

@@ -303,7 +303,7 @@ script = ExtResource("1_r0vsh")
 _pathFollow3D = NodePath("Path3D/PathFollow3D")
 _camera = NodePath("Path3D/PathFollow3D/Camera3D")
 _littleJohn = NodePath("Little John")
-_credits = [NodePath("Label3D"), NodePath("Label3D2"), NodePath("Label3D3"), NodePath("Label3D4")]
+_credits = [NodePath("Label3D"), NodePath("Label3D2"), NodePath("Label3D3"), NodePath("Label3D4"), NodePath("stats")]
 
 [node name="Room" parent="." instance=ExtResource("1_asoc8")]
 transform = Transform3D(-1.307, 0, 1.14261574e-07, 0, 1.307, 0, -1.14261574e-07, 0, -1.307, 0, 0, 0)
@@ -514,17 +514,27 @@ Unsaved Trash"
 font_size = 200
 outline_size = 37
 
+[node name="stats" type="Label3D" parent="."]
+transform = Transform3D(0.6343287, -0.26048648, 0.72785586, -0.056679897, 0.9233161, 0.3798352, -0.7709827, -0.28219533, 0.57092154, 13.283628, 11.040378, 9.148169)
+text = "Player Modelling:
+Unsaved Trash
+asd
+asd
+asdwee"
+font_size = 200
+outline_size = 127
+
 [node name="Path3D" type="Path3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.160961, 9.571094, -8.590512)
 curve = SubResource("Curve3D_c865i")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.5908337, -0.32164294, -0.7398604, 0, 0.9169836, -0.39873126, 0.80667984, -0.23557982, -0.5418934, 14.892323, 4.5828953, 21.818602)
-progress = 70.323845
+transform = Transform3D(-0.5908337, -0.32164288, -0.7398605, 0, 0.91698366, -0.3987312, 0.80667984, -0.23557977, -0.5418935, 15.417315, 4.865828, 22.203121)
+progress = 71.03419
 rotation_mode = 2
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
-transform = Transform3D(-4.371144e-08, 0, 1, 0, 1.0000012, 0, -1.0000012, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-1.0000012, 0, -8.742278e-08, 0, 1.0000012, 0, 8.742288e-08, 0, -1, 0, 0, 0)
 
 [node name="Little John" parent="." instance=ExtResource("20_0ohna")]
 transform = Transform3D(1.6170063, 0, 0, 0, 1.6170063, 0, 0, 0, 1.6170063, -1.2436506, -0.6605729, -6.493291)

@@ -170,6 +170,7 @@ public partial class GameFlowHandler : Node
         PlayerController.instance.headNode.GetParentNode3D().RotationDegrees = new Vector3(0, 180, 0);
         _dreamTimer.HideIt();
         PlayerController.instance.visualHandler.WakeUp();
+        //TODO credit song
         await ToSignal(GetTree().CreateTimer(5f), "timeout");
         CreditsHandler.instance.SetCameraToSpot(1);
         await ToSignal(GetTree().CreateTimer(6f), "timeout");
