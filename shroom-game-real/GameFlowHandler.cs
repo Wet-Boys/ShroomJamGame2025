@@ -164,13 +164,16 @@ public partial class GameFlowHandler : Node
     {
         ChangeSpeed(1);
         SetCurrentGame(CurrentTime.Time12Am);
+        ChangeSpeed(1);
         GD.Print($"Final score: {completedDreamLevels}");
         LoadScene(CurrentTime.Victory);
         PlayerController.instance.Position = new Vector3(0.879f, 8.3f, 7.5f);
         PlayerController.instance.RotationDegrees = new Vector3(0, 180, 0);
         PlayerController.instance.headNode.GetParentNode3D().RotationDegrees = new Vector3(0, 180, 0);
         _dreamTimer.HideIt();
+        ChangeSpeed(1);
         PlayerController.instance.visualHandler.WakeUp();
+        ChangeSpeed(1);
         await ToSignal(GetTree().CreateTimer(5f), "timeout");
         MusicManager.Instance.StartDreamSong();
         CreditsHandler.instance.SetCameraToSpot(1);

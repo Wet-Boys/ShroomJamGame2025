@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="ShroomGameReal"
+config/name="Scoot Shoot"
 run/main_scene="res://scenes/default_game.tscn"
 config/features=PackedStringArray("4.5", "C#", "Forward Plus")
 config/icon="res://icon.svg"
@@ -34,7 +34,7 @@ project/assembly_name="ShroomGameReal"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/light_shafts/plugin.cfg", "res://addons/settings_helper/plugin.cfg")
+enabled=PackedStringArray("res://addons/light_shafts/plugin.cfg")
 
 [file_customization]
 
