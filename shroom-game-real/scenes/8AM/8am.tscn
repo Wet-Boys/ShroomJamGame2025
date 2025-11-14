@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bamkm6krucn3a"]
+[gd_scene load_steps=41 format=4 uid="uid://bamkm6krucn3a"]
 
 [ext_resource type="PackedScene" uid="uid://djhtiivqsen7h" path="res://scenes/room-core.tscn" id="1_asoc8"]
 [ext_resource type="Script" uid="uid://b34fd7vtgdriy" path="res://scenes/8AM/CreditsHandler.cs" id="1_r0vsh"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://soh8mr608bwy" path="res://scenes/10AM/Slavic Tv_tv_02_tv_out_Normal.png" id="14_10vi8"]
 [ext_resource type="LightmapGIData" uid="uid://c4dfo61fwgjoc" path="res://scenes/8AM/8am.lmbake" id="15_67p13"]
 [ext_resource type="PackedScene" uid="uid://b64f63dkq0uv8" path="res://8AMJohn.tscn" id="20_0ohna"]
+[ext_resource type="PackedScene" uid="uid://dm60plccsepd2" path="res://fadeOut.tscn" id="20_1yj1e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjohu"]
 resource_name = "Boite mouchoirs - papier mouchoir"
@@ -416,7 +417,7 @@ curve = SubResource("Curve3D_jacut")
 script = ExtResource("3_67p13")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast"]
-transform = Transform3D(0.43212876, 0.12995023, -0.6178775, 0.05125275, 0.7390405, 0.19127783, 0.6293113, -0.1494222, 0.4086993, 0.114871025, 2.8878884, 0.095973015)
+transform = Transform3D(0.43212876, 0.12995023, -0.6178774, 0.05125275, 0.7390405, 0.1912778, 0.6293113, -0.1494222, 0.40869924, 0.114871025, 2.8878884, 0.095973015)
 light_color = Color(1, 0.9773333, 0.83, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
@@ -455,7 +456,7 @@ curve = SubResource("Curve3D_53brq")
 script = ExtResource("3_67p13")
 
 [node name="Window Light" type="SpotLight3D" parent="Window Frame Shadow Cast2"]
-transform = Transform3D(0.43212876, 0.12995023, -0.6178775, 0.05125275, 0.7390405, 0.19127783, 0.6293113, -0.1494222, 0.4086993, 0.114871025, 2.8878882, 0.09597278)
+transform = Transform3D(0.43212876, 0.12995023, -0.6178774, 0.05125275, 0.7390405, 0.1912778, 0.6293113, -0.1494222, 0.40869924, 0.114871025, 2.8878882, 0.09597278)
 light_color = Color(1, 0.9773333, 0.83, 1)
 light_energy = 7.0
 light_indirect_energy = 16.0
@@ -537,6 +538,8 @@ rotation_mode = 2
 
 [node name="Camera3D" type="Camera3D" parent="Path3D/PathFollow3D"]
 transform = Transform3D(-1.0000012, 0, -8.742278e-08, 0, 1.0000012, 0, 8.742288e-08, 0, -1, 0, 0, 0)
+
+[node name="Control" parent="Path3D/PathFollow3D/Camera3D" instance=ExtResource("20_1yj1e")]
 
 [node name="Little John" parent="." instance=ExtResource("20_0ohna")]
 transform = Transform3D(1.6170063, 0, 0, 0, 1.6170063, 0, 0, 0, 1.6170063, -1.2436506, -0.6605729, -6.493291)

@@ -182,6 +182,8 @@ public partial class GameFlowHandler : Node
         CreditsHandler.instance.SetCameraToSpot(4);
         await ToSignal(GetTree().CreateTimer(6f), "timeout");
         CreditsHandler.instance.SetCameraToSpot(5);
+        await ToSignal(GetTree().CreateTimer(15f), "timeout");
+        FadeOut.instance.FadeOutAnimation();
     }
 
     private bool _timeToSleep;
